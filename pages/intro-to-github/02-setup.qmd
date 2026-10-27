@@ -1,0 +1,80 @@
+---
+title: "Lesson 2: Setting up"
+---
+
+## 1. Create a GitHub account
+
+1. Go to [github.com/signup](https://github.com/signup).
+2. Choose a **professional username**. It appears on everything you do, for example `jsmith-nv` rather than `pizzalover99`.
+3. **Turn on two-factor authentication (2FA):** profile picture → **Settings → Password and authentication**. NV OSE requires 2FA for all organization members.
+4. Optional: if you use a personal account for work, add your work email under **Settings → Emails**.
+
+### Protect your email address
+
+Every commit is labeled with an email address, and in public repos anyone can see it. To keep yours private:
+
+1. Go to **Settings → Emails** and check **Keep my email addresses private**.
+2. GitHub then shows you a private "noreply" address, like `12345678+username@users.noreply.github.com`. Use that address when you configure Git (below).
+
+## 2. Install the tools
+
+| Tool | Mac | Windows |
+|---|---|---|
+| **GitHub Desktop** | [desktop.github.com](https://desktop.github.com/) | [desktop.github.com](https://desktop.github.com/) |
+| **Git** (for the command line) | Open Terminal and type `git --version`. If Git isn't installed, macOS offers to install it. | Install [Git for Windows](https://git-scm.com/download/win). It includes **Git Bash**. |
+| **Text editor** | [VS Code](https://code.visualstudio.com/) or RStudio | [VS Code](https://code.visualstudio.com/) or RStudio |
+
+Check that Git works:
+
+```bash
+git --version
+```
+
+You should see something like `git version 2.47.0`.
+
+## 3. Connect GitHub Desktop
+
+1. Open GitHub Desktop and sign in: **GitHub Desktop → Settings → Accounts** on Mac, **File → Options → Accounts** on Windows.
+2. Your browser opens. Sign in to GitHub and authorize the app.
+3. Under **Git**, confirm your name and email.
+
+## 4. Configure Git for the command line
+
+Tell Git who you are. Do this once per computer:
+
+```bash
+git config --global user.name "Your Name"
+git config --global user.email "your-noreply-or-work-email@example.com"
+git config --global init.defaultBranch main
+```
+
+Check your settings:
+
+```bash
+git config --list
+```
+
+## 5. Authenticate the command line
+
+GitHub **no longer accepts your password** for Git on the command line. Use one of these instead:
+
+- **Easiest (Windows):** Git for Windows includes Git Credential Manager. The first time you push, a browser window opens so you can sign in.
+- **Easiest (Mac or Windows):** install the [GitHub CLI](https://cli.github.com/) and run:
+  ```bash
+  gh auth login
+  ```
+  Follow the prompts and choose **HTTPS** and **Login with a web browser**.
+- **Alternative:** a [personal access token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens) or an [SSH key](https://docs.github.com/en/authentication/connecting-to-github-with-ssh). These are more advanced.
+
+::: {.callout-warning}
+A token works like a password. Never paste it into code, a README, or a chat. See [Lesson 9](09-data-security.qmd).
+:::
+
+## Checklist
+
+- [ ] GitHub account created, with 2FA on
+- [ ] Email privacy set
+- [ ] GitHub Desktop installed and signed in
+- [ ] Git installed (`git --version` works)
+- [ ] `user.name` and `user.email` configured
+- [ ] Accepted the invitation to the **nv-ose** organization (check your email or [github.com/nv-ose](https://github.com/nv-ose))

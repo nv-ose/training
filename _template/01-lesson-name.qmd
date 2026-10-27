@@ -1,0 +1,24 @@
+---
+title: "Lesson 1: [Lesson title]"
+---
+
+Short introduction: what this lesson covers and why it matters.
+
+## Section heading
+
+Content...
+
+::: {.callout-tip}
+A helpful tip.
+:::
+
+## Exercise
+
+1. Task step...
+2. Task step...
+
+**✅ Check:** how learners know it worked.
+
+::: {.callout-tip collapse="true" title="Show solution"}
+Solution...
+:::

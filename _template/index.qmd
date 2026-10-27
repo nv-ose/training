@@ -1,4 +1,6 @@
-# [Training Title]
+---
+title: "[Training Title]"
+---
 
 One-sentence description of this training.
 
@@ -22,18 +24,15 @@ By the end of this training, participants will be able to:
 - Software to install: ...
 - Prior knowledge: ...
 
-## Contents
+## Lessons
 
-| Folder | What's inside |
-|---|---|
-| `slides/` | Presentation slides |
-| `exercises/` | Hands-on activities |
-| `data/` | Small example datasets |
-| `solutions/` | Exercise solutions |
+| # | Lesson | Time |
+|---|---|---|
+| 1 | [Lesson title](01-lesson-name.qmd) | 20 min |
 
 ## Maintainer
 
-[name] — [email]
+[name] — [email](mailto:email)
 
 ## License
 

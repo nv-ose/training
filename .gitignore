@@ -11,10 +11,13 @@ Thumbs.db
 __pycache__/
 .ipynb_checkpoints/
 
-# Quarto / build output
+# Quarto build cache (docs/ is the published site and MUST be committed)
 /.quarto/
-_site/
+/_site/
 
 # Secrets
 .env
+.Renviron
 *.key
+
+**/*.quarto_ipynb

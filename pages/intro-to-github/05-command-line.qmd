@@ -1,0 +1,112 @@
+---
+title: "Lesson 5: The basic workflow on the command line"
+---
+
+The command line (CLI) does everything GitHub Desktop does, and more. It's also what you'll use on servers and in automated pipelines.
+
+- **Mac:** open **Terminal**.
+- **Windows:** open **Git Bash**, which comes with Git for Windows.
+
+## Moving around
+
+Some basic commands for finding your way:
+
+```bash
+pwd                      # Show the folder you're in
+ls                       # List files (add -a to include hidden files)
+cd Documents/GitHub      # Go into a folder
+cd ..                    # Go up one folder
+mkdir my-project         # Make a new folder
+```
+
+## Option A: Start a new repo with `git init`
+
+```bash
+mkdir my-project
+cd my-project
+git init                 # Turns this folder into a Git repo (creates the hidden .git folder)
+```
+
+Create a README and a .gitignore, then make your first commit:
+
+```bash
+echo "# My Project" > README.md
+echo ".DS_Store" > .gitignore
+
+git status               # See what's changed
+git add README.md .gitignore
+git commit -m "Initial commit: add README and .gitignore"
+```
+
+To connect it to GitHub, first create an **empty** repo on github.com. Don't add a README there, because you already have one. Then:
+
+```bash
+git remote add origin https://github.com/nv-ose/my-project.git
+git push -u origin main  # -u remembers this remote, so next time just type: git push
+```
+
+## Option B: Copy an existing repo with `git clone`
+
+```bash
+cd ~/Documents/GitHub
+git clone https://github.com/nv-ose/training.git
+cd training
+```
+
+`git clone` downloads the whole repo, including its history, and sets up `origin` for you.
+
+## The everyday loop
+
+```bash
+git pull                         # 1. Get the latest changes
+# ... edit files ...
+git status                       # 2. See what changed
+git diff                         # 3. See the exact line changes
+git add filename.R               # 4. Stage specific files
+git add .                        #    ...or stage everything (check git status first!)
+git commit -m "Add age filter"   # 5. Commit
+git push                         # 6. Send to GitHub
+```
+
+| Command | GitHub Desktop equivalent |
+|---|---|
+| `git pull` | Fetch origin / Pull origin |
+| `git status` | Changes tab |
+| `git diff` | Clicking a file in the Changes tab |
+| `git add` | Checking a file's box |
+| `git commit -m "..."` | Summary box + **Commit to main** |
+| `git push` | Push origin |
+| `git log --oneline` | History tab |
+
+::: {.callout-warning title="Be careful with git add ."}
+`git add .` stages *everything*, including files you may not want. Run `git status` first, and rely on your `.gitignore`.
+:::
+
+## Looking at history
+
+```bash
+git log                  # Full history
+git log --oneline        # One line per commit
+git log -p filename.R    # Every change to one file
+git show abc1234         # Details of one commit (use the ID from git log)
+```
+
+## Undoing things
+
+| Situation | Command |
+|---|---|
+| Discard unsaved edits to a file | `git restore filename.R` |
+| Unstage a file (keep the edits) | `git restore --staged filename.R` |
+| Fix the last commit's message (before pushing) | `git commit --amend -m "New message"` |
+| Undo a commit that's already pushed | `git revert abc1234`. This creates a new commit that reverses it |
+
+::: {.callout-warning}
+Avoid `git reset --hard` and `git push --force` until you're comfortable. They can permanently delete work.
+:::
+
+## Getting help
+
+```bash
+git help             # List common commands
+git help commit      # Manual for a specific command
+```

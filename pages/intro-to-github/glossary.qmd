@@ -1,0 +1,37 @@
+---
+title: "Glossary"
+---
+
+| Term | Definition |
+|---|---|
+| **Branch** | A separate line of development. `main` is the default branch. |
+| **Clone** | A full copy of a repo, including its history, on your computer. |
+| **Commit** | A saved snapshot of changes, with a message, an author, and a unique ID (hash). |
+| **Commit message** | A short description of what a commit changed and why. |
+| **Conflict (merge conflict)** | When two changes affect the same lines and Git needs you to choose which to keep. |
+| **Diff** | The line-by-line difference between two versions of a file. |
+| **Fetch** | Check GitHub for new changes without applying them. |
+| **Fork** | Your own copy of someone else's repo on GitHub. |
+| **.gitignore** | A file listing patterns for files Git should never track. |
+| **GitHub Pages** | A free GitHub service that turns a repo into a website. |
+| **HEAD** | The commit you are currently on. |
+| **Issue** | A GitHub item for tracking a task, bug, or idea. |
+| **Local** | Your computer's copy of a repo. |
+| **main** | The default, official branch of a repo. |
+| **Markdown (.md)** | A simple text formatting language used for READMEs and documentation. |
+| **Merge** | Combine the changes from one branch into another. |
+| **Organization (org)** | A shared GitHub account for a team, such as `nv-ose`. |
+| **origin** | The default name for the remote copy of the repo on GitHub. |
+| **Owner** | An org member with full admin rights. |
+| **Pull** | Fetch new changes from GitHub and merge them into your local copy. |
+| **Pull request (PR)** | A request to merge one branch into another, with review and discussion. |
+| **Push** | Upload your local commits to GitHub. |
+| **Push protection** | A GitHub feature that blocks pushes containing known secret formats. |
+| **README** | The front-page document of a repo, usually `README.md`. |
+| **Remote** | A copy of the repo hosted elsewhere, usually on GitHub. |
+| **Repository (repo)** | A project folder tracked by Git, plus its history. |
+| **Revert** | A new commit that undoes an earlier commit. |
+| **Secret** | Any credential: a password, API key, token, or private key. |
+| **Stage (staging area)** | The set of changes chosen to go into the next commit (`git add`). |
+| **Template repository** | A repo you can use to start new repos with the same files, without its history. |
+| **Two-factor authentication (2FA)** | A second login step, such as an app code, that protects your account. |

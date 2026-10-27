@@ -1,0 +1,99 @@
+---
+title: "Lesson 6: Branches and pull requests"
+---
+
+## What is a branch?
+
+A **branch** is a separate copy of the project where you can make changes without affecting the main version. When the work is ready, you **merge** it back.
+
+```
+main:      A───B───────────E (merge)
+                \         /
+my-branch:       C───D───┘
+```
+
+- `main` is the official, working version.
+- You create `my-branch`, make commits **C** and **D**, and `main` is unaffected.
+- When you're done, you merge the branch back into `main`.
+
+**Why use branches?** You can experiment safely, several people can work at once, and every change can be reviewed before it reaches `main`. The NV OSE SOP requires this for shared repos.
+
+**Naming:** `yourname/short-description`, for example `mwegener/add-age-filter`.
+
+## What is a pull request (PR)?
+
+A **pull request** asks to merge your branch into `main`. It's where teammates:
+
+- see exactly what changed
+- leave comments on specific lines
+- **approve** the change, or **request changes**
+- merge it once it's approved
+
+## The branch → PR → merge workflow
+
+### In GitHub Desktop
+
+1. **Current branch → New branch**. Name it, and base it on `main`.
+2. Make your changes, then **Commit to `your-branch`**.
+3. Click **Publish branch**. This pushes the branch to GitHub.
+4. Click **Create Pull Request**. Your browser opens on GitHub.
+5. Add a title and description, choose **Reviewers** on the right, then click **Create pull request**.
+6. After approval, click **Merge pull request** on GitHub, then **Delete branch**.
+7. Back in Desktop, switch to `main` and click **Pull origin**.
+
+### On the command line
+
+```bash
+git switch main
+git pull
+git switch -c mwegener/add-age-filter      # Create and switch to a new branch
+# ... edit, then:
+git add .
+git commit -m "Add age filter"
+git push -u origin mwegener/add-age-filter
+```
+
+Then open the PR on github.com. GitHub shows a yellow **Compare & pull request** banner. After it's merged:
+
+```bash
+git switch main
+git pull
+git branch -d mwegener/add-age-filter      # Delete the local branch
+```
+
+Other branch commands:
+
+```bash
+git branch               # List local branches (* marks the current one)
+git branch -a            # Include branches on GitHub
+git switch branch-name   # Switch to an existing branch
+```
+
+## Reviewing a pull request
+
+1. Open the PR and go to the **Files changed** tab.
+2. Click **+** next to a line to comment on it.
+3. Click **Review changes** and choose **Comment**, **Approve**, or **Request changes**.
+
+When reviewing, ask: Does it work? Is it clear? **Is there any sensitive data or any credential in it?**
+
+## Merge conflicts
+
+A **conflict** happens when two branches change the same lines of the same file. Git can't decide which version to keep, so it asks you.
+
+The file will contain markers like this:
+
+```
+<<<<<<< HEAD
+age_groups <- c("0-17", "18-64", "65+")
+=======
+age_groups <- c("0-4", "5-17", "18-49", "50-64", "65+")
+>>>>>>> mwegener/add-age-filter
+```
+
+To resolve it:
+
+1. Edit the file so it contains the version you want, and **delete all of the marker lines** (`<<<<<<<`, `=======`, `>>>>>>>`).
+2. Save the file, then stage and commit it. GitHub Desktop walks you through this, and GitHub can resolve simple conflicts in the browser.
+
+**To avoid conflicts:** pull often, keep branches short-lived, and talk with your team about who is editing what.

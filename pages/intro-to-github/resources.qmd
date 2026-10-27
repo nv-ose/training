@@ -1,0 +1,35 @@
+---
+title: "Further resources"
+---
+
+## Interactive practice
+
+- [GitHub Skills: Introduction to GitHub](https://github.com/skills/introduction-to-github): a hands-on course of under an hour (also available as a [CWML copy](https://github.com/CWML/introduction-to-github))
+- [GitHub Skills catalog](https://skills.github.com/): more free interactive courses
+- [Learn Git Branching](https://learngitbranching.js.org/): a visual, game-like tutorial
+
+## Official documentation
+
+- [GitHub Docs: Using Git](https://docs.github.com/en/get-started/using-git)
+- [GitHub Docs: Getting started](https://docs.github.com/en/get-started)
+- [GitHub Desktop documentation](https://docs.github.com/en/desktop)
+- [Pro Git book](https://git-scm.com/book/en/v2): free and comprehensive
+- [GitHub's .gitignore templates](https://github.com/github/gitignore)
+- [Removing sensitive data from a repository](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository)
+
+## Beginner guides
+
+- [GitHub for Beginners: your roadmap to mastering the GitHub essentials](https://github.blog/developer-skills/github/github-for-beginners-your-roadmap-to-mastering-the-github-essentials/) (GitHub Blog)
+- [GitHub for Beginners: getting started with Git and GitHub in VS Code](https://github.blog/developer-skills/github/github-for-beginners-getting-started-with-git-and-github-in-vs-code/) (GitHub Blog)
+- [Ultimate Guide to Git and GitHub](https://www.geeksforgeeks.org/blogs/ultimate-guide-git-github/) (GeeksforGeeks)
+- [How to Use Git and GitHub](https://www.geeksforgeeks.org/git/how-to-use-git-and-github/) (GeeksforGeeks)
+
+## For R and RStudio users
+
+- [Happy Git and GitHub for the useR](https://happygitwithr.com/) by Jenny Bryan: the go-to guide for using Git with R and RStudio
+- The `usethis` package: `usethis::use_git()`, `usethis::use_github()`, `usethis::edit_r_environ()`
+
+## NV OSE
+
+- [Contributing Guidelines (SOP)](https://github.com/nv-ose/.github/blob/main/CONTRIBUTING.md)
+- [Team Hub Discussions](https://github.com/orgs/nv-ose/discussions): ask questions here (members only)

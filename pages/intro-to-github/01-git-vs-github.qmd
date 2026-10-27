@@ -1,0 +1,80 @@
+---
+title: "Lesson 1: Git vs. GitHub: what and why"
+---
+
+## Why version control?
+
+Most of us have a folder that looks like this:
+
+```
+analysis_final.R
+analysis_final_v2.R
+analysis_final_v2_JL_edits.R
+analysis_FINAL_actually_final.R
+```
+
+**Version control** replaces that with one file and a complete, labeled history of every change: who changed what, when, and why. You can go back to any earlier version at any time.
+
+For public health work, this means:
+
+- **Reproducibility.** You can show exactly which code produced a report.
+- **Collaboration.** Several people can work on the same project without emailing files or overwriting each other.
+- **Continuity.** When someone leaves, their work and its history stay with the team.
+- **Safety.** Mistakes can be undone.
+
+## Git vs. GitHub
+
+| | **Git** | **GitHub** |
+|---|---|---|
+| What it is | Version control **software** | A **website** that hosts Git repositories |
+| Where it runs | On your computer | In the cloud (github.com) |
+| Needs internet? | No | Yes |
+| What it does | Tracks changes to files in a folder | Stores a copy online, and adds collaboration tools: pull requests, issues, discussions, permissions, and websites (GitHub Pages) |
+| Made by | Linus Torvalds (2005), open source | GitHub, Inc. (owned by Microsoft) |
+
+An analogy: **Git is like Microsoft Word's "Track Changes," and GitHub is like SharePoint** where the tracked documents are stored and shared. You can use Git without GitHub, but GitHub needs Git.
+
+Other sites that host Git repositories include GitLab and Bitbucket. The Git skills are the same everywhere.
+
+## Three ways to use Git and GitHub
+
+| Tool | Best for |
+|---|---|
+| **github.com** (web browser) | Quick edits, reviewing pull requests, settings, Discussions |
+| **GitHub Desktop** (app) | Day-to-day work without typing commands. Recommended for beginners |
+| **Command line** (Terminal / Git Bash) | Full control, automation, and working on servers |
+
+RStudio and VS Code also have built-in Git panels. They do the same things as GitHub Desktop.
+
+## Key vocabulary
+
+| Term | Meaning |
+|---|---|
+| **Repository (repo)** | A project folder tracked by Git, including its full history |
+| **Commit** | A saved snapshot of your changes, with a message explaining them |
+| **Local** | The copy on your computer |
+| **Remote** | The copy on GitHub (usually called `origin`) |
+| **Push** | Send your commits from local to remote |
+| **Pull** | Bring new commits from remote to local |
+| **Branch** | A separate line of work, so you can make changes without affecting the main version |
+| **Pull request (PR)** | A request to merge one branch into another, with a place for review and discussion |
+
+See the full [glossary](glossary.qmd).
+
+## The big picture
+
+```
+ Your computer (local)                              GitHub (remote)
+┌───────────────────────────────────────┐         ┌─────────────────┐
+│ Working folder → Staging → Local repo │  push → │   Remote repo   │
+│     (edit)        (add)    (commit)   │ ← pull  │   (origin)      │
+└───────────────────────────────────────┘         └─────────────────┘
+```
+
+1. **Edit** files as you normally would.
+2. **Stage** (choose) the changes you want to save together.
+3. **Commit** them with a message.
+4. **Push** them to GitHub so others can see them.
+5. **Pull** to get changes others have made.
+
+Every lesson that follows builds on this loop.

@@ -1,0 +1,114 @@
+---
+title: "Lesson 3: Repositories, READMEs, and .gitignore"
+---
+
+## What is a repository?
+
+A **repository (repo)** is a project folder that Git tracks. It contains:
+
+- your files (code, documents, small example data)
+- a hidden `.git` folder that stores the complete history. **Don't edit or delete it.**
+
+A good rule is **one project per repo**.
+
+## Creating a repository on GitHub
+
+1. Click **+** (top right) → **New repository**.
+2. **Owner:** choose `nv-ose` for team work, or your own account for practice.
+3. **Name:** lowercase with hyphens, like `flu-dashboard`. See the [SOP naming rules](https://github.com/nv-ose/.github/blob/main/CONTRIBUTING.md).
+4. **Description:** one sentence.
+5. **Visibility:** Public or Private. See [Lesson 8](08-public-vs-private.qmd). **When in doubt, choose Private.**
+6. Check **Add a README file**.
+7. **Add .gitignore:** choose a template, such as **R** or **Python**.
+8. **Choose a license:** CC BY 4.0 for documents, MIT for code. This mostly matters for public repos.
+9. Click **Create repository**.
+
+## README.md
+
+The README is the **front page** of your repo. GitHub displays it automatically below the file list. It's written in **Markdown**, a simple formatting language.
+
+### A good README answers
+
+- **What** is this?
+- **Who** is it for, and who maintains it?
+- **How** do I use it? What software do I need, and in what order do I run the scripts?
+- **What's in** each folder?
+- **When** was it last updated?
+
+The NV OSE template is in the [SOP, section 9](https://github.com/nv-ose/.github/blob/main/CONTRIBUTING.md#9-readme-template).
+
+### Markdown basics
+
+| You type | You get |
+|---|---|
+| `# Heading` | Large heading |
+| `## Subheading` | Smaller heading |
+| `**bold**` | **bold** |
+| `*italic*` | *italic* |
+| `- item` | Bulleted list |
+| `1. item` | Numbered list |
+| `[link text](https://example.com)` | [link text](https://example.com) |
+| `` `code` `` | `code` |
+| `![alt text](image.png)` | An image |
+
+For a block of code, put three backticks (```` ``` ````) on the lines before and after it.
+
+GitHub's [Markdown guide](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax) covers more.
+
+## .gitignore
+
+A `.gitignore` file tells Git which files to **never track**. It's one of your most important safety tools.
+
+```gitignore
+# Operating-system clutter
+.DS_Store
+Thumbs.db
+
+# R
+.Rhistory
+.RData
+.Rproj.user/
+
+# Python
+__pycache__/
+.venv/
+
+# Secrets: NEVER commit these
+.env
+*.key
+credentials.json
+
+# Data: keep real data out of Git
+data/raw/
+*.sas7bdat
+*.xlsx
+```
+
+### How it works
+
+- Each line is a pattern. `*` matches anything, a trailing `/` means a folder, and `#` starts a comment.
+- Ignored files stay on your computer. Git just doesn't track them or upload them.
+- GitHub has ready-made templates in the [github/gitignore](https://github.com/github/gitignore) repo.
+
+### Gotcha: .gitignore doesn't affect files already tracked
+
+If a file was committed *before* you added it to `.gitignore`, Git keeps tracking it. To stop tracking it, but keep it on your computer:
+
+```bash
+git rm --cached path/to/file
+git commit -m "Stop tracking file"
+```
+
+The file still exists in **earlier commits**. If it contained sensitive information, see [Lesson 9](09-data-security.qmd).
+
+::: {.callout-tip title="Best practice"}
+Create the `.gitignore` *first*, before you add any data or secrets to the folder.
+:::
+
+## Other common files
+
+| File | Purpose |
+|---|---|
+| `LICENSE` | Tells others how they may reuse your work |
+| `CONTRIBUTING.md` | How to contribute. For NV OSE, it's set org-wide in the `.github` repo |
+| `.github/` folder | GitHub-specific settings, such as issue templates and workflows |

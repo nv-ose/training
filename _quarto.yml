@@ -1,0 +1,72 @@
+project:
+  type: website
+  output-dir: docs
+  # Explicit list, so stray .qmd/.md files (README.md, _template/) are not rendered
+  render:
+    - index.qmd
+    - "pages/**/*.qmd"
+  resources:
+    - "/.nojekyll"
+
+website:
+  title: "NV OSE Training"
+  description: "Workshops, tutorials, and learning materials from the Nevada Office of State Epidemiology"
+  site-url: https://nv-ose.github.io/training/
+  repo-url: https://github.com/nv-ose/training
+  search: true
+  page-navigation: true
+  navbar:
+    logo: images/logo.png
+    logo-alt: "Office of State Epidemiology logo"
+    left:
+      - text: "Home"
+        href: index.qmd
+      - text: "Intro to Git & GitHub"
+        href: pages/intro-to-github/index.qmd
+    right:
+      - text: "Feedback"
+        icon: envelope
+        href: "mailto:mwegener@health.nv.gov?subject=NV%20OSE%20Training%20feedback"
+      - icon: github
+        href: https://github.com/nv-ose/training
+        aria-label: "Training materials on GitHub"
+  sidebar:
+    - id: intro-to-github
+      title: "Intro to Git & GitHub"
+      style: docked
+      contents:
+        - href: pages/intro-to-github/index.qmd
+          text: "Overview"
+        - section: "Lessons"
+          contents:
+            - pages/intro-to-github/01-git-vs-github.qmd
+            - pages/intro-to-github/02-setup.qmd
+            - pages/intro-to-github/03-repositories-readme-gitignore.qmd
+            - pages/intro-to-github/04-github-desktop.qmd
+            - pages/intro-to-github/05-command-line.qmd
+            - pages/intro-to-github/06-branches-pull-requests.qmd
+            - pages/intro-to-github/07-clones-forks.qmd
+            - pages/intro-to-github/08-public-vs-private.qmd
+            - pages/intro-to-github/09-data-security.qmd
+        - section: "Practice and reference"
+          contents:
+            - pages/intro-to-github/exercises.qmd
+            - pages/intro-to-github/cheatsheet.qmd
+            - pages/intro-to-github/glossary.qmd
+            - pages/intro-to-github/resources.qmd
+  page-footer:
+    left: "Nevada Office of State Epidemiology"
+    center: "Questions or feedback? Email [mwegener@health.nv.gov](mailto:mwegener@health.nv.gov?subject=NV%20OSE%20Training%20feedback)"
+    right: "Built with [Quarto](https://quarto.org)"
+
+format:
+  html:
+    theme:
+      light: cosmo
+      dark: darkly
+    respect-user-color-scheme: true
+    css: styles.css
+    toc: true
+    toc-title: "On this page"
+    code-copy: true
+    code-overflow: wrap

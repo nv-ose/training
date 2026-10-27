@@ -1,0 +1,149 @@
+---
+title: "Lesson 9: Data security: what never goes on GitHub"
+---
+
+::: {.callout-important title="The most important lesson in this training"}
+Git is designed to **never forget**. That's great for code, and dangerous for data and secrets.
+:::
+
+## Never commit any of these, in public or private repos
+
+### Data
+
+- ❌ **Protected health information (PHI)**: names, dates of birth, addresses, medical record numbers, case details
+- ❌ **Personally identifiable information (PII)**: Social Security numbers, phone numbers, email addresses of the public
+- ❌ **Line-level surveillance or case data**, even if it's "de-identified." Small counts and combinations of fields (age + ZIP code + date) can identify people.
+- ❌ Data covered by data use agreements (DUAs), IRB protocols, HIPAA, or state confidentiality rules
+- ❌ Unreleased or provisional numbers that haven't been cleared
+
+### Secrets (credentials)
+
+- ❌ **Passwords**, including database and server passwords
+- ❌ **API keys and tokens**, such as REDCap, Census, or cloud service keys, and GitHub tokens
+- ❌ **Usernames paired with systems**, connection strings, and internal server names or IP addresses
+- ❌ Private keys and certificates (`.pem`, `.key`, `id_rsa`)
+- ❌ `.env` files and config files that contain any of the above
+
+### Also avoid
+
+- ❌ Large files. GitHub warns at 50 MB and blocks files over 100 MB.
+- ❌ Copyrighted material you don't have rights to share
+
+## Why "just delete it" doesn't work
+
+When you commit a file, Git stores it **permanently in the history**. If you delete it and commit again:
+
+```
+Commit 1: Add analysis.R + patients.csv      ← patients.csv is still here
+Commit 2: Delete patients.csv                ← only hidden from the latest version
+```
+
+Anyone with access can still:
+
+- open **History**, or run `git log`, and view the old commit
+- check out the old commit and get the file back
+- find it in **every clone and fork** made before you deleted it
+
+And in a **public** repo:
+
+- **Automated bots scan GitHub for leaked secrets within minutes** of a push.
+- Search engines and archives may have already copied it.
+- Making the repo private, or deleting it, doesn't undo copies that already exist.
+
+**Removing something from history completely** requires rewriting the history (with tools like `git filter-repo` or BFG), force-pushing, getting everyone to re-clone, and sometimes contacting GitHub Support. It's slow and error-prone, and never fully guaranteed. **Prevention is much easier.**
+
+## How to keep secrets and data out
+
+### 1. Set up `.gitignore` first
+
+Before adding anything else to a new repo:
+
+```gitignore
+.env
+*.key
+*.pem
+credentials*
+config/secrets.*
+data/raw/
+data/confidential/
+*.sas7bdat
+*.xlsx
+*.csv
+```
+
+You can add exceptions for safe files, for example `!data/example/*.csv`.
+
+### 2. Keep secrets out of code
+
+❌ **Don't** do this:
+
+```r
+con <- dbConnect(odbc(), uid = "jsmith", pwd = "Summer2026!")
+api_key <- "a1b2c3d4e5f6"
+```
+
+✅ **Do** this instead. Store secrets in a file that Git ignores, or in your system's environment variables.
+
+**R:** put the values in `.Renviron`, and add `.Renviron` to `.gitignore`.
+
+```r
+# .Renviron (never committed)
+DB_USER=jsmith
+DB_PASS=Summer2026!
+```
+
+```r
+# analysis.R (safe to commit)
+con <- dbConnect(odbc(),
+                 uid = Sys.getenv("DB_USER"),
+                 pwd = Sys.getenv("DB_PASS"))
+```
+
+**Python:** put the values in `.env`, and add `.env` to `.gitignore`.
+
+```python
+import os
+from dotenv import load_dotenv
+load_dotenv()
+api_key = os.getenv("API_KEY")
+```
+
+Even better, use your agency's approved password manager or secrets tool.
+
+### 3. Keep data out of the repo
+
+- Store real data on approved agency storage, such as secure network drives, and point your code to it.
+- Commit **code**, not data. Document in the README where authorized users can find the data.
+- For examples and training, use **synthetic (fake) data** or **public, aggregated** datasets.
+
+### 4. Review before every commit
+
+- In GitHub Desktop, look at **every file and line** in the Changes tab.
+- On the command line, run `git status` and `git diff --staged` before committing.
+- Ask yourself: *Would I be comfortable if this were on the front page of the news?*
+
+### 5. Let GitHub help
+
+- **Push protection** blocks many known secret formats, such as API keys and tokens. NV OSE has it turned on for public repos. Turn it on for your own account too: **Settings → Code security → Push protection for yourself**.
+- Don't rely on it alone. It **doesn't** detect PHI or data, and it doesn't catch every kind of password.
+
+## If something sensitive is committed
+
+**Act quickly, and don't try to hide it.**
+
+1. **Don't push**, if you haven't yet. Undo the commit: in GitHub Desktop, **History → Undo commit**; on the command line, `git reset --soft HEAD~1`. Then remove the file and add it to `.gitignore`.
+2. **If it's already pushed:**
+   - **Tell an NV OSE owner immediately**: Max Wegener ([mwegener@health.nv.gov](mailto:mwegener@health.nv.gov)) or Jordan Lancaster ([jlancaster@health.nv.gov](mailto:jlancaster@health.nv.gov)).
+   - **Secrets:** **revoke or change them right away.** Treat the password or token as compromised, even if the repo is private or you deleted it quickly.
+   - **Data (PHI/PII):** follow the agency's **privacy and security incident reporting** procedures. This may be a reportable breach.
+3. An owner will help remove it from history and check forks and clones.
+
+## Quick self-check
+
+Before you push, ask:
+
+- [ ] Did I check every changed file?
+- [ ] Is there any real data, or anything that could identify a person?
+- [ ] Is there any password, token, key, username, or server name?
+- [ ] Is my `.gitignore` covering data and secret files?
+- [ ] If this repo is public, is everything in it cleared for public release?

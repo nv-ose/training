@@ -1,0 +1,64 @@
+---
+title: "Git and GitHub cheat sheet"
+---
+
+## One-time setup
+
+```bash
+git config --global user.name "Your Name"
+git config --global user.email "you@example.com"
+git config --global init.defaultBranch main
+```
+
+## Start a project
+
+| Task | Command line | GitHub Desktop |
+|---|---|---|
+| New repo in the current folder | `git init` | File → New repository |
+| Copy a repo from GitHub | `git clone <url>` | File → Clone repository |
+| Connect a local repo to GitHub | `git remote add origin <url>` | Publish repository |
+
+## Everyday loop
+
+| Task | Command line | GitHub Desktop |
+|---|---|---|
+| Get the latest changes | `git pull` | Fetch / Pull origin |
+| See what changed | `git status`, `git diff` | Changes tab |
+| Stage files | `git add <file>` or `git add .` | Check the files |
+| Commit | `git commit -m "Message"` | Summary → Commit |
+| Send to GitHub | `git push` | Push origin |
+| View history | `git log --oneline` | History tab |
+
+## Branches
+
+| Task | Command line | GitHub Desktop |
+|---|---|---|
+| List branches | `git branch` | Current branch ▾ |
+| Create and switch | `git switch -c name` | New branch |
+| Switch | `git switch name` | Current branch ▾ → choose |
+| Push a new branch | `git push -u origin name` | Publish branch |
+| Delete a local branch | `git branch -d name` | Branch → Delete |
+| Open a pull request | (on github.com) | Create Pull Request |
+
+## Undo
+
+| Task | Command line | GitHub Desktop |
+|---|---|---|
+| Discard edits to a file | `git restore <file>` | Right-click → Discard changes |
+| Unstage a file | `git restore --staged <file>` | Uncheck the file |
+| Undo the last commit (not pushed) | `git reset --soft HEAD~1` | History → Undo commit |
+| Reverse a pushed commit | `git revert <id>` | History → Revert changes in commit |
+| Stop tracking a file | `git rm --cached <file>` | n/a |
+
+## Before every push
+
+- [ ] Checked every changed file
+- [ ] No data, PHI, or PII
+- [ ] No passwords, tokens, keys, or server names
+- [ ] `.gitignore` is up to date
+
+## Something sensitive got pushed?
+
+1. **Revoke or change** any exposed secret immediately.
+2. Tell an owner: Max Wegener ([mwegener@health.nv.gov](mailto:mwegener@health.nv.gov)) or Jordan Lancaster ([jlancaster@health.nv.gov](mailto:jlancaster@health.nv.gov)).
+3. For PHI or PII, follow the agency's incident reporting procedures.

@@ -1,0 +1,114 @@
+---
+title: "Hands-on exercises"
+---
+
+Do these in **your personal GitHub account**, or in a practice repo an owner creates for the workshop. Don't use real NV OSE project repos.
+
+---
+
+## Exercise 1: Create a repository (Lesson 3, 10 min)
+
+1. On github.com, create a new **private** repo named `github-practice`.
+2. Check **Add a README file**, and choose the **R** (or **Python**) `.gitignore` template.
+3. Click the pencil icon on the README and edit it so it includes:
+   - a heading with your name
+   - one sentence about what you hope to use GitHub for
+   - a bulleted list of three things
+   - a link to the NV OSE SOP
+4. Commit directly to `main` with the message `Update README`.
+5. Open `.gitignore`. Find one line you understand and one you don't.
+
+**Check:** the README shows your formatting on the repo's front page.
+
+---
+
+## Exercise 2: Clone, edit, commit, push with GitHub Desktop (Lesson 4, 15 min)
+
+1. In GitHub Desktop: **File → Clone repository**, then choose `github-practice`.
+2. Open the folder and create a file called `notes.md` that contains the line `My first commit from Desktop`.
+3. In GitHub Desktop, look at the change in the **Changes** tab.
+4. Commit it with the summary `Add notes file`.
+5. Click **Push origin**.
+6. Refresh the repo on github.com. Is `notes.md` there?
+7. Open the **History** tab in Desktop. How many commits do you see?
+
+---
+
+## Exercise 3: The command line and `git init` (Lesson 5, 20 min)
+
+1. Open Terminal or Git Bash and run:
+   ```bash
+   cd ~/Documents
+   mkdir cli-practice
+   cd cli-practice
+   git init
+   ```
+2. Create a README and a `.gitignore`:
+   ```bash
+   echo "# CLI Practice" > README.md
+   echo ".env" > .gitignore
+   ```
+3. Create a fake secrets file: `echo "API_KEY=fake123" > .env`
+4. Run `git status`. **Is `.env` listed? Why or why not?**
+5. Stage and commit:
+   ```bash
+   git add .
+   git commit -m "Initial commit"
+   git log --oneline
+   ```
+6. On github.com, create an **empty, private** repo named `cli-practice`. Don't add a README. Then follow the commands GitHub shows under **"…or push an existing repository from the command line."**
+7. Refresh github.com. **Confirm `.env` was NOT uploaded.**
+
+---
+
+## Exercise 4: Branch and pull request (Lesson 6, 20 min, best in pairs)
+
+1. In `github-practice`, create a branch named `yourname/add-favorite`.
+2. Add a line to `notes.md`: `My favorite dataset is ...`
+3. Commit, publish the branch, and click **Create Pull Request**.
+4. Add your partner as a **reviewer**. (They'll need access: **Settings → Collaborators**.)
+5. **Partner:** open the PR → **Files changed** → leave one comment → **Approve**.
+6. Merge the PR, delete the branch, and pull `main` in Desktop.
+
+**Bonus, create a merge conflict:** on two different branches, change the *same line* of `notes.md`. Merge one, then try to merge the other, and resolve the conflict.
+
+---
+
+## Exercise 5: Spot the problem (Lesson 9, 10 min, discussion)
+
+Each of these is about to be committed. What's wrong, and what should happen instead?
+
+**A.**
+```r
+library(DBI)
+con <- dbConnect(odbc::odbc(), server = "nvdb-prod-02.state.nv.us",
+                 uid = "jsmith", pwd = "Winter2026!")
+```
+
+**B.** A folder `data/` containing `measles_cases_2026.csv`, with columns `name, dob, zip, onset_date`.
+
+**C.** A colleague says: *"I accidentally pushed my API key, but I deleted the file and pushed again, so it's fine."*
+
+**D.** A private repo with a summary table where one county has a count of 2.
+
+**E.** `.gitignore` contains `data/`, but `data/cases.csv` still shows up on GitHub.
+
+::: {.callout-tip collapse="true" title="Show answers"}
+**A.** It contains a password, a username, and an internal server name. Move the credentials to `.Renviron` or `.env` (ignored by Git) and use `Sys.getenv()`. Leave out the server name too, or keep it in config. If this was already pushed, **change the password** and tell an owner.
+
+**B.** This is line-level PHI. It must **never** be on GitHub, public or private. Keep it on approved secure storage, add `data/` to `.gitignore`, and use synthetic data for examples. If it was pushed, tell an owner and follow incident reporting procedures.
+
+**C.** Not fine. The key is still in the history, and bots may already have it. **Revoke the key right away**, tell an owner, and clean the history.
+
+**D.** Small cell counts can identify people. Follow the agency's small-number suppression rules before sharing, even internally.
+
+**E.** `.gitignore` doesn't affect files that were already tracked. Run `git rm --cached data/cases.csv` and commit. The file remains in history, so treat it as exposed if it's sensitive.
+
+:::
+
+---
+
+## Extra practice
+
+- GitHub Skills: [Introduction to GitHub](https://github.com/skills/introduction-to-github), an interactive course of under an hour
+- GitHub Skills: [Communicate using Markdown](https://github.com/skills/communicate-using-markdown)

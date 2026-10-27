@@ -1,0 +1,59 @@
+---
+title: "Lesson 8: Public vs. private repositories"
+---
+
+## The difference
+
+| | **Public** | **Private** |
+|---|---|---|
+| Who can see it | **Anyone on the internet**, including search engines and automated scrapers | Only people you give access to |
+| Who can edit it | Only people you give access to | Only people you give access to |
+| Can others fork it? | Yes, anyone | Only members, and NV OSE has disabled this |
+| GitHub Pages on the Free plan | ✅ Yes | ❌ No |
+| Free security scanning | ✅ Full | Limited |
+
+**Public means anyone can *see* it, not that anyone can *change* it.** Outsiders can only suggest changes, through forks and pull requests.
+
+## What's public in a public repo
+
+All of it:
+
+- every file, **in every commit** in the history
+- **every branch**, including work in progress
+- issues, pull requests, comments, and commit messages
+- the name and email on each commit (see email privacy in [Lesson 2](02-setup.qmd))
+
+## Which to choose
+
+| Choose **Public** for | Choose **Private** for |
+|---|---|
+| Training materials meant to be shared | Internal procedures and drafts |
+| Code from published or approved analyses | Code from analyses that haven't been released or cleared |
+| Templates and tools for other agencies | Anything that mentions internal systems, servers, or file paths |
+| GitHub Pages websites | Anything you're unsure about |
+
+::: {.callout-tip title="When in doubt, start private"}
+A private repo can be made public later, after review. Making a public repo private doesn't erase what people have already seen, copied, or forked.
+:::
+
+## NV OSE repositories
+
+| Repo | Visibility |
+|---|---|
+| `.github` (org profile and SOP) | Public |
+| `training` | Public |
+| `shared-resources` | Private |
+| `presentations` | Private |
+| `team-hub` | Private |
+
+Only organization **owners** can change a repo's visibility. Ask an owner if you think a repo should be made public.
+
+## Private ≠ safe for sensitive data
+
+A private repo is still **not** an approved place for PHI, PII, or confidential data:
+
+- Access can change when people join, leave, or are added by mistake.
+- A repo can be made public by accident.
+- Data in Git history is hard to remove completely.
+
+See [Lesson 9](09-data-security.qmd).

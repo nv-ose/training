@@ -1,0 +1,26 @@
+---
+title: "NV OSE Training"
+subtitle: "Workshops, tutorials, and learning materials from the Nevada Office of State Epidemiology"
+sidebar: false
+toc: false
+---
+
+Welcome! This site collects training materials created by **NV OSE, the Office of State Epidemiology**, for public health staff and anyone else who wants to learn. All materials are free to use and share under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
+
+## Trainings
+
+| Training | What you'll learn | Level | Time |
+|---|---|---|---|
+| [Introduction to Git and GitHub](pages/intro-to-github/index.qmd) | Git vs. GitHub, READMEs, .gitignore, GitHub Desktop, the command line, branches, pull requests, forks, public vs. private, and data security | Beginner | About 3 hours |
+
+More trainings are on the way.
+
+## How to use these materials
+
+- **Self-paced:** work through the lessons in order using the sidebar, then try the exercises.
+- **Workshop:** instructors can teach directly from the pages. Each training lists its learning objectives, prerequisites, and timing.
+- **Get the files:** all source files are on [GitHub](https://github.com/nv-ose/training). You can [download everything as a ZIP](https://github.com/nv-ose/training/archive/refs/heads/main.zip).
+
+::: {.callout-note}
+These pages never contain real data. Examples use made-up or public data only.
+:::

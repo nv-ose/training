@@ -1,0 +1,89 @@
+---
+title: "Lesson 4: The basic workflow in GitHub Desktop"
+---
+
+GitHub Desktop lets you do everyday Git work with buttons instead of commands. Behind the scenes, it runs the same Git commands you'll learn in [Lesson 5](05-command-line.qmd).
+
+## The layout
+
+```
+┌──────────────────┬──────────────────┬──────────────────────────────┐
+│ Current          │ Current branch ▾ │ Fetch / Pull / Push origin   │
+│ repository ▾     │                  │                              │
+├──────────────────┴──────────────────┴──────────────────────────────┤
+│ Changes | History  │  Diff view: red = removed, green = added       │
+│ ☑ file1.R          │                                                │
+│ ☑ README.md        │                                                │
+│                    │                                                │
+│ Summary (required) │                                                │
+│ Description        │                                                │
+│ [Commit to main]   │                                                │
+└────────────────────┴────────────────────────────────────────────────┘
+```
+
+## Getting a repository onto your computer
+
+| Situation | What to do |
+|---|---|
+| The repo is already on GitHub | **File → Clone repository**, choose it from the list (or paste the URL), choose where to save it, then click **Clone** |
+| You have a local folder that isn't a repo yet | **File → Add local repository**, choose the folder, click **create a repository**, then **Publish repository** |
+| You're starting from scratch | **File → New repository**, then **Publish repository** |
+
+When you publish, choose the **Organization** (`nv-ose` for team work) and check or uncheck **Keep this code private**.
+
+## The everyday loop
+
+### 1. Pull first
+
+Click **Fetch origin**. If others made changes, the button changes to **Pull origin**. Click it.
+
+::: {.callout-tip}
+Always pull before you start working. It avoids most conflicts.
+:::
+
+### 2. Make changes
+
+Edit files in your usual tools, such as RStudio, VS Code, Excel or Word. GitHub Desktop notices automatically.
+
+### 3. Review your changes
+
+The **Changes** tab lists every file that changed. Click a file to see exactly what changed.
+
+- **Uncheck** any file you don't want in this commit.
+- **Check for sensitive content.** Is there a password, a real name, or a data file? If so, uncheck it, and add it to `.gitignore`: right-click the file → **Ignore file**.
+
+### 4. Commit
+
+1. Write a **Summary**, such as `Add age-group filter to flu script`.
+2. Optional: add a **Description** with more detail.
+3. Click **Commit to main**, or to whichever branch you're on.
+
+A commit is saved **only on your computer** at this point.
+
+### 5. Push
+
+Click **Push origin**. Your commits are now on GitHub.
+
+## Other handy features
+
+| Feature | Where |
+|---|---|
+| See past commits | **History** tab |
+| Undo the most recent commit (before pushing) | **History** → right-click the commit → **Undo commit** |
+| Discard changes to a file | **Changes** → right-click the file → **Discard changes** |
+| Reverse a commit you've already pushed | **History** → right-click → **Revert changes in commit**. This makes a new commit that undoes it |
+| Open the repo in your editor or file browser | **Repository → Open in…** / **Show in Finder (Explorer)** |
+| View the repo on GitHub | **Repository → View on GitHub** |
+| Branches and pull requests | See [Lesson 6](06-branches-pull-requests.qmd) |
+
+## Writing good commit messages
+
+- Start with a verb in the present tense: **Add**, **Fix**, **Update**, **Remove**.
+- Say *what* changed and, if it isn't obvious, *why*.
+- Keep the summary under about 50 characters.
+
+| ✅ Good | ❌ Not helpful |
+|---|---|
+| `Fix date parsing in import script` | `fixed stuff` |
+| `Add README for flu dashboard` | `update` |
+| `Remove unused 2023 data columns` | `final version` |

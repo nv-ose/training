@@ -1,0 +1,67 @@
+---
+title: "Introduction to Git and GitHub"
+---
+
+A beginner-friendly training on version control with Git and GitHub, written for NV OSE staff and public health professionals. No prior experience needed.
+
+## Overview
+
+- **Audience:** Anyone new to Git and GitHub: epidemiologists, analysts, and program staff
+- **Level:** Beginner
+- **Duration:** About 3 hours (can be split into two sessions)
+- **Format:** Workshop or self-paced
+
+## Learning objectives
+
+By the end of this training, you will be able to:
+
+1. Explain the difference between **Git** and **GitHub**, and why version control matters.
+2. Create a repository with a **README** and a **.gitignore**.
+3. Make, commit, push, and pull changes using **GitHub Desktop** and the **command line**.
+4. Use **branches** and **pull requests** to collaborate safely, and explain what a **fork** is.
+5. Choose between **public and private** repositories.
+6. Keep **data, passwords, and API tokens** out of GitHub, and know what to do if something is committed by mistake.
+
+## Prerequisites
+
+- A free [GitHub account](https://github.com/signup) with two-factor authentication turned on
+- [GitHub Desktop](https://desktop.github.com/) installed
+- [Git](https://git-scm.com/downloads) installed (for the command-line lesson)
+- A text editor, such as [VS Code](https://code.visualstudio.com/) or RStudio
+
+::: {.callout-note}
+On a state computer you may need IT to install software. Request it ahead of time.
+:::
+
+## Lessons
+
+| # | Lesson | Time |
+|---|---|---|
+| 1 | [Git vs. GitHub: what and why](01-git-vs-github.qmd) | 15 min |
+| 2 | [Setting up](02-setup.qmd) | 20 min |
+| 3 | [Repositories, READMEs, and .gitignore](03-repositories-readme-gitignore.qmd) | 20 min |
+| 4 | [The basic workflow in GitHub Desktop](04-github-desktop.qmd) | 25 min |
+| 5 | [The basic workflow on the command line](05-command-line.qmd) | 25 min |
+| 6 | [Branches and pull requests](06-branches-pull-requests.qmd) | 25 min |
+| 7 | [Clones, forks, and templates](07-clones-forks.qmd) | 10 min |
+| 8 | [Public vs. private repositories](08-public-vs-private.qmd) | 10 min |
+| 9 | [Data security: what never goes on GitHub](09-data-security.qmd) | 20 min |
+
+**Also included:**
+
+- [Hands-on exercises](exercises.qmd)
+- [Cheat sheet](cheatsheet.qmd): the commands and buttons you'll use most
+- [Glossary](glossary.qmd)
+- [Further resources](resources.qmd)
+
+## Maintainer
+
+Max Wegener — [mwegener@health.nv.gov](mailto:mwegener@health.nv.gov)
+
+## License
+
+CC BY 4.0
+
+## Last updated
+
+2026-10-27

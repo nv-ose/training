@@ -1,0 +1,42 @@
+---
+title: "Lesson 7: Clones, forks, and templates"
+---
+
+These three are easy to mix up.
+
+| | **Clone** | **Fork** | **Template** |
+|---|---|---|---|
+| What it is | A copy of a repo **on your computer** | A copy of someone else's repo **under your GitHub account** | A **fresh new repo** that starts with another repo's files |
+| Linked to the original? | Yes. You push and pull to it | Yes. You can send changes back with a pull request | No. It has no shared history |
+| Includes history? | Yes | Yes | No |
+| Use it when | You have write access and want to work locally | You **don't** have write access but want to contribute or adapt the work | You want to start a new project from a standard structure |
+
+## Clone
+
+You did this in Lessons 4 and 5. Use it for any repo you can push to, which includes all NV OSE repos you're a member of.
+
+## Fork
+
+A fork is your own copy of someone else's project, on GitHub.
+
+1. On the repo's page, click **Fork** (top right) → **Create fork**.
+2. Clone **your fork** to your computer and make changes.
+3. To suggest your changes to the original project, open a **pull request** from your fork.
+4. To get the original's newest changes, click **Sync fork** on your fork's page.
+
+### When to fork, and when to use a branch
+
+- **Inside NV OSE:** use **branches**, not forks. You already have access.
+- **Outside projects** (another agency's or an open-source package): **fork**.
+
+### Fork rules to know
+
+- A fork of a **public** repo is public.
+- A fork of a **private** repo stays private, and NV OSE has turned off forking of its private repos.
+- If a public repo is deleted or made private, **existing public forks remain**. This is one more reason never to put sensitive data in a public repo (see [Lesson 9](09-data-security.qmd)).
+
+## Template
+
+A template repo has a **Use this template** button. Clicking it creates a brand-new repo with the same files but none of the history. It's great for standard project setups.
+
+The GitHub Skills course [Introduction to GitHub](https://github.com/skills/introduction-to-github) uses a template. Try it for extra hands-on practice.
