@@ -81,7 +81,7 @@ Each of these is about to be committed. What's wrong, and what should happen ins
 **A.**
 ```r
 library(DBI)
-con <- dbConnect(odbc::odbc(), server = "nvdb-prod-02.state.nv.us",
+con <- dbConnect(odbc::odbc(), server = "db-server.example.org",
                  uid = "jsmith", pwd = "Winter2026!")
 ```
 

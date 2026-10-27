@@ -576,7 +576,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Each of these is about to be committed. What’s wrong, and what should happen instead?</p>
 <p><strong>A.</strong></p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(DBI)</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>con <span class="ot">&lt;-</span> <span class="fu">dbConnect</span>(odbc<span class="sc">::</span><span class="fu">odbc</span>(), <span class="at">server =</span> <span class="st">"nvdb-prod-02.state.nv.us"</span>,</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>con <span class="ot">&lt;-</span> <span class="fu">dbConnect</span>(odbc<span class="sc">::</span><span class="fu">odbc</span>(), <span class="at">server =</span> <span class="st">"db-server.example.org"</span>,</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>                 <span class="at">uid =</span> <span class="st">"jsmith"</span>, <span class="at">pwd =</span> <span class="st">"Winter2026!"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><strong>B.</strong> A folder <code>data/</code> containing <code>measles_cases_2026.csv</code>, with columns <code>name, dob, zip, onset_date</code>.</p>
 <p><strong>C.</strong> A colleague says: <em>“I accidentally pushed my API key, but I deleted the file and pushed again, so it’s fine.”</em></p>
