@@ -33,7 +33,7 @@ Not rendered on the site (the file name starts with `_`). Check off each screens
 - [ ] `04-desktop-overview.png`: the full GitHub Desktop window with a repo open: **Current repository**, **Current branch**, **Fetch origin**, the Changes tab, and the diff
 - [ ] `04-clone-dialog.png`: **File → Clone repository**, showing the list of repos and the Local path
 - [ ] `04-add-local-repo.png`: **File → Add local repository**, showing the "not a Git repository… **create a repository**" message
-- [ ] `04-publish-dialog.png`: the **Publish repository** dialog, showing the **Organization** dropdown and **Keep this code private**
+- [x] `04-publish-dialog.png`: the **Publish repository** dialog, showing the **Organization** dropdown and **Keep this code private**
 - [ ] `04-changes-tab.png`: Changes tab with 2–3 changed files, one file's diff (red/green lines), and the Summary/Description boxes filled in
 - [ ] `04-push-origin.png`: the top bar after committing, showing **Push origin** with the ↑1 count
 - [ ] `04-pull-origin.png`: the top bar showing **Pull origin** with the ↓ count (make a change on github.com first, then click Fetch)

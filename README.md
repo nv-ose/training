@@ -30,7 +30,7 @@ Workshops, tutorials, and learning materials from **NV OSE — The Office of Sta
 2. Write the overview in `index.qmd` and add lessons as numbered `.qmd` files (`01-...qmd`, `02-...qmd`).
 3. In `_quarto.yml`, add a navbar link and a sidebar for the new training (copy the `intro-to-github` entries).
 4. Add a row to the table above and on `index.qmd`.
-5. Build the site (below), then commit and open a pull request.
+5. Build the site (below), then commit and open a pull request ([how to add files and open a pull request](https://github.com/nv-ose/.github/blob/main/CONTRIBUTING.md#how-to-add-or-change-files)).
 
 See the [Contributing Guidelines](https://github.com/nv-ose/.github/blob/main/CONTRIBUTING.md) for full details.
 

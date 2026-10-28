@@ -29,7 +29,34 @@ GitHub Desktop lets you do everyday Git work with buttons instead of commands. B
 | You have a local folder that isn't a repo yet | **File → Add local repository**, choose the folder, click **create a repository**, then **Publish repository** |
 | You're starting from scratch | **File → New repository**, then **Publish repository** |
 
-When you publish, choose the **Organization** (`nv-ose` for team work) and check or uncheck **Keep this code private**.
+### Publishing: choose the organization
+
+A repository you create or add on your computer is **local only** until you publish it. GitHub Desktop lists it under **Other**, with a computer icon instead of a repo icon.
+
+To put it on GitHub, click **Publish repository** in the top bar:
+
+::: {.annotated}
+![](../../images/intro-to-github/04-publish-dialog.png){fig-alt="GitHub Desktop's Publish Repository dialog on the GitHub.com tab. The Name field says respiratory-dashboard, the Description field has a one-line summary, Keep this code private is checked, and the Organization dropdown is set to nv-ose. A red box marks the Organization dropdown and a green box marks the Keep this code private checkbox."}
+[]{.green-box style="left:4%; top:56%; width:34%; height:6.5%;"}
+[]{.red-box style="left:3.5%; top:69.5%; width:92.5%; height:8%;"}
+:::
+
+1. **Name:** lowercase with hyphens (see the [SOP naming rules](https://github.com/nv-ose/.github/blob/main/CONTRIBUTING.md#2-naming-conventions)).
+2. **Description:** one sentence about what the repo is.
+3. **Keep this code private** (green box): leave it checked unless an owner has approved making the repo public.
+4. **Organization** (red box): choose **nv-ose** for team work.
+
+::: {.callout-warning title="Check the Organization dropdown"}
+It defaults to **None**, which publishes the repo to **your personal account**, not to NV OSE. It's an easy step to miss.
+:::
+
+::: {.callout-tip collapse="true" title="Published to the wrong account? How to move it"}
+1. On github.com, open the repo and go to **Settings → Danger Zone → Transfer ownership**.
+2. Choose **Specify an organization or username**, type **nv-ose**, and confirm by typing the repo name.
+3. In GitHub Desktop, go to **Repository → Repository Settings → Remote** and change the URL to `https://github.com/nv-ose/<repo-name>.git`. Then click **Fetch origin** to check it works.
+
+GitHub redirects the old address for a while, but update the remote anyway.
+:::
 
 ## The everyday loop
 

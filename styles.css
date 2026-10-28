@@ -34,6 +34,8 @@ body.quarto-light blockquote { color: #495057; }
   border-radius: 6px;
 }
 body.quarto-dark .annotated img { border-color: #495057; }
+.annotated p { margin: 0; }
+.annotated .figure, .annotated figure { margin: 0; }
 .annotated .red-box,
 .annotated .red-circle,
 .annotated .green-box,
