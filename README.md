@@ -11,6 +11,7 @@ Workshops, tutorials, and learning materials from **NV OSE — The Office of Sta
 | Training | Description | Level | Last updated |
 |---|---|---|---|
 | [Introduction to Git and GitHub](https://nv-ose.github.io/training/pages/intro-to-github/) ([source](pages/intro-to-github/)) | Git vs. GitHub, READMEs, .gitignore, GitHub Desktop, the command line, branches, pull requests, forks, public vs. private, and data security | Beginner | 2026-10-27 |
+| [Building Websites with Quarto](https://nv-ose.github.io/training/pages/intro-to-quarto-websites/) ([source](pages/intro-to-quarto-websites/)) | Quarto pages, R code chunks, website projects, navigation, themes, accessibility, publishing on GitHub Pages, and adding a training to this site | Beginner–Intermediate | 2026-10-28 |
 
 ## Repository layout
 

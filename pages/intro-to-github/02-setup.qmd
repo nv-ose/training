@@ -20,7 +20,7 @@ Every commit is labeled with an email address, and in public repos anyone can se
 
 | Tool | Mac | Windows |
 |---|---|---|
-| **GitHub Desktop** | [desktop.github.com](https://desktop.github.com/) | [desktop.github.com](https://desktop.github.com/) |
+| **GitHub Desktop** | [Download GitHub Desktop](https://desktop.github.com/download/) (Mac version) | [Download GitHub Desktop](https://desktop.github.com/download/) (Windows version) |
 | **Git** (for the command line) | Open Terminal and type `git --version`. If Git isn't installed, macOS offers to install it. | Install [Git for Windows](https://git-scm.com/download/win). It includes **Git Bash**. |
 | **Text editor** | [VS Code](https://code.visualstudio.com/) or RStudio | [VS Code](https://code.visualstudio.com/) or RStudio |
 

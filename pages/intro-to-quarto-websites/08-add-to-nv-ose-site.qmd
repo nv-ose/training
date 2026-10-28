@@ -1,0 +1,117 @@
+---
+title: "Lesson 8: Adding a training to the NV OSE site"
+---
+
+This lesson puts it all together: adding a new training to [nv-ose.github.io/training](https://nv-ose.github.io/training/).
+
+::: {.callout-note title="Not ready to do it yourself?"}
+You don't have to. Use the **[Training submission form](https://github.com/nv-ose/team-hub/issues/new?template=training-submission.yml)** (NV OSE members only): attach your slides or documents, and Max or Jordan will convert them into pages. This lesson is for people who want to build the pages themselves.
+:::
+
+## How the training repo is organized
+
+```
+training/
+├── _quarto.yml          ← navbar and one sidebar per training
+├── index.qmd            ← home page, with the table of trainings
+├── README.md            ← the same table, for people browsing GitHub
+├── styles.css           ← contrast fixes and screenshot highlight boxes
+├── _template/           ← copy this to start a new training
+├── images/<training>/   ← screenshots and images, one folder per training
+├── pages/
+│   ├── intro-to-github/
+│   └── intro-to-quarto-websites/
+└── docs/                ← the rendered site (never edit by hand)
+```
+
+::: {.callout-warning title="This repo is public"}
+Everything in `training`, including branches and pull requests, can be seen by anyone. Use made-up or public data only, and keep internal details out.
+:::
+
+## Step by step
+
+### 1. Get the repo and make a branch
+
+1. In GitHub Desktop: **File → Clone repository → nv-ose/training**. Save it in `Documents/GitHub/NV-OSE/`. (Skip this if you already have it; just **Pull origin**.)
+2. **Current branch → New branch**: `yourname/add-<training-name>`, e.g., `jsmith/add-intro-to-r`.
+
+### 2. Copy the template
+
+Copy the `_template/` folder into `pages/` and rename it with your training's name (lowercase, hyphens):
+
+```
+pages/intro-to-r/
+├── index.qmd            ← overview: audience, objectives, prerequisites, lesson table
+└── 01-lesson-name.qmd   ← first lesson (rename it, e.g., 01-getting-started.qmd)
+```
+
+Delete the template's empty `data/` and `slides/` folders if you don't need them.
+
+### 3. Write the pages
+
+- Fill in `index.qmd`: title, audience, level, duration, learning objectives, prerequisites, and a table linking to each lesson.
+- Write numbered lessons: `01-...qmd`, `02-...qmd`, and so on. Each needs a `title:` in its YAML header.
+- Put images in `images/<training-name>/`, and give every one `fig-alt` text (see [Lesson 3](03-qmd-basics.qmd#images-and-alt-text)).
+- Use callouts for tips and warnings, and collapsed callouts for answers.
+
+### 4. Add it to the navigation
+
+In `_quarto.yml`, add a **navbar link** and a **sidebar**, copying the existing entries:
+
+```yaml
+website:
+  navbar:
+    left:
+      - text: "Home"
+        href: index.qmd
+      - text: "Intro to Git & GitHub"
+        href: pages/intro-to-github/index.qmd
+      - text: "Intro to R"                         # ← new
+        href: pages/intro-to-r/index.qmd          # ← new
+  sidebar:
+    - id: intro-to-github
+      # ... existing ...
+    - id: intro-to-r                               # ← new sidebar
+      title: "Intro to R"
+      style: docked
+      contents:
+        - href: pages/intro-to-r/index.qmd
+          text: "Overview"
+        - section: "Lessons"
+          contents:
+            - pages/intro-to-r/01-getting-started.qmd
+            - pages/intro-to-r/02-importing-data.qmd
+```
+
+### 5. List it on the home page
+
+Add a row to the **Trainings** table in both `index.qmd` (the site) and `README.md` (GitHub):
+
+```markdown
+| [Introduction to R](pages/intro-to-r/index.qmd) | Importing data, summaries, and basic charts | Beginner | About 2 hours |
+```
+
+### 6. Preview, then render
+
+1. Run `quarto preview` and click through every page: links, images, tabs, callouts, in **light and dark mode**.
+2. Stop the preview, then run `quarto render`.
+3. Fix any errors or warnings ([Lesson 5](05-preview-render.qmd#common-errors-and-fixes)).
+
+### 7. Commit, push, and open a pull request
+
+1. In GitHub Desktop, review the **Changes** list: your new pages, `_quarto.yml`, `index.qmd`, `README.md`, images, and the updated `docs/` files. **No data files, nothing internal.**
+2. Commit, e.g., `Add Intro to R training`.
+3. Click **Publish branch**, then **Create Pull Request**. Add Max or Jordan as a reviewer.
+4. After it's approved and merged, the site updates within a couple of minutes.
+
+## Review checklist
+
+Before you open the pull request:
+
+- [ ] Every page has a `title:`, and lessons are numbered in order
+- [ ] Overview page has audience, objectives, prerequisites, and a lesson table
+- [ ] Every image has `fig-alt` text, and no unwanted captions
+- [ ] Only made-up or public data; no internal servers, names, or credentials
+- [ ] New training is in the navbar, has a sidebar, and is listed in `index.qmd` and `README.md`
+- [ ] Previewed in light and dark mode; all links work
+- [ ] Rendered, and `docs/` changes are included in the commit

@@ -23,6 +23,8 @@ website:
         href: index.qmd
       - text: "Intro to Git & GitHub"
         href: pages/intro-to-github/index.qmd
+      - text: "Quarto Websites"
+        href: pages/intro-to-quarto-websites/index.qmd
     right:
       - text: "Feedback"
         icon: envelope
@@ -54,6 +56,27 @@ website:
             - pages/intro-to-github/cheatsheet.qmd
             - pages/intro-to-github/glossary.qmd
             - pages/intro-to-github/resources.qmd
+    - id: intro-to-quarto-websites
+      title: "Quarto Websites"
+      style: docked
+      contents:
+        - href: pages/intro-to-quarto-websites/index.qmd
+          text: "Overview"
+        - section: "Lessons"
+          contents:
+            - pages/intro-to-quarto-websites/01-what-is-quarto.qmd
+            - pages/intro-to-quarto-websites/02-setup.qmd
+            - pages/intro-to-quarto-websites/03-qmd-basics.qmd
+            - pages/intro-to-quarto-websites/04-create-website.qmd
+            - pages/intro-to-quarto-websites/05-preview-render.qmd
+            - pages/intro-to-quarto-websites/06-customize.qmd
+            - pages/intro-to-quarto-websites/07-publish-github-pages.qmd
+            - pages/intro-to-quarto-websites/08-add-to-nv-ose-site.qmd
+        - section: "Practice and reference"
+          contents:
+            - pages/intro-to-quarto-websites/exercises.qmd
+            - pages/intro-to-quarto-websites/cheatsheet.qmd
+            - pages/intro-to-quarto-websites/resources.qmd
   page-footer:
     left: "Nevada Office of State Epidemiology"
     center: "Questions or feedback? Email [mwegener@health.nv.gov](mailto:mwegener@health.nv.gov?subject=NV%20OSE%20Training%20feedback)"

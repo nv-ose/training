@@ -25,7 +25,7 @@ By the end of this training, you will be able to:
 ## Prerequisites
 
 - A free [GitHub account](https://github.com/signup) with two-factor authentication turned on
-- [GitHub Desktop](https://desktop.github.com/) installed
+- [GitHub Desktop](https://desktop.github.com/download/) installed
 - [Git](https://git-scm.com/downloads) installed (for the command-line lesson)
 - A text editor, such as [VS Code](https://code.visualstudio.com/) or RStudio
 

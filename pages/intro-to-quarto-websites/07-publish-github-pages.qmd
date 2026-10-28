@@ -1,0 +1,136 @@
+---
+title: "Lesson 7: Publishing on GitHub Pages"
+---
+
+**GitHub Pages** hosts websites for free, straight from a GitHub repository. Your site gets an address like:
+
+- `https://your-username.github.io/repo-name/` for a personal repo
+- `https://nv-ose.github.io/repo-name/` for an NV OSE repo
+
+::: {.callout-warning title="Pages sites are public"}
+On GitHub's Free plan, Pages only works for **public** repositories, and the published site is visible to **anyone**, even if the repo later becomes private. Only publish material cleared for public release: no real data, no internal details. See [Public vs. private](../intro-to-github/08-public-vs-private.qmd).
+:::
+
+## The approach: render to `docs/`, publish from `docs/`
+
+There are several ways to publish a Quarto site. This training (and the NV OSE site) uses the simplest one: **commit the rendered site in a `docs/` folder**, and tell GitHub Pages to serve that folder. It works with GitHub Desktop and needs no extra setup.
+
+### Step 1: Prepare the project
+
+In `_quarto.yml`:
+
+```yaml
+project:
+  type: website
+  output-dir: docs
+```
+
+In the project folder, create an **empty file named `.nojekyll`** (with the dot). It tells GitHub Pages to serve your files as they are, instead of processing them with its own site builder (Jekyll), which can break Quarto sites. To copy it into `docs/` on every render, add:
+
+```yaml
+project:
+  type: website
+  output-dir: docs
+  resources:
+    - "/.nojekyll"
+```
+
+::: {.panel-tabset group="editor"}
+
+## Positron
+
+In the terminal:
+
+```bash
+touch .nojekyll
+```
+
+## VS Code
+
+In the terminal:
+
+```bash
+touch .nojekyll
+```
+
+On Windows (PowerShell): `New-Item .nojekyll`
+
+## RStudio
+
+In the **Terminal** tab:
+
+```bash
+touch .nojekyll
+```
+
+On Windows, use **File → New File → Text File**, then save it as `.nojekyll` in the project folder.
+
+## Terminal
+
+```bash
+touch .nojekyll
+```
+
+:::
+
+### Step 2: Render
+
+```bash
+quarto render
+```
+
+Check that `docs/` contains `index.html` and `.nojekyll`.
+
+### Step 3: Make sure `docs/` isn't ignored
+
+GitHub only publishes files you commit. Open `.gitignore` (if there is one) and make sure it doesn't contain `docs/`. Do ignore Quarto's cache:
+
+```gitignore
+/.quarto/
+```
+
+### Step 4: Put the project on GitHub
+
+In GitHub Desktop (see the [Git and GitHub training](../intro-to-github/04-github-desktop.qmd)):
+
+1. **File → Add local repository**, choose the project folder, then click **create a repository**.
+2. Check the **Changes** list: your `.qmd` files, `_quarto.yml`, `styles.css`, and everything in `docs/`. Commit.
+3. Click **Publish repository**. For a practice site, use your personal account and **uncheck Keep this code private** (Pages needs a public repo). For NV OSE, choose the **nv-ose** organization, and ask an owner before making anything public.
+
+### Step 5: Turn on GitHub Pages
+
+1. On github.com, open the repo and go to **Settings → Pages**.
+2. Under **Build and deployment**, set **Source** to **Deploy from a branch**.
+3. Set **Branch** to **`main`** and the folder to **`/docs`**. Click **Save**.
+4. Wait 1–2 minutes and refresh. The page shows **"Your site is live at …"** with the address.
+
+::: {.callout-tip}
+On the repo's main page, click ⚙️ next to **About** and check **Use your GitHub Pages website**, so the site link appears on the repo.
+:::
+
+## Updating the site
+
+Every change follows the same loop:
+
+```
+edit .qmd ──► quarto render ──► commit (including docs/) ──► push ──► live in 1–2 min
+```
+
+::: {.callout-important title="The most common mistake"}
+Editing a `.qmd` file and pushing **without rendering**. The source changes, but `docs/` doesn't, so the live site stays the same. If your change isn't showing up, render, then commit the `docs/` changes.
+:::
+
+If the site still looks old after a few minutes:
+
+- Do a hard refresh: **Cmd + Shift + R** (Mac) / **Ctrl + Shift + R** (Windows).
+- Check the repo's **Actions** tab. The **pages build and deployment** run should have a green ✅. A red ❌ shows an error message.
+
+## Other ways to publish
+
+| Method | How it works | When to use it |
+|---|---|---|
+| **`docs/` folder** (this lesson) | You render locally and commit `docs/` | Simple; works with GitHub Desktop. Used by the NV OSE site |
+| **`quarto publish gh-pages`** | One command renders and pushes the site to a separate `gh-pages` branch | You're comfortable on the command line and don't want `docs/` in your main branch |
+| **GitHub Actions** | GitHub renders the site on its own servers after each push | Larger projects; needs R and packages set up on GitHub's side |
+
+See Quarto's [Publishing to GitHub Pages](https://quarto.org/docs/publishing/github-pages.html) guide for the other two.

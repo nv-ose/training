@@ -2,7 +2,7 @@
 title: "Lesson 4: The basic workflow in GitHub Desktop"
 ---
 
-GitHub Desktop lets you do everyday Git work with buttons instead of commands. Behind the scenes, it runs the same Git commands you'll learn in [Lesson 5](05-command-line.qmd).
+GitHub Desktop lets you do everyday Git work with buttons instead of commands. If you don't have it yet, [download GitHub Desktop](https://desktop.github.com/download/) and sign in (see [Lesson 2](02-setup.qmd#connect-github-desktop)). Behind the scenes, it runs the same Git commands you'll learn in [Lesson 5](05-command-line.qmd).
 
 ## The layout
 

@@ -1,0 +1,88 @@
+---
+title: "Lesson 6: Customizing your site"
+---
+
+All of these settings go in `_quarto.yml`. After changing them, preview to see the result.
+
+## Themes, and light and dark mode
+
+Quarto includes about two dozen free [Bootswatch themes](https://quarto.org/docs/output-formats/html-themes.html): `cosmo`, `flatly`, `litera`, `lumen`, `sandstone`, `yeti`, and more.
+
+```yaml
+format:
+  html:
+    theme: flatly
+```
+
+To offer a light and a dark version, with a toggle in the navbar:
+
+```yaml
+format:
+  html:
+    theme:
+      light: cosmo
+      dark: darkly
+    respect-user-color-scheme: true   # start in the reader's system setting
+```
+
+This is what the NV OSE training site uses.
+
+## Logo, footer, and search
+
+```yaml
+website:
+  title: "My Practice Site"
+  search: true                      # search box in the navbar
+  page-navigation: true             # "previous / next" buttons at the bottom of pages
+  navbar:
+    logo: images/logo.png
+    logo-alt: "Organization logo"   # alt text for the logo
+  page-footer:
+    left: "My Organization"
+    center: "Questions? Email [me@example.gov](mailto:me@example.gov)"
+    right: "Built with [Quarto](https://quarto.org)"
+```
+
+`logo` and `logo-alt` go **under `navbar:`**, not directly under `website:`.
+
+## Small style tweaks with CSS
+
+`styles.css` is for small adjustments. For example, to make the navbar logo sit on a white background in dark mode:
+
+```css
+.navbar-logo {
+  background-color: #fff;
+  border-radius: 4px;
+  padding: 2px;
+}
+```
+
+Keep CSS changes small. A theme does most of the work.
+
+## Accessibility: make it usable for everyone
+
+Public health sites should work for people using screen readers, keyboard navigation, or high contrast. Quarto handles much of this. You're responsible for:
+
+| Check | How |
+|---|---|
+| **Alt text on every image and chart** | `{fig-alt="..."}` on images; `#| fig-alt:` on chunks |
+| **Meaningful link text** | `[Download the report](...)`, not `[click here](...)` |
+| **Headings in order** | `##` then `###`, without skipping levels; don't use headings just to make text big |
+| **Readable contrast** | Text must stand out from its background (at least 4.5:1). Some theme elements don't, especially in dark mode. Check with a contrast tool, not by eye |
+| **Email addresses as links** | `[me@example.gov](mailto:me@example.gov)` |
+| **Don't rely on color alone** | In charts, use labels or line styles as well as color |
+
+::: {.callout-tip title="Contrast fixes for cosmo and darkly"}
+The NV OSE site's [`styles.css`](https://github.com/nv-ose/training/blob/main/styles.css) contains tested fixes for some low-contrast parts of these two themes (buttons, previous/next links, code in headings). Copy it if you use the same themes.
+:::
+
+## Copy buttons and table of contents
+
+```yaml
+format:
+  html:
+    toc: true                # "On this page" outline
+    toc-title: "On this page"
+    code-copy: true          # copy button on code blocks
+    code-overflow: wrap      # wrap long code lines instead of scrolling
+```

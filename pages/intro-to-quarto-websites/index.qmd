@@ -1,0 +1,70 @@
+---
+title: "Building Websites with Quarto"
+---
+
+Learn to turn Markdown and R code into a website, and publish it for free on GitHub Pages. This is how the [NV OSE training site](https://nv-ose.github.io/training/) you're reading right now is built.
+
+## Overview
+
+- **Audience:** Staff who want to publish trainings, documentation, or project sites, or add a training to this site
+- **Level:** Beginner to intermediate
+- **Duration:** About 2.5 hours (can be split into two sessions)
+- **Format:** Workshop or self-paced
+- **Editors:** Instructions for **Positron**, **VS Code**, and **RStudio**. Pick your editor once in any tab set, and every page follows your choice.
+
+## Learning objectives
+
+By the end of this training, you will be able to:
+
+1. Explain what Quarto is and how a `.qmd` file becomes a web page.
+2. Write a Quarto page with Markdown, callouts, images with alt text, and R code chunks.
+3. Create a Quarto website project and organize pages with a navbar and sidebar.
+4. Preview and render a site, and fix common errors.
+5. Customize the look (themes, light and dark mode, logo, footer) while keeping it accessible.
+6. Publish a site on **GitHub Pages**, and update it.
+7. Add a new training to the NV OSE training site.
+
+## Prerequisites
+
+- Completed [Introduction to Git and GitHub](../intro-to-github/index.qmd), or comfortable with commits, pushing, and GitHub Desktop
+- [Quarto](https://quarto.org/docs/get-started/) installed
+- [R](https://cran.r-project.org/) installed, with the `rmarkdown` and `knitr` packages (for pages that run R code)
+- An editor: [Positron](https://positron.posit.co/), [VS Code](https://code.visualstudio.com/), or [RStudio](https://posit.co/download/rstudio-desktop/)
+- A GitHub account and [GitHub Desktop](https://desktop.github.com/download/)
+
+Basic R is helpful but not required. The examples are short and explained.
+
+::: {.callout-note}
+On a state computer you may need IT to install Quarto, R, or an editor. Request them ahead of time.
+:::
+
+## Lessons
+
+| # | Lesson | Time |
+|---|---|---|
+| 1 | [What is Quarto?](01-what-is-quarto.qmd) | 10 min |
+| 2 | [Setting up](02-setup.qmd) | 20 min |
+| 3 | [Writing a Quarto page](03-qmd-basics.qmd) | 25 min |
+| 4 | [Creating a website project](04-create-website.qmd) | 25 min |
+| 5 | [Previewing and rendering](05-preview-render.qmd) | 15 min |
+| 6 | [Customizing your site](06-customize.qmd) | 15 min |
+| 7 | [Publishing on GitHub Pages](07-publish-github-pages.qmd) | 20 min |
+| 8 | [Adding a training to the NV OSE site](08-add-to-nv-ose-site.qmd) | 20 min |
+
+**Also included:**
+
+- [Hands-on exercises](exercises.qmd): build and publish your own practice site
+- [Cheat sheet](cheatsheet.qmd)
+- [Further resources](resources.qmd)
+
+## Maintainer
+
+Max Wegener — [mwegener@health.nv.gov](mailto:mwegener@health.nv.gov)
+
+## License
+
+CC BY 4.0
+
+## Last updated
+
+2026-10-28

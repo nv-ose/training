@@ -12,6 +12,7 @@ Welcome! This site collects training materials created by **NV OSE, the Office o
 | Training | What you'll learn | Level | Time |
 |---|---|---|---|
 | [Introduction to Git and GitHub](pages/intro-to-github/index.qmd) | Git vs. GitHub, READMEs, .gitignore, GitHub Desktop, the command line, branches, pull requests, forks, public vs. private, and data security | Beginner | About 3 hours |
+| [Building Websites with Quarto](pages/intro-to-quarto-websites/index.qmd) | Quarto pages, R code chunks, website projects, navigation, themes, accessibility, publishing on GitHub Pages, and adding a training to this site | Beginner–Intermediate | About 2.5 hours |
 
 More trainings are on the way.
 

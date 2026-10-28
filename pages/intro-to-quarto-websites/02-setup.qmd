@@ -1,0 +1,92 @@
+---
+title: "Lesson 2: Setting up"
+---
+
+## 1. Install Quarto
+
+1. Download the installer for your computer from [quarto.org/docs/get-started](https://quarto.org/docs/get-started/).
+2. Run it and accept the defaults.
+3. Check it works. Open a terminal (Terminal on Mac, or the terminal inside your editor) and run:
+
+```bash
+quarto --version
+```
+
+You should see a version number, like `1.10.18`.
+
+::: {.callout-note}
+RStudio and Positron include a copy of Quarto, but installing it separately gives you the newest version and makes the `quarto` command available in any terminal.
+:::
+
+## 2. Install R and two packages
+
+Pages that run R code need R plus the `rmarkdown` and `knitr` packages.
+
+1. Install [R](https://cran.r-project.org/) if you don't have it.
+2. In R, run:
+
+```r
+install.packages(c("rmarkdown", "knitr"))
+```
+
+For the chart examples in the exercises, also install `ggplot2`:
+
+```r
+install.packages("ggplot2")
+```
+
+## 3. Set up your editor
+
+Pick the editor you use. The tabs on every page of this training remember your choice.
+
+::: {.panel-tabset group="editor"}
+
+## Positron
+
+[Positron](https://positron.posit.co/) is Posit's newer editor. It has R, Python, and Quarto support built in.
+
+1. Install Positron.
+2. Open it and start an R session (the interpreter picker at the top right).
+3. Nothing else to install: Quarto support is included.
+
+**Command Palette:** most Quarto actions are in the Command Palette: **Cmd + Shift + P** (Mac) or **Ctrl + Shift + P** (Windows). Type `Quarto` to see them.
+
+## VS Code
+
+1. Install [VS Code](https://code.visualstudio.com/).
+2. Open the **Extensions** view (the four-squares icon in the left bar) and install:
+   - **Quarto** (by Quarto)
+   - **R** (by REditorSupport)
+3. In R, install the language server, which the R extension uses:
+   ```r
+   install.packages("languageserver")
+   ```
+
+**Command Palette:** **Cmd + Shift + P** (Mac) or **Ctrl + Shift + P** (Windows). Type `Quarto` to see Quarto actions.
+
+## RStudio
+
+1. Install a recent [RStudio](https://posit.co/download/rstudio-desktop/) (2022.07 or later supports Quarto).
+2. Nothing else to install: Quarto support is included.
+
+**Where things are:** the **Render** button sits above an open `.qmd` file. Website projects also get a **Build** tab (top-right pane).
+
+:::
+
+## 4. Check everything
+
+Run this in a terminal:
+
+```bash
+quarto check
+```
+
+It reports whether Quarto can find R and `knitr`. Look for ✓ (or `OK`) next to **R installation** and **knitr**. If R isn't found, restart your editor after installing R, and run `quarto check` again.
+
+## Checklist
+
+- [ ] `quarto --version` shows a version number
+- [ ] R installed, with `rmarkdown`, `knitr`, and `ggplot2`
+- [ ] Editor installed (and, for VS Code, the Quarto and R extensions)
+- [ ] `quarto check` finds R and knitr
+- [ ] [GitHub Desktop](https://desktop.github.com/download/) (or Git) set up, from the [Git and GitHub training](../intro-to-github/02-setup.qmd)

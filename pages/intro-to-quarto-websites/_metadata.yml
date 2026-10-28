@@ -1,0 +1,4 @@
+# Applies to every page in this training.
+# engine: markdown means code is SHOWN, never run, so the lesson examples
+# (including ```{r} blocks inside example files) are displayed as text.
+engine: markdown

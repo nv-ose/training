@@ -1,0 +1,133 @@
+---
+title: "Lesson 5: Previewing and rendering"
+---
+
+## Preview vs. render
+
+| | **Preview** | **Render** |
+|---|---|---|
+| What it does | Builds the site and opens it in a browser or panel. **Updates automatically** every time you save | Builds the whole site into the output folder (`docs/`) once |
+| Use it | While you're writing | Before you commit and publish |
+| Command | `quarto preview` | `quarto render` |
+
+::: {.callout-important title="Stop the preview before rendering"}
+Running preview and render at the same time can cause errors. Stop the preview first (**Ctrl + C** in its terminal, or close the preview panel).
+:::
+
+## Previewing
+
+::: {.panel-tabset group="editor"}
+
+## Positron
+
+- Open any `.qmd` file and press **Cmd + Shift + K** (Mac) / **Ctrl + Shift + K** (Windows), or click the **Preview** button above the file.
+- The site opens in the **Viewer** pane. Save a file and it refreshes.
+- To open it in your web browser, click the **Open in browser** icon in the Viewer.
+
+## VS Code
+
+- Open any `.qmd` file and press **Cmd + Shift + K** (Mac) / **Ctrl + Shift + K** (Windows), or click the **Preview** button above the file.
+- The site opens in a side panel. Save a file and it refreshes.
+
+## RStudio
+
+- Open any `.qmd` file and click **Render** (or press **Cmd + Shift + K** / **Ctrl + Shift + K**).
+- Check **Render on Save** next to the Render button to refresh on every save.
+- The page opens in the **Viewer** pane, or in a browser, depending on the gear menu next to Render.
+
+## Terminal
+
+From the project folder:
+
+```bash
+quarto preview
+```
+
+It prints a local address (like `http://localhost:4321`) and opens your browser. Leave it running while you edit; press **Ctrl + C** to stop.
+
+:::
+
+The preview is only on your computer. Nobody else can see it.
+
+## Rendering the whole site
+
+::: {.panel-tabset group="editor"}
+
+## Positron
+
+Open a terminal (**Terminal → New Terminal**) and run:
+
+```bash
+quarto render
+```
+
+## VS Code
+
+Open a terminal (**Terminal → New Terminal**) and run:
+
+```bash
+quarto render
+```
+
+## RStudio
+
+Go to the **Build** tab and click **Render Website**. Or, in the **Terminal** tab (not the R Console):
+
+```bash
+quarto render
+```
+
+## Terminal
+
+From the project folder:
+
+```bash
+quarto render
+```
+
+:::
+
+Quarto lists each page as it builds:
+
+```
+[1/4] index.qmd
+[2/4] about.qmd
+[3/4] data-sources.qmd
+[4/4] lessons/01-intro.qmd
+
+Output created: docs/index.html
+```
+
+Open `docs/index.html` in a browser to check the result.
+
+## Pages with R code: freeze
+
+When you render, Quarto runs the R code on every page. That can be slow, and anyone who renders the site needs every R package used.
+
+**Freeze** saves the results, so code only re-runs when that page's code changes:
+
+```yaml
+# in _quarto.yml
+execute:
+  freeze: auto
+```
+
+Quarto stores the saved results in a `_freeze/` folder. **Commit `_freeze/`** along with `docs/`.
+
+If a page's code needs passwords, internal servers, or real data, it shouldn't run on a website at all. Use `eval: false` to show it without running it, and never publish its output.
+
+## Common errors and fixes
+
+| Error message contains… | Likely cause | Fix |
+|---|---|---|
+| `YAML parse error` / `bad indentation` | A spacing mistake in `_quarto.yml` or a page header | Check indentation (two spaces per level, no tabs) and the space after each colon |
+| `property name ... is invalid` | A setting in the wrong place (e.g., `logo:` under `website:` instead of `navbar:`) | Check the [Quarto reference](https://quarto.org/docs/reference/projects/websites.html) for where the setting goes |
+| `there is no package called 'ggplot2'` | An R package isn't installed | `install.packages("ggplot2")` |
+| `R installation not found` / `knitr` not found | Quarto can't find R, or knitr isn't installed | Run `quarto check`; install `rmarkdown` and `knitr`; restart the editor |
+| `Error in ... : object 'x' not found` (with a chunk name) | The R code has an error | Run that chunk in R to debug. The message tells you which chunk failed |
+| `Unable to resolve link target` (warning) | A link points to a file that doesn't exist | Fix the path or file name |
+| A page is missing from the site | It's not in the navbar/sidebar, or not in a `render:` list | Add it to `_quarto.yml` |
+
+::: {.callout-tip}
+Read the **first** error message. Later messages are often just consequences of the first one.
+:::

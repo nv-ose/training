@@ -1,0 +1,196 @@
+---
+title: "Lesson 4: Creating a website project"
+---
+
+## 1. Create the project
+
+Make the project inside your GitHub folder (e.g., `Documents/GitHub/`), so it's easy to turn into a repo later.
+
+::: {.panel-tabset group="editor"}
+
+## Positron
+
+1. Open the Command Palette: **Cmd + Shift + P** (Mac) / **Ctrl + Shift + P** (Windows).
+2. Type and choose **Quarto: Create Project**.
+3. Choose **Website Project**.
+4. Pick the parent folder (e.g., `Documents/GitHub`) and type a name, like `quarto-practice`.
+5. Positron opens the new project folder.
+
+## VS Code
+
+1. Open the Command Palette: **Cmd + Shift + P** (Mac) / **Ctrl + Shift + P** (Windows).
+2. Type and choose **Quarto: Create Project**.
+3. Choose **Website Project**.
+4. Pick the parent folder (e.g., `Documents/GitHub`) and type a name, like `quarto-practice`.
+5. VS Code opens the new project folder.
+
+## RStudio
+
+1. **File → New Project… → New Directory → Quarto Website**.
+2. **Directory name:** e.g., `quarto-practice`.
+3. **Create project as subdirectory of:** click **Browse** and choose `Documents/GitHub`.
+4. Leave the other options unchecked, and click **Create Project**.
+5. RStudio opens the project and shows a **Build** tab.
+
+## Terminal
+
+Works with any editor:
+
+```bash
+cd ~/Documents/GitHub
+quarto create project website quarto-practice
+```
+
+Then open the `quarto-practice` folder in your editor.
+
+:::
+
+## 2. What you get
+
+```
+quarto-practice/
+├── _quarto.yml     ← site settings
+├── index.qmd       ← home page
+├── about.qmd       ← a second page
+└── styles.css      ← custom styles (empty to start)
+```
+
+## 3. `_quarto.yml`: the site's control panel
+
+Open `_quarto.yml`. A new project's file looks roughly like this (comments added):
+
+```yaml
+project:
+  type: website          # this folder is a website
+
+website:
+  title: "quarto-practice"   # shown at the top left of every page
+  navbar:                    # the bar across the top
+    left:
+      - href: index.qmd
+        text: Home
+      - about.qmd            # uses the page's own title as link text
+
+format:
+  html:
+    theme: cosmo             # the look (Lesson 6)
+    css: styles.css
+    toc: true                # "On this page" table of contents
+```
+
+**Two changes to make right away:**
+
+```yaml
+project:
+  type: website
+  output-dir: docs           # ← add: put the rendered site in docs/ (for GitHub Pages)
+
+website:
+  title: "My Practice Site"  # ← change: a readable title
+```
+
+`output-dir: docs` matters in [Lesson 7](07-publish-github-pages.qmd): GitHub Pages can publish straight from a `docs/` folder.
+
+::: {.callout-warning title="Indentation is meaning"}
+In YAML, the number of spaces decides what belongs to what. `navbar:` is *inside* `website:` because it's indented two spaces under it. Use two spaces per level, and never tabs. Most `_quarto.yml` errors are indentation mistakes.
+:::
+
+## 4. Add a page
+
+1. Create a new file in the project folder, e.g., `data-sources.qmd`.
+2. Give it a YAML header and some content:
+
+   ```markdown
+   ---
+   title: "Data Sources"
+   ---
+
+   ## ESSENCE
+
+   Syndromic surveillance data from emergency departments.
+   ```
+
+3. Add it to the navbar in `_quarto.yml`:
+
+   ```yaml
+   website:
+     navbar:
+       left:
+         - href: index.qmd
+           text: Home
+         - about.qmd
+         - data-sources.qmd     # ← new
+   ```
+
+A page that isn't in the navbar or sidebar still gets built, but nobody can find it unless something links to it.
+
+## 5. Organize pages in folders with a sidebar
+
+For more than a handful of pages, put them in a folder and add a **sidebar**:
+
+```
+quarto-practice/
+├── _quarto.yml
+├── index.qmd
+└── lessons/
+    ├── 01-intro.qmd
+    ├── 02-data.qmd
+    └── 03-charts.qmd
+```
+
+```yaml
+website:
+  title: "My Practice Site"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: lessons/01-intro.qmd
+        text: Lessons
+  sidebar:
+    style: docked
+    contents:
+      - section: "Lessons"
+        contents:
+          - lessons/01-intro.qmd
+          - lessons/02-data.qmd
+          - lessons/03-charts.qmd
+```
+
+Or let Quarto list every file in the folder automatically:
+
+```yaml
+  sidebar:
+    contents:
+      - section: "Lessons"
+        contents: "lessons/*"
+```
+
+Files are listed in alphabetical order, which is why lesson files are numbered: `01-`, `02-`, `03-`.
+
+### More than one sidebar
+
+A site with several sections (like this one, with one sidebar per training) gives each sidebar an `id`, and links the navbar to its first page. See the NV OSE site's [`_quarto.yml`](https://github.com/nv-ose/training/blob/main/_quarto.yml) for a working example.
+
+## 6. Linking between pages
+
+Link to the `.qmd` file. Quarto turns it into the right `.html` link:
+
+```markdown
+See [Lesson 2](02-data.qmd), or go back to the [home page](../index.qmd).
+```
+
+`../` means "go up one folder."
+
+## 7. Add a navbar link to an outside site
+
+```yaml
+website:
+  navbar:
+    right:
+      - icon: github
+        href: https://github.com/your-username/quarto-practice
+        aria-label: "Source code on GitHub"
+```
+
+`aria-label` gives icon-only links a name for screen readers.

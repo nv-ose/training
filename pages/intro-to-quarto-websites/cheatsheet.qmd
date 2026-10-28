@@ -1,0 +1,137 @@
+---
+title: "Quarto websites cheat sheet"
+---
+
+## Commands
+
+| Task | Command |
+|---|---|
+| Check your setup | `quarto check` |
+| Create a website project | `quarto create project website my-site` |
+| Live preview while editing | `quarto preview` (stop with **Ctrl + C**) |
+| Build the whole site | `quarto render` |
+| Build one page | `quarto render page.qmd` |
+
+## Editor shortcuts
+
+| Action | Positron / VS Code | RStudio |
+|---|---|---|
+| Command Palette | Cmd/Ctrl + Shift + P | n/a |
+| Create a project | Command Palette → **Quarto: Create Project** | **File → New Project → New Directory → Quarto Website** |
+| Preview | Cmd/Ctrl + Shift + K | **Render** button (Cmd/Ctrl + Shift + K) |
+| Render whole site | `quarto render` in the terminal | **Build** tab → **Render Website** |
+| Visual editor | Cmd/Ctrl + Shift + F4 | **Visual** button |
+
+## Page header
+
+```yaml
+---
+title: "Page title"
+description: "One-line summary"
+---
+```
+
+## Minimal website `_quarto.yml`
+
+```yaml
+project:
+  type: website
+  output-dir: docs
+  resources:
+    - "/.nojekyll"
+
+website:
+  title: "My Site"
+  search: true
+  page-navigation: true
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: lessons/01-intro.qmd
+        text: Lessons
+  sidebar:
+    style: docked
+    contents:
+      - section: "Lessons"
+        contents: "lessons/*"
+  page-footer:
+    center: "Questions? [me@example.gov](mailto:me@example.gov)"
+
+format:
+  html:
+    theme:
+      light: cosmo
+      dark: darkly
+    respect-user-color-scheme: true
+    toc: true
+    code-copy: true
+```
+
+## Markdown extras
+
+````markdown
+::: {.callout-tip}
+A tip.
+:::
+
+::: {.callout-tip collapse="true" title="Show answer"}
+Hidden until clicked.
+:::
+
+::: {.panel-tabset}
+## Tab one
+Content.
+## Tab two
+Content.
+:::
+
+![](images/chart.png){fig-alt="Describe what the image shows."}
+
+[Link to another page](other-page.qmd)
+````
+
+## R chunks
+
+````markdown
+```{r}
+#| label: fig-cases
+#| echo: false
+#| fig-alt: "Describe the chart's type, variables, and main pattern."
+plot(cases)
+```
+
+Inline result: `{r} nrow(cases)` cases.
+````
+
+| Chunk option | Effect |
+|---|---|
+| `echo: false` | Hide code, show result |
+| `eval: false` | Show code, don't run it |
+| `include: false` | Run, show nothing |
+| `warning: false` | Hide warnings |
+| `fig-alt` | Alt text for a chart (required) |
+| `fig-cap` | Visible caption |
+
+Freeze results so code only re-runs when it changes (commit `_freeze/`):
+
+```yaml
+execute:
+  freeze: auto
+```
+
+## Publish to GitHub Pages
+
+1. `output-dir: docs` in `_quarto.yml`, plus an empty `.nojekyll` file
+2. `quarto render`
+3. Commit everything, **including `docs/`**, and push
+4. Repo **Settings → Pages → Deploy from a branch → `main` → `/docs` → Save**
+
+**Every update:** edit → `quarto render` → commit (with `docs/`) → push.
+
+## Before you publish
+
+- [ ] No real data, credentials, or internal details (Pages sites are public)
+- [ ] Every image and chart has alt text
+- [ ] Previewed in light and dark mode; links work
+- [ ] Rendered, and `docs/` committed

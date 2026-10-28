@@ -1,0 +1,199 @@
+---
+title: "Lesson 3: Writing a Quarto page"
+---
+
+Every page of a Quarto website is a `.qmd` file with three kinds of content:
+
+1. A **YAML header** with the page's settings
+2. **Markdown** text
+3. Optional **code chunks** that Quarto runs
+
+## A complete example page
+
+````markdown
+---
+title: "Weekly ILI Summary"
+author: "Jane Smith"
+date: 2026-10-28
+---
+
+## Overview
+
+This page shows **made-up** influenza-like illness (ILI) data
+for practice.
+
+::: {.callout-note}
+All data on this page is synthetic.
+:::
+
+```{r}
+#| label: fig-ili
+#| echo: true
+#| fig-alt: "Line chart of weekly percent ILI over 20 weeks, rising from
+#|   about 1.5% to a peak near 4.5% in week 12, then falling."
+
+library(ggplot2)
+
+set.seed(2026)
+ili <- data.frame(
+  week    = seq(as.Date("2025-09-28"), by = "week", length.out = 20),
+  pct_ili = round(1.5 + 3 * exp(-((1:20 - 12)^2) / 18) + rnorm(20, 0, 0.2), 1)
+)
+
+ggplot(ili, aes(week, pct_ili)) +
+  geom_line() +
+  labs(x = "Week", y = "% ILI")
+```
+
+The peak was in week `{r} which.max(ili$pct_ili)`.
+````
+
+Rendered, this produces a page with a title, author and date, a heading, a blue note box, the R code, the chart, and a sentence with the peak week filled in from the data.
+
+## 1. The YAML header
+
+The block between the two `---` lines at the very top. It's written in **YAML**: `key: value` pairs.
+
+```yaml
+---
+title: "Weekly ILI Summary"
+author: "Jane Smith"
+date: 2026-10-28
+description: "One-line summary, used by search and link previews"
+---
+```
+
+::: {.callout-warning title="YAML is picky about spacing"}
+- There must be a space after the colon: `title: "Hi"`, not `title:"Hi"`.
+- Indent with **spaces**, never tabs.
+- Put text in quotes if it contains a colon: `title: "Lesson 1: Basics"`.
+:::
+
+## 2. Markdown
+
+Quarto uses the same Markdown as GitHub READMEs, plus a few extras.
+
+| You type | You get |
+|---|---|
+| `## Heading` | Section heading (use `##` and below; the title is the top level) |
+| `**bold**` / `*italic*` | **bold** / *italic* |
+| `- item` / `1. item` | Bulleted / numbered list |
+| `[text](https://example.com)` | A link |
+| `[next lesson](04-create-website.qmd)` | A link to another page. Use the `.qmd` name; Quarto converts it to `.html` |
+| `` `code` `` | Inline `code` |
+| `> quote` | A block quote |
+
+### Callouts
+
+Colored boxes for notes, tips, and warnings:
+
+```markdown
+::: {.callout-tip}
+Save often!
+:::
+
+::: {.callout-warning title="Careful"}
+This deletes files.
+:::
+
+::: {.callout-tip collapse="true" title="Show answer"}
+Hidden until clicked: great for exercise answers.
+:::
+```
+
+Types: `callout-note`, `callout-tip`, `callout-warning`, `callout-important`, `callout-caution`.
+
+::: {.callout-tip collapse="true" title="Show answer"}
+Like this one.
+:::
+
+### Tabs
+
+Tabs let readers choose between versions, like the editor tabs in this training:
+
+```markdown
+::: {.panel-tabset}
+## Mac
+Press Cmd + S.
+## Windows
+Press Ctrl + S.
+:::
+```
+
+## 3. Images and alt text
+
+```markdown
+![](images/epi-curve.png){fig-alt="Bar chart of weekly measles cases, peaking at 12 in week 8."}
+```
+
+- **`fig-alt`** is the **alt text**: what screen-reader users hear instead of seeing the image. **Every image needs it.**
+- Text inside the square brackets `![like this](...)` becomes a **visible caption** under the image. Leave the brackets empty if you don't want a caption.
+- Good alt text says what the image shows and its main point, not just "chart" or "screenshot."
+
+## 4. R code chunks
+
+A chunk starts with ```` ```{r} ```` and ends with ```` ``` ````. Options go at the top, on lines starting with `#|`:
+
+```{{r}}
+#| label: summary-table
+#| echo: false
+
+head(ili)
+```
+
+Common options (each goes on its own `#|` line):
+
+| Option | What it does |
+|---|---|
+| `label: name` | Names the chunk (no spaces). Labels starting with `fig-` make numbered, cross-referenceable figures |
+| `echo: false` | Hide the code, show only the result |
+| `eval: false` | Show the code, but don't run it |
+| `include: false` | Run the code, but show nothing (useful for loading packages) |
+| `warning: false` | Hide warnings |
+| `fig-alt: "..."` | Alt text for a chart (**required for every chart**) |
+| `fig-cap: "..."` | Visible caption for a chart |
+
+You can set options for every chunk on a page in the YAML header:
+
+```yaml
+---
+title: "My page"
+execute:
+  echo: false
+  warning: false
+---
+```
+
+### Inline code
+
+Put R results into a sentence with `` `{r} expression` ``:
+
+```markdown
+There were `{r} nrow(cases)` cases this week.
+```
+
+::: {.callout-important title="Never use real data on a public site"}
+Code on a website runs **when you render**, and its results are published. Use made-up (synthetic) or public data only. See [Data security](../intro-to-github/09-data-security.qmd).
+:::
+
+## 5. Visual mode
+
+All three editors have a **visual editor** that shows a `.qmd` file formatted (like a word processor), with toolbar buttons for headings, lists, and tables.
+
+::: {.panel-tabset group="editor"}
+
+## Positron
+
+Right-click in the file → **Edit in Visual Mode**, or press **Cmd + Shift + F4** (Mac) / **Ctrl + Shift + F4** (Windows). Same again to switch back.
+
+## VS Code
+
+Right-click in the file → **Edit in Visual Mode**, or press **Cmd + Shift + F4** (Mac) / **Ctrl + Shift + F4** (Windows). Requires the Quarto extension.
+
+## RStudio
+
+Click **Visual** / **Source** at the top left of the editor.
+
+:::
+
+Visual mode may reformat your Markdown slightly when it saves (spacing, table layout). That's harmless.

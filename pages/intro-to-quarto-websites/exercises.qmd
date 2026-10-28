@@ -1,0 +1,124 @@
+---
+title: "Hands-on exercises"
+---
+
+Build and publish your own practice website, step by step. Use **your personal GitHub account** and only **made-up data**.
+
+## Exercise 1: Create and preview a site (Lessons 4–5, 15 min)
+
+1. Create a new Quarto **website project** named `quarto-practice` in `Documents/GitHub/` (see [Lesson 4](04-create-website.qmd#create-the-project) for your editor).
+2. In `_quarto.yml`, change the `title:` to `"<Your Name>'s Practice Site"`.
+3. In `index.qmd`, replace the text with two sentences about yourself and what you'd like to build.
+4. Start a **preview**. Change a word in `index.qmd`, save, and watch the preview update.
+
+**✅ Check:** the preview shows your new title in the navbar and your text on the home page.
+
+## Exercise 2: Add pages and a sidebar (Lesson 4, 20 min)
+
+1. Create a folder `lessons/` with two files: `01-welcome.qmd` and `02-data.qmd`. Give each a `title:` and a heading with some text.
+2. In `_quarto.yml`, add a **Lessons** link to the navbar pointing to `lessons/01-welcome.qmd`.
+3. Add a docked **sidebar** with a "Lessons" section listing both files.
+4. In `01-welcome.qmd`, add a link to `02-data.qmd`.
+5. Add a **tip callout** and a **collapsed callout** titled "Show answer".
+
+**✅ Check:** the Lessons link opens the welcome page, the sidebar lists both lessons, the link works, and the collapsed callout opens when clicked.
+
+::: {.callout-tip collapse="true" title="Show solution: _quarto.yml"}
+```yaml
+project:
+  type: website
+
+website:
+  title: "Jane's Practice Site"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: lessons/01-welcome.qmd
+        text: Lessons
+      - about.qmd
+  sidebar:
+    style: docked
+    contents:
+      - section: "Lessons"
+        contents:
+          - lessons/01-welcome.qmd
+          - lessons/02-data.qmd
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+```
+:::
+
+## Exercise 3: Add R code and a chart (Lesson 3, 20 min)
+
+1. In `lessons/02-data.qmd`, add this chunk. It makes **synthetic** weekly ILI data:
+
+   ````markdown
+   ```{r}
+   #| label: make-data
+   set.seed(2026)
+   ili <- data.frame(
+     week    = seq(as.Date("2025-09-28"), by = "week", length.out = 20),
+     pct_ili = round(1.5 + 3 * exp(-((1:20 - 12)^2) / 18) + rnorm(20, 0, 0.2), 1)
+   )
+   head(ili)
+   ```
+   ````
+
+2. Add a second chunk that draws a line chart with `ggplot2`, and hide its code with `echo: false`.
+3. Give the chart **alt text** with `fig-alt`, describing the shape of the curve.
+4. Add a sentence that reports the highest `pct_ili` value using **inline code**.
+
+**✅ Check:** the page shows the first six rows of data, a chart without its code, and a sentence with the peak value filled in.
+
+::: {.callout-tip collapse="true" title="Show solution"}
+````markdown
+```{r}
+#| label: fig-ili
+#| echo: false
+#| fig-alt: "Line chart of weekly percent ILI over 20 weeks. It starts near
+#|   1.5%, rises to a peak of about 4.5% around week 12, then falls back."
+library(ggplot2)
+ggplot(ili, aes(week, pct_ili)) +
+  geom_line() +
+  labs(x = "Week", y = "% ILI")
+```
+
+The highest weekly value was `{r} max(ili$pct_ili)`%.
+````
+:::
+
+## Exercise 4: Customize the look (Lesson 6, 10 min)
+
+1. Switch the theme to a **light and dark pair** (e.g., `flatly` and `darkly`) with `respect-user-color-scheme: true`.
+2. Add `search: true`, `page-navigation: true`, and a `page-footer` with your name.
+3. Add a GitHub icon link on the right of the navbar, with an `aria-label`.
+
+**✅ Check:** a light/dark toggle appears in the navbar, the footer shows on every page, and lessons have previous/next buttons.
+
+## Exercise 5: Publish it (Lesson 7, 20 min)
+
+1. Add `output-dir: docs` and the `.nojekyll` resource to `_quarto.yml`, and create the `.nojekyll` file.
+2. Stop the preview and run `quarto render`.
+3. In GitHub Desktop, add the folder as a repository, commit, and **publish it to your personal account as public**.
+4. Turn on GitHub Pages: **Settings → Pages → Deploy from a branch → `main` → `/docs` → Save**.
+5. Open `https://<your-username>.github.io/quarto-practice/`.
+
+**✅ Check:** your site is live at that address.
+
+6. **Update it:** change a sentence, render, commit, and push. Confirm the live site changes within a couple of minutes (hard refresh with **Cmd/Ctrl + Shift + R**).
+
+::: {.callout-tip collapse="true" title="Site not showing up?"}
+- **404 page:** check that Pages is set to `main` and `/docs`, and that `docs/index.html` was committed.
+- **Page has no styling:** check that `.nojekyll` is in `docs/`.
+- **Change not showing:** did you run `quarto render` before committing? Check that `docs/` files changed in GitHub Desktop.
+- **Still nothing:** look at the repo's **Actions** tab for a failed "pages build and deployment" run.
+:::
+
+## Bonus: Clean up
+
+When you're done practicing, you can delete the repo (**Settings → Danger Zone → Delete this repository**), or keep it as a sandbox.

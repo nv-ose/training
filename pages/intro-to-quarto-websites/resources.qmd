@@ -1,0 +1,39 @@
+---
+title: "Further resources"
+---
+
+## Official Quarto documentation
+
+- [Get Started](https://quarto.org/docs/get-started/): installation and first steps for each editor
+- [Creating a Website](https://quarto.org/docs/websites/)
+- [Website Navigation](https://quarto.org/docs/websites/website-navigation.html): navbars, sidebars, and footers
+- [HTML Themes](https://quarto.org/docs/output-formats/html-themes.html): themes and light/dark mode
+- [Publishing to GitHub Pages](https://quarto.org/docs/publishing/github-pages.html)
+- [Markdown Basics](https://quarto.org/docs/authoring/markdown-basics.html)
+- [Callout Blocks](https://quarto.org/docs/authoring/callouts.html)
+- [Code Cells: Knitr (R)](https://quarto.org/docs/computations/r.html)
+- [Managing Execution (freeze)](https://quarto.org/docs/projects/code-execution.html)
+- [Website options reference](https://quarto.org/docs/reference/projects/websites.html): every `_quarto.yml` setting
+- [Quarto Gallery](https://quarto.org/docs/gallery/): example sites to learn from
+
+## Editors
+
+- [Positron documentation](https://positron.posit.co/)
+- [Quarto in VS Code](https://quarto.org/docs/tools/vscode.html)
+- [Quarto in RStudio](https://quarto.org/docs/tools/rstudio.html)
+
+## Accessibility
+
+- [WebAIM Contrast Checker](https://webaim.org/resources/contrastchecker/)
+
+## Example sites built this way
+
+- [NV OSE Training](https://nv-ose.github.io/training/) ([source](https://github.com/nv-ose/training))
+- [CWML R Hands-on Workshop Series](https://cwml.github.io/CWML-R-Hands-on-Workshop-Series/)
+- [CWML All of Us Training Resources](https://cwml.github.io/All-of-Us-Training-Resources/)
+
+## NV OSE
+
+- [Introduction to Git and GitHub](../intro-to-github/index.qmd): the prerequisite for publishing
+- [Training submission form](https://github.com/nv-ose/team-hub/issues/new?template=training-submission.yml) (members only)
+- [Contributing Guidelines (SOP)](https://github.com/nv-ose/.github/blob/main/CONTRIBUTING.md)
