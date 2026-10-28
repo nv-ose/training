@@ -17,6 +17,7 @@
 ## Workflow
 
 - Max commits and pushes himself with GitHub Desktop. **Don't commit or push.** Prepare changes and tell him what changed.
+- Most new trainings arrive as **Training submission** issues in the private `team-hub` repo (status labels: `training-submission` → `in-progress` → `published`; full workflow in the team-hub README). Materials attached there are unreviewed: check for real data and internal details before anything goes into this public repo.
 - New training: copy `_template/` into `pages/<name>/`, then add a navbar item and a sidebar in `_quarto.yml`, plus rows in `README.md` and `index.qmd`.
 
 ## Accessibility rules (required)
