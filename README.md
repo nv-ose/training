@@ -26,11 +26,25 @@ Workshops, tutorials, and learning materials from **NV OSE — The Office of Sta
 
 ## Adding a training
 
+There are two ways to add a training. **Most people should use option 1.**
+
+### Option 1: Submit your materials (no Git or Quarto needed)
+
+1. Go to **[Submit a training](https://github.com/nv-ose/team-hub/issues/new?template=training-submission.yml)** (in the private `team-hub` repo; you must be signed in as an NV OSE member).
+2. Fill in the form and attach your files: PowerPoint, Word, PDF, Excel, or code in a .zip.
+3. Max Wegener or Jordan Lancaster reviews the materials, converts them into pages on this site, and follows up in the issue. You're credited as the author.
+
+Submissions stay private until they're reviewed. This repo is **public**, so don't upload drafts or materials here directly.
+
+### Option 2: Build it yourself (if you know Quarto)
+
 1. Copy `_template/` into `pages/` and rename it (lowercase, hyphens: e.g., `pages/intro-to-r/`).
 2. Write the overview in `index.qmd` and add lessons as numbered `.qmd` files (`01-...qmd`, `02-...qmd`).
 3. In `_quarto.yml`, add a navbar link and a sidebar for the new training (copy the `intro-to-github` entries).
 4. Add a row to the table above and on `index.qmd`.
-5. Build the site (below), then commit and open a pull request ([how to add files and open a pull request](https://github.com/nv-ose/.github/blob/main/CONTRIBUTING.md#how-to-add-or-change-files)).
+5. Build the site (below), then commit on a branch and open a pull request ([how to add files and open a pull request](https://github.com/nv-ose/.github/blob/main/CONTRIBUTING.md#how-to-add-or-change-files)). Max or Jordan reviews it before it goes live.
+
+Everything in this repo, including branches and pull requests, is public. Check for data and internal details before you push.
 
 See the [Contributing Guidelines](https://github.com/nv-ose/.github/blob/main/CONTRIBUTING.md) for full details.
 

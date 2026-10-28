@@ -21,6 +21,10 @@ More trainings are on the way.
 - **Workshop:** instructors can teach directly from the pages. Each training lists its learning objectives, prerequisites, and timing.
 - **Get the files:** all source files are on [GitHub](https://github.com/nv-ose/training). You can [download everything as a ZIP](https://github.com/nv-ose/training/archive/refs/heads/main.zip).
 
+## Share a training
+
+**NV OSE staff:** have materials you'd like to see here? [Submit a training](https://github.com/nv-ose/team-hub/issues/new?template=training-submission.yml) (sign-in required). Attach your slides, handouts, or code, and we'll turn them into pages on this site.
+
 ::: {.callout-note}
 These pages never contain real data. Examples use made-up or public data only.
 :::
