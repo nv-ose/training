@@ -498,7 +498,14 @@
     "href": "index.html#how-to-use-these-materials",
     "title": "NV OSE Training",
     "section": "How to use these materials",
-    "text": "How to use these materials\n\nSelf-paced: work through the lessons in order using the sidebar, then try the exercises.\nWorkshop: instructors can teach directly from the pages. Each training lists its learning objectives, prerequisites, and timing.\nGet the files: all source files are on GitHub. You can download everything as a ZIP.\n\n\n\n\n\n\n\nNote\n\n\n\nThese pages never contain real data. Examples use made-up or public data only."
+    "text": "How to use these materials\n\nSelf-paced: work through the lessons in order using the sidebar, then try the exercises.\nWorkshop: instructors can teach directly from the pages. Each training lists its learning objectives, prerequisites, and timing.\nGet the files: all source files are on GitHub. You can download everything as a ZIP."
+  },
+  {
+    "objectID": "index.html#share-a-training",
+    "href": "index.html#share-a-training",
+    "title": "NV OSE Training",
+    "section": "Share a training",
+    "text": "Share a training\nNV OSE staff: have materials you’d like to see here? Submit a training (sign-in required). Attach your slides, handouts, or code, and we’ll turn them into pages on this site.\n\n\n\n\n\n\nNote\n\n\n\nThese pages never contain real data. Examples use made-up or public data only."
   },
   {
     "objectID": "pages/intro-to-github/01-git-vs-github.html",
