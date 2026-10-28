@@ -18,6 +18,41 @@ body.quarto-dark .btn-outline-secondary {
 body.quarto-dark .page-navigation .nav-page-text { color: #dee2e6; }
 body.quarto-light blockquote { color: #495057; }
 
+/* Annotated screenshots: wrap the image in ::: {.annotated} and place boxes
+   with % positions, e.g. [ ]{.red-box style="left:10%; top:20%; width:15%; height:8%;"}
+   Red = click here; green = options to look at. */
+.annotated {
+  position: relative;
+  display: inline-block;
+  max-width: 100%;
+  margin: 0.5rem 0 1rem;
+}
+.annotated img {
+  display: block;
+  max-width: 100%;
+  border: 1px solid #ced4da;
+  border-radius: 6px;
+}
+body.quarto-dark .annotated img { border-color: #495057; }
+.annotated p { margin: 0; }
+.annotated .figure, .annotated figure { margin: 0; }
+.annotated .red-box,
+.annotated .red-circle,
+.annotated .green-box,
+.annotated .green-circle {
+  position: absolute;
+  pointer-events: none;
+  border: 3px solid;
+}
+.annotated .red-box,
+.annotated .red-circle { border-color: #d0021b; }
+.annotated .green-box,
+.annotated .green-circle { border-color: #1a7f37; }
+.annotated .red-box,
+.annotated .green-box { border-radius: 4px; }
+.annotated .red-circle,
+.annotated .green-circle { border-radius: 50%; }
+
 /* Logo: white background so the blue mark stays visible in dark mode */
 .navbar-logo {
   background-color: #fff;
