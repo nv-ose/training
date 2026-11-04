@@ -15,7 +15,15 @@ Positron **doesn't install R or Python itself**. It finds and uses the versions 
 Windows may include a "Python" shortcut that just opens the Microsoft Store. It often doesn't work with Positron. Install Python from [python.org](https://www.python.org/downloads/) instead.
 :::
 
-On a state computer, you may need IT to install software. Request it ahead of time.
+::: {.callout-important title="On a state computer: ask IT to install everything system-wide"}
+Security software blocks programs installed in your user `AppData` folder. Ask IT to install:
+
+- **Positron** with the **system installer** (installs to `C:\Program Files\Positron`), not the user installer
+- **R** (installs to `C:\Program Files\R` by default)
+- **Python 3.13 or 3.14**, **for all users** (installer: **Customize installation → Install Python for all users**), with **Add python.exe to PATH**
+
+See [Troubleshooting](troubleshooting.qmd) if Positron or Python won't start.
+:::
 
 ## 2. Install Positron
 
@@ -79,3 +87,7 @@ Other ways to get there:
 - **Command Palette:** type `Color Theme`
 
 To follow your computer's light/dark setting automatically: open **Settings**, search for `auto detect color scheme`, and turn on **Window: Auto Detect Color Scheme**.
+
+## 6. Test your setup
+
+Download the **[practice project](practice-project.qmd)** and run its two check scripts: one for R and one for Python. If both print **OK**, you're ready for the rest of the training.

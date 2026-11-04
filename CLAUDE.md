@@ -40,3 +40,4 @@
 - The trainings tables in `README.md` and `index.qmd`.
 - The lesson order in the `_quarto.yml` sidebar, and the lesson tables in each training's `index.qmd`.
 - Owner contact info, which also appears in `pages/intro-to-github/09-data-security.qmd` and `cheatsheet.qmd`.
+- `practice/positron-practice/` is the source of the downloadable practice project; `practice/positron-practice.zip` is what the site serves (listed under `resources:`). **Rebuild the zip** whenever files in the folder change. All its data is synthetic.

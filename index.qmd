@@ -13,7 +13,7 @@ Welcome! This site collects training materials created by **NV OSE, the Office o
 |---|---|---|---|
 | [Introduction to Git and GitHub](pages/intro-to-github/index.qmd) | Git vs. GitHub, READMEs, .gitignore, GitHub Desktop, the command line, branches, pull requests, forks, public vs. private, and data security | Beginner | About 3 hours |
 | [Introduction to Quarto](pages/intro-to-quarto/index.qmd) | Markdown, what Quarto adds, R code chunks, HTML reports, revealjs presentations, websites, accessibility, and publishing on GitHub Pages | Beginner | About 5 hours (3 sessions) |
-| [Introduction to Positron](pages/intro-to-positron/index.qmd) | The Positron IDE for R and Python: interpreters, project folders and here(), the NV OSE folder structure, panes compared with RStudio and VS Code, extensions (including AI assistants), and Git | Beginner | About 45 minutes |
+| [Introduction to Positron](pages/intro-to-positron/index.qmd) | The Positron IDE for R and Python: interpreters, project folders and here(), the NV OSE folder structure, panes compared with RStudio and VS Code, extensions (including AI assistants), Git, and Python environments | Beginner | About 1 hour |
 
 More trainings are on the way.
 
@@ -21,7 +21,7 @@ More trainings are on the way.
 
 New to all of this? Take the trainings in this order:
 
-1. **[Introduction to Positron](pages/intro-to-positron/index.qmd)** (45 min): set up the editor and a project folder.
+1. **[Introduction to Positron](pages/intro-to-positron/index.qmd)** (1 hour): set up the editor and a project folder.
 2. **[Introduction to Quarto](pages/intro-to-quarto/index.qmd), Sessions 1–2:** Markdown, code, reports, and slides.
 3. **[Introduction to Git and GitHub](pages/intro-to-github/index.qmd):** version control and sharing your work.
 4. **[Introduction to Quarto](pages/intro-to-quarto/index.qmd), Session 3:** build a website and publish it on GitHub Pages.

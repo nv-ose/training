@@ -1,0 +1,37 @@
+---
+title: "Practice report: weekly ILI (made-up data)"
+format:
+  html:
+    embed-resources: true
+execute:
+  echo: false
+  warning: false
+---
+
+```{r}
+#| label: setup
+#| include: false
+library(here)
+ili <- read.csv(here("raw_data", "example_ili.csv"))
+ili$week <- as.Date(ili$week)
+peak <- ili[which.max(ili$pct_ili), ]
+```
+
+::: {.callout-note}
+All data in this report is made up, for practice only.
+:::
+
+## Summary
+
+Across `{r} length(unique(ili$county))` counties and `{r} length(unique(ili$week))` weeks, the highest weekly ILI was **`{r} peak$pct_ili`%** in `{r} peak$county` County, the week of `{r} format(peak$week, "%B %d, %Y")`.
+
+## Trend
+
+```{r}
+#| label: fig-trend
+#| fig-cap: "Weekly percent of visits for ILI, Clark County"
+#| fig-alt: "Line chart of weekly percent of visits for influenza-like illness in Clark County over 20 weeks, rising from under 2% in early October to a peak around 4% to 5% in December, then falling."
+clark <- subset(ili, county == "Clark")
+plot(clark$week, clark$pct_ili, type = "b", pch = 19,
+     xlab = "Week", ylab = "% of visits for ILI")
+```

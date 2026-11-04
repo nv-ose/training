@@ -2,7 +2,19 @@
 title: "Troubleshooting"
 ---
 
-Common first-day problems, especially on Windows.
+Common first-day problems, especially on Windows state computers.
+
+## "A file being opened with execute access was denied" (Positron won't open)
+
+The **Endpoint Security Agent** blocked Positron because it was installed in your user `AppData` folder (`C:\Users\<you>\AppData\Local\Programs\Positron`). State security policy blocks programs from running there. You may also see *"Windows cannot access the specified device, path, or file"* when clicking the taskbar shortcut.
+
+**Don't try to get around it.** Ask **IT** to:
+
+1. Uninstall the user version.
+2. Install Positron with the **system installer** (the Windows *System* download on [positron.posit.co](https://positron.posit.co/download.html)), which installs to `C:\Program Files\Positron`.
+
+The same applies to **Python**: ask IT to install it **for all users** (`C:\Program Files\Python3xx`).
+
 
 ## I don't see R or Python icons
 
@@ -15,6 +27,38 @@ That's expected. Positron doesn't put R or Python in the left sidebar. Start the
 - **Command Palette** (**Ctrl + Shift + P**): type `Interpreter: Start New Session`.
 
 To **restart** the current console instead, click **↻** at the top of the Console panel. You can have R and Python consoles open at the same time and switch between them at the top of the Console.
+
+## Python failed to start, or "Timed out waiting to connect"
+
+You may see *"Python 3.x (System) failed to start up (exit code 130)"* or *"Timed out waiting to connect to session's ZeroMQ sockets"*. The first session got stuck, often while security software scanned it.
+
+**Start a fresh session:** click the **interpreter picker** (top right) → **Start New Session** → choose **Python** (or R). A new session usually starts normally.
+
+If it keeps failing:
+
+- Close Positron completely and reopen it.
+- Try Python **3.13** instead of the newest version.
+- Check **Output** tab → **Python Kernel** for errors mentioning *blocked* or *denied*. If you see them, ask IT to allow Python and Positron to make **local (localhost) connections** in the endpoint security tool.
+
+A *"SyntaxWarning: 'return' in a 'finally' block"* message in the same output is harmless. Ignore it.
+
+## "No supported Python (3.9–3.14) was found"
+
+Positron's Welcome page shows this when it can't find a Python version it supports. Either Python isn't installed, or only a version that's too new (e.g., 3.15) or the Microsoft Store shortcut is.
+
+- **Don't click "Install Python"** on a state computer. It tries to download and run an installer script (`uv`), which antivirus correctly blocks (*"This script contains malicious content and has been blocked"*).
+- Ask **IT** to install **Python 3.13 or 3.14 for all users** from [python.org](https://www.python.org/downloads/windows/), with **Add python.exe to PATH** checked.
+- Then restart Positron, or click **↻** next to **Environment Setup** on the Welcome page.
+
+## Errors about `.ruff.toml` in the Python folder
+
+Messages like `Failed to resolve settings for …\Python314\Lib\test\.ruff.toml` mean **Python's own installation folder was opened as a project** (**File → Open Folder** on the Python folder).
+
+1. **File → Close Folder.**
+2. **File → Open Folder…** and choose your **project** folder instead.
+3. Choose Python from the **interpreter picker**. That's how you pick which Python to use.
+
+Never edit or save files inside the Python installation folder.
 
 ## The interpreter picker shows no R or Python
 

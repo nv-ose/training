@@ -1,0 +1,85 @@
+---
+title: "Practice project: test your setup"
+---
+
+A small, ready-made project with R and Python scripts. Use it to **check that Positron, R, and Python work on your computer**, and to try everything from the lessons. All data in it is made up.
+
+[⬇ Download positron-practice.zip](../../practice/positron-practice.zip){.btn .btn-outline-primary download="positron-practice.zip"}
+
+## What's inside
+
+```
+positron-practice/
+├── scripts/
+│   ├── 01_check_setup.R     # checks R and the project setup
+│   ├── 02_explore_data.R    # tour of Console, Variables, Data Explorer, Plots, Help
+│   ├── check_setup.py       # checks Python and the project setup
+│   └── explore_data.py      # the same tour in Python
+├── notebooks/
+│   └── summary.qmd          # a short Quarto report
+├── raw_data/
+│   └── example_ili.csv      # made-up weekly ILI data for 4 counties
+├── processed_data/  images/  reports/  downloads/
+├── README.md
+├── .gitignore
+└── .here
+```
+
+## 1. Set it up
+
+1. Download **positron-practice.zip** (button above).
+2. In File Explorer, right-click the zip → **Extract All…**, and extract it to `Documents\GitHub\`. You should end up with `Documents\GitHub\positron-practice\`.
+3. In Positron: **File → Open Folder…** → choose the **`positron-practice`** folder itself (not the folder above it).
+
+## 2. Test R
+
+1. Start **R** from the interpreter picker (top right).
+2. Open `scripts/01_check_setup.R` and click **▶ Run** (top right of the editor).
+3. The Console should show your R version, the project folder, and three **OK** lines:
+
+```
+OK: .here file found.
+OK: read example_ili.csv: 80 rows, 5 columns.
+All done. If every line says OK, R is working in Positron!
+```
+
+It installs the `here` package the first time, if needed.
+
+## 3. Test Python
+
+1. Start **Python** from the interpreter picker (**Start New Session** → Python).
+2. Open `scripts/check_setup.py` and click **▶ Run**.
+3. You should see your Python version and where it's installed, then:
+
+```
+OK: project folder found: ...\positron-practice
+OK: read example_ili.csv: 80 rows, 5 columns.
+All done. If every line says OK, Python is working in Positron!
+```
+
+It needs **no packages**, so it's a clean test of Python itself.
+
+::: {.callout-tip title="Something didn't work?"}
+- Python won't start, or no Python in the picker: [Troubleshooting](troubleshooting.qmd#python-failed-to-start-or-timed-out-waiting-to-connect)
+- "No .here file found": you opened the wrong folder. Open `positron-practice` itself.
+- `here` won't install: your network may need proxy settings for R. Ask IT.
+:::
+
+## 4. Explore
+
+**R:** open `scripts/02_explore_data.R` and run it **line by line** with **Ctrl + Enter**. Watch:
+
+- the **Console** for output ([Lesson 5](05-panes.qmd#console))
+- the **Variables** pane, where `ili`, `county_avg`, and `peak` appear
+- the **Data Explorer**, opened by `View(ili)`
+- the **Plots** pane, for the Clark County chart
+- the **Help** pane, opened by `?aggregate`
+- `processed_data/`, where a new file appears in the Explorer
+
+**Python:** `scripts/explore_data.py` does the same. Part 1 needs no packages. Part 2 needs **pandas** and **matplotlib**: set up a project environment first ([Lesson 8](08-python-environments.qmd)).
+
+**Quarto:** open `notebooks/summary.qmd` and click **Preview** (**Ctrl + Shift + K**) to render a short report. See the [Quarto training](../intro-to-quarto/index.qmd) for more.
+
+## 5. Try Git (optional)
+
+Follow [Lesson 7](07-git.qmd): initialize a repository, check that the `.gitignore` keeps `processed_data/` and `.venv/` out, and make a first commit. Keep it on your computer, or publish it to your **personal** account to practice. This isn't an NV OSE project.

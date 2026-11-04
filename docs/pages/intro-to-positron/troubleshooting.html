@@ -384,17 +384,40 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Lesson 7: Git in Positron</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/intro-to-positron/08-python-environments.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lesson 8: Python environments</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
- <span class="menu-text">Reference</span></a>
+ <span class="menu-text">Practice</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/intro-to-positron/practice-project.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Practice project: test your setup</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Reference</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../pages/intro-to-positron/quick-reference.html" class="sidebar-item-text sidebar-link">
@@ -419,8 +442,12 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#i-dont-see-r-or-python-icons" id="toc-i-dont-see-r-or-python-icons" class="nav-link active" data-scroll-target="#i-dont-see-r-or-python-icons">I don’t see R or Python icons</a></li>
+  <li><a href="#a-file-being-opened-with-execute-access-was-denied-positron-wont-open" id="toc-a-file-being-opened-with-execute-access-was-denied-positron-wont-open" class="nav-link active" data-scroll-target="#a-file-being-opened-with-execute-access-was-denied-positron-wont-open">“A file being opened with execute access was denied” (Positron won’t open)</a></li>
+  <li><a href="#i-dont-see-r-or-python-icons" id="toc-i-dont-see-r-or-python-icons" class="nav-link" data-scroll-target="#i-dont-see-r-or-python-icons">I don’t see R or Python icons</a></li>
   <li><a href="#how-do-i-start-a-new-r-or-python-console" id="toc-how-do-i-start-a-new-r-or-python-console" class="nav-link" data-scroll-target="#how-do-i-start-a-new-r-or-python-console">How do I start a new R or Python console?</a></li>
+  <li><a href="#python-failed-to-start-or-timed-out-waiting-to-connect" id="toc-python-failed-to-start-or-timed-out-waiting-to-connect" class="nav-link" data-scroll-target="#python-failed-to-start-or-timed-out-waiting-to-connect">Python failed to start, or “Timed out waiting to connect”</a></li>
+  <li><a href="#no-supported-python-3.93.14-was-found" id="toc-no-supported-python-3.93.14-was-found" class="nav-link" data-scroll-target="#no-supported-python-3.93.14-was-found">“No supported Python (3.9–3.14) was found”</a></li>
+  <li><a href="#errors-about-.ruff.toml-in-the-python-folder" id="toc-errors-about-.ruff.toml-in-the-python-folder" class="nav-link" data-scroll-target="#errors-about-.ruff.toml-in-the-python-folder">Errors about <code>.ruff.toml</code> in the Python folder</a></li>
   <li><a href="#the-interpreter-picker-shows-no-r-or-python" id="toc-the-interpreter-picker-shows-no-r-or-python" class="nav-link" data-scroll-target="#the-interpreter-picker-shows-no-r-or-python">The interpreter picker shows no R or Python</a></li>
   <li><a href="#where-is-python-installed" id="toc-where-is-python-installed" class="nav-link" data-scroll-target="#where-is-python-installed">Where is Python installed?</a></li>
   <li><a href="#the-python-console-is-blank-and-i-cant-type-in-it" id="toc-the-python-console-is-blank-and-i-cant-type-in-it" class="nav-link" data-scroll-target="#the-python-console-is-blank-and-i-cant-type-in-it">The Python Console is blank and I can’t type in it</a></li>
@@ -454,7 +481,17 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Common first-day problems, especially on Windows.</p>
+<p>Common first-day problems, especially on Windows state computers.</p>
+<section id="a-file-being-opened-with-execute-access-was-denied-positron-wont-open" class="level2">
+<h2 class="anchored" data-anchor-id="a-file-being-opened-with-execute-access-was-denied-positron-wont-open">“A file being opened with execute access was denied” (Positron won’t open)</h2>
+<p>The <strong>Endpoint Security Agent</strong> blocked Positron because it was installed in your user <code>AppData</code> folder (<code>C:\Users\&lt;you&gt;\AppData\Local\Programs\Positron</code>). State security policy blocks programs from running there. You may also see <em>“Windows cannot access the specified device, path, or file”</em> when clicking the taskbar shortcut.</p>
+<p><strong>Don’t try to get around it.</strong> Ask <strong>IT</strong> to:</p>
+<ol type="1">
+<li>Uninstall the user version.</li>
+<li>Install Positron with the <strong>system installer</strong> (the Windows <em>System</em> download on <a href="https://positron.posit.co/download.html">positron.posit.co</a>), which installs to <code>C:\Program Files\Positron</code>.</li>
+</ol>
+<p>The same applies to <strong>Python</strong>: ask IT to install it <strong>for all users</strong> (<code>C:\Program Files\Python3xx</code>).</p>
+</section>
 <section id="i-dont-see-r-or-python-icons" class="level2">
 <h2 class="anchored" data-anchor-id="i-dont-see-r-or-python-icons">I don’t see R or Python icons</h2>
 <p>That’s expected. Positron doesn’t put R or Python in the left sidebar. Start them from the <strong>interpreter picker</strong> in the <strong>top-right corner</strong> (<a href="../../pages/intro-to-positron/02-setup.html#start-r-or-python-the-interpreter-picker">Lesson 2</a>).</p>
@@ -467,6 +504,37 @@ ul.task-list li input[type="checkbox"] {
 <li><strong>Command Palette</strong> (<strong>Ctrl + Shift + P</strong>): type <code>Interpreter: Start New Session</code>.</li>
 </ul>
 <p>To <strong>restart</strong> the current console instead, click <strong>↻</strong> at the top of the Console panel. You can have R and Python consoles open at the same time and switch between them at the top of the Console.</p>
+</section>
+<section id="python-failed-to-start-or-timed-out-waiting-to-connect" class="level2">
+<h2 class="anchored" data-anchor-id="python-failed-to-start-or-timed-out-waiting-to-connect">Python failed to start, or “Timed out waiting to connect”</h2>
+<p>You may see <em>“Python 3.x (System) failed to start up (exit code 130)”</em> or <em>“Timed out waiting to connect to session’s ZeroMQ sockets”</em>. The first session got stuck, often while security software scanned it.</p>
+<p><strong>Start a fresh session:</strong> click the <strong>interpreter picker</strong> (top right) → <strong>Start New Session</strong> → choose <strong>Python</strong> (or R). A new session usually starts normally.</p>
+<p>If it keeps failing:</p>
+<ul>
+<li>Close Positron completely and reopen it.</li>
+<li>Try Python <strong>3.13</strong> instead of the newest version.</li>
+<li>Check <strong>Output</strong> tab → <strong>Python Kernel</strong> for errors mentioning <em>blocked</em> or <em>denied</em>. If you see them, ask IT to allow Python and Positron to make <strong>local (localhost) connections</strong> in the endpoint security tool.</li>
+</ul>
+<p>A <em>“SyntaxWarning: ‘return’ in a ‘finally’ block”</em> message in the same output is harmless. Ignore it.</p>
+</section>
+<section id="no-supported-python-3.93.14-was-found" class="level2">
+<h2 class="anchored" data-anchor-id="no-supported-python-3.93.14-was-found">“No supported Python (3.9–3.14) was found”</h2>
+<p>Positron’s Welcome page shows this when it can’t find a Python version it supports. Either Python isn’t installed, or only a version that’s too new (e.g., 3.15) or the Microsoft Store shortcut is.</p>
+<ul>
+<li><strong>Don’t click “Install Python”</strong> on a state computer. It tries to download and run an installer script (<code>uv</code>), which antivirus correctly blocks (<em>“This script contains malicious content and has been blocked”</em>).</li>
+<li>Ask <strong>IT</strong> to install <strong>Python 3.13 or 3.14 for all users</strong> from <a href="https://www.python.org/downloads/windows/">python.org</a>, with <strong>Add python.exe to PATH</strong> checked.</li>
+<li>Then restart Positron, or click <strong>↻</strong> next to <strong>Environment Setup</strong> on the Welcome page.</li>
+</ul>
+</section>
+<section id="errors-about-.ruff.toml-in-the-python-folder" class="level2">
+<h2 class="anchored" data-anchor-id="errors-about-.ruff.toml-in-the-python-folder">Errors about <code>.ruff.toml</code> in the Python folder</h2>
+<p>Messages like <code>Failed to resolve settings for …\Python314\Lib\test\.ruff.toml</code> mean <strong>Python’s own installation folder was opened as a project</strong> (<strong>File → Open Folder</strong> on the Python folder).</p>
+<ol type="1">
+<li><strong>File → Close Folder.</strong></li>
+<li><strong>File → Open Folder…</strong> and choose your <strong>project</strong> folder instead.</li>
+<li>Choose Python from the <strong>interpreter picker</strong>. That’s how you pick which Python to use.</li>
+</ol>
+<p>Never edit or save files inside the Python installation folder.</p>
 </section>
 <section id="the-interpreter-picker-shows-no-r-or-python" class="level2">
 <h2 class="anchored" data-anchor-id="the-interpreter-picker-shows-no-r-or-python">The interpreter picker shows no R or Python</h2>

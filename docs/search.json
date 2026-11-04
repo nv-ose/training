@@ -640,7 +640,19 @@
     "href": "pages/intro-to-positron/troubleshooting.html",
     "title": "Troubleshooting",
     "section": "",
-    "text": "Common first-day problems, especially on Windows.",
+    "text": "Common first-day problems, especially on Windows state computers.",
+    "crumbs": [
+      "Intro to Positron",
+      "Reference",
+      "Troubleshooting"
+    ]
+  },
+  {
+    "objectID": "pages/intro-to-positron/troubleshooting.html#a-file-being-opened-with-execute-access-was-denied-positron-wont-open",
+    "href": "pages/intro-to-positron/troubleshooting.html#a-file-being-opened-with-execute-access-was-denied-positron-wont-open",
+    "title": "Troubleshooting",
+    "section": "“A file being opened with execute access was denied” (Positron won’t open)",
+    "text": "“A file being opened with execute access was denied” (Positron won’t open)\nThe Endpoint Security Agent blocked Positron because it was installed in your user AppData folder (C:\\Users\\&lt;you&gt;\\AppData\\Local\\Programs\\Positron). State security policy blocks programs from running there. You may also see “Windows cannot access the specified device, path, or file” when clicking the taskbar shortcut.\nDon’t try to get around it. Ask IT to:\n\nUninstall the user version.\nInstall Positron with the system installer (the Windows System download on positron.posit.co), which installs to C:\\Program Files\\Positron.\n\nThe same applies to Python: ask IT to install it for all users (C:\\Program Files\\Python3xx).",
     "crumbs": [
       "Intro to Positron",
       "Reference",
@@ -665,6 +677,42 @@
     "title": "Troubleshooting",
     "section": "How do I start a new R or Python console?",
     "text": "How do I start a new R or Python console?\n\nTop-right interpreter picker: choose an R or Python version. That starts a new session.\nConsole panel: click + (new session) at the top of the Console, or the dropdown arrow beside it, and choose R or Python.\nCommand Palette (Ctrl + Shift + P): type Interpreter: Start New Session.\n\nTo restart the current console instead, click ↻ at the top of the Console panel. You can have R and Python consoles open at the same time and switch between them at the top of the Console.",
+    "crumbs": [
+      "Intro to Positron",
+      "Reference",
+      "Troubleshooting"
+    ]
+  },
+  {
+    "objectID": "pages/intro-to-positron/troubleshooting.html#python-failed-to-start-or-timed-out-waiting-to-connect",
+    "href": "pages/intro-to-positron/troubleshooting.html#python-failed-to-start-or-timed-out-waiting-to-connect",
+    "title": "Troubleshooting",
+    "section": "Python failed to start, or “Timed out waiting to connect”",
+    "text": "Python failed to start, or “Timed out waiting to connect”\nYou may see “Python 3.x (System) failed to start up (exit code 130)” or “Timed out waiting to connect to session’s ZeroMQ sockets”. The first session got stuck, often while security software scanned it.\nStart a fresh session: click the interpreter picker (top right) → Start New Session → choose Python (or R). A new session usually starts normally.\nIf it keeps failing:\n\nClose Positron completely and reopen it.\nTry Python 3.13 instead of the newest version.\nCheck Output tab → Python Kernel for errors mentioning blocked or denied. If you see them, ask IT to allow Python and Positron to make local (localhost) connections in the endpoint security tool.\n\nA “SyntaxWarning: ‘return’ in a ‘finally’ block” message in the same output is harmless. Ignore it.",
+    "crumbs": [
+      "Intro to Positron",
+      "Reference",
+      "Troubleshooting"
+    ]
+  },
+  {
+    "objectID": "pages/intro-to-positron/troubleshooting.html#no-supported-python-3.93.14-was-found",
+    "href": "pages/intro-to-positron/troubleshooting.html#no-supported-python-3.93.14-was-found",
+    "title": "Troubleshooting",
+    "section": "“No supported Python (3.9–3.14) was found”",
+    "text": "“No supported Python (3.9–3.14) was found”\nPositron’s Welcome page shows this when it can’t find a Python version it supports. Either Python isn’t installed, or only a version that’s too new (e.g., 3.15) or the Microsoft Store shortcut is.\n\nDon’t click “Install Python” on a state computer. It tries to download and run an installer script (uv), which antivirus correctly blocks (“This script contains malicious content and has been blocked”).\nAsk IT to install Python 3.13 or 3.14 for all users from python.org, with Add python.exe to PATH checked.\nThen restart Positron, or click ↻ next to Environment Setup on the Welcome page.",
+    "crumbs": [
+      "Intro to Positron",
+      "Reference",
+      "Troubleshooting"
+    ]
+  },
+  {
+    "objectID": "pages/intro-to-positron/troubleshooting.html#errors-about-.ruff.toml-in-the-python-folder",
+    "href": "pages/intro-to-positron/troubleshooting.html#errors-about-.ruff.toml-in-the-python-folder",
+    "title": "Troubleshooting",
+    "section": "Errors about .ruff.toml in the Python folder",
+    "text": "Errors about .ruff.toml in the Python folder\nMessages like Failed to resolve settings for …\\Python314\\Lib\\test\\.ruff.toml mean Python’s own installation folder was opened as a project (File → Open Folder on the Python folder).\n\nFile → Close Folder.\nFile → Open Folder… and choose your project folder instead.\nChoose Python from the interpreter picker. That’s how you pick which Python to use.\n\nNever edit or save files inside the Python installation folder.",
     "crumbs": [
       "Intro to Positron",
       "Reference",
@@ -756,102 +804,183 @@
     ]
   },
   {
-    "objectID": "pages/intro-to-positron/index.html",
-    "href": "pages/intro-to-positron/index.html",
-    "title": "Introduction to Positron",
+    "objectID": "pages/intro-to-positron/practice-project.html",
+    "href": "pages/intro-to-positron/practice-project.html",
+    "title": "Practice project: test your setup",
     "section": "",
-    "text": "A short, hands-on walkthrough of Positron, the free editor for R and Python from Posit. By the end you’ll have a project folder set up the NV OSE way and know your way around every part of the window.",
+    "text": "A small, ready-made project with R and Python scripts. Use it to check that Positron, R, and Python work on your computer, and to try everything from the lessons. All data in it is made up.\n⬇ Download positron-practice.zip",
     "crumbs": [
       "Intro to Positron",
-      "Overview"
+      "Practice",
+      "Practice project: test your setup"
     ]
   },
   {
-    "objectID": "pages/intro-to-positron/index.html#overview",
-    "href": "pages/intro-to-positron/index.html#overview",
-    "title": "Introduction to Positron",
-    "section": "Overview",
-    "text": "Overview\n\nAudience: Anyone who writes R or Python, including RStudio and VS Code users switching to Positron\nLevel: Beginner\nDuration: About 45 minutes\nFormat: Self-paced walkthrough, or a short live demo\nComputer: Windows (Mac differences are noted where they matter)",
+    "objectID": "pages/intro-to-positron/practice-project.html#whats-inside",
+    "href": "pages/intro-to-positron/practice-project.html#whats-inside",
+    "title": "Practice project: test your setup",
+    "section": "What’s inside",
+    "text": "What’s inside\npositron-practice/\n├── scripts/\n│   ├── 01_check_setup.R     # checks R and the project setup\n│   ├── 02_explore_data.R    # tour of Console, Variables, Data Explorer, Plots, Help\n│   ├── check_setup.py       # checks Python and the project setup\n│   └── explore_data.py      # the same tour in Python\n├── notebooks/\n│   └── summary.qmd          # a short Quarto report\n├── raw_data/\n│   └── example_ili.csv      # made-up weekly ILI data for 4 counties\n├── processed_data/  images/  reports/  downloads/\n├── README.md\n├── .gitignore\n└── .here",
     "crumbs": [
       "Intro to Positron",
-      "Overview"
+      "Practice",
+      "Practice project: test your setup"
     ]
   },
   {
-    "objectID": "pages/intro-to-positron/index.html#learning-objectives",
-    "href": "pages/intro-to-positron/index.html#learning-objectives",
-    "title": "Introduction to Positron",
-    "section": "Learning objectives",
-    "text": "Learning objectives\nBy the end of this training, you will be able to:\n\nInstall Positron and start an R or Python session.\nOpen a project folder, and set it up with the NV OSE folder structure, a README, and a .here file.\nCreate folders and files, and save them, from the Explorer.\nFind your way around the panes, and match them to what you know from RStudio or VS Code.\nInstall extensions, including AI assistants your agency approves.\nStart tracking a project with Git from Positron.",
+    "objectID": "pages/intro-to-positron/practice-project.html#set-it-up",
+    "href": "pages/intro-to-positron/practice-project.html#set-it-up",
+    "title": "Practice project: test your setup",
+    "section": "1. Set it up",
+    "text": "1. Set it up\n\nDownload positron-practice.zip (button above).\nIn File Explorer, right-click the zip → Extract All…, and extract it to Documents\\GitHub\\. You should end up with Documents\\GitHub\\positron-practice\\.\nIn Positron: File → Open Folder… → choose the positron-practice folder itself (not the folder above it).",
     "crumbs": [
       "Intro to Positron",
-      "Overview"
+      "Practice",
+      "Practice project: test your setup"
     ]
   },
   {
-    "objectID": "pages/intro-to-positron/index.html#prerequisites",
-    "href": "pages/intro-to-positron/index.html#prerequisites",
-    "title": "Introduction to Positron",
-    "section": "Prerequisites",
-    "text": "Prerequisites\n\nA Windows computer where you can install software (or ask IT to install Positron, R, and Python for you)\nFor Lesson 7: Git for Windows and a GitHub account. See the Git and GitHub training.",
+    "objectID": "pages/intro-to-positron/practice-project.html#test-r",
+    "href": "pages/intro-to-positron/practice-project.html#test-r",
+    "title": "Practice project: test your setup",
+    "section": "2. Test R",
+    "text": "2. Test R\n\nStart R from the interpreter picker (top right).\nOpen scripts/01_check_setup.R and click ▶ Run (top right of the editor).\nThe Console should show your R version, the project folder, and three OK lines:\n\nOK: .here file found.\nOK: read example_ili.csv: 80 rows, 5 columns.\nAll done. If every line says OK, R is working in Positron!\nIt installs the here package the first time, if needed.",
     "crumbs": [
       "Intro to Positron",
-      "Overview"
+      "Practice",
+      "Practice project: test your setup"
     ]
   },
   {
-    "objectID": "pages/intro-to-positron/index.html#lessons",
-    "href": "pages/intro-to-positron/index.html#lessons",
-    "title": "Introduction to Positron",
-    "section": "Lessons",
-    "text": "Lessons\n\n\n\n#\nLesson\nTime\n\n\n\n\n1\nWhat is Positron?\n5 min\n\n\n2\nInstalling and first launch\n8 min\n\n\n3\nProjects: folders, not .Rproj\n7 min\n\n\n4\nFiles and folders\n8 min\n\n\n5\nThe panes\n7 min\n\n\n6\nExtensions\n4 min\n\n\n7\nGit in Positron\n6 min\n\n\n\nAlso included:\n\nQuick reference: shortcuts, and “coming from RStudio?”\nTroubleshooting: first-day problems, especially on Windows",
+    "objectID": "pages/intro-to-positron/practice-project.html#test-python",
+    "href": "pages/intro-to-positron/practice-project.html#test-python",
+    "title": "Practice project: test your setup",
+    "section": "3. Test Python",
+    "text": "3. Test Python\n\nStart Python from the interpreter picker (Start New Session → Python).\nOpen scripts/check_setup.py and click ▶ Run.\nYou should see your Python version and where it’s installed, then:\n\nOK: project folder found: ...\\positron-practice\nOK: read example_ili.csv: 80 rows, 5 columns.\nAll done. If every line says OK, Python is working in Positron!\nIt needs no packages, so it’s a clean test of Python itself.\n\n\n\n\n\n\nTipSomething didn’t work?\n\n\n\n\nPython won’t start, or no Python in the picker: Troubleshooting\n“No .here file found”: you opened the wrong folder. Open positron-practice itself.\nhere won’t install: your network may need proxy settings for R. Ask IT.",
     "crumbs": [
       "Intro to Positron",
-      "Overview"
+      "Practice",
+      "Practice project: test your setup"
     ]
   },
   {
-    "objectID": "pages/intro-to-positron/index.html#next-steps",
-    "href": "pages/intro-to-positron/index.html#next-steps",
-    "title": "Introduction to Positron",
-    "section": "Next steps",
-    "text": "Next steps\n\nIntroduction to Quarto: write reports, slides, and websites in Positron with Markdown and R.\nIntroduction to Git and GitHub: version control and collaboration.",
+    "objectID": "pages/intro-to-positron/practice-project.html#explore",
+    "href": "pages/intro-to-positron/practice-project.html#explore",
+    "title": "Practice project: test your setup",
+    "section": "4. Explore",
+    "text": "4. Explore\nR: open scripts/02_explore_data.R and run it line by line with Ctrl + Enter. Watch:\n\nthe Console for output (Lesson 5)\nthe Variables pane, where ili, county_avg, and peak appear\nthe Data Explorer, opened by View(ili)\nthe Plots pane, for the Clark County chart\nthe Help pane, opened by ?aggregate\nprocessed_data/, where a new file appears in the Explorer\n\nPython: scripts/explore_data.py does the same. Part 1 needs no packages. Part 2 needs pandas and matplotlib: set up a project environment first (Lesson 8).\nQuarto: open notebooks/summary.qmd and click Preview (Ctrl + Shift + K) to render a short report. See the Quarto training for more.",
     "crumbs": [
       "Intro to Positron",
-      "Overview"
+      "Practice",
+      "Practice project: test your setup"
     ]
   },
   {
-    "objectID": "pages/intro-to-positron/index.html#maintainer",
-    "href": "pages/intro-to-positron/index.html#maintainer",
-    "title": "Introduction to Positron",
-    "section": "Maintainer",
-    "text": "Maintainer\nMax Wegener — mwegener@health.nv.gov",
+    "objectID": "pages/intro-to-positron/practice-project.html#try-git-optional",
+    "href": "pages/intro-to-positron/practice-project.html#try-git-optional",
+    "title": "Practice project: test your setup",
+    "section": "5. Try Git (optional)",
+    "text": "5. Try Git (optional)\nFollow Lesson 7: initialize a repository, check that the .gitignore keeps processed_data/ and .venv/ out, and make a first commit. Keep it on your computer, or publish it to your personal account to practice. This isn’t an NV OSE project.",
     "crumbs": [
       "Intro to Positron",
-      "Overview"
+      "Practice",
+      "Practice project: test your setup"
     ]
   },
   {
-    "objectID": "pages/intro-to-positron/index.html#license",
-    "href": "pages/intro-to-positron/index.html#license",
-    "title": "Introduction to Positron",
-    "section": "License",
-    "text": "License\nCC BY 4.0",
+    "objectID": "pages/intro-to-positron/08-python-environments.html",
+    "href": "pages/intro-to-positron/08-python-environments.html",
+    "title": "Lesson 8: Python environments",
+    "section": "",
+    "text": "When you pip install pandas, the package goes into one specific Python installation. Without care, every project shares the same Python and the same packages, and that causes problems:\n\nProject A needs pandas 2.1, project B needs pandas 2.3. Only one can be installed.\nAn update for one project breaks another.\nA colleague can’t tell which packages your project needs.\n\nA virtual environment (venv) fixes this. It’s a private copy of Python inside your project folder (usually called .venv), with its own packages. Each project gets exactly what it needs.\n\n\n\n\n\n\n\nWithout environments\nWith a .venv per project\n\n\n\n\nAll projects share one set of packages\nEach project has its own packages\n\n\nUpdates can break other projects\nProjects don’t affect each other\n\n\n“Which packages does this need?” is a guess\nrequirements.txt lists them\n\n\n\n\n\n\n\n\n\nNoteWhat about R?\n\n\n\nR’s equivalent is the renv package (renv::init()). It’s optional, and Positron’s New Folder from Template → R Project offers it (Lesson 3). Most R users at NV OSE don’t need it to start.",
     "crumbs": [
       "Intro to Positron",
-      "Overview"
+      "Lessons",
+      "Lesson 8: Python environments"
     ]
   },
   {
-    "objectID": "pages/intro-to-positron/index.html#last-updated",
-    "href": "pages/intro-to-positron/index.html#last-updated",
-    "title": "Introduction to Positron",
-    "section": "Last updated",
-    "text": "Last updated\n2026-11-04",
+    "objectID": "pages/intro-to-positron/08-python-environments.html#why-environments",
+    "href": "pages/intro-to-positron/08-python-environments.html#why-environments",
+    "title": "Lesson 8: Python environments",
+    "section": "",
+    "text": "When you pip install pandas, the package goes into one specific Python installation. Without care, every project shares the same Python and the same packages, and that causes problems:\n\nProject A needs pandas 2.1, project B needs pandas 2.3. Only one can be installed.\nAn update for one project breaks another.\nA colleague can’t tell which packages your project needs.\n\nA virtual environment (venv) fixes this. It’s a private copy of Python inside your project folder (usually called .venv), with its own packages. Each project gets exactly what it needs.\n\n\n\n\n\n\n\nWithout environments\nWith a .venv per project\n\n\n\n\nAll projects share one set of packages\nEach project has its own packages\n\n\nUpdates can break other projects\nProjects don’t affect each other\n\n\n“Which packages does this need?” is a guess\nrequirements.txt lists them\n\n\n\n\n\n\n\n\n\nNoteWhat about R?\n\n\n\nR’s equivalent is the renv package (renv::init()). It’s optional, and Positron’s New Folder from Template → R Project offers it (Lesson 3). Most R users at NV OSE don’t need it to start.",
     "crumbs": [
       "Intro to Positron",
-      "Overview"
+      "Lessons",
+      "Lesson 8: Python environments"
+    ]
+  },
+  {
+    "objectID": "pages/intro-to-positron/08-python-environments.html#create-an-environment",
+    "href": "pages/intro-to-positron/08-python-environments.html#create-an-environment",
+    "title": "Lesson 8: Python environments",
+    "section": "Create an environment",
+    "text": "Create an environment\n\nOpen your project folder in Positron (File → Open Folder…).\nOpen the Terminal tab (next to the Console). On Windows it’s PowerShell.\nRun (use the Python version you want, e.g., 3.13):\npy -3.13 -m venv .venv\nThis creates a .venv folder in your project. It takes a few seconds.\n\n\n\n\n\n\nTip‘py’ is not recognized?\n\n\n\nUse the full path to the Python you want instead, for example: & \"C:\\Program Files\\Python313\\python.exe\" -m venv .venv. Find the path with py -0p or where python in Command Prompt (Troubleshooting).\n\n\nSelect it: click the interpreter picker (top right) → Start New Session (or New Console Session…), and choose the Python marked .venv / your project’s environment. Positron usually detects it automatically and may suggest it.\n\nCreating a Python Project with File → New Folder from Template… can also set up an environment for you.",
+    "crumbs": [
+      "Intro to Positron",
+      "Lessons",
+      "Lesson 8: Python environments"
+    ]
+  },
+  {
+    "objectID": "pages/intro-to-positron/08-python-environments.html#install-packages-into-it",
+    "href": "pages/intro-to-positron/08-python-environments.html#install-packages-into-it",
+    "title": "Lesson 8: Python environments",
+    "section": "Install packages into it",
+    "text": "Install packages into it\nIn the Terminal, install with the environment’s own Python, so packages go into .venv and nowhere else:\n.venv\\Scripts\\python -m pip install pandas matplotlib\nThen restart the Python session (↻ at the top of the Console) so it sees the new packages.\n\n\n\n\n\n\nTipWhy not ‘activate’ the environment?\n\n\n\nMany guides say to run .venv\\Scripts\\activate first. On state computers, PowerShell often blocks that script (“running scripts is disabled on this system”). You don’t need it: calling .venv\\Scripts\\python directly does the same thing, and Positron’s Console uses the environment you selected in the picker.\n\n\n\n\n\n\n\n\nWarningpip install fails with SSL or connection errors?\n\n\n\nThe state network may need proxy settings for pip to download packages. Ask IT for the proxy address, or for the approved way to install Python packages.",
+    "crumbs": [
+      "Intro to Positron",
+      "Lessons",
+      "Lesson 8: Python environments"
+    ]
+  },
+  {
+    "objectID": "pages/intro-to-positron/08-python-environments.html#record-which-packages-the-project-needs",
+    "href": "pages/intro-to-positron/08-python-environments.html#record-which-packages-the-project-needs",
+    "title": "Lesson 8: Python environments",
+    "section": "Record which packages the project needs",
+    "text": "Record which packages the project needs\nSave the list of packages to a file, so others (or future you) can recreate the environment:\n.venv\\Scripts\\python -m pip freeze &gt; requirements.txt\nCommit requirements.txt to Git. To recreate the environment on another computer:\npy -3.13 -m venv .venv\n.venv\\Scripts\\python -m pip install -r requirements.txt",
+    "crumbs": [
+      "Intro to Positron",
+      "Lessons",
+      "Lesson 8: Python environments"
+    ]
+  },
+  {
+    "objectID": "pages/intro-to-positron/08-python-environments.html#keep-.venv-out-of-git",
+    "href": "pages/intro-to-positron/08-python-environments.html#keep-.venv-out-of-git",
+    "title": "Lesson 8: Python environments",
+    "section": "Keep .venv out of Git",
+    "text": "Keep .venv out of Git\nThe .venv folder is large and specific to your computer, so never commit it. Add this line to your project’s .gitignore:\n.venv/\nCommit requirements.txt instead.",
+    "crumbs": [
+      "Intro to Positron",
+      "Lessons",
+      "Lesson 8: Python environments"
+    ]
+  },
+  {
+    "objectID": "pages/intro-to-positron/08-python-environments.html#try-it-with-the-practice-project",
+    "href": "pages/intro-to-positron/08-python-environments.html#try-it-with-the-practice-project",
+    "title": "Lesson 8: Python environments",
+    "section": "Try it with the practice project",
+    "text": "Try it with the practice project\nIn the practice project:\n\nCreate a .venv in the positron-practice folder.\nInstall pandas and matplotlib into it.\nSelect the environment in the interpreter picker.\nRun scripts/check_setup.py. It should say “OK: you’re using this project’s virtual environment (.venv).”\nRun part 2 of scripts/explore_data.py to see a pandas data frame in the Variables pane and a chart in Plots.",
+    "crumbs": [
+      "Intro to Positron",
+      "Lessons",
+      "Lesson 8: Python environments"
+    ]
+  },
+  {
+    "objectID": "pages/intro-to-positron/08-python-environments.html#quick-reference",
+    "href": "pages/intro-to-positron/08-python-environments.html#quick-reference",
+    "title": "Lesson 8: Python environments",
+    "section": "Quick reference",
+    "text": "Quick reference\n\n\n\n\n\n\n\nTask\nCommand (PowerShell, in the project folder)\n\n\n\n\nCreate an environment\npy -3.13 -m venv .venv\n\n\nInstall a package\n.venv\\Scripts\\python -m pip install pandas\n\n\nList installed packages\n.venv\\Scripts\\python -m pip list\n\n\nSave the package list\n.venv\\Scripts\\python -m pip freeze &gt; requirements.txt\n\n\nRecreate from the list\n.venv\\Scripts\\python -m pip install -r requirements.txt\n\n\nUse it in Positron\nInterpreter picker → choose the .venv Python",
+    "crumbs": [
+      "Intro to Positron",
+      "Lessons",
+      "Lesson 8: Python environments"
     ]
   },
   {
@@ -1027,7 +1156,7 @@
     "href": "pages/intro-to-positron/02-setup.html",
     "title": "Lesson 2: Installing and first launch",
     "section": "",
-    "text": "Positron doesn’t install R or Python itself. It finds and uses the versions already on your computer, so install them first:\n\n\n\nLanguage\nWhere to get it\nNotes\n\n\n\n\nR\ncran.r-project.org\nAccept the defaults\n\n\nPython\npython.org/downloads\nOn Windows, check “Add python.exe to PATH” during setup\n\n\n\n\n\n\n\n\n\nWarningWindows: avoid the Microsoft Store Python\n\n\n\nWindows may include a “Python” shortcut that just opens the Microsoft Store. It often doesn’t work with Positron. Install Python from python.org instead.\n\n\nOn a state computer, you may need IT to install software. Request it ahead of time.",
+    "text": "Positron doesn’t install R or Python itself. It finds and uses the versions already on your computer, so install them first:\n\n\n\nLanguage\nWhere to get it\nNotes\n\n\n\n\nR\ncran.r-project.org\nAccept the defaults\n\n\nPython\npython.org/downloads\nOn Windows, check “Add python.exe to PATH” during setup\n\n\n\n\n\n\n\n\n\nWarningWindows: avoid the Microsoft Store Python\n\n\n\nWindows may include a “Python” shortcut that just opens the Microsoft Store. It often doesn’t work with Positron. Install Python from python.org instead.\n\n\n\n\n\n\n\n\nImportantOn a state computer: ask IT to install everything system-wide\n\n\n\nSecurity software blocks programs installed in your user AppData folder. Ask IT to install:\n\nPositron with the system installer (installs to C:\\Program Files\\Positron), not the user installer\nR (installs to C:\\Program Files\\R by default)\nPython 3.13 or 3.14, for all users (installer: Customize installation → Install Python for all users), with Add python.exe to PATH\n\nSee Troubleshooting if Positron or Python won’t start.",
     "crumbs": [
       "Intro to Positron",
       "Lessons",
@@ -1039,7 +1168,7 @@
     "href": "pages/intro-to-positron/02-setup.html#install-r-andor-python-first",
     "title": "Lesson 2: Installing and first launch",
     "section": "",
-    "text": "Positron doesn’t install R or Python itself. It finds and uses the versions already on your computer, so install them first:\n\n\n\nLanguage\nWhere to get it\nNotes\n\n\n\n\nR\ncran.r-project.org\nAccept the defaults\n\n\nPython\npython.org/downloads\nOn Windows, check “Add python.exe to PATH” during setup\n\n\n\n\n\n\n\n\n\nWarningWindows: avoid the Microsoft Store Python\n\n\n\nWindows may include a “Python” shortcut that just opens the Microsoft Store. It often doesn’t work with Positron. Install Python from python.org instead.\n\n\nOn a state computer, you may need IT to install software. Request it ahead of time.",
+    "text": "Positron doesn’t install R or Python itself. It finds and uses the versions already on your computer, so install them first:\n\n\n\nLanguage\nWhere to get it\nNotes\n\n\n\n\nR\ncran.r-project.org\nAccept the defaults\n\n\nPython\npython.org/downloads\nOn Windows, check “Add python.exe to PATH” during setup\n\n\n\n\n\n\n\n\n\nWarningWindows: avoid the Microsoft Store Python\n\n\n\nWindows may include a “Python” shortcut that just opens the Microsoft Store. It often doesn’t work with Positron. Install Python from python.org instead.\n\n\n\n\n\n\n\n\nImportantOn a state computer: ask IT to install everything system-wide\n\n\n\nSecurity software blocks programs installed in your user AppData folder. Ask IT to install:\n\nPositron with the system installer (installs to C:\\Program Files\\Positron), not the user installer\nR (installs to C:\\Program Files\\R by default)\nPython 3.13 or 3.14, for all users (installer: Customize installation → Install Python for all users), with Add python.exe to PATH\n\nSee Troubleshooting if Positron or Python won’t start.",
     "crumbs": [
       "Intro to Positron",
       "Lessons",
@@ -1088,6 +1217,18 @@
     "title": "Lesson 2: Installing and first launch",
     "section": "5. Dark mode and themes",
     "text": "5. Dark mode and themes\n\nPress Ctrl + K, release, then Ctrl + T (Mac: Cmd + K, then Cmd + T).\nChoose a dark theme (e.g., Positron Dark) from the list. Use the arrow keys to preview.\n\nOther ways to get there:\n\nWindows: File → Preferences → Theme → Color Theme\nMac: Positron → Settings → Theme → Color Theme\nCommand Palette: type Color Theme\n\nTo follow your computer’s light/dark setting automatically: open Settings, search for auto detect color scheme, and turn on Window: Auto Detect Color Scheme.",
+    "crumbs": [
+      "Intro to Positron",
+      "Lessons",
+      "Lesson 2: Installing and first launch"
+    ]
+  },
+  {
+    "objectID": "pages/intro-to-positron/02-setup.html#test-your-setup",
+    "href": "pages/intro-to-positron/02-setup.html#test-your-setup",
+    "title": "Lesson 2: Installing and first launch",
+    "section": "6. Test your setup",
+    "text": "6. Test your setup\nDownload the practice project and run its two check scripts: one for R and one for Python. If both print OK, you’re ready for the rest of the training.",
     "crumbs": [
       "Intro to Positron",
       "Lessons",
@@ -1710,14 +1851,14 @@
     "href": "index.html#trainings",
     "title": "NV OSE Training",
     "section": "Trainings",
-    "text": "Trainings\n\n\n\nTraining\nWhat you’ll learn\nLevel\nTime\n\n\n\n\nIntroduction to Git and GitHub\nGit vs. GitHub, READMEs, .gitignore, GitHub Desktop, the command line, branches, pull requests, forks, public vs. private, and data security\nBeginner\nAbout 3 hours\n\n\nIntroduction to Quarto\nMarkdown, what Quarto adds, R code chunks, HTML reports, revealjs presentations, websites, accessibility, and publishing on GitHub Pages\nBeginner\nAbout 5 hours (3 sessions)\n\n\nIntroduction to Positron\nThe Positron IDE for R and Python: interpreters, project folders and here(), the NV OSE folder structure, panes compared with RStudio and VS Code, extensions (including AI assistants), and Git\nBeginner\nAbout 45 minutes\n\n\n\nMore trainings are on the way."
+    "text": "Trainings\n\n\n\nTraining\nWhat you’ll learn\nLevel\nTime\n\n\n\n\nIntroduction to Git and GitHub\nGit vs. GitHub, READMEs, .gitignore, GitHub Desktop, the command line, branches, pull requests, forks, public vs. private, and data security\nBeginner\nAbout 3 hours\n\n\nIntroduction to Quarto\nMarkdown, what Quarto adds, R code chunks, HTML reports, revealjs presentations, websites, accessibility, and publishing on GitHub Pages\nBeginner\nAbout 5 hours (3 sessions)\n\n\nIntroduction to Positron\nThe Positron IDE for R and Python: interpreters, project folders and here(), the NV OSE folder structure, panes compared with RStudio and VS Code, extensions (including AI assistants), Git, and Python environments\nBeginner\nAbout 1 hour\n\n\n\nMore trainings are on the way."
   },
   {
     "objectID": "index.html#suggested-order",
     "href": "index.html#suggested-order",
     "title": "NV OSE Training",
     "section": "Suggested order",
-    "text": "Suggested order\nNew to all of this? Take the trainings in this order:\n\nIntroduction to Positron (45 min): set up the editor and a project folder.\nIntroduction to Quarto, Sessions 1–2: Markdown, code, reports, and slides.\nIntroduction to Git and GitHub: version control and sharing your work.\nIntroduction to Quarto, Session 3: build a website and publish it on GitHub Pages.\n\nAlready comfortable with one of these? Skip ahead. Each training lists its own prerequisites."
+    "text": "Suggested order\nNew to all of this? Take the trainings in this order:\n\nIntroduction to Positron (1 hour): set up the editor and a project folder.\nIntroduction to Quarto, Sessions 1–2: Markdown, code, reports, and slides.\nIntroduction to Git and GitHub: version control and sharing your work.\nIntroduction to Quarto, Session 3: build a website and publish it on GitHub Pages.\n\nAlready comfortable with one of these? Skip ahead. Each training lists its own prerequisites."
   },
   {
     "objectID": "index.html#how-to-use-these-materials",
@@ -2314,7 +2455,7 @@
     "href": "pages/intro-to-positron/03-projects.html#opening-a-folder",
     "title": "Lesson 3: Projects: folders, not .Rproj",
     "section": "Opening a folder",
-    "text": "Opening a folder\nFile → Open Folder… (or Ctrl + K, then Ctrl + O), then choose your project folder.\n\n \n\nThe folder’s name then appears at the top of the Explorer and in the folder menu at the top right, next to the interpreter picker. Use that menu to switch between recent projects.\n\nWorking on two projects at once\nUse File → New Window (Ctrl + Shift + N), then open the other folder in the new window. Each window is its own project, with its own Console and files.",
+    "text": "Opening a folder\nFile → Open Folder… (or Ctrl + K, then Ctrl + O), then choose your project folder.\n\n \n\n\n\n\n\n\n\nWarning\n\n\n\nOpen your project folder, not the folder where R or Python is installed. To choose which R or Python to use, use the interpreter picker (Lesson 2).\n\n\nThe folder’s name then appears at the top of the Explorer and in the folder menu at the top right, next to the interpreter picker. Use that menu to switch between recent projects.\n\nWorking on two projects at once\nUse File → New Window (Ctrl + Shift + N), then open the other folder in the new window. Each window is its own project, with its own Console and files.",
     "crumbs": [
       "Intro to Positron",
       "Lessons",
@@ -2547,6 +2688,105 @@
       "Intro to Positron",
       "Lessons",
       "Lesson 7: Git in Positron"
+    ]
+  },
+  {
+    "objectID": "pages/intro-to-positron/index.html",
+    "href": "pages/intro-to-positron/index.html",
+    "title": "Introduction to Positron",
+    "section": "",
+    "text": "A short, hands-on walkthrough of Positron, the free editor for R and Python from Posit. By the end you’ll have a project folder set up the NV OSE way and know your way around every part of the window.",
+    "crumbs": [
+      "Intro to Positron",
+      "Overview"
+    ]
+  },
+  {
+    "objectID": "pages/intro-to-positron/index.html#overview",
+    "href": "pages/intro-to-positron/index.html#overview",
+    "title": "Introduction to Positron",
+    "section": "Overview",
+    "text": "Overview\n\nAudience: Anyone who writes R or Python, including RStudio and VS Code users switching to Positron\nLevel: Beginner\nDuration: About 55 minutes, plus optional practice\nFormat: Self-paced walkthrough, or a short live demo\nComputer: Windows (Mac differences are noted where they matter)",
+    "crumbs": [
+      "Intro to Positron",
+      "Overview"
+    ]
+  },
+  {
+    "objectID": "pages/intro-to-positron/index.html#learning-objectives",
+    "href": "pages/intro-to-positron/index.html#learning-objectives",
+    "title": "Introduction to Positron",
+    "section": "Learning objectives",
+    "text": "Learning objectives\nBy the end of this training, you will be able to:\n\nInstall Positron and start an R or Python session.\nOpen a project folder, and set it up with the NV OSE folder structure, a README, and a .here file.\nCreate folders and files, and save them, from the Explorer.\nFind your way around the panes, and match them to what you know from RStudio or VS Code.\nInstall extensions, including AI assistants your agency approves.\nStart tracking a project with Git from Positron.\nCreate a Python virtual environment and install packages into it.",
+    "crumbs": [
+      "Intro to Positron",
+      "Overview"
+    ]
+  },
+  {
+    "objectID": "pages/intro-to-positron/index.html#prerequisites",
+    "href": "pages/intro-to-positron/index.html#prerequisites",
+    "title": "Introduction to Positron",
+    "section": "Prerequisites",
+    "text": "Prerequisites\n\nA Windows computer where you can install software (or ask IT to install Positron, R, and Python for you)\nFor Lesson 7: Git for Windows and a GitHub account. See the Git and GitHub training.",
+    "crumbs": [
+      "Intro to Positron",
+      "Overview"
+    ]
+  },
+  {
+    "objectID": "pages/intro-to-positron/index.html#lessons",
+    "href": "pages/intro-to-positron/index.html#lessons",
+    "title": "Introduction to Positron",
+    "section": "Lessons",
+    "text": "Lessons\n\n\n\n#\nLesson\nTime\n\n\n\n\n1\nWhat is Positron?\n5 min\n\n\n2\nInstalling and first launch\n8 min\n\n\n3\nProjects: folders, not .Rproj\n7 min\n\n\n4\nFiles and folders\n8 min\n\n\n5\nThe panes\n7 min\n\n\n6\nExtensions\n4 min\n\n\n7\nGit in Positron\n6 min\n\n\n8\nPython environments\n10 min\n\n\n\nAlso included:\n\nPractice project: a downloadable R and Python project to test your setup and try each lesson\nQuick reference: shortcuts, and “coming from RStudio?”\nTroubleshooting: first-day problems, especially on Windows",
+    "crumbs": [
+      "Intro to Positron",
+      "Overview"
+    ]
+  },
+  {
+    "objectID": "pages/intro-to-positron/index.html#next-steps",
+    "href": "pages/intro-to-positron/index.html#next-steps",
+    "title": "Introduction to Positron",
+    "section": "Next steps",
+    "text": "Next steps\n\nIntroduction to Quarto: write reports, slides, and websites in Positron with Markdown and R.\nIntroduction to Git and GitHub: version control and collaboration.",
+    "crumbs": [
+      "Intro to Positron",
+      "Overview"
+    ]
+  },
+  {
+    "objectID": "pages/intro-to-positron/index.html#maintainer",
+    "href": "pages/intro-to-positron/index.html#maintainer",
+    "title": "Introduction to Positron",
+    "section": "Maintainer",
+    "text": "Maintainer\nMax Wegener — mwegener@health.nv.gov",
+    "crumbs": [
+      "Intro to Positron",
+      "Overview"
+    ]
+  },
+  {
+    "objectID": "pages/intro-to-positron/index.html#license",
+    "href": "pages/intro-to-positron/index.html#license",
+    "title": "Introduction to Positron",
+    "section": "License",
+    "text": "License\nCC BY 4.0",
+    "crumbs": [
+      "Intro to Positron",
+      "Overview"
+    ]
+  },
+  {
+    "objectID": "pages/intro-to-positron/index.html#last-updated",
+    "href": "pages/intro-to-positron/index.html#last-updated",
+    "title": "Introduction to Positron",
+    "section": "Last updated",
+    "text": "Last updated\n2026-11-04",
+    "crumbs": [
+      "Intro to Positron",
+      "Overview"
     ]
   },
   {

@@ -1,0 +1,109 @@
+---
+title: "Lesson 8: Python environments"
+---
+
+## Why environments?
+
+When you `pip install pandas`, the package goes into **one specific Python installation**. Without care, every project shares the same Python and the same packages, and that causes problems:
+
+- Project A needs pandas 2.1, project B needs pandas 2.3. Only one can be installed.
+- An update for one project breaks another.
+- A colleague can't tell which packages your project needs.
+
+A **virtual environment** (venv) fixes this. It's a private copy of Python **inside your project folder** (usually called `.venv`), with its own packages. Each project gets exactly what it needs.
+
+| Without environments | With a `.venv` per project |
+|---|---|
+| All projects share one set of packages | Each project has its own packages |
+| Updates can break other projects | Projects don't affect each other |
+| "Which packages does this need?" is a guess | `requirements.txt` lists them |
+
+::: {.callout-note title="What about R?"}
+R's equivalent is the **renv** package (`renv::init()`). It's optional, and Positron's **New Folder from Template → R Project** offers it ([Lesson 3](03-projects.qmd#creating-a-new-project-from-a-template)). Most R users at NV OSE don't need it to start.
+:::
+
+## Create an environment
+
+1. Open your project folder in Positron (**File → Open Folder…**).
+2. Open the **Terminal** tab (next to the Console). On Windows it's **PowerShell**.
+3. Run (use the Python version you want, e.g., 3.13):
+
+   ```powershell
+   py -3.13 -m venv .venv
+   ```
+
+   This creates a `.venv` folder in your project. It takes a few seconds.
+
+   ::: {.callout-tip title="'py' is not recognized?"}
+   Use the full path to the Python you want instead, for example:
+   `& "C:\Program Files\Python313\python.exe" -m venv .venv`.
+   Find the path with `py -0p` or `where python` in Command Prompt ([Troubleshooting](troubleshooting.qmd#where-is-python-installed)).
+   :::
+
+4. **Select it:** click the **interpreter picker** (top right) → **Start New Session** (or **New Console Session…**), and choose the Python marked **.venv** / your project's environment. Positron usually detects it automatically and may suggest it.
+
+Creating a **Python Project** with **File → New Folder from Template…** can also set up an environment for you.
+
+## Install packages into it
+
+In the **Terminal**, install with the environment's own Python, so packages go into `.venv` and nowhere else:
+
+```powershell
+.venv\Scripts\python -m pip install pandas matplotlib
+```
+
+Then **restart** the Python session (↻ at the top of the Console) so it sees the new packages.
+
+::: {.callout-tip title="Why not 'activate' the environment?"}
+Many guides say to run `.venv\Scripts\activate` first. On state computers, PowerShell often **blocks** that script ("running scripts is disabled on this system"). You don't need it: calling `.venv\Scripts\python` directly does the same thing, and Positron's Console uses the environment you selected in the picker.
+:::
+
+::: {.callout-warning title="pip install fails with SSL or connection errors?"}
+The state network may need **proxy settings** for pip to download packages. Ask IT for the proxy address, or for the approved way to install Python packages.
+:::
+
+## Record which packages the project needs
+
+Save the list of packages to a file, so others (or future you) can recreate the environment:
+
+```powershell
+.venv\Scripts\python -m pip freeze > requirements.txt
+```
+
+Commit `requirements.txt` to Git. To recreate the environment on another computer:
+
+```powershell
+py -3.13 -m venv .venv
+.venv\Scripts\python -m pip install -r requirements.txt
+```
+
+## Keep `.venv` out of Git
+
+The `.venv` folder is large and specific to your computer, so **never commit it**. Add this line to your project's `.gitignore`:
+
+```
+.venv/
+```
+
+Commit `requirements.txt` instead.
+
+## Try it with the practice project
+
+In the [practice project](practice-project.qmd):
+
+1. Create a `.venv` in the `positron-practice` folder.
+2. Install `pandas` and `matplotlib` into it.
+3. Select the environment in the interpreter picker.
+4. Run `scripts/check_setup.py`. It should say **"OK: you're using this project's virtual environment (.venv)."**
+5. Run part 2 of `scripts/explore_data.py` to see a pandas data frame in the Variables pane and a chart in Plots.
+
+## Quick reference
+
+| Task | Command (PowerShell, in the project folder) |
+|---|---|
+| Create an environment | `py -3.13 -m venv .venv` |
+| Install a package | `.venv\Scripts\python -m pip install pandas` |
+| List installed packages | `.venv\Scripts\python -m pip list` |
+| Save the package list | `.venv\Scripts\python -m pip freeze > requirements.txt` |
+| Recreate from the list | `.venv\Scripts\python -m pip install -r requirements.txt` |
+| Use it in Positron | Interpreter picker → choose the **.venv** Python |

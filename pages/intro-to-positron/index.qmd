@@ -8,7 +8,7 @@ A short, hands-on walkthrough of **Positron**, the free editor for R and Python 
 
 - **Audience:** Anyone who writes R or Python, including RStudio and VS Code users switching to Positron
 - **Level:** Beginner
-- **Duration:** About 45 minutes
+- **Duration:** About 55 minutes, plus optional practice
 - **Format:** Self-paced walkthrough, or a short live demo
 - **Computer:** Windows (Mac differences are noted where they matter)
 
@@ -22,6 +22,7 @@ By the end of this training, you will be able to:
 4. Find your way around the panes, and match them to what you know from RStudio or VS Code.
 5. Install extensions, including AI assistants your agency approves.
 6. Start tracking a project with Git from Positron.
+7. Create a Python virtual environment and install packages into it.
 
 ## Prerequisites
 
@@ -39,8 +40,11 @@ By the end of this training, you will be able to:
 | 5 | [The panes](05-panes.qmd) | 7 min |
 | 6 | [Extensions](06-extensions.qmd) | 4 min |
 | 7 | [Git in Positron](07-git.qmd) | 6 min |
+| 8 | [Python environments](08-python-environments.qmd) | 10 min |
 
 **Also included:**
+
+- [Practice project](practice-project.qmd): a downloadable R and Python project to **test your setup** and try each lesson
 
 - [Quick reference](quick-reference.qmd): shortcuts, and "coming from RStudio?"
 - [Troubleshooting](troubleshooting.qmd): first-day problems, especially on Windows

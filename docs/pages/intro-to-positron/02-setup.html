@@ -385,17 +385,40 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Lesson 7: Git in Positron</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/intro-to-positron/08-python-environments.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lesson 8: Python environments</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
- <span class="menu-text">Reference</span></a>
+ <span class="menu-text">Practice</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/intro-to-positron/practice-project.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Practice project: test your setup</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Reference</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../pages/intro-to-positron/quick-reference.html" class="sidebar-item-text sidebar-link">
@@ -428,6 +451,7 @@ ul.task-list li input[type="checkbox"] {
   </ul></li>
   <li><a href="#where-to-run-code" id="toc-where-to-run-code" class="nav-link" data-scroll-target="#where-to-run-code">4. Where to run code</a></li>
   <li><a href="#dark-mode-and-themes" id="toc-dark-mode-and-themes" class="nav-link" data-scroll-target="#dark-mode-and-themes">5. Dark mode and themes</a></li>
+  <li><a href="#test-your-setup" id="toc-test-your-setup" class="nav-link" data-scroll-target="#test-your-setup">6. Test your setup</a></li>
   </ul>
 </nav>
     </div>
@@ -491,7 +515,25 @@ ul.task-list li input[type="checkbox"] {
 <p>Windows may include a “Python” shortcut that just opens the Microsoft Store. It often doesn’t work with Positron. Install Python from <a href="https://www.python.org/downloads/">python.org</a> instead.</p>
 </div>
 </div>
-<p>On a state computer, you may need IT to install software. Request it ahead of time.</p>
+<div class="callout callout-style-default callout-important callout-titled" title="On a state computer: ask IT to install everything system-wide">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>On a state computer: ask IT to install everything system-wide
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Security software blocks programs installed in your user <code>AppData</code> folder. Ask IT to install:</p>
+<ul>
+<li><strong>Positron</strong> with the <strong>system installer</strong> (installs to <code>C:\Program Files\Positron</code>), not the user installer</li>
+<li><strong>R</strong> (installs to <code>C:\Program Files\R</code> by default)</li>
+<li><strong>Python 3.13 or 3.14</strong>, <strong>for all users</strong> (installer: <strong>Customize installation → Install Python for all users</strong>), with <strong>Add python.exe to PATH</strong></li>
+</ul>
+<p>See <a href="../../pages/intro-to-positron/troubleshooting.html">Troubleshooting</a> if Positron or Python won’t start.</p>
+</div>
+</div>
 </section>
 <section id="install-positron" class="level2">
 <h2 class="anchored" data-anchor-id="install-positron">2. Install Positron</h2>
@@ -591,6 +633,10 @@ ul.task-list li input[type="checkbox"] {
 <li><strong>Command Palette:</strong> type <code>Color Theme</code></li>
 </ul>
 <p>To follow your computer’s light/dark setting automatically: open <strong>Settings</strong>, search for <code>auto detect color scheme</code>, and turn on <strong>Window: Auto Detect Color Scheme</strong>.</p>
+</section>
+<section id="test-your-setup" class="level2">
+<h2 class="anchored" data-anchor-id="test-your-setup">6. Test your setup</h2>
+<p>Download the <strong><a href="../../pages/intro-to-positron/practice-project.html">practice project</a></strong> and run its two check scripts: one for R and one for Python. If both print <strong>OK</strong>, you’re ready for the rest of the training.</p>
 
 
 </section>

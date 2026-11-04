@@ -28,6 +28,10 @@ Keep it. Positron just opens the folder it's in, and colleagues using RStudio ca
 []{.red-box style="left:10.5%; top:31.5%; width:84%; height:4%;"}
 :::
 
+::: {.callout-warning}
+Open your **project** folder, not the folder where R or Python is installed. To choose which R or Python to use, use the **interpreter picker** ([Lesson 2](02-setup.qmd#start-r-or-python-the-interpreter-picker)).
+:::
+
 The folder's name then appears at the top of the Explorer and in the **folder menu** at the top right, next to the interpreter picker. Use that menu to switch between recent projects.
 
 ### Working on two projects at once

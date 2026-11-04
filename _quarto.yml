@@ -8,6 +8,7 @@ project:
   resources:
     - "/.nojekyll"
     - "pages/intro-to-github/README-template.md"
+    - "practice/positron-practice.zip"
 
 website:
   title: "NV OSE Training"
@@ -104,6 +105,10 @@ website:
             - pages/intro-to-positron/05-panes.qmd
             - pages/intro-to-positron/06-extensions.qmd
             - pages/intro-to-positron/07-git.qmd
+            - pages/intro-to-positron/08-python-environments.qmd
+        - section: "Practice"
+          contents:
+            - pages/intro-to-positron/practice-project.qmd
         - section: "Reference"
           contents:
             - pages/intro-to-positron/quick-reference.qmd

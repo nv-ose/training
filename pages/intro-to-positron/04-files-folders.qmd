@@ -33,7 +33,7 @@ Hover over the project name at the top of the Explorer to see four icons: **New 
 
 ::: {.annotated style="max-width:45%"}
 ![](../../images/intro-to-positron/07-explorer-new-folder-button.png){fig-alt="The top of the Explorer for MY-R-PROJECT, with four icons beside the name: New File, New Folder (marked with a red box), Refresh, and Collapse All."}
-[]{.red-circle style="left:64%; top:40%; width:12%; height:42%;"}
+[]{.red-circle style="left:64%; top:52%; width:12%; height:42%;"}
 :::
 
 1. Click the folder you want the new folder **inside** (or click empty space to put it at the top level).

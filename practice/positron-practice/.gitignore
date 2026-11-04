@@ -1,0 +1,25 @@
+# Data: real projects keep data out of Git.
+# (This practice project's example_ili.csv is made up, so it's included.)
+processed_data/*
+!processed_data/.gitkeep
+downloads/*
+!downloads/.gitkeep
+
+# Python environment
+.venv/
+__pycache__/
+
+# R
+.Rhistory
+.RData
+.Rproj.user/
+
+# Quarto
+/.quarto/
+*_files/
+reports/*.html
+notebooks/*.html
+
+# Secrets
+.env
+.Renviron
