@@ -1,0 +1,63 @@
+---
+title: "Introduction to Positron"
+---
+
+A short, hands-on walkthrough of **Positron**, the free editor for R and Python from Posit. By the end you'll have a project folder set up the NV OSE way and know your way around every part of the window.
+
+## Overview
+
+- **Audience:** Anyone who writes R or Python, including RStudio and VS Code users switching to Positron
+- **Level:** Beginner
+- **Duration:** About 45 minutes
+- **Format:** Self-paced walkthrough, or a short live demo
+- **Computer:** Windows (Mac differences are noted where they matter)
+
+## Learning objectives
+
+By the end of this training, you will be able to:
+
+1. Install Positron and start an R or Python session.
+2. Open a project folder, and set it up with the NV OSE folder structure, a README, and a `.here` file.
+3. Create folders and files, and save them, from the Explorer.
+4. Find your way around the panes, and match them to what you know from RStudio or VS Code.
+5. Install extensions, including AI assistants your agency approves.
+6. Start tracking a project with Git from Positron.
+
+## Prerequisites
+
+- A Windows computer where you can install software (or ask IT to install **Positron**, **R**, and **Python** for you)
+- For Lesson 7: [Git for Windows](https://git-scm.com/download/win) and a GitHub account. See the [Git and GitHub training](../intro-to-github/02-setup.qmd).
+
+## Lessons
+
+| # | Lesson | Time |
+|---|---|---|
+| 1 | [What is Positron?](01-introduction.qmd) | 5 min |
+| 2 | [Installing and first launch](02-setup.qmd) | 8 min |
+| 3 | [Projects: folders, not .Rproj](03-projects.qmd) | 7 min |
+| 4 | [Files and folders](04-files-folders.qmd) | 8 min |
+| 5 | [The panes](05-panes.qmd) | 7 min |
+| 6 | [Extensions](06-extensions.qmd) | 4 min |
+| 7 | [Git in Positron](07-git.qmd) | 6 min |
+
+**Also included:**
+
+- [Quick reference](quick-reference.qmd): shortcuts, and "coming from RStudio?"
+- [Troubleshooting](troubleshooting.qmd): first-day problems, especially on Windows
+
+## Next steps
+
+- **[Introduction to Quarto](../intro-to-quarto/index.qmd):** write reports, slides, and websites in Positron with Markdown and R.
+- **[Introduction to Git and GitHub](../intro-to-github/index.qmd):** version control and collaboration.
+
+## Maintainer
+
+Max Wegener — [mwegener@health.nv.gov](mailto:mwegener@health.nv.gov)
+
+## License
+
+CC BY 4.0
+
+## Last updated
+
+2026-11-04

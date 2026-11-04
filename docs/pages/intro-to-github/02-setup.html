@@ -319,6 +319,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a class="nav-link active" href="../../pages/intro-to-github/index.html" aria-current="page"> 
 <span class="menu-text">Intro to Git &amp; GitHub</span></a>
   </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../pages/intro-to-quarto/index.html"> 
+<span class="menu-text">Intro to Quarto</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../pages/intro-to-positron/index.html"> 
+<span class="menu-text">Intro to Positron</span></a>
+  </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
@@ -443,6 +451,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../../pages/intro-to-github/readme-guide.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Writing a good README</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../../pages/intro-to-github/cheatsheet.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Git and GitHub cheat sheet</span></a>
   </div>
@@ -475,7 +489,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#protect-your-email-address" id="toc-protect-your-email-address" class="nav-link" data-scroll-target="#protect-your-email-address">Protect your email address</a></li>
   </ul></li>
-  <li><a href="#install-the-tools" id="toc-install-the-tools" class="nav-link" data-scroll-target="#install-the-tools">2. Install the tools</a></li>
+  <li><a href="#install-the-tools" id="toc-install-the-tools" class="nav-link" data-scroll-target="#install-the-tools">2. Install the tools</a>
+  <ul class="collapse">
+  <li><a href="#show-file-extensions-and-hidden-files-windows" id="toc-show-file-extensions-and-hidden-files-windows" class="nav-link" data-scroll-target="#show-file-extensions-and-hidden-files-windows">Show file extensions and hidden files (Windows)</a></li>
+  </ul></li>
   <li><a href="#connect-github-desktop" id="toc-connect-github-desktop" class="nav-link" data-scroll-target="#connect-github-desktop">3. Connect GitHub Desktop</a></li>
   <li><a href="#configure-git-for-the-command-line" id="toc-configure-git-for-the-command-line" class="nav-link" data-scroll-target="#configure-git-for-the-command-line">4. Configure Git for the command line</a></li>
   <li><a href="#authenticate-the-command-line" id="toc-authenticate-the-command-line" class="nav-link" data-scroll-target="#authenticate-the-command-line">5. Authenticate the command line</a></li>
@@ -529,36 +546,57 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <thead>
 <tr class="header">
 <th>Tool</th>
-<th>Mac</th>
 <th>Windows</th>
+<th>Mac (if you use one)</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><strong>GitHub Desktop</strong></td>
-<td><a href="https://desktop.github.com/">desktop.github.com</a></td>
-<td><a href="https://desktop.github.com/">desktop.github.com</a></td>
+<td><a href="https://desktop.github.com/download/">Download GitHub Desktop</a> (Windows version)</td>
+<td>Same link (Mac version)</td>
 </tr>
 <tr class="even">
 <td><strong>Git</strong> (for the command line)</td>
-<td>Open Terminal and type <code>git --version</code>. If Git isn’t installed, macOS offers to install it.</td>
-<td>Install <a href="https://git-scm.com/download/win">Git for Windows</a>. It includes <strong>Git Bash</strong>.</td>
+<td>Install <a href="https://git-scm.com/download/win">Git for Windows</a> and accept the defaults. It includes <strong>Git Bash</strong> and <strong>Git Credential Manager</strong></td>
+<td>Open Terminal and type <code>git --version</code>; macOS offers to install it</td>
 </tr>
 <tr class="odd">
-<td><strong>Text editor</strong></td>
-<td><a href="https://code.visualstudio.com/">VS Code</a> or RStudio</td>
-<td><a href="https://code.visualstudio.com/">VS Code</a> or RStudio</td>
+<td><strong>Editor</strong></td>
+<td><a href="https://positron.posit.co/">Positron</a>, <a href="https://code.visualstudio.com/">VS Code</a>, or RStudio</td>
+<td>Same</td>
 </tr>
 </tbody>
 </table>
-<p>Check that Git works:</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>On a state computer you may need IT to install software. Request it ahead of time.</p>
+</div>
+</div>
+<section id="show-file-extensions-and-hidden-files-windows" class="level3">
+<h3 class="anchored" data-anchor-id="show-file-extensions-and-hidden-files-windows">Show file extensions and hidden files (Windows)</h3>
+<p>By default, Windows <strong>hides file extensions</strong> (so <code>report.qmd</code> shows as just <code>report</code>) and <strong>hides some files</strong>. You’ll be working with files like <code>.gitignore</code>, <code>.here</code>, and <code>.Renviron</code>, so turn both on:</p>
+<ol type="1">
+<li>Open <strong>File Explorer</strong>.</li>
+<li>Click <strong>View</strong> (top menu) → <strong>Show</strong> → check <strong>File name extensions</strong> and <strong>Hidden items</strong>. On Windows 10: the <strong>View</strong> tab → check <strong>File name extensions</strong> and <strong>Hidden items</strong>.</li>
+</ol>
+<p>Check that Git works. Open <strong>Git Bash</strong> (Start menu → type <code>Git Bash</code>) or <strong>Command Prompt</strong>, and run:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> <span class="at">--version</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>You should see something like <code>git version 2.47.0</code>.</p>
+</section>
 </section>
 <section id="connect-github-desktop" class="level2">
 <h2 class="anchored" data-anchor-id="connect-github-desktop">3. Connect GitHub Desktop</h2>
 <ol type="1">
-<li>Open GitHub Desktop and sign in: <strong>GitHub Desktop → Settings → Accounts</strong> on Mac, <strong>File → Options → Accounts</strong> on Windows.</li>
+<li>Open GitHub Desktop and sign in: <strong>File → Options → Accounts</strong> (Mac: <strong>GitHub Desktop → Settings → Accounts</strong>).</li>
 <li>Your browser opens. Sign in to GitHub and authorize the app.</li>
 <li>Under <strong>Git</strong>, confirm your name and email.</li>
 </ol>
@@ -577,7 +615,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>GitHub <strong>no longer accepts your password</strong> for Git on the command line. Use one of these instead:</p>
 <ul>
 <li><p><strong>Easiest (Windows):</strong> Git for Windows includes Git Credential Manager. The first time you push, a browser window opens so you can sign in.</p></li>
-<li><p><strong>Easiest (Mac or Windows):</strong> install the <a href="https://cli.github.com/">GitHub CLI</a> and run:</p>
+<li><p><strong>Alternative:</strong> install the <a href="https://cli.github.com/">GitHub CLI</a> and run:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">gh</span> auth login</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Follow the prompts and choose <strong>HTTPS</strong> and <strong>Login with a web browser</strong>.</p></li>
 <li><p><strong>Alternative:</strong> a <a href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens">personal access token</a> or an <a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh">SSH key</a>. These are more advanced.</p></li>

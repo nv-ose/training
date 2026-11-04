@@ -1,0 +1,171 @@
+---
+engine: markdown
+title: "Lesson 7: Presentations with revealjs"
+---
+
+Quarto makes slide presentations from the same Markdown and R code. The main slide format is **revealjs**: slides that run in a web browser, so they work on any computer, can include live code results, and can be shared as a single file or a link.
+
+## 1. Your first deck
+
+Create a file, e.g., `talk.qmd`:
+
+```markdown
+---
+title: "Influenza Season Update"
+subtitle: "Practice deck with synthetic data"
+author: "Jane Smith"
+date: today
+format: revealjs
+---
+
+## Where we are
+
+- ILI is rising in most counties
+- Peak expected in about 3 weeks
+- Vaccination clinics continue through December
+
+## Next steps
+
+Coordinate with local health authorities on clinic hours.
+```
+
+- `format: revealjs` makes it a slide deck.
+- The title, subtitle, author, and date become the **title slide**.
+- Every `##` heading **starts a new slide**.
+
+Render it the same way as a document (**Preview** or **Ctrl + Shift + K**). The output is `talk.html`; open it in a browser to present.
+
+## 2. Slides without titles, and sections
+
+```markdown
+## Slide with a title
+
+Content
+
+---
+
+This slide has no title. Three dashes start a new slide.
+
+# Part 2: Data
+
+## The next slide
+```
+
+A single `#` heading makes a **section title slide**, and the `##` slides after it are stacked **vertically** under that section (you move through them with ↓). If you'd rather keep every slide in one left-to-right line, use only `##`.
+
+## 3. Revealing content step by step
+
+```markdown
+## Key findings
+
+::: {.incremental}
+- Cases up 20% from last week
+- Highest rates in children under 5
+- Hospitalizations stable
+:::
+
+## A pause
+
+First this appears.
+
+. . .
+
+Then this, on the next click.
+```
+
+To make **every** list in the deck appear item by item, add `incremental: true` under `revealjs:` in the header.
+
+## 4. Two columns
+
+```markdown
+## Chart and key points
+
+:::: {.columns}
+
+::: {.column width="60%"}
+![](images/epi-curve.png){fig-alt="Bar chart of weekly cases peaking in week 8."}
+:::
+
+::: {.column width="40%"}
+- Peak in week 8
+- Now declining
+:::
+
+::::
+```
+
+## 5. Speaker notes
+
+```markdown
+## Next steps
+
+Coordinate with local health authorities.
+
+::: {.notes}
+Mention the December clinic schedule. Pause for questions.
+:::
+```
+
+Notes don't appear on the slides. Press **S** while presenting to open the **speaker view**, with your notes, a timer, and the next slide.
+
+## 6. Charts and code on slides
+
+R chunks work on slides exactly as in documents:
+
+````markdown
+```{r}
+#| echo: false
+#| fig-alt: "Line chart of weekly percent ILI rising to a peak near 4.5% in week 12."
+#| fig-width: 8
+#| fig-height: 4
+ggplot(ili, aes(week, pct_ili)) + geom_line() + labs(x = "Week", y = "% ILI")
+```
+````
+
+Usually you'll hide the code (`echo: false`) and show only the chart. For a coding talk, show it, and highlight lines in order with `code-line-numbers: "1|2-3"`.
+
+## 7. Settings for the whole deck
+
+```yaml
+---
+title: "Influenza Season Update"
+format:
+  revealjs:
+    theme: simple            # also: default, dark, serif, solarized, moon, ...
+    slide-number: true       # number in the corner
+    incremental: false       # true = all lists appear item by item
+    footer: "NV OSE | Synthetic data"
+    logo: images/logo.png
+    embed-resources: true    # one self-contained HTML file
+execute:
+  echo: false
+---
+```
+
+`embed-resources: true` makes the deck a single file you can email, put on a shared drive, or upload to a training site, and it still works offline.
+
+## 8. Presenting
+
+Open the HTML file in a browser, then:
+
+| Key | Does |
+|---|---|
+| **→** / **Space** | Next slide (or next step) |
+| **←** | Previous |
+| **F** | Full screen |
+| **S** | Speaker view (notes, timer, next slide) |
+| **Esc** or **O** | Overview of all slides |
+| **B** | Black out the screen |
+
+**Save as PDF:** add `?print-pdf` to the end of the address in the browser (e.g., `talk.html?print-pdf`), then print to PDF. This works best in Chrome.
+
+## 9. Accessibility on slides
+
+- Alt text on every image and chart (`fig-alt`), exactly as in documents.
+- Keep text short and large; don't cram slides.
+- Check contrast, especially with dark themes and colored text.
+- Don't rely on color alone in charts.
+
+::: {.callout-tip title="Need PowerPoint?"}
+If someone requires a `.pptx` file, Quarto can also render `format: pptx`. Fewer features work (no incremental reveals or interactive output), but the content carries over. See Quarto's [PowerPoint](https://quarto.org/docs/presentations/powerpoint.html) guide.
+:::

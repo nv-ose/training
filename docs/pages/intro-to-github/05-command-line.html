@@ -319,6 +319,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a class="nav-link active" href="../../pages/intro-to-github/index.html" aria-current="page"> 
 <span class="menu-text">Intro to Git &amp; GitHub</span></a>
   </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../pages/intro-to-quarto/index.html"> 
+<span class="menu-text">Intro to Quarto</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../pages/intro-to-positron/index.html"> 
+<span class="menu-text">Intro to Positron</span></a>
+  </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
@@ -443,6 +451,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../../pages/intro-to-github/readme-guide.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Writing a good README</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../../pages/intro-to-github/cheatsheet.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Git and GitHub cheat sheet</span></a>
   </div>
@@ -506,9 +520,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <p>The command line (CLI) does everything GitHub Desktop does, and more. It’s also what you’ll use on servers and in automated pipelines.</p>
 <ul>
+<li><strong>Windows:</strong> open <strong>Git Bash</strong> (Start menu → type <code>Git Bash</code>). It comes with Git for Windows and understands all the commands below.</li>
 <li><strong>Mac:</strong> open <strong>Terminal</strong>.</li>
-<li><strong>Windows:</strong> open <strong>Git Bash</strong>, which comes with Git for Windows.</li>
 </ul>
+<div class="callout callout-style-default callout-tip callout-titled" title="Windows paths in Git Bash">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Windows paths in Git Bash
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Git Bash writes Windows paths with forward slashes. Your Documents folder, <code>C:\Users\&lt;you&gt;\Documents</code>, is <code>~/Documents</code> (or <code>/c/Users/&lt;you&gt;/Documents</code>). To open Git Bash already in a folder, right-click inside the folder in File Explorer → <strong>Open Git Bash here</strong> (on Windows 11, click <strong>Show more options</strong> first).</p>
+</div>
+</div>
 <section id="moving-around" class="level2">
 <h2 class="anchored" data-anchor-id="moving-around">Moving around</h2>
 <p>Some basic commands for finding your way:</p>

@@ -18,13 +18,25 @@ Every commit is labeled with an email address, and in public repos anyone can se
 
 ## 2. Install the tools
 
-| Tool | Mac | Windows |
+| Tool | Windows | Mac (if you use one) |
 |---|---|---|
-| **GitHub Desktop** | [Download GitHub Desktop](https://desktop.github.com/download/) (Mac version) | [Download GitHub Desktop](https://desktop.github.com/download/) (Windows version) |
-| **Git** (for the command line) | Open Terminal and type `git --version`. If Git isn't installed, macOS offers to install it. | Install [Git for Windows](https://git-scm.com/download/win). It includes **Git Bash**. |
-| **Text editor** | [VS Code](https://code.visualstudio.com/) or RStudio | [VS Code](https://code.visualstudio.com/) or RStudio |
+| **GitHub Desktop** | [Download GitHub Desktop](https://desktop.github.com/download/) (Windows version) | Same link (Mac version) |
+| **Git** (for the command line) | Install [Git for Windows](https://git-scm.com/download/win) and accept the defaults. It includes **Git Bash** and **Git Credential Manager** | Open Terminal and type `git --version`; macOS offers to install it |
+| **Editor** | [Positron](https://positron.posit.co/), [VS Code](https://code.visualstudio.com/), or RStudio | Same |
 
-Check that Git works:
+::: {.callout-note}
+On a state computer you may need IT to install software. Request it ahead of time.
+:::
+
+### Show file extensions and hidden files (Windows)
+
+By default, Windows **hides file extensions** (so `report.qmd` shows as just `report`) and **hides some files**. You'll be working with files like `.gitignore`, `.here`, and `.Renviron`, so turn both on:
+
+1. Open **File Explorer**.
+2. Click **View** (top menu) → **Show** → check **File name extensions** and **Hidden items**.
+   On Windows 10: the **View** tab → check **File name extensions** and **Hidden items**.
+
+Check that Git works. Open **Git Bash** (Start menu → type `Git Bash`) or **Command Prompt**, and run:
 
 ```bash
 git --version
@@ -34,7 +46,7 @@ You should see something like `git version 2.47.0`.
 
 ## 3. Connect GitHub Desktop
 
-1. Open GitHub Desktop and sign in: **GitHub Desktop → Settings → Accounts** on Mac, **File → Options → Accounts** on Windows.
+1. Open GitHub Desktop and sign in: **File → Options → Accounts** (Mac: **GitHub Desktop → Settings → Accounts**).
 2. Your browser opens. Sign in to GitHub and authorize the app.
 3. Under **Git**, confirm your name and email.
 
@@ -59,7 +71,7 @@ git config --list
 GitHub **no longer accepts your password** for Git on the command line. Use one of these instead:
 
 - **Easiest (Windows):** Git for Windows includes Git Credential Manager. The first time you push, a browser window opens so you can sign in.
-- **Easiest (Mac or Windows):** install the [GitHub CLI](https://cli.github.com/) and run:
+- **Alternative:** install the [GitHub CLI](https://cli.github.com/) and run:
   ```bash
   gh auth login
   ```

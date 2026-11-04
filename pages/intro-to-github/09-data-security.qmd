@@ -84,7 +84,7 @@ api_key <- "a1b2c3d4e5f6"
 
 ✅ **Do** this instead. Store secrets in a file that Git ignores, or in your system's environment variables.
 
-**R:** put the values in `.Renviron`, and add `.Renviron` to `.gitignore`.
+**R:** put the values in your personal `.Renviron` file. In R, run `file.edit("~/.Renviron")` to open it. On Windows it's usually in your **Documents** folder (`C:\Users\<you>\Documents\.Renviron`), outside any project, so it isn't committed. If you ever keep one inside a project, add `.Renviron` to `.gitignore`.
 
 ```r
 # .Renviron (never committed)

@@ -1,0 +1,110 @@
+---
+title: "Writing a good README"
+---
+
+A **README** is a short document that explains a project: what it is, how to use it, and who to ask. Every NV OSE repository needs one, and most project folders benefit from one even if they never go on GitHub.
+
+[⬇ Download the NV OSE README template](README-template.md){.btn .btn-outline-primary .btn-sm download="README.md"}
+
+## Why READMEs matter
+
+- **It's the front page.** GitHub shows `README.md` automatically below a repo's file list. It's the first thing anyone sees.
+- **Handoffs.** When someone leaves, goes on leave, or covers for a colleague, the README is how the next person runs the project.
+- **Future you.** In six months you won't remember which script runs first or where the data lives.
+- **Findability.** A clear first sentence tells people, in search results and in the member directory, whether this is the project they need.
+- **Fewer questions.** Setup steps and a troubleshooting table answer the most common questions before anyone has to ask.
+
+## Where READMEs show up
+
+| Where | What happens |
+|---|---|
+| A repo's main page on GitHub | `README.md` in the top folder is displayed below the file list |
+| Any folder on GitHub | A `README.md` inside a folder is displayed when you open that folder, which is useful for explaining `scripts/` or `notebooks/` |
+| Positron, VS Code, RStudio | Open `README.md` and use the preview (Positron and VS Code: **Open Preview to the Side** icon at the top right of the file) |
+| An organization's profile | A special `profile/README.md` (like NV OSE's) becomes the org's home page |
+
+READMEs are written in **Markdown**. See [Lesson 3](03-repositories-readme-gitignore.qmd#readme.md), or the [Markdown basics](../intro-to-quarto/03-markdown.qmd) lesson in the Quarto training.
+
+## What to include
+
+Not every project needs every section. Start with the first five; add the rest as the project grows.
+
+| Section | Answers | Needed? |
+|---|---|---|
+| **Title and one-line description** | What is this? | Always |
+| **Overview** | Why does it exist? Who maintains it? Is it active? | Always |
+| **Quick start** | How do I run it, in three steps or fewer? | Always for code |
+| **Project structure** | What's in each folder? | Always |
+| **Maintainer and last updated** | Who do I ask? Is this current? | Always |
+| Requirements | What software, packages, and system access do I need? | Code projects |
+| Setup | What do I do the first time? | Code projects |
+| Data | Where does the data come from, and where is it stored? | Projects that use data |
+| Outputs | What does it produce, and where? | Projects with outputs |
+| Troubleshooting | What usually goes wrong, and how do I fix it? | As problems come up |
+| Contributing | How do I suggest a change? | Shared repos |
+| License | How can others reuse it? | Public repos |
+
+## The NV OSE template
+
+[⬇ Download README-template.md](README-template.md){download="README.md"}, rename it to `README.md`, put it in your project's top folder, and fill it in. Delete sections you don't need.
+
+```markdown
+# Project Title
+
+One sentence: what this project does and who it's for.
+
+## Overview
+- **Purpose:** ...
+- **Program area:** ...
+- **Status:** Active / In development / Archived
+- **Maintainer:** Name (email)
+
+## Quick start
+1. ...
+
+## Project structure
+(folder tree)
+
+## Requirements
+## Setup
+## Data
+## Outputs
+## Troubleshooting
+## Contributing
+## License
+## Last updated
+YYYY-MM-DD
+```
+
+## Tips
+
+- **Lead with the one-line description.** "Weekly data pipeline for the Nevada Respiratory Surveillance Dashboard" beats "This repo contains scripts."
+- **Write for someone new.** Assume they know R but not your project.
+- **Show the run order.** Number scripts (`01_import.R`, `02_clean.R`) and list them in order.
+- **Say where data lives, never include it.** "Line list is on the S: drive in `Respiratory/2026/`" is fine. The data itself, or a path with a username in it, is not.
+- **List systems, never credentials.** "Needs a REDCap API token in `~/.Renviron`," never the token.
+- **Use relative links** to files in the repo: `[the report](notebooks/report.qmd)`.
+- **Keep it current.** Update the README in the same commit as the change it describes. A wrong README is worse than none.
+- **Use headings, tables, and short lists.** People scan READMEs; they don't read them top to bottom.
+
+## Good and weak examples
+
+| Weak | Better |
+|---|---|
+| "Flu stuff" | "Weekly pipeline that pulls ESSENCE, FluView, and REDCap data for the Nevada Respiratory Dashboard" |
+| "Run the scripts." | "1. Run `scripts/01_import.R`. 2. Run `scripts/02_clean.R`. 3. Render `notebooks/report.qmd`." |
+| "Ask me if you have questions." | "**Maintainer:** Max Wegener ([mwegener@health.nv.gov](mailto:mwegener@health.nv.gov))" |
+| "Data is in the data folder." | "Raw ESSENCE extracts are saved to `raw_data/` by `01_import.R`. This folder isn't in Git." |
+
+::: {.callout-tip title="A real example"}
+NV OSE members can see a full README for a working pipeline in the private [`respiratory-dashboard`](https://github.com/nv-ose/respiratory-dashboard) repo: quick start, a step table, data sources, setup, credentials, troubleshooting, and maintenance notes.
+:::
+
+## Checklist
+
+- [ ] One-sentence description at the top
+- [ ] Maintainer and contact
+- [ ] How to run it, in order
+- [ ] What's in each folder
+- [ ] Where the data comes from and where it's stored (no data, no credentials)
+- [ ] Last updated date

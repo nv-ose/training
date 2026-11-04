@@ -31,7 +31,7 @@ title: "Further resources"
 
 ## NV OSE
 
-- [Building Websites with Quarto](../intro-to-quarto-websites/index.qmd): the next step, publishing your own site
+- [Introduction to Quarto](../intro-to-quarto/index.qmd): the next step: Markdown, reports, slides, and publishing your own site
 
 - [Contributing Guidelines (SOP)](https://github.com/nv-ose/.github/blob/main/CONTRIBUTING.md)
 - [Team Hub Discussions](https://github.com/orgs/nv-ose/discussions): ask questions here (members only)

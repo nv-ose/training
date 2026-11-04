@@ -1,0 +1,142 @@
+---
+engine: markdown
+title: "Lesson 5: Code in Quarto"
+---
+
+This is what makes Quarto different from Markdown: it can **run your R code** and put the results (tables, charts, numbers) into the document.
+
+## Code chunks
+
+A **code chunk** looks like a Markdown code block, but with the language in curly braces: `{r}`. Quarto runs it.
+
+````markdown
+```{r}
+cases <- data.frame(
+  county = c("Clark", "Washoe", "Carson City"),
+  cases  = c(120, 45, 8)
+)
+cases
+```
+````
+
+When rendered, the output shows the code, then the result printed below it.
+
+::: {.panel-tabset group="editor"}
+
+## Positron
+
+- Insert a chunk: Command Palette → **Quarto: Insert Code Cell**, or type it by hand.
+- Run one chunk while you write: click **Run Cell** above it, or **Ctrl + Shift + Enter**.
+
+## VS Code
+
+- Insert a chunk: Command Palette → **Quarto: Insert Code Cell**, or type it by hand.
+- Run one chunk while you write: click **Run Cell** above it, or **Ctrl + Shift + Enter**.
+
+## RStudio
+
+- Insert a chunk: **Ctrl + Alt + I** (Mac: Cmd + Option + I), or the green **+C** button.
+- Run one chunk while you write: click the green ▶ at its top right, or **Ctrl + Shift + Enter**.
+
+:::
+
+Running a chunk by hand only runs it in your R session. **Rendering** runs every chunk, from top to bottom, in a fresh session, so every chunk must work in order.
+
+## Chunk options
+
+Options go at the top of a chunk, each on its own line starting with `#|`:
+
+````markdown
+```{r}
+#| label: fig-ili
+#| echo: false
+#| fig-cap: "Weekly percent of visits for influenza-like illness"
+#| fig-alt: "Line chart of weekly percent ILI over 20 weeks, rising from
+#|   about 1.5% to a peak near 4.5% in week 12, then falling."
+
+library(ggplot2)
+ggplot(ili, aes(week, pct_ili)) +
+  geom_line() +
+  labs(x = "Week", y = "% ILI")
+```
+````
+
+Common options:
+
+| Option | What it does |
+|---|---|
+| `label: name` | Names the chunk (no spaces). A label starting with `fig-` makes a numbered figure you can cross-reference |
+| `echo: false` | Hide the code; show only the result |
+| `eval: false` | Show the code, but don't run it |
+| `include: false` | Run the code, but show nothing (good for loading packages and data) |
+| `warning: false` / `message: false` | Hide warnings / messages |
+| `fig-alt: "..."` | Alt text for a chart (**required for every chart**) |
+| `fig-cap: "..."` | Visible caption |
+| `fig-width`, `fig-height` | Chart size, in inches |
+
+### Options for the whole document
+
+Set defaults for every chunk in the YAML header:
+
+```yaml
+---
+title: "Weekly ILI Summary"
+execute:
+  echo: false
+  warning: false
+  message: false
+---
+```
+
+A typical report sets `echo: false`, so readers see results, not code. A training or tutorial leaves code visible.
+
+## Inline code
+
+Put a result **inside a sentence** with `` `{r} expression` ``:
+
+```markdown
+This week there were `{r} sum(cases$cases)` cases across
+`{r} nrow(cases)` counties.
+```
+
+When rendered: "This week there were 173 cases across 3 counties." Numbers in the text always match the data.
+
+## Tables from data
+
+Print a data frame nicely with `knitr::kable()`:
+
+````markdown
+```{r}
+#| echo: false
+knitr::kable(cases, col.names = c("County", "Cases"))
+```
+````
+
+## A typical setup chunk
+
+Most documents start with one hidden chunk that loads packages and data:
+
+````markdown
+```{r}
+#| label: setup
+#| include: false
+library(tidyverse)
+cases <- read_csv("data/example_cases.csv")
+```
+````
+
+## Freeze: don't re-run everything every time
+
+In a project with many pages (like a website), you can tell Quarto to **save results** and only re-run a page's code when that code changes:
+
+```yaml
+# in _quarto.yml
+execute:
+  freeze: auto
+```
+
+The saved results go in a `_freeze/` folder. Commit it with the rest of the project ([Lesson 9](09-preview-render.qmd)).
+
+::: {.callout-important title="Real data never goes in published output"}
+Code runs **when you render**, and its results are written into the output. Anything you share or publish (a report, slides, a website) must use made-up (synthetic) or public data, unless it's cleared for release. Never put passwords or API keys in a `.qmd` file. See [Data security](../intro-to-github/09-data-security.qmd).
+:::

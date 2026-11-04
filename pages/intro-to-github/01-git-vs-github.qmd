@@ -42,7 +42,7 @@ Other sites that host Git repositories include GitLab and Bitbucket. The Git ski
 |---|---|
 | **github.com** (web browser) | Quick edits, reviewing pull requests, settings, Discussions |
 | **GitHub Desktop** (app) | Day-to-day work without typing commands. Recommended for beginners |
-| **Command line** (Terminal / Git Bash) | Full control, automation, and working on servers |
+| **Command line** (Git Bash or PowerShell on Windows; Terminal on Mac) | Full control, automation, and working on servers |
 
 RStudio and VS Code also have built-in Git panels. They do the same things as GitHub Desktop.
 

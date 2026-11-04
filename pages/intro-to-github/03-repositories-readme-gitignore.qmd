@@ -35,7 +35,9 @@ The README is the **front page** of your repo. GitHub displays it automatically 
 - **What's in** each folder?
 - **When** was it last updated?
 
-The NV OSE template is in the [SOP, section 12](https://github.com/nv-ose/.github/blob/main/CONTRIBUTING.md#12-readme-template).
+::: {.callout-tip title="README guide and template"}
+See **[Writing a good README](readme-guide.qmd)** for what to include, tips, examples, and a downloadable NV OSE template.
+:::
 
 ### Markdown basics
 

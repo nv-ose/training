@@ -319,6 +319,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a class="nav-link active" href="../../pages/intro-to-github/index.html" aria-current="page"> 
 <span class="menu-text">Intro to Git &amp; GitHub</span></a>
   </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../pages/intro-to-quarto/index.html"> 
+<span class="menu-text">Intro to Quarto</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../pages/intro-to-positron/index.html"> 
+<span class="menu-text">Intro to Positron</span></a>
+  </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
@@ -439,6 +447,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <div class="sidebar-item-container"> 
   <a href="../../pages/intro-to-github/exercises.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Hands-on exercises</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/intro-to-github/readme-guide.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Writing a good README</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -599,7 +613,7 @@ data/confidential/
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>con <span class="ot">&lt;-</span> <span class="fu">dbConnect</span>(<span class="fu">odbc</span>(), <span class="at">uid =</span> <span class="st">"jsmith"</span>, <span class="at">pwd =</span> <span class="st">"Summer2026!"</span>)</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>api_key <span class="ot">&lt;-</span> <span class="st">"a1b2c3d4e5f6"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>✅ <strong>Do</strong> this instead. Store secrets in a file that Git ignores, or in your system’s environment variables.</p>
-<p><strong>R:</strong> put the values in <code>.Renviron</code>, and add <code>.Renviron</code> to <code>.gitignore</code>.</p>
+<p><strong>R:</strong> put the values in your personal <code>.Renviron</code> file. In R, run <code>file.edit("~/.Renviron")</code> to open it. On Windows it’s usually in your <strong>Documents</strong> folder (<code>C:\Users\&lt;you&gt;\Documents\.Renviron</code>), outside any project, so it isn’t committed. If you ever keep one inside a project, add <code>.Renviron</code> to <code>.gitignore</code>.</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># .Renviron (never committed)</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>DB_USER<span class="ot">=</span>jsmith</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>DB_PASS<span class="ot">=</span>Summer2026<span class="sc">!</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>

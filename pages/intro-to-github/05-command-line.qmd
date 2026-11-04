@@ -4,8 +4,12 @@ title: "Lesson 5: The basic workflow on the command line"
 
 The command line (CLI) does everything GitHub Desktop does, and more. It's also what you'll use on servers and in automated pipelines.
 
+- **Windows:** open **Git Bash** (Start menu → type `Git Bash`). It comes with Git for Windows and understands all the commands below.
 - **Mac:** open **Terminal**.
-- **Windows:** open **Git Bash**, which comes with Git for Windows.
+
+::: {.callout-tip title="Windows paths in Git Bash"}
+Git Bash writes Windows paths with forward slashes. Your Documents folder, `C:\Users\<you>\Documents`, is `~/Documents` (or `/c/Users/<you>/Documents`). To open Git Bash already in a folder, right-click inside the folder in File Explorer → **Open Git Bash here** (on Windows 11, click **Show more options** first).
+:::
 
 ## Moving around
 

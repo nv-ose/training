@@ -7,6 +7,7 @@ project:
     - "pages/**/*.qmd"
   resources:
     - "/.nojekyll"
+    - "pages/intro-to-github/README-template.md"
 
 website:
   title: "NV OSE Training"
@@ -23,8 +24,10 @@ website:
         href: index.qmd
       - text: "Intro to Git & GitHub"
         href: pages/intro-to-github/index.qmd
-      - text: "Quarto Websites"
-        href: pages/intro-to-quarto-websites/index.qmd
+      - text: "Intro to Quarto"
+        href: pages/intro-to-quarto/index.qmd
+      - text: "Intro to Positron"
+        href: pages/intro-to-positron/index.qmd
     right:
       - text: "Feedback"
         icon: envelope
@@ -53,30 +56,58 @@ website:
         - section: "Practice and reference"
           contents:
             - pages/intro-to-github/exercises.qmd
+            - pages/intro-to-github/readme-guide.qmd
             - pages/intro-to-github/cheatsheet.qmd
             - pages/intro-to-github/glossary.qmd
             - pages/intro-to-github/resources.qmd
-    - id: intro-to-quarto-websites
-      title: "Quarto Websites"
+    - id: intro-to-quarto
+      title: "Introduction to Quarto"
       style: docked
       contents:
-        - href: pages/intro-to-quarto-websites/index.qmd
+        - href: pages/intro-to-quarto/index.qmd
+          text: "Overview"
+        - section: "Session 1: Markdown and Quarto basics"
+          contents:
+            - pages/intro-to-quarto/01-what-is-quarto.qmd
+            - pages/intro-to-quarto/02-setup.qmd
+            - pages/intro-to-quarto/03-markdown.qmd
+            - pages/intro-to-quarto/04-quarto-markdown.qmd
+            - pages/intro-to-quarto/05-code.qmd
+        - section: "Session 2: Documents and presentations"
+          contents:
+            - pages/intro-to-quarto/06-documents.qmd
+            - pages/intro-to-quarto/07-presentations.qmd
+        - section: "Session 3: Websites and publishing"
+          contents:
+            - pages/intro-to-quarto/08-websites.qmd
+            - pages/intro-to-quarto/09-preview-render.qmd
+            - pages/intro-to-quarto/10-customize.qmd
+            - pages/intro-to-quarto/11-publish-github-pages.qmd
+            - pages/intro-to-quarto/12-add-to-nv-ose-site.qmd
+        - section: "Practice and reference"
+          contents:
+            - pages/intro-to-quarto/exercises.qmd
+            - pages/intro-to-quarto/cheatsheet.qmd
+            - pages/intro-to-quarto/resources.qmd
+    - id: intro-to-positron
+      title: "Introduction to Positron"
+      style: docked
+      contents:
+        - href: pages/intro-to-positron/index.qmd
           text: "Overview"
         - section: "Lessons"
           contents:
-            - pages/intro-to-quarto-websites/01-what-is-quarto.qmd
-            - pages/intro-to-quarto-websites/02-setup.qmd
-            - pages/intro-to-quarto-websites/03-qmd-basics.qmd
-            - pages/intro-to-quarto-websites/04-create-website.qmd
-            - pages/intro-to-quarto-websites/05-preview-render.qmd
-            - pages/intro-to-quarto-websites/06-customize.qmd
-            - pages/intro-to-quarto-websites/07-publish-github-pages.qmd
-            - pages/intro-to-quarto-websites/08-add-to-nv-ose-site.qmd
-        - section: "Practice and reference"
+            - pages/intro-to-positron/01-introduction.qmd
+            - pages/intro-to-positron/02-setup.qmd
+            - pages/intro-to-positron/03-projects.qmd
+            - pages/intro-to-positron/04-files-folders.qmd
+            - pages/intro-to-positron/05-panes.qmd
+            - pages/intro-to-positron/06-extensions.qmd
+            - pages/intro-to-positron/07-git.qmd
+        - section: "Reference"
           contents:
-            - pages/intro-to-quarto-websites/exercises.qmd
-            - pages/intro-to-quarto-websites/cheatsheet.qmd
-            - pages/intro-to-quarto-websites/resources.qmd
+            - pages/intro-to-positron/quick-reference.qmd
+            - pages/intro-to-positron/troubleshooting.qmd
   page-footer:
     left: "Nevada Office of State Epidemiology"
     center: "Questions or feedback? Email [mwegener@health.nv.gov](mailto:mwegener@health.nv.gov?subject=NV%20OSE%20Training%20feedback)"

@@ -36,7 +36,7 @@ Do these in **your personal GitHub account**, or in a practice repo an owner cre
 
 ## Exercise 3: The command line and `git init` (Lesson 5, 20 min)
 
-1. Open Terminal or Git Bash and run:
+1. Open **Git Bash** (Mac: Terminal) and run:
    ```bash
    cd ~/Documents
    mkdir cli-practice

@@ -1,0 +1,50 @@
+---
+engine: markdown
+title: "Further resources"
+---
+
+## Getting Quarto
+
+- [Download Quarto](https://quarto.org/docs/get-started/): installers for Mac, Windows, and Linux, plus first steps for each editor
+- [Positron](https://positron.posit.co/) · [VS Code](https://code.visualstudio.com/) · [RStudio](https://posit.co/download/rstudio-desktop/)
+- [GitHub Desktop](https://desktop.github.com/download/)
+
+## Markdown
+
+- [Quarto: Markdown Basics](https://quarto.org/docs/authoring/markdown-basics.html)
+- [GitHub: Basic writing and formatting syntax](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
+
+## Quarto documentation
+
+- [Guide](https://quarto.org/docs/guide/): the full user guide
+- [Callout Blocks](https://quarto.org/docs/authoring/callouts.html) · [Figures](https://quarto.org/docs/authoring/figures.html) · [Cross-references](https://quarto.org/docs/authoring/cross-references.html)
+- [Using R](https://quarto.org/docs/computations/r.html) · [Execution options](https://quarto.org/docs/computations/execution-options.html)
+- [HTML documents](https://quarto.org/docs/output-formats/html-basics.html)
+- [Revealjs presentations](https://quarto.org/docs/presentations/revealjs/)
+- [Creating a Website](https://quarto.org/docs/websites/) · [Website Navigation](https://quarto.org/docs/websites/website-navigation.html)
+- [HTML Themes](https://quarto.org/docs/output-formats/html-themes.html)
+- [Publishing to GitHub Pages](https://quarto.org/docs/publishing/github-pages.html)
+- [Quarto Gallery](https://quarto.org/docs/gallery/): example reports, slides, and sites
+
+## Editors
+
+- [Quarto in VS Code](https://quarto.org/docs/tools/vscode.html) (also applies to Positron)
+- [Quarto in RStudio](https://quarto.org/docs/tools/rstudio.html)
+
+## Accessibility
+
+- [WebAIM Contrast Checker](https://webaim.org/resources/contrastchecker/)
+
+## Example sites built with Quarto
+
+- [NV OSE Training](https://nv-ose.github.io/training/) ([source](https://github.com/nv-ose/training))
+- [CWML R Hands-on Workshop Series](https://cwml.github.io/CWML-R-Hands-on-Workshop-Series/)
+- [CWML All of Us Training Resources](https://cwml.github.io/All-of-Us-Training-Resources/)
+
+## NV OSE
+
+- [Introduction to Positron](../intro-to-positron/index.qmd): the editor used in this training
+
+- [Introduction to Git and GitHub](../intro-to-github/index.qmd): needed for publishing (Session 3)
+- [Training submission form](https://github.com/nv-ose/team-hub/issues/new?template=training-submission.yml) (members only)
+- [Contributing Guidelines (SOP)](https://github.com/nv-ose/.github/blob/main/CONTRIBUTING.md)

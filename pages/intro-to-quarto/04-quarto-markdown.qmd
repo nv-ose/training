@@ -1,0 +1,166 @@
+---
+engine: markdown
+title: "Lesson 4: What Quarto adds to Markdown"
+---
+
+Everything from [Lesson 3](03-markdown.qmd) works in Quarto. This lesson covers what Quarto **adds**. None of this works on GitHub; it's Quarto only.
+
+## 1. The YAML header
+
+Every `.qmd` file starts with a header between two `---` lines. It's written in **YAML**: `key: value` pairs that set up the document.
+
+```yaml
+---
+title: "Weekly ILI Summary"
+subtitle: "Week 42, 2026"
+author: "Jane Smith"
+date: 2026-10-28
+format: html
+toc: true
+---
+```
+
+| Setting | What it does |
+|---|---|
+| `title`, `subtitle`, `author`, `date` | Shown at the top of the output |
+| `format` | The type of output: `html`, `revealjs` (slides), and others ([Lesson 6](06-documents.qmd)) |
+| `toc: true` | Adds a table of contents |
+| `description` | A one-line summary (used by search and link previews) |
+
+::: {.callout-warning title="YAML is picky about spacing"}
+- Put a space after the colon: `title: "Hi"`, not `title:"Hi"`.
+- Indent with **spaces**, never tabs. Two spaces per level.
+- Put text in quotes if it contains a colon: `title: "Lesson 1: Basics"`.
+:::
+
+## 2. Callouts
+
+Colored boxes for notes, tips, and warnings:
+
+```markdown
+::: {.callout-note}
+This is a note.
+:::
+
+::: {.callout-warning title="Careful"}
+This deletes files.
+:::
+
+::: {.callout-tip collapse="true" title="Show answer"}
+Hidden until clicked: good for exercise answers.
+:::
+```
+
+::: {.callout-note}
+This is a note.
+:::
+
+::: {.callout-warning title="Careful"}
+This deletes files.
+:::
+
+::: {.callout-tip collapse="true" title="Show answer"}
+Hidden until clicked: good for exercise answers.
+:::
+
+The five types: `callout-note`, `callout-tip`, `callout-warning`, `callout-important`, and `callout-caution`.
+
+The `:::` lines create a **div**: a block with a name in `{ }`. Quarto uses the same pattern for tabs, columns, and more.
+
+## 3. Tabs
+
+Let readers choose between versions of the same content:
+
+```markdown
+::: {.panel-tabset}
+## Windows
+Press **Ctrl + S**.
+
+## Mac
+Press **Cmd + S**.
+:::
+```
+
+::: {.panel-tabset}
+## Windows
+Press **Ctrl + S**.
+
+## Mac
+Press **Cmd + S**.
+:::
+
+Add `group="os"` to several tab sets on the same site, and choosing a tab in one switches them all. The editor tabs in this training work that way.
+
+## 4. Columns
+
+```markdown
+:::: {.columns}
+
+::: {.column width="50%"}
+Left side
+:::
+
+::: {.column width="50%"}
+Right side
+:::
+
+::::
+```
+
+The outer block uses **four** colons so Quarto can tell where it ends. Columns are most useful on slides ([Lesson 7](07-presentations.qmd)).
+
+## 5. Images, captions, and alt text
+
+```markdown
+![](images/epi-curve.png){fig-alt="Bar chart of weekly measles cases, peaking at 12 in week 8."}
+
+![Weekly measles cases, 2026](images/epi-curve.png){fig-alt="Bar chart of weekly measles cases, peaking at 12 in week 8."}
+```
+
+- **`fig-alt`** is the **alt text**: what screen-reader users hear instead of seeing the image. **Every image needs it.**
+- Text in the square brackets becomes a **visible caption**. Leave them empty if you don't want one.
+- Size and position: `{width="60%" fig-align="center" fig-alt="..."}`.
+
+Good alt text says what the image shows and its main point: not "chart," but "Bar chart of weekly measles cases, peaking at 12 in week 8."
+
+## 6. Cross-references
+
+Give a figure an ID starting with `fig-`, and refer to it with `@`:
+
+```markdown
+![Weekly measles cases](images/epi-curve.png){#fig-measles fig-alt="..."}
+
+Cases peaked in week 8 (@fig-measles).
+```
+
+Quarto numbers it ("Figure 1") and turns `@fig-measles` into a link. Tables use `tbl-`.
+
+## 7. Footnotes
+
+```markdown
+Rates are per 100,000 population.^[Population estimates from the 2024 Census.]
+```
+
+Rates are per 100,000 population.^[Population estimates from the 2024 Census.]
+
+## 8. Visual mode
+
+All three editors have a **visual editor** that shows a `.qmd` file formatted (like a word processor), with toolbar buttons for headings, lists, tables, and callouts. It's a good way to learn the syntax: make something with the toolbar, then switch back to source to see the Markdown.
+
+::: {.panel-tabset group="editor"}
+
+## Positron
+
+Right-click in the file → **Edit in Visual Mode**, or press **Ctrl + Shift + F4** (Mac: Cmd + Shift + F4). Same again to switch back.
+
+## VS Code
+
+Right-click in the file → **Edit in Visual Mode**, or press **Ctrl + Shift + F4** (Mac: Cmd + Shift + F4). Requires the Quarto extension.
+
+## RStudio
+
+Click **Visual** / **Source** at the top left of the editor.
+
+:::
+
+Visual mode may reformat your Markdown slightly when it saves (spacing, table layout). That's harmless.

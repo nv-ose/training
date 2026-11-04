@@ -12,6 +12,7 @@
 - Stop `quarto preview` first, then run `quarto render`. The output goes to `docs/`.
 - `docs/` is **generated**. Never edit it by hand, but do commit it: GitHub Pages serves `main` → `/docs`.
 - The site only **shows** code. All code blocks are plain fenced blocks (```bash, ```r); nothing is executed, so there is no `_freeze/`. If executable `{r}` chunks are added, decide between `freeze: auto` and `eval: false`.
+- Every page in `pages/intro-to-quarto/` has `engine: markdown` in its YAML header, so its R examples (chunk examples are written as ```` ```{r} ```` inside four-backtick ````markdown blocks; `{{r}}` does NOT work with the markdown engine) are displayed, never run. A directory `_metadata.yml` alone did NOT stop knitr. New pages in that training need the line too.
 - Only files in the `render:` list in `_quarto.yml` are built. `README.md` and `_template/` are not.
 
 ## Workflow

@@ -1,0 +1,223 @@
+---
+engine: markdown
+title: "Hands-on exercises"
+---
+
+One set of exercises per session. Together they build a small practice project: a Markdown page, a report, a slide deck, and finally a published website. Use **only made-up data**, and your **personal GitHub account** for publishing.
+
+Start by making a folder for everything: `Documents/GitHub/quarto-practice/`.
+
+## Session 1: Markdown and Quarto basics
+
+### Exercise 1: Markdown (Lesson 3, 15 min)
+
+1. In `quarto-practice/`, create `markdown-practice.qmd` with a YAML header containing just a `title:`.
+2. Write a short "About me" page using:
+   - two `##` headings
+   - **bold** and *italic* text
+   - a bulleted list and a numbered list
+   - a link to the [NV OSE training site](https://nv-ose.github.io/training/)
+   - a table with three counties and made-up case counts, with the numbers right-aligned
+3. Preview it.
+
+**✅ Check:** everything renders formatted, and the table has three rows with right-aligned numbers.
+
+::: {.callout-tip collapse="true" title="Show solution"}
+```markdown
+---
+title: "About me"
+---
+
+## Who I am
+
+I'm an **epidemiologist** in the *Office of State Epidemiology*.
+
+## What I work on
+
+- Respiratory surveillance
+- Data dashboards
+
+1. Pull the data
+2. Check it
+3. Report it
+
+See the [NV OSE training site](https://nv-ose.github.io/training/).
+
+| County | Cases |
+|:-------|------:|
+| Clark  |   120 |
+| Washoe |    45 |
+| Elko   |     6 |
+```
+:::
+
+### Bonus: Write a README (10 min)
+
+Download the [NV OSE README template](../intro-to-github/readme-guide.qmd), save it as `README.md` in `quarto-practice/`, and fill in the title, description, project structure, and maintainer for your practice project. Open the preview to check it.
+
+### Exercise 2: Quarto extras (Lesson 4, 10 min)
+
+Add to the same page:
+
+1. A **tip** callout and a **collapsed** callout titled "Show answer".
+2. A tab set with two tabs, "Windows" and "Mac".
+3. A footnote.
+
+**✅ Check:** the collapsed callout opens when clicked, and the tabs switch.
+
+### Exercise 3: Code (Lesson 5, 15 min)
+
+1. Add this chunk, which makes a small made-up data frame:
+
+   ````markdown
+   ```{r}
+   #| label: data
+   cases <- data.frame(
+     county = c("Clark", "Washoe", "Elko"),
+     cases  = c(120, 45, 6)
+   )
+   ```
+   ````
+
+2. Add a chunk that shows the data as a table with `knitr::kable()`, with its code hidden.
+3. Write a sentence that reports the **total** number of cases with inline code.
+
+**✅ Check:** the page shows a table (no code) and a sentence saying "171".
+
+::: {.callout-tip collapse="true" title="Show solution"}
+````markdown
+```{r}
+#| echo: false
+knitr::kable(cases, col.names = c("County", "Cases"))
+```
+
+There were `{r} sum(cases$cases)` cases in total.
+````
+:::
+
+## Session 2: Documents and presentations
+
+### Exercise 4: An HTML report (Lesson 6, 20 min)
+
+1. Create `ili-report.qmd` from the [complete report example](06-documents.qmd#a-complete-report) in Lesson 6.
+2. Render it. Find `ili-report.html` in your folder and open it in a browser.
+3. Change `set.seed(2026)` to another number, render again, and check that the numbers in the **Summary** sentence change with the chart.
+4. Add `code-fold: true` under `html:`, and render again.
+
+**✅ Check:** a self-contained report with a table of contents, a numbered figure, a table, and a sentence whose numbers match the chart. With `code-fold`, a "Code" button appears above each chunk.
+
+### Exercise 5: A slide deck (Lesson 7, 20 min)
+
+1. Create `talk.qmd` with `format: revealjs` and a title, author, and date.
+2. Make at least four slides:
+   - an **incremental** list
+   - a **two-column** slide (text on one side, a list on the other)
+   - a slide with **speaker notes**
+   - a slide with the ILI chart from Exercise 4 (code hidden, with `fig-alt`)
+3. Add `slide-number: true` and `embed-resources: true`.
+4. Render, open `talk.html` in a browser, and try **F**, **S**, and **Esc**.
+
+**✅ Check:** the deck has a title slide, the list appears one item at a time, and **S** shows your notes.
+
+::: {.callout-tip collapse="true" title="Show solution: YAML header"}
+```yaml
+---
+title: "ILI Update"
+author: "Jane Smith"
+date: today
+format:
+  revealjs:
+    slide-number: true
+    embed-resources: true
+execute:
+  echo: false
+---
+```
+:::
+
+## Session 3: Websites and publishing
+
+### Exercise 6: Turn the folder into a website (Lesson 8, 20 min)
+
+1. Create a **website project** in a new folder, `quarto-site` (see [Lesson 8](08-websites.qmd#create-the-project) for your editor).
+2. Change the site `title:` in `_quarto.yml`.
+3. Copy `markdown-practice.qmd` and `ili-report.qmd` from your practice folder into the site folder, and add both to the navbar.
+4. Preview the site.
+
+**✅ Check:** the navbar has Home, About, and your two pages, and each one opens.
+
+::: {.callout-tip title="Report options on a site"}
+Inside a website, the site's settings in `_quarto.yml` apply to every page. You can delete `embed-resources: true` from the report's header; a site doesn't need it.
+:::
+
+### Exercise 7: Sidebar and look (Lessons 8 and 10, 15 min)
+
+1. Make a `lessons/` folder with `01-welcome.qmd` and `02-data.qmd`, and add a docked **sidebar** listing them.
+2. Switch to a **light and dark theme pair** with `respect-user-color-scheme: true`.
+3. Add `search: true`, `page-navigation: true`, and a `page-footer` with your name.
+
+**✅ Check:** a light/dark toggle in the navbar, a sidebar on the lesson pages, and a footer on every page.
+
+::: {.callout-tip collapse="true" title="Show solution: _quarto.yml"}
+```yaml
+project:
+  type: website
+
+website:
+  title: "Jane's Practice Site"
+  search: true
+  page-navigation: true
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: lessons/01-welcome.qmd
+        text: Lessons
+      - ili-report.qmd
+      - about.qmd
+  sidebar:
+    style: docked
+    contents:
+      - section: "Lessons"
+        contents:
+          - lessons/01-welcome.qmd
+          - lessons/02-data.qmd
+  page-footer:
+    center: "Made by Jane Smith"
+
+format:
+  html:
+    theme:
+      light: flatly
+      dark: darkly
+    respect-user-color-scheme: true
+    css: styles.css
+    toc: true
+```
+:::
+
+### Exercise 8: Publish it (Lesson 11, 20 min)
+
+1. Add `output-dir: docs` and the `.nojekyll` resource to `_quarto.yml`, and create the `.nojekyll` file.
+2. Stop the preview and run `quarto render`.
+3. In GitHub Desktop, add the folder as a repository, commit, and **publish it to your personal account as public**.
+4. Turn on GitHub Pages: **Settings → Pages → Deploy from a branch → `main` → `/docs` → Save**.
+5. Open `https://<your-username>.github.io/quarto-site/`.
+6. **Update it:** change a sentence, render, commit, and push. Confirm the live site changes (hard refresh with **Ctrl + Shift + R**).
+
+**✅ Check:** your site is live, and your update appears.
+
+::: {.callout-tip collapse="true" title="Site not showing up?"}
+- **404 page:** check that Pages is set to `main` and `/docs`, and that `docs/index.html` was committed.
+- **Page has no styling:** check that `.nojekyll` is in `docs/`.
+- **Change not showing:** did you run `quarto render` before committing? Check that `docs/` files changed in GitHub Desktop.
+- **Still nothing:** look at the repo's **Actions** tab for a failed "pages build and deployment" run.
+:::
+
+### Bonus: Add your deck to the site
+
+Copy `talk.qmd` into the site folder and add it to the navbar. Render and push. Your slides are now online at `.../talk.html`.
+
+## Clean up
+
+When you're done practicing, you can delete the practice repo (**Settings → Danger Zone → Delete this repository**), or keep it as a sandbox.

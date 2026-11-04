@@ -1,0 +1,86 @@
+---
+engine: markdown
+title: "Introduction to Quarto"
+---
+
+Learn to write with **Markdown**, turn text and R code into reports and slides with **Quarto**, and publish a **website** on GitHub Pages. This is how the [NV OSE training site](https://nv-ose.github.io/training/) you're reading right now is built.
+
+## Overview
+
+- **Audience:** Anyone who writes reports, presentations, documentation, or trainings, especially if you use R
+- **Level:** Beginner (no Markdown or Quarto experience needed)
+- **Duration:** About 5 hours, in three sessions (below)
+- **Format:** Workshop or self-paced
+- **Editors:** Instructions for **Positron**, **VS Code**, and **RStudio**. Pick your editor once in any tab set, and every page follows your choice.
+
+## Learning objectives
+
+By the end of this training, you will be able to:
+
+1. Write formatted text in **Markdown**, and explain what Quarto adds to it.
+2. Describe what Quarto is used for, and install it.
+3. Add callouts, tabs, figures with alt text, and R code chunks to a Quarto document.
+4. Create an **HTML report** that combines text, code, tables, and charts.
+5. Build a **slide presentation** with revealjs.
+6. Create a **website**, publish it on **GitHub Pages**, and keep it updated.
+7. Make your Quarto outputs accessible.
+8. Add a new training to the NV OSE training site.
+
+## Prerequisites
+
+- **Session 1:** none. Install [Quarto](https://quarto.org/docs/get-started/), [R](https://cran.r-project.org/), and an editor ([Positron](https://positron.posit.co/), [VS Code](https://code.visualstudio.com/), or [RStudio](https://posit.co/download/rstudio-desktop/)) as part of [Lesson 2](02-setup.qmd).
+- **New to Positron?** The 45-minute [Introduction to Positron](../intro-to-positron/index.qmd) covers the editor first.
+- **Session 3 (publishing):** a GitHub account and [GitHub Desktop](https://desktop.github.com/download/). The [Introduction to Git and GitHub](../intro-to-github/index.qmd) training first is recommended.
+
+Basic R helps but isn't required. The code examples are short and explained.
+
+::: {.callout-note}
+On a state computer you may need IT to install Quarto, R, or an editor. Request them ahead of time.
+:::
+
+## Lessons
+
+### Session 1: Markdown and Quarto basics (about 1 hour 45 min)
+
+| # | Lesson | Time |
+|---|---|---|
+| 1 | [What is Quarto?](01-what-is-quarto.qmd) | 15 min |
+| 2 | [Setting up](02-setup.qmd) | 20 min |
+| 3 | [Markdown basics](03-markdown.qmd) | 30 min |
+| 4 | [What Quarto adds to Markdown](04-quarto-markdown.qmd) | 20 min |
+| 5 | [Code in Quarto](05-code.qmd) | 20 min |
+
+### Session 2: Documents and presentations (about 1 hour 15 min)
+
+| # | Lesson | Time |
+|---|---|---|
+| 6 | [Documents: HTML reports](06-documents.qmd) | 35 min |
+| 7 | [Presentations with revealjs](07-presentations.qmd) | 40 min |
+
+### Session 3: Websites and publishing (about 2 hours)
+
+| # | Lesson | Time |
+|---|---|---|
+| 8 | [Creating a website](08-websites.qmd) | 25 min |
+| 9 | [Previewing, rendering, and fixing errors](09-preview-render.qmd) | 15 min |
+| 10 | [Customizing and accessibility](10-customize.qmd) | 15 min |
+| 11 | [Publishing on GitHub Pages](11-publish-github-pages.qmd) | 20 min |
+| 12 | [Adding a training to the NV OSE site](12-add-to-nv-ose-site.qmd) | 20 min |
+
+**Also included:**
+
+- [Hands-on exercises](exercises.qmd): one set per session, ending with your own published site
+- [Cheat sheet](cheatsheet.qmd)
+- [Further resources](resources.qmd)
+
+## Maintainer
+
+Max Wegener — [mwegener@health.nv.gov](mailto:mwegener@health.nv.gov)
+
+## License
+
+CC BY 4.0
+
+## Last updated
+
+2026-10-28

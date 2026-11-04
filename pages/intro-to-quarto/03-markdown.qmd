@@ -1,0 +1,208 @@
+---
+engine: markdown
+title: "Lesson 3: Markdown basics"
+---
+
+Everything in this lesson works in **GitHub** (READMEs, Issues, Discussions) **and** in **Quarto**. Each section shows what you type, then what you get.
+
+::: {.callout-tip title="Follow along"}
+Create a file called `practice.qmd` in your editor, with this at the top:
+
+```yaml
+---
+title: "Markdown practice"
+---
+```
+
+Try each example below it, and preview (**Ctrl + Shift + K**) to see the result. No editor yet? Use the **Preview** tab when editing any file on github.com.
+:::
+
+## Paragraphs and line breaks
+
+```markdown
+This is one paragraph. A single line break
+inside it is ignored, so this is still the same paragraph.
+
+A blank line starts a new paragraph.
+```
+
+This is one paragraph. A single line break
+inside it is ignored, so this is still the same paragraph.
+
+A blank line starts a new paragraph.
+
+To force a line break *without* a new paragraph, end the line with a backslash `\`.
+
+## Headings
+
+```markdown
+## Section
+### Subsection
+#### Smaller subsection
+```
+
+- The number of `#` signs sets the level. Put a **space** after them.
+- In Quarto, the page title comes from the YAML header, so start sections at `##`.
+- Use headings in order (`##` then `###`), without skipping levels. Screen readers use them to navigate.
+
+## Emphasis
+
+| You type | You get |
+|---|---|
+| `**bold**` | **bold** |
+| `*italic*` | *italic* |
+| `***bold italic***` | ***bold italic*** |
+| `~~strikethrough~~` | ~~strikethrough~~ |
+| `` `inline code` `` | `inline code` |
+
+## Lists
+
+```markdown
+- Bullet point
+- Another one
+  - Indented (two spaces) makes a sub-point
+- Back to the top level
+
+1. First step
+2. Second step
+3. Third step
+
+- [ ] A task to do
+- [x] A finished task
+```
+
+- Bullet point
+- Another one
+  - Indented (two spaces) makes a sub-point
+- Back to the top level
+
+1. First step
+2. Second step
+3. Third step
+
+- [ ] A task to do
+- [x] A finished task
+
+::: {.callout-warning title="Leave a blank line before a list"}
+A list directly under a line of text, with no blank line between, may not be recognized as a list. The same goes for tables and headings.
+:::
+
+## Links
+
+```markdown
+[NV OSE training site](https://nv-ose.github.io/training/)
+
+[Lesson 2](02-setup.qmd)
+
+[Email Max](mailto:mwegener@health.nv.gov)
+
+<https://quarto.org>
+```
+
+[NV OSE training site](https://nv-ose.github.io/training/)
+
+[Lesson 2](02-setup.qmd)
+
+[Email Max](mailto:mwegener@health.nv.gov)
+
+<https://quarto.org>
+
+- Link text should say where the link goes: "NV OSE training site," not "click here."
+- Link to other files with a **relative path**: `02-setup.qmd`, or `../index.qmd` to go up a folder.
+
+## Images
+
+```markdown
+![](images/logo.png)
+```
+
+In plain Markdown, the text in the square brackets is the image's **alt text**, the description screen readers read aloud. In Quarto it also becomes a visible **caption**, so Quarto has a separate `fig-alt` option for alt text ([Lesson 4](04-quarto-markdown.qmd#images-captions-and-alt-text)).
+
+**Every image needs alt text.** Describe what it shows and why it's there.
+
+## Block quotes
+
+```markdown
+> Surveillance is the cornerstone of public health practice.
+```
+
+> Surveillance is the cornerstone of public health practice.
+
+## Code blocks
+
+Wrap code in three backticks. Add the language name for color highlighting:
+
+````markdown
+```r
+cases <- read.csv("cases.csv")
+summary(cases)
+```
+````
+
+```r
+cases <- read.csv("cases.csv")
+summary(cases)
+```
+
+In plain Markdown (and on GitHub), this code is only **displayed**. In Quarto, writing `{r}` instead of `r` makes it **run** ([Lesson 5](05-code.qmd)).
+
+## Tables
+
+```markdown
+| County  | Cases | Rate per 100,000 |
+|:--------|------:|:----------------:|
+| Clark   |   120 |       5.2        |
+| Washoe  |    45 |       9.0        |
+```
+
+| County  | Cases | Rate per 100,000 |
+|:--------|------:|:----------------:|
+| Clark   |   120 |       5.2        |
+| Washoe  |    45 |       9.0        |
+
+- The second row (`|---|`) separates the header from the body. It's required.
+- Colons set alignment: `:---` left, `---:` right, `:---:` centered.
+- The columns don't need to line up in your text. It just makes them easier to read.
+- **Every row needs the same number of `|` separators**, or the table breaks.
+- For big tables, generate them from data with R code instead of typing them ([Lesson 5](05-code.qmd)).
+
+## Horizontal line
+
+```markdown
+---
+```
+
+Three dashes on their own line, **with a blank line above**, draw a line across the page. (Without the blank line, the text above becomes a heading.)
+
+## Special characters
+
+To show a symbol that Markdown would otherwise treat as formatting, put a backslash before it: `\*not italic\*` shows \*not italic\*.
+
+## Comments
+
+```markdown
+<!-- A note to yourself. It won't appear in the output. -->
+```
+
+## Put it to use: a README
+
+The most common Markdown file you'll write is a **README**: the front page of a project that explains what it is and how to use it. GitHub shows it automatically on a repository's main page.
+
+See **[Writing a good README](../intro-to-github/readme-guide.qmd)** for what to include, and download the NV OSE template there.
+
+## Markdown quick reference
+
+| Element | Syntax |
+|---|---|
+| Heading | `## Heading` |
+| Bold / italic | `**bold**` / `*italic*` |
+| Bullet / numbered list | `- item` / `1. item` |
+| Task list | `- [ ] task` |
+| Link | `[text](url)` |
+| Image | `![](path)` |
+| Inline code | `` `code` `` |
+| Code block | ```` ```r ```` … ```` ``` ```` |
+| Quote | `> text` |
+| Table | Rows of cells separated by pipes, plus a dashes row under the header ([Tables](#tables)) |
+| Line | `---` (blank line above) |
+| Comment | `<!-- note -->` |

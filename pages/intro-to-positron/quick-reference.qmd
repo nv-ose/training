@@ -1,0 +1,48 @@
+---
+title: "Quick reference"
+---
+
+## Keyboard shortcuts (Windows)
+
+| Task | Shortcut |
+|---|---|
+| Command Palette (find any command) | **Ctrl + Shift + P** |
+| Run current line or selection | **Ctrl + Enter** |
+| Run the whole file | Click **▶** at the top right of the editor |
+| Save | **Ctrl + S** |
+| New window | **Ctrl + Shift + N** |
+| Open folder | **Ctrl + K**, then **Ctrl + O** |
+| Quick-open a file by name | **Ctrl + P** |
+| Explorer / Search / Source Control / Extensions | **Ctrl + Shift + E** / **F** / **G** / **X** |
+| Show/hide the side bar | **Ctrl + B** |
+| Comment or uncomment lines | **Ctrl + /** |
+| Find / Find in all files | **Ctrl + F** / **Ctrl + Shift + F** |
+| Markdown preview | **Ctrl + Shift + V** |
+| Quarto preview | **Ctrl + Shift + K** |
+| Change color theme | **Ctrl + K**, then **Ctrl + T** |
+
+On a Mac, use **Cmd** instead of **Ctrl**.
+
+## Coming from RStudio?
+
+| In RStudio you… | In Positron you… |
+|---|---|
+| Open an `.Rproj` file | **File → Open Folder…** |
+| Use the Environment tab | Use the **Variables** pane |
+| Run `View(df)` | Same, or click the table icon in Variables (opens the Data Explorer) |
+| Use the Files tab | Use the **Explorer** |
+| Use the Git tab | Use **Source Control** (**Ctrl + Shift + G**) |
+| Set R version in Global Options | Use the **interpreter picker** (top right) |
+| Use Tools → Global Options | Use **File → Preferences → Settings** (**Ctrl + ,**) |
+| Click **Knit** / **Render** | Click **Preview** above a `.qmd` file (**Ctrl + Shift + K**). See the [Quarto training](../intro-to-quarto/index.qmd) |
+| Insert a chunk (Ctrl + Alt + I) | Same shortcut, or Command Palette → **Quarto: Insert Code Cell** |
+
+## Starting a new project checklist
+
+- [ ] Create or open the folder (**File → Open Folder…** or **New Folder from Template…**)
+- [ ] Create the folders: `scripts/`, `notebooks/`, `raw_data/`, `processed_data/`, `images/`, `reports/`, `downloads/`
+- [ ] Add `README.md` ([template](../intro-to-github/readme-guide.qmd))
+- [ ] Add `.here` (`here::set_here()`)
+- [ ] Add `.gitignore` (data folders and secrets)
+- [ ] Initialize Git and make a first commit
+- [ ] Publish privately to **nv-ose** with GitHub Desktop

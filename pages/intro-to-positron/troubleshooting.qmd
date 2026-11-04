@@ -1,0 +1,116 @@
+---
+title: "Troubleshooting"
+---
+
+Common first-day problems, especially on Windows.
+
+## I don't see R or Python icons
+
+That's expected. Positron doesn't put R or Python in the left sidebar. Start them from the **interpreter picker** in the **top-right corner** ([Lesson 2](02-setup.qmd#start-r-or-python-the-interpreter-picker)).
+
+## How do I start a new R or Python console?
+
+- **Top-right interpreter picker:** choose an R or Python version. That starts a new session.
+- **Console panel:** click **+** (new session) at the top of the Console, or the dropdown arrow beside it, and choose R or Python.
+- **Command Palette** (**Ctrl + Shift + P**): type `Interpreter: Start New Session`.
+
+To **restart** the current console instead, click **↻** at the top of the Console panel. You can have R and Python consoles open at the same time and switch between them at the top of the Console.
+
+## The interpreter picker shows no R or Python
+
+Positron can't find them on your computer. It doesn't install them itself.
+
+1. **Install them:** R from [cran.r-project.org](https://cran.r-project.org/); Python from [python.org](https://www.python.org/downloads/) (on Windows, check **"Add python.exe to PATH"**).
+2. **Restart Positron.**
+3. Still missing? Open the Command Palette (**Ctrl + Shift + P**) and run **Interpreter: Discover all interpreters**.
+4. Check that Python is really installed (next section).
+
+## Where is Python installed?
+
+::: {.panel-tabset group="os"}
+
+## Windows: Command Prompt
+
+```
+where python
+```
+
+If you installed Python from python.org, the **py launcher** lists every installed version and its path:
+
+```
+py -0p
+```
+
+## Windows: PowerShell
+
+```
+Get-Command python
+```
+
+or
+
+```
+where.exe python
+```
+
+In PowerShell, plain `where` means something else (`Where-Object`), so you need the `.exe`.
+
+## Mac
+
+In Terminal:
+
+```
+which python3
+```
+
+:::
+
+You can also ask Python which executable it's running from:
+
+```
+python -c "import sys; print(sys.executable)"
+```
+
+(On a Mac, use `python3`.)
+
+::: {.callout-warning title="A path with WindowsApps in it"}
+If the result is `...\WindowsApps\python.exe`, that's the **Microsoft Store shortcut**, not a real install, and it often fails in Positron. Install Python from [python.org](https://www.python.org/downloads/), check **"Add python.exe to PATH"**, restart Positron, and choose that version in the interpreter picker.
+:::
+
+## The Python Console is blank and I can't type in it
+
+The Python session usually hasn't started or has crashed. Try these in order:
+
+1. **Wait.** On first launch Python can take 10–30 seconds. If you see a spinner or "Starting…", let it finish.
+2. **Restart the session:** click **↻** at the top of the Console, or run **Interpreter: Restart Active Interpreter** from the Command Palette.
+3. **Check the logs:** in the bottom panel, open the **Output** tab and choose **Python Kernel** or **Python Language Pack** from the dropdown on the right. Errors show up there.
+4. **Install `ipykernel`** (the most common fix). In the **Terminal** tab, run:
+
+   ```
+   python -m pip install ipykernel
+   ```
+
+   Then restart Positron.
+5. **Check you have a real Python install,** not the Microsoft Store shortcut ([above](#where-is-python-installed)).
+
+## I typed `python` in the Console and got an error
+
+The Console is already running Python. Type the code itself, like `print("hello")`. Only the **Terminal** needs `python` first ([Lesson 2](02-setup.qmd#where-to-run-code)).
+
+## I can't see the Extensions panel
+
+- Press **Ctrl + Shift + X** to open the Extensions view.
+- If the whole icon bar on the left is missing: **View → Appearance → Activity Bar Position → Default**. Or search `Activity Bar` in the Command Palette.
+
+## My VS Code extensions aren't here
+
+Positron is a separate app, so it doesn't bring over VS Code extensions. It also installs from the **Open VSX** marketplace rather than Microsoft's, so a few extensions (like Pylance and some other Microsoft ones) aren't available.
+
+- In the Extensions view, search for each one and click **Install**.
+- If one isn't listed, download its `.vsix` file, then in the Extensions view click **⋯ → Install from VSIX…** and choose the file. Only install `.vsix` files from trusted sources.
+
+Positron already includes R and Python support, so you don't need separate extensions for them.
+
+## I want dark mode
+
+**Ctrl + K**, then **Ctrl + T**, and choose a dark theme ([Lesson 2](02-setup.qmd#dark-mode-and-themes)).

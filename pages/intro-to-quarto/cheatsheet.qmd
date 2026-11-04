@@ -1,0 +1,195 @@
+---
+engine: markdown
+title: "Quarto cheat sheet"
+---
+
+## Markdown
+
+| Element | Syntax |
+|---|---|
+| Heading | `## Heading`, `### Subheading` |
+| Bold / italic / strikethrough | `**bold**` / `*italic*` / `~~strike~~` |
+| Bulleted / numbered list | `- item` / `1. item` |
+| Task list | `- [ ] task` / `- [x] done` |
+| Link | `[text](https://...)` or `[text](page.qmd)` |
+| Email link | `[me@example.gov](mailto:me@example.gov)` |
+| Inline code | `` `code` `` |
+| Quote | `> quote` |
+| Horizontal line | `---` with a blank line above |
+| Comment | `<!-- note -->` |
+
+Tables:
+
+```markdown
+| County | Cases |
+|:-------|------:|
+| Clark  |   120 |
+```
+
+## Quarto extras
+
+````markdown
+::: {.callout-tip}
+A tip. Also: callout-note, callout-warning, callout-important, callout-caution
+:::
+
+::: {.callout-tip collapse="true" title="Show answer"}
+Hidden until clicked.
+:::
+
+::: {.panel-tabset}
+## Tab one
+Content
+## Tab two
+Content
+:::
+
+:::: {.columns}
+::: {.column width="50%"}
+Left
+:::
+::: {.column width="50%"}
+Right
+:::
+::::
+
+![Caption](image.png){#fig-name fig-alt="What the image shows."}
+See @fig-name.
+
+A footnote.^[The note text.]
+````
+
+## Code
+
+````markdown
+```{r}
+#| label: fig-cases
+#| echo: false
+#| fig-cap: "Visible caption"
+#| fig-alt: "Chart type, variables, and main pattern."
+plot(cases)
+```
+
+Inline: there were `{r} nrow(cases)` cases.
+````
+
+| Chunk option | Effect |
+|---|---|
+| `echo: false` | Hide code, show result |
+| `eval: false` | Show code, don't run it |
+| `include: false` | Run, show nothing |
+| `warning: false` / `message: false` | Hide warnings / messages |
+| `fig-alt` | Alt text (required for every chart) |
+| `fig-cap` | Visible caption |
+
+## HTML report header
+
+```yaml
+---
+title: "Report title"
+author: "Your Name"
+date: today
+format:
+  html:
+    toc: true
+    number-sections: true
+    embed-resources: true     # one self-contained file
+    code-fold: true           # code behind "Code" buttons
+execute:
+  echo: false
+  warning: false
+---
+```
+
+## Slides (revealjs)
+
+```yaml
+---
+title: "Talk title"
+format:
+  revealjs:
+    slide-number: true
+    incremental: false
+    footer: "Footer text"
+    embed-resources: true
+---
+```
+
+| In the file | Does |
+|---|---|
+| `## Title` | New slide |
+| `---` | New slide without a title |
+| `# Section` | Section title slide |
+| `::: {.incremental}` … `:::` | List appears item by item |
+| `. . .` | Pause |
+| `::: {.notes}` … `:::` | Speaker notes |
+
+| While presenting | Key |
+|---|---|
+| Full screen | **F** |
+| Speaker view | **S** |
+| Overview | **Esc** / **O** |
+| Save as PDF | add `?print-pdf` to the URL, then print |
+
+## Websites
+
+```yaml
+project:
+  type: website
+  output-dir: docs
+  resources:
+    - "/.nojekyll"
+
+website:
+  title: "My Site"
+  search: true
+  page-navigation: true
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: lessons/01-intro.qmd
+        text: Lessons
+  sidebar:
+    style: docked
+    contents:
+      - section: "Lessons"
+        contents: "lessons/*"
+  page-footer:
+    center: "Questions? [me@example.gov](mailto:me@example.gov)"
+
+format:
+  html:
+    theme:
+      light: cosmo
+      dark: darkly
+    respect-user-color-scheme: true
+    toc: true
+```
+
+## Commands and shortcuts
+
+| Task | Terminal | Positron / VS Code | RStudio |
+|---|---|---|---|
+| Check setup | `quarto check` | | |
+| New website | `quarto create project website my-site` | **Quarto: Create Project** | **File → New Project → Quarto Website** |
+| Preview | `quarto preview` | **Ctrl + Shift + K** | **Render** button |
+| Render one file | `quarto render file.qmd` | | **Render** button |
+| Render a whole site | `quarto render` | `quarto render` in the terminal | **Build → Render Website** |
+| Visual editor | | **Ctrl + Shift + F4** | **Visual** button |
+
+## Publish to GitHub Pages
+
+1. `output-dir: docs` and an empty `.nojekyll` file
+2. `quarto render`
+3. Commit everything, **including `docs/`**, and push
+4. **Settings → Pages → Deploy from a branch → `main` → `/docs` → Save**
+
+**Every update:** edit → `quarto render` → commit (with `docs/`) → push.
+
+## Before you share or publish
+
+- [ ] No real or unreleased data, credentials, or internal details
+- [ ] Every image and chart has alt text
+- [ ] Headings in order; link text is meaningful
+- [ ] Previewed in light and dark mode; links work

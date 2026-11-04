@@ -99,7 +99,7 @@ Click **Push origin**. Your commits are now on GitHub.
 | Undo the most recent commit (before pushing) | **History** → right-click the commit → **Undo commit** |
 | Discard changes to a file | **Changes** → right-click the file → **Discard changes** |
 | Reverse a commit you've already pushed | **History** → right-click → **Revert changes in commit**. This makes a new commit that undoes it |
-| Open the repo in your editor or file browser | **Repository → Open in…** / **Show in Finder (Explorer)** |
+| Open the repo in your editor or file browser | **Repository → Open in…** / **Show in Explorer** (Mac: Show in Finder) |
 | View the repo on GitHub | **Repository → View on GitHub** |
 | Branches and pull requests | See [Lesson 6](06-branches-pull-requests.qmd) |
 

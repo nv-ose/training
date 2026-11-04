@@ -1,0 +1,159 @@
+---
+engine: markdown
+title: "Lesson 6: Documents: HTML reports"
+---
+
+A Quarto **document** is a single `.qmd` file that renders to a single output. The most flexible output is an **HTML report**: it opens in any web browser, can be emailed as one file, and supports everything from the previous lessons: tabs, collapsible callouts, and interactive tables.
+
+## 1. Create a document
+
+::: {.panel-tabset group="editor"}
+
+## Positron
+
+1. **File → New File…** → **Quarto Document**, or create a file ending in `.qmd`.
+2. Save it in a project folder, e.g., `Documents/quarto-practice/ili-report.qmd`.
+
+## VS Code
+
+1. Command Palette → **Quarto: New Document**, or create a file ending in `.qmd`.
+2. Save it in a project folder, e.g., `Documents/quarto-practice/ili-report.qmd`.
+
+## RStudio
+
+1. **File → New File → Quarto Document…**
+2. Enter a title, leave **HTML** selected, and click **Create**. (Uncheck "Use visual markdown editor" if you prefer source mode.)
+3. Save it, e.g., `ili-report.qmd`.
+
+:::
+
+## 2. A complete report
+
+````markdown
+---
+title: "Weekly ILI Summary"
+subtitle: "Practice report with synthetic data"
+author: "Jane Smith"
+date: today
+format:
+  html:
+    toc: true
+    number-sections: true
+    embed-resources: true
+execute:
+  echo: false
+  warning: false
+---
+
+```{r}
+#| label: setup
+#| include: false
+library(ggplot2)
+set.seed(2026)
+ili <- data.frame(
+  week    = seq(as.Date("2025-09-28"), by = "week", length.out = 20),
+  pct_ili = round(1.5 + 3 * exp(-((1:20 - 12)^2) / 18) + rnorm(20, 0, 0.2), 1)
+)
+peak <- ili[which.max(ili$pct_ili), ]
+```
+
+::: {.callout-note}
+All data in this report is synthetic, for practice only.
+:::
+
+## Summary
+
+ILI peaked at **`{r} peak$pct_ili`%** in the week of `{r} format(peak$week, "%B %d")`.
+
+## Trend
+
+```{r}
+#| label: fig-trend
+#| fig-cap: "Weekly percent of visits for ILI"
+#| fig-alt: "Line chart of weekly percent ILI over 20 weeks. It starts near
+#|   1.5%, rises to a peak of about 4.5% around week 12, then falls back."
+ggplot(ili, aes(week, pct_ili)) +
+  geom_line(linewidth = 1) +
+  labs(x = "Week", y = "% ILI")
+```
+
+@fig-trend shows the season so far.
+
+## Data
+
+```{r}
+#| label: tbl-data
+#| tbl-cap: "Most recent five weeks"
+knitr::kable(tail(ili, 5), col.names = c("Week", "% ILI"))
+```
+````
+
+What's happening:
+
+- `date: today` fills in the date when you render.
+- `embed-resources: true` packs images and styles **into the one HTML file**, so you can email it or put it on a shared drive and it still works.
+- `echo: false` hides the code for the whole report. Readers see results only.
+- The setup chunk loads packages and data without showing anything.
+- Inline code (`` `{r} peak$pct_ili` ``) writes the numbers into the sentence, so they always match the data.
+- `@fig-trend` becomes "Figure 1", linked to the chart.
+
+## 3. Render it
+
+::: {.panel-tabset group="editor"}
+
+## Positron
+
+Click **Preview** above the file, or press **Ctrl + Shift + K**. The report appears in the **Viewer**; the HTML file is saved next to the `.qmd`.
+
+## VS Code
+
+Click **Preview** above the file, or press **Ctrl + Shift + K**. The report opens in a side panel; the HTML file is saved next to the `.qmd`.
+
+## RStudio
+
+Click **Render** (or **Ctrl + Shift + K**). The report opens in the Viewer or a browser; the HTML file is saved next to the `.qmd`.
+
+## Terminal
+
+```bash
+quarto render ili-report.qmd
+```
+
+:::
+
+The result is `ili-report.html` in the same folder. Double-click it to open it in your browser.
+
+## 4. Useful HTML options
+
+```yaml
+format:
+  html:
+    toc: true                  # table of contents
+    toc-location: left         # ... on the left instead of the right
+    number-sections: true      # 1, 1.1, 1.2 ...
+    embed-resources: true      # one self-contained file
+    code-fold: true            # code hidden behind "Show the code" buttons
+    code-tools: true           # a menu to show/hide all code, or view the source
+    df-print: paged            # data frames as scrollable, paged tables
+    theme: flatly              # change the look (Lesson 10)
+```
+
+`code-fold: true` is a good middle ground for analysis write-ups: readers see results first, and can open the code if they want.
+
+## 5. Reports that update themselves
+
+The real power: change the data, render again, and the whole report updates: charts, tables, and every number in the text.
+
+A typical routine report:
+
+1. A setup chunk reads the newest data file.
+2. Every number and chart is calculated from it.
+3. Each week: drop in the new data, click **Render**, share the HTML.
+
+::: {.callout-important title="Reports with real data"}
+An HTML report contains the **results** of your code (numbers, tables, charts), and with `embed-resources: true` the whole thing is in one file. Treat it like any other report with data: share it only through approved channels, and never publish it on a public site unless it's cleared for release.
+:::
+
+## Other document formats
+
+The same `.qmd` file can also render to **Word** (`format: docx`), **PDF** (`format: pdf` or `format: typst`), and more, by changing `format:` in the header. This training focuses on HTML. See Quarto's [Documents](https://quarto.org/docs/output-formats/all-formats.html) guide for the others.

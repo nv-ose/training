@@ -1,0 +1,87 @@
+---
+engine: markdown
+title: "Lesson 1: What is Quarto?"
+---
+
+## Start with Markdown
+
+**Markdown** is a simple way to format plain text. You type symbols, and they become formatting:
+
+| You type        | You get        |
+|-----------------|----------------|
+| `**important**` | **important**  |
+| `# Heading`     | A heading      |
+| `- item`        | A bullet point |
+
+You've probably seen it already: GitHub READMEs, Issues, Discussions, Teams and Slack messages, and many note-taking apps use Markdown. It's easy to read even before it's formatted, and because it's plain text, it works well with Git.
+
+But plain Markdown has limits. It can't run code, number figures, make slides, build a multi-page website, or produce a polished report.
+
+## Quarto builds on Markdown
+
+**Quarto** is free, open-source software from [Posit](https://posit.co/) (the company behind RStudio) that takes Markdown much further. You write a `.qmd` file ("Quarto Markdown"), and Quarto **renders** it into a finished product:
+
+```         
+            ┌──────────────┐
+            │              ├──► report.html  (web page / report)
+ file.qmd ──►    Quarto    ├──► slides.html  (presentation)
+ (Markdown  │  (+ R runs   ├──► a website    (many linked pages)
+  + R code) │  your code)  ├──► .docx, .pdf  (Word, PDF)
+            └──────────────┘
+```
+
+### What Quarto adds
+
+| Plain Markdown | Quarto |
+|------------------------------------|------------------------------------|
+| Formatting only | Formatting **plus** running R, Python, or Julia code and inserting the results |
+| One output: a formatted page | Many outputs from the same file: HTML, slides, websites, Word, PDF, and more |
+| No settings | A **YAML header** to set the title, author, theme, table of contents, and more |
+| Basic elements | Callout boxes, tabs, columns, cross-referenced figures and tables, footnotes, citations |
+| You style it however your app styles it | Built-in themes, light and dark mode, accessible defaults |
+
+### Quarto and R Markdown
+
+If you've used **R Markdown** (`.Rmd` files), Quarto is its successor. The ideas are the same, but Quarto works with more languages and editors, and most `.Rmd` files render in Quarto with few or no changes.
+
+## What people use Quarto for
+
+| Use | Example in public health |
+|------------------------------------|------------------------------------|
+| **Reports** | A weekly surveillance summary where the charts and numbers update from the data automatically |
+| **Presentations** | Conference talks and briefings with live charts and code, as a web-based slide deck |
+| **Websites** | Training sites (like this one), project documentation, a team's resource hub |
+| **Documentation** | A pipeline's how-to guide, like a step-by-step `report.qmd` that staff run each week |
+| **Books and manuals** | A multi-chapter methods manual or SOP |
+| **Dashboards** | A simple page of charts and value boxes |
+
+The [Quarto Gallery](https://quarto.org/docs/gallery/) has hundreds of examples.
+
+### Why it's worth learning
+
+- **Reproducible.** The chart in the report is produced by the code beside it. Rerun with new data, and everything updates, with no copy-pasting from R into Word.
+- **One skill, many outputs.** The same Markdown and code make reports, slides, and websites.
+- **Plain text.** Files are small, readable, and version-controlled with Git.
+- **Free.** Quarto is free, and so is publishing on GitHub Pages.
+
+## This training
+
+This course works up from the basics:
+
+1.  **Session 1:** Markdown, then what Quarto adds, then code
+2.  **Session 2:** HTML reports, then presentations
+3.  **Session 3:** websites, then publishing them on GitHub Pages
+
+## Key vocabulary
+
+| Term | Meaning |
+|------------------------------------|------------------------------------|
+| **Markdown** | Simple text formatting (`**bold**`, `# Heading`, `- list`) |
+| **Quarto** | Software that turns Markdown and code into documents, slides, and websites |
+| **`.qmd` file** | A Quarto document: YAML header + Markdown + code chunks |
+| **YAML** | The `key: value` settings format used in headers and `_quarto.yml` |
+| **Code chunk** | A block of R (or Python) code that Quarto runs |
+| **Render** | Build the output (HTML, slides, a site) from `.qmd` files |
+| **Preview** | Render and show a live view that updates as you edit |
+| **Format** | The type of output: `html`, `revealjs` (slides), `docx`, `pdf`… |
+| **Project** | A folder with a `_quarto.yml`, such as a website |
