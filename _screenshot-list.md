@@ -1,82 +1,75 @@
 # Screenshot shot list: Intro to Git & GitHub
 
-Not rendered on the site (the file name starts with `_`). Check off each screenshot as you save it.
+Not rendered on the site (the file name starts with `_`). ✅ = saved and checked. **Take all screenshots on Windows** (github.com pages look the same on any computer, but GitHub Desktop, File Explorer, and terminals must be Windows).
 
-## How to capture
+## How to capture (Windows)
 
-- **Where to save:** `training/images/intro-to-github/`, using the exact file names below.
-- **Mac:** press **Cmd + Shift + 4**, then **Space**, then click a window to capture just that window. Or press **Cmd + Shift + 4** and drag to select an area.
-- **Use a practice setup:** your personal account and a practice repo named `github-practice`. **Not** real NV OSE project repos.
-- **Light mode** in GitHub and GitHub Desktop, for consistency. The site itself handles dark mode.
-- **Don't draw arrows or boxes.** Leave the images clean. Highlights are added afterwards as CSS overlays, so they can be moved without re-editing the image.
-- **Privacy:** before saving, make sure there are no email addresses, real names other than your own, tokens, or notification contents. Tell me if anything needs to be painted out.
-- Crop to the relevant part of the window. Full-screen captures are hard to read.
+- **Where to save:** `training/images/intro-to-github/`. Names don't matter; they get renamed when checked.
+- **Capture:** **Win + Shift + S**, then drag around the area (or choose **Window** mode).
+- **Use a practice repo** (e.g., `github-practice` in your personal account), not real NV OSE projects.
+- **Light mode**, no drawn arrows or boxes (highlights are added afterwards).
+- **Privacy:** avoid **email addresses**, `C:\Users\<you>` paths, **lists of your repos** (they show private names), tokens, and notifications.
+- **Don't commit screenshots until they've been checked**, and don't use **Discard changes** on renamed/cleaned images.
 
 ## Lesson 2: Setting up
 
-- [ ] `02-2fa-settings.png`: github.com → **Settings → Password and authentication**, showing the two-factor authentication section
-- [ ] `02-email-privacy.png`: **Settings → Emails**, showing **Keep my email addresses private** (crop out the email list or blur the addresses)
-- [ ] `02-desktop-accounts.png`: GitHub Desktop → **Settings → Accounts**, signed in
-- [ ] `02-desktop-git-config.png`: GitHub Desktop → **Settings → Git**, showing the name and email fields (blur the email)
-- [ ] `02-git-version.png`: Terminal after running `git --version`
+- [x] `02-2fa-settings.png`: **Settings → Password and authentication**
+- [x] `02-email-privacy.png`: **Settings → Emails**, Keep my email addresses private (emails covered)
+- [x] `02-account-settings.png`: **Settings → Account** (extra)
+- [x] `02-desktop-file-options-menu.png`: GitHub Desktop **File → Options…**
+- [x] `02-desktop-accounts.png`: **Options → Accounts**
+- [x] `02-desktop-git-config.png`: **Options → Git → Author** (email shown as a noreply example)
+- [x] `02-desktop-default-branch.png`: **Options → Git → Default branch**
+- [x] `02-push-failed-private-email.png`: the **Failed to push** private-email error
+- [x] `02-git-version.png`: PowerShell `git --version` (username covered)
 
 ## Lesson 3: Repositories, READMEs, and .gitignore
 
-- [ ] `03-new-repo-menu.png`: the **+** menu (top right of github.com) with **New repository** visible
-- [ ] `03-new-repo-form.png`: the whole **Create a new repository** form: owner, name, description, Public/Private, Add README, .gitignore template, license. Scroll or zoom out to fit it in one shot if you can
-- [ ] `03-repo-front-page.png`: a repo's main page showing the file list and the rendered README below it
-- [ ] `03-edit-readme.png`: editing README.md in the browser (pencil icon), showing the **Edit** and **Preview** tabs
-- [ ] `03-gitignore-file.png`: a `.gitignore` file opened on github.com
+- [x] `03-new-repo-menu.png`, `03-new-repo-form.png`, `03-repo-front-page.png`, `03-readme-rendered.png`
+- [x] `03-edit-file-button.png`, `03-edit-readme.png`, `03-edit-readme-preview.png`, `03-gitignore-file.png`
 
-## Lesson 4: GitHub Desktop
+## Lesson 4: GitHub Desktop ✅ done
 
-- [ ] `04-desktop-overview.png`: the full GitHub Desktop window with a repo open: **Current repository**, **Current branch**, **Fetch origin**, the Changes tab, and the diff
-- [ ] `04-clone-dialog.png`: **File → Clone repository**, showing the list of repos and the Local path
-- [ ] `04-add-local-repo.png`: **File → Add local repository**, showing the "not a Git repository… **create a repository**" message
-- [x] `04-publish-dialog.png`: the **Publish repository** dialog, showing the **Organization** dropdown and **Keep this code private**
-- [ ] `04-changes-tab.png`: Changes tab with 2–3 changed files, one file's diff (red/green lines), and the Summary/Description boxes filled in
-- [ ] `04-push-origin.png`: the top bar after committing, showing **Push origin** with the ↑1 count
-- [ ] `04-pull-origin.png`: the top bar showing **Pull origin** with the ↓ count (make a change on github.com first, then click Fetch)
-- [ ] `04-history-menu.png`: History tab, right-clicking a commit to show **Undo commit / Revert changes in commit**
-- [ ] `04-ignore-file-menu.png`: Changes tab, right-clicking a file to show **Ignore file** and **Discard changes**
+- [x] `04-desktop-welcome.png` (repo list removed), `04-desktop-overview.png`
+- [x] `04-clone-menu.png`, `04-clone-dialog.png` (username covered)
+- [x] `04-add-local-menu.png`, `04-add-local-dialog.png`, `04-add-local-create-repo.png` (username covered)
+- [x] `04-new-repo-dialog.png` (username covered), `04-publish-dialog.png`
+- [x] `04-changes-tab.png`, `04-changes-list.png`, `04-commit-summary-description.png`
+- [x] `04-ignore-file-menu.png`, `04-discard-changes-menu.png`, `04-confirm-discard.png`
+- [x] `04-push-origin.png`, `04-pull-origin.png`, `04-history-tab.png`, `04-history-menu.png`
+- [ ] `04-changes-checkboxes.png` (optional): Changes tab with some files **unchecked**
 
 ## Lesson 5: Command line
 
-- [ ] `05-terminal-status.png`: Terminal showing `git status` output with one modified and one untracked file
-- [ ] `05-empty-repo-setup.png`: github.com's page for a new **empty** repo, showing the "…or push an existing repository from the command line" commands
-- [ ] `05-copy-clone-url.png`: the green **Code** button opened on a repo, showing the HTTPS URL and the copy icon
+- [x] `05-terminal-status.png` (username covered), `05-repo-code-button.png`, `05-copy-clone-url.png`
+- [ ] `05-git-bash.png`: **Git Bash** open, or right-click a folder → **Open Git Bash here**
+- [ ] `05-empty-repo-setup.png`: a new **empty** repo's page with "…or push an existing repository from the command line"
 
-## Lesson 6: Branches and pull requests
+## Lesson 6: Branches and pull requests (next batch, in a practice repo)
 
-- [ ] `06-new-branch.png`: GitHub Desktop **Current branch** dropdown with **New branch** visible
-- [ ] `06-publish-branch.png`: the top bar showing **Publish branch**
-- [ ] `06-create-pr-desktop.png`: GitHub Desktop showing the **Create Pull Request** button / prompt
+- [ ] `06-new-branch.png`: **Current branch** dropdown → **New branch**
+- [ ] `06-publish-branch.png`: **Publish branch** button
+- [ ] `06-create-pr-desktop.png`: **Create Pull Request** in GitHub Desktop
 - [ ] `06-compare-banner.png`: github.com's yellow **Compare & pull request** banner
-- [ ] `06-open-pr-form.png`: the **Open a pull request** form, showing the title, description, and **Reviewers** on the right
-- [ ] `06-files-changed.png`: a PR's **Files changed** tab with a line comment being added (the blue **+**)
-- [ ] `06-review-changes.png`: the **Review changes** box with Comment / Approve / Request changes
-- [ ] `06-merge-pr.png`: the **Merge pull request** button, and then the **Delete branch** button after merging (one or two shots)
-- [ ] `06-conflict-desktop.png`: GitHub Desktop's merge conflict dialog (create one with Exercise 4's bonus)
+- [ ] `06-open-pr-form.png`: **Open a pull request** form (title, description, **Reviewers**)
+- [ ] `06-files-changed.png`: **Files changed** tab with a line comment (blue **+**)
+- [ ] `06-review-changes.png`: **Review changes** box (Comment / Approve / Request changes)
+- [ ] `06-merge-pr.png`: **Merge pull request**, then **Delete branch**
+- [ ] `06-conflict-desktop.png` (optional): GitHub Desktop merge conflict dialog
 
 ## Lesson 7: Clones, forks, and templates
 
-- [ ] `07-fork-button.png`: the **Fork** button on a public repo (e.g., github.com/skills/introduction-to-github)
-- [ ] `07-sync-fork.png`: the **Sync fork** button on a fork's page
-- [ ] `07-use-template.png`: the **Use this template** button on a template repo
+- [ ] `07-fork-button.png`, `07-sync-fork.png`, `07-use-template.png`
 
 ## Lesson 8: Public vs. private
 
-- [ ] `08-visibility-label.png`: a repo header showing the **Public** or **Private** label next to its name
-- [ ] `08-change-visibility.png`: **Settings → Danger Zone → Change visibility** (just view it; don't change anything)
+- [ ] `08-visibility-label.png`: **Public/Private** label next to a repo name
+- [ ] `08-change-visibility.png`: **Settings → Danger Zone → Change visibility** (just view it)
 
 ## Lesson 9: Data security
 
-- [ ] `09-push-protection-setting.png`: personal **Settings → Code security**, showing **Push protection for yourself**
-- [ ] `09-desktop-review.png`: GitHub Desktop Changes tab showing a reviewed diff (can reuse a fake `.env` file in a practice repo to show it **not** appearing, because it's ignored)
-
----
-
-When some or all of these are saved, tell me. I'll look at each image, write its alt text, add the highlight boxes, and place it in the lessons.
+- [ ] `09-push-protection-setting.png`: **Settings → Code security → Push protection for yourself**
+- [ ] `09-desktop-review.png`: Changes tab where an ignored `.env` file does **not** appear
 
 ---
 
