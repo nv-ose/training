@@ -7,6 +7,8 @@ title: "Lesson 2: Setting up"
 1. Go to [github.com/signup](https://github.com/signup).
 2. Choose a **professional username**. It appears on everything you do, for example `jsmith-nv` rather than `pizzalover99`.
 3. **Turn on two-factor authentication (2FA):** profile picture → **Settings → Password and authentication**. NV OSE requires 2FA for all organization members.
+
+   ![](../../images/intro-to-github/02-2fa-settings.png){fig-alt="GitHub's Password and authentication settings page. Sign in methods are listed (email, password, passkeys, Google, Apple), and below them the Two-factor authentication section with a Preferred 2FA method set to Passkeys."}
 4. Optional: if you use a personal account for work, add your work email under **Settings → Emails**.
 
 ### Protect your email address
@@ -15,6 +17,19 @@ Every commit is labeled with an email address, and in public repos anyone can se
 
 1. Go to **Settings → Emails** and check **Keep my email addresses private**.
 2. GitHub then shows you a private "noreply" address, like `12345678+username@users.noreply.github.com`. Use that address when you configure Git (below).
+
+::: {.annotated}
+![](../../images/intro-to-github/02-email-privacy.png){fig-alt="GitHub's Emails settings page. It lists one verified email address and shows the account's noreply address for web-based Git operations. At the bottom, the Keep my email addresses private setting is turned on, marked with a red box."}
+[]{.red-box style="left:78.5%; top:82%; width:3.7%; height:5.5%;"}
+:::
+
+::: {.callout-warning title="Push failed because of a private email?"}
+::: {style="max-width:70%"}
+![](../../images/intro-to-github/02-push-failed-private-email.png){fig-alt="A GitHub Desktop error titled Failed to push: Cannot push these commits as they contain an email address marked as private on GitHub. It suggests unchecking Keep my email address private."}
+:::
+
+This means Git is committing with your **private** email. **Don't** turn off email privacy as the message suggests. Instead, set your Git email to your **noreply** address ([step 3](#connect-github-desktop)), then undo and redo the commit.
+:::
 
 ## 2. Install the tools
 
@@ -42,13 +57,32 @@ Check that Git works. Open **Git Bash** (Start menu → type `Git Bash`) or **Co
 git --version
 ```
 
-You should see something like `git version 2.47.0`.
+You should see something like `git version 2.53.0.windows.2`:
 
-## 3. Connect GitHub Desktop
+![](../../images/intro-to-github/02-git-version.png){fig-alt="Windows PowerShell after running git --version, which prints git version 2.53.0.windows.2."}
 
-1. Open GitHub Desktop and sign in: **File → Options → Accounts** (Mac: **GitHub Desktop → Settings → Accounts**).
-2. Your browser opens. Sign in to GitHub and authorize the app.
-3. Under **Git**, confirm your name and email.
+## 3. Connect GitHub Desktop {#connect-github-desktop}
+
+1. Open GitHub Desktop and go to **File → Options…** (Mac: **GitHub Desktop → Settings**).
+
+::: {.annotated style="max-width:60%"}
+![](../../images/intro-to-github/02-desktop-file-options-menu.png){fig-alt="GitHub Desktop's File menu with Options… (shortcut Ctrl+,) marked with a red box. Other items are New repository, Add local repository, Clone repository, and Exit."}
+[]{.red-box style="left:4.5%; top:53%; width:28.5%; height:13.5%;"}
+:::
+
+2. Under **Accounts**, click **Sign in** for GitHub.com. Your browser opens; sign in to GitHub and authorize the app. When it's done, your account appears:
+
+::: {style="max-width:55%"}
+![](../../images/intro-to-github/02-desktop-accounts.png){fig-alt="The Accounts page of GitHub Desktop's Options, showing a signed-in GitHub.com account with a Sign out button, and a Sign into GitHub Enterprise button below."}
+:::
+
+3. Under **Git → Author**, set your **Name**, and choose your **noreply** address in the **Email** dropdown. Click **Save**.
+
+::: {style="max-width:55%"}
+![](../../images/intro-to-github/02-desktop-git-config.png){fig-alt="The Git page of GitHub Desktop's Options, on the Author tab. The Name field has a username, and the Email dropdown shows a noreply address ending in @users.noreply.github.com."}
+:::
+
+4. Under **Git → Default branch**, leave it as **main**.
 
 ## 4. Configure Git for the command line
 

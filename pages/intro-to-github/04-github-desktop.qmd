@@ -6,20 +6,20 @@ GitHub Desktop lets you do everyday Git work with buttons instead of commands. I
 
 ## The layout
 
-```
-┌──────────────────┬──────────────────┬──────────────────────────────┐
-│ Current          │ Current branch ▾ │ Fetch / Pull / Push origin   │
-│ repository ▾     │                  │                              │
-├──────────────────┴──────────────────┴──────────────────────────────┤
-│ Changes | History  │  Diff view: red = removed, green = added       │
-│ ☑ file1.R          │                                                │
-│ ☑ README.md        │                                                │
-│                    │                                                │
-│ Summary (required) │                                                │
-│ Description        │                                                │
-│ [Commit to main]   │                                                │
-└────────────────────┴────────────────────────────────────────────────┘
-```
+![](../../images/intro-to-github/04-desktop-overview.png){fig-alt="GitHub Desktop with the training repository open. Across the top bar: Current repository (training), Current branch (main), and Fetch origin. On the left, the Changes and History tabs, with 0 changed files, and Summary and Description boxes above a Commit to main button. The main area says No local changes and offers buttons to open the repository in an editor, show it in Explorer, or view it on GitHub."}
+
+| Area | What it's for |
+|---|---|
+| **Current repository** (top left) | Switch between repos |
+| **Current branch** | See and switch branches ([Lesson 6](06-branches-pull-requests.qmd)) |
+| **Fetch / Pull / Push origin** (top) | Sync with GitHub. The label changes depending on what's needed |
+| **Changes** tab | Files you've changed since the last commit |
+| **History** tab | Past commits |
+| **Summary / Description / Commit** (bottom left) | Save your changes as a commit |
+
+The first time you open GitHub Desktop, it shows a **Let's get started!** screen with the same options as the File menu:
+
+![](../../images/intro-to-github/04-desktop-welcome.png){fig-alt="GitHub Desktop's Let's get started! screen with four buttons: Create a tutorial repository, Clone a repository from the Internet, Create a New Repository on your local drive, and Add an Existing Repository from your local drive."}
 
 ## Getting a repository onto your computer
 
@@ -28,6 +28,45 @@ GitHub Desktop lets you do everyday Git work with buttons instead of commands. I
 | The repo is already on GitHub | **File → Clone repository**, choose it from the list (or paste the URL), choose where to save it, then click **Clone** |
 | You have a local folder that isn't a repo yet | **File → Add local repository**, choose the folder, click **create a repository**, then **Publish repository** |
 | You're starting from scratch | **File → New repository**, then **Publish repository** |
+
+### Clone a repository
+
+**File → Clone repository…** (**Ctrl + Shift + O**):
+
+::: {.annotated style="max-width:45%"}
+![](../../images/intro-to-github/04-clone-menu.png){fig-alt="GitHub Desktop's File menu with Clone repository… (shortcut Ctrl+Shift+O) marked with a red box."}
+[]{.red-box style="left:9.5%; top:39.5%; width:59%; height:11.5%;"}
+:::
+
+Choose the repo on the **GitHub.com** tab, or paste its URL on the **URL** tab. Check the **Local path** (e.g., `Documents\GitHub`), then click **Clone**.
+
+::: {style="max-width:60%"}
+![](../../images/intro-to-github/04-clone-dialog.png){fig-alt="The Clone a repository dialog on the URL tab, with a box for the repository URL or username/repository, and a Local path ending in the Documents GitHub folder, with a Choose… button. Clone and Cancel buttons are at the bottom."}
+:::
+
+### Add a folder that's already on your computer
+
+**File → Add local repository…** (**Ctrl + O**), then choose the folder:
+
+::: {.annotated style="max-width:45%"}
+![](../../images/intro-to-github/04-add-local-menu.png){fig-alt="GitHub Desktop's File menu with Add local repository… (shortcut Ctrl+O) marked with a red box."}
+[]{.red-box style="left:9.5%; top:29%; width:58%; height:12.5%;"}
+:::
+
+If the folder isn't a Git repository yet, GitHub Desktop says so. Click **create a repository**:
+
+::: {.annotated style="max-width:55%"}
+![](../../images/intro-to-github/04-add-local-create-repo.png){fig-alt="The Add local repository dialog with a local path filled in, and a red warning: This directory does not appear to be a Git repository. Would you like to create a repository here instead? The create a repository link is marked with a red box."}
+[]{.red-box style="left:31.5%; top:56%; width:24%; height:8.5%;"}
+:::
+
+### Start a new repository
+
+**File → New repository…** (**Ctrl + N**). Give it a name, choose the local path, and optionally add a README, `.gitignore`, and license:
+
+::: {style="max-width:55%"}
+![](../../images/intro-to-github/04-new-repo-dialog.png){fig-alt="The Create a new repository dialog with Name (test), Local path, Description, an Initialize this repository with a README checkbox, Git ignore and License dropdowns, and a note showing where the repository will be created. A Create repository button is at the bottom."}
+:::
 
 ### Publishing: choose the organization
 
@@ -62,7 +101,12 @@ GitHub redirects the old address for a while, but update the remote anyway.
 
 ### 1. Pull first
 
-Click **Fetch origin**. If others made changes, the button changes to **Pull origin**. Click it.
+Click **Fetch origin**. If others made changes, the button changes to **Pull origin**, with a ↓ count of new commits. Click it.
+
+::: {.annotated}
+![](../../images/intro-to-github/04-pull-origin.png){fig-alt="GitHub Desktop with no local changes. The top bar button reads Pull origin with a count of 2 down arrows, marked with a red box, and the main area says Pull 2 commits from the origin remote with a blue Pull origin button."}
+[]{.red-box style="left:31.2%; top:3%; width:12.6%; height:5.6%;"}
+:::
 
 ::: {.callout-tip}
 Always pull before you start working. It avoids most conflicts.
@@ -74,10 +118,30 @@ Edit files in your usual tools, such as RStudio, VS Code, Excel or Word. GitHub 
 
 ### 3. Review your changes
 
-The **Changes** tab lists every file that changed. Click a file to see exactly what changed.
+The **Changes** tab lists every file that changed. Click a file to see exactly what changed: **red** lines were removed, **green** lines were added.
 
-- **Uncheck** any file you don't want in this commit.
+![](../../images/intro-to-github/04-changes-tab.png){fig-alt="GitHub Desktop's Changes tab with one changed file, README.md. The diff on the right shows a red removed line, ## Available trainings, and a green added line, ## Available training. At the bottom left, the Summary says updated readme, the Description explains the change, and the button reads Commit 1 file to main."}
+
+- **Uncheck** any file you don't want in this commit. Checked files are included:
+
+::: {style="max-width:30%"}
+![](../../images/intro-to-github/04-changes-list.png){fig-alt="The Changes list with 2 changed files, .gitignore and README.md, both checked."}
+:::
+
 - **Check for sensitive content.** Is there a password, a real name, or a data file? If so, uncheck it, and add it to `.gitignore`: right-click the file → **Ignore file**.
+
+::: {.columns}
+::: {.column width="48%"}
+::: {style="max-width:100%"}
+![](../../images/intro-to-github/04-ignore-file-menu.png){fig-alt="The right-click menu for a changed file, with Discard changes…, Ignore file (add to .gitignore), Ignore all .md files (add to .gitignore), Copy file path, Show in Explorer, and Open in Visual Studio Code."}
+:::
+:::
+::: {.column width="4%"}
+:::
+::: {.column width="48%"}
+Right-clicking a file gives you **Ignore file (add to .gitignore)** to keep it out of Git for good, and **Discard changes…** to throw away your edits to it ([below](#other-handy-features)).
+:::
+:::
 
 ### 4. Commit
 
@@ -85,11 +149,25 @@ The **Changes** tab lists every file that changed. Click a file to see exactly w
 2. Optional: add a **Description** with more detail.
 3. Click **Commit to main**, or to whichever branch you're on.
 
+::: {.annotated style="max-width:40%"}
+![](../../images/intro-to-github/04-commit-summary-description.png){fig-alt="The bottom of GitHub Desktop's Changes tab: the Summary box says updated readme, the Description says updated the available training heading in the readme file, and the Commit 1 file to main button is marked with a red box."}
+[]{.red-box style="left:2.5%; top:80.5%; width:87%; height:14%;"}
+:::
+
 A commit is saved **only on your computer** at this point.
 
 ### 5. Push
 
-Click **Push origin**. Your commits are now on GitHub.
+Click **Push origin**. The ↑ count shows how many commits are waiting. Your commits are now on GitHub.
+
+::: {.annotated}
+![](../../images/intro-to-github/04-push-origin.png){fig-alt="GitHub Desktop after committing. The top bar button reads Push origin with a count of 2 up arrows, marked with a red box, and the main area says You have 2 local commits waiting to be pushed to GitHub, with a blue Push origin button. At the bottom left, Committed just now with an Undo button."}
+[]{.red-box style="left:31.2%; top:3%; width:12.6%; height:5.6%;"}
+:::
+
+::: {.callout-tip title="Changed your mind right after committing?"}
+Before you push, click **Undo** at the bottom left (next to "Committed just now") to take the commit back. Your changes stay in the Changes tab.
+:::
 
 ## Other handy features
 
@@ -102,6 +180,46 @@ Click **Push origin**. Your commits are now on GitHub.
 | Open the repo in your editor or file browser | **Repository → Open in…** / **Show in Explorer** (Mac: Show in Finder) |
 | View the repo on GitHub | **Repository → View on GitHub** |
 | Branches and pull requests | See [Lesson 6](06-branches-pull-requests.qmd) |
+
+### History
+
+The **History** tab lists every commit, newest first. Click one to see which files it changed:
+
+![](../../images/intro-to-github/04-history-tab.png){fig-alt="GitHub Desktop's History tab: a list of commits with their messages, authors, and times on the left (two marked with up arrows, meaning not pushed yet), and on the right the selected commit's message, its 41 changed files, and the diff of one file."}
+
+Right-click a commit for more options:
+
+::: {.annotated style="max-width:30%"}
+![](../../images/intro-to-github/04-history-menu.png){fig-alt="The right-click menu for a commit in the History tab, with Undo commit… marked with a red box and Revert changes in commit marked with a green box. Other items include Amend commit, Create branch from commit, Cherry-pick commit, and Copy SHA."}
+[]{.red-box style="left:5%; top:10.5%; width:90%; height:7%;"}
+[]{.green-box style="left:5%; top:38.5%; width:90%; height:7%;"}
+:::
+
+- **Undo commit** (red): for your **latest commit that isn't pushed yet**. The changes go back to the Changes tab.
+- **Revert changes in commit** (green): for a commit that's **already pushed**. It makes a *new* commit that reverses it, so history stays intact.
+
+### Discarding changes
+
+Right-click a file in **Changes** → **Discard changes…**, then confirm:
+
+::: {.columns}
+::: {.column width="45%"}
+::: {style="max-width:100%"}
+![](../../images/intro-to-github/04-discard-changes-menu.png){fig-alt="The Changes list with .gitignore selected and its right-click menu open, showing Discard changes… at the top."}
+:::
+:::
+::: {.column width="5%"}
+:::
+::: {.column width="50%"}
+::: {style="max-width:100%"}
+![](../../images/intro-to-github/04-confirm-discard.png){fig-alt="The Confirm discard changes dialog asking: Are you sure you want to discard all changes to .gitignore? Changes can be restored by retrieving them from the Recycle Bin. Discard changes and Cancel buttons are at the bottom."}
+:::
+:::
+:::
+
+::: {.callout-warning}
+Discarding throws away your edits since the last commit. The file goes to the Recycle Bin, but don't rely on that. Only discard what you really don't want.
+:::
 
 ## Writing good commit messages
 

@@ -59,6 +59,13 @@ cd training
 
 `git clone` downloads the whole repo, including its history, and sets up `origin` for you.
 
+**Where to get the URL:** on the repo's GitHub page, click the green **Code** button, and copy the **HTTPS** URL:
+
+::: {.annotated style="max-width:50%"}
+![](../../images/intro-to-github/05-copy-clone-url.png){fig-alt="The Code menu opened on a GitHub repository, on the Local tab. Under Clone, the HTTPS option is selected and the URL https://github.com/nv-ose/training.git is shown with a copy icon, marked with a red box. Below are Open with GitHub Desktop and Download ZIP."}
+[]{.red-box style="left:17%; top:47%; width:75%; height:13%;"}
+:::
+
 ## The everyday loop
 
 ```bash
@@ -85,6 +92,10 @@ git push                         # 6. Send to GitHub
 ::: {.callout-warning title="Be careful with git add ."}
 `git add .` stages *everything*, including files you may not want. Run `git status` first, and rely on your `.gitignore`.
 :::
+
+`git status` is the command you'll use most. It tells you which branch you're on, whether you're in sync with GitHub, and which files changed:
+
+![](../../images/intro-to-github/05-terminal-status.png){fig-alt="PowerShell in the training repository folder. git --version shows git version 2.53.0.windows.2, and git status shows: On branch main, Your branch is up to date with origin/main, Changes not staged for commit, modified: README.md, in red."}
 
 ## Looking at history
 
