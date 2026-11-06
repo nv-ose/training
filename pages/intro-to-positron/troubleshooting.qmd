@@ -50,6 +50,20 @@ Positron's Welcome page shows this when it can't find a Python version it suppor
 - Ask **IT** to install **Python 3.13 or 3.14 for all users** from [python.org](https://www.python.org/downloads/windows/), with **Add python.exe to PATH** checked.
 - Then restart Positron, or click **↻** next to **Environment Setup** on the Welcome page.
 
+## Python is installed, but Positron doesn't list it
+
+If you know where `python.exe` is (find it with `py -0p` or `where python`, [below](#where-is-python-installed)), add it yourself:
+
+1. **Enter the path:** Command Palette (**Ctrl + Shift + P**) → **Python: Select Interpreter** → **Enter interpreter path…**, and paste the full path to `python.exe`. Then use the interpreter picker → **Start New Session** → Python.
+2. **Or add its folder to the search list:** **File → Preferences → Settings** (**Ctrl + ,**), search `interpreters include`, and under **Python › Interpreters: Include** click **Add Item** and paste the **folder** containing `python.exe`. Then run **Interpreter: Discover all interpreters**, or restart Positron.
+3. **Optional, make it the default:** in Settings, search `default interpreter path` and paste the full path to `python.exe`.
+
+If it then fails to start, see the entry above. If Positron doesn't offer to install `ipykernel`, install it in the **Terminal** using that Python's path:
+
+```powershell
+& "C:\path\to\python.exe" -m pip install ipykernel
+```
+
 ## Errors about `.ruff.toml` in the Python folder
 
 Messages like `Failed to resolve settings for …\Python314\Lib\test\.ruff.toml` mean **Python's own installation folder was opened as a project** (**File → Open Folder** on the Python folder).
