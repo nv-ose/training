@@ -14,6 +14,9 @@ Workshops, tutorials, and learning materials from **NV OSE — The Office of Sta
 | [Introduction to Quarto](https://nv-ose.github.io/training/pages/intro-to-quarto/) ([source](pages/intro-to-quarto/)) | Markdown, what Quarto adds, R code chunks, HTML reports, revealjs presentations, websites, accessibility, and publishing on GitHub Pages | Beginner | 2026-10-28 |
 | [Introduction to Positron](https://nv-ose.github.io/training/pages/intro-to-positron/) ([source](pages/intro-to-positron/)) | The Positron IDE for R and Python: interpreters, project folders and here(), the NV OSE folder structure, panes compared with RStudio and VS Code, extensions (including AI assistants), Git, and Python environments | Beginner | 2026-11-04 |
 
+New to all of this? See the **Suggested order** on the [training site](https://nv-ose.github.io/training/).
+ 
+
 ## Repository layout
 
 | Path | What it is |
