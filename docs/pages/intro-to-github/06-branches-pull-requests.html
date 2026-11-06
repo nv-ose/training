@@ -548,15 +548,64 @@ my-branch:       C───D───┘</code></pre>
 <h2 class="anchored" data-anchor-id="the-branch-pr-merge-workflow">The branch → PR → merge workflow</h2>
 <section id="in-github-desktop" class="level3">
 <h3 class="anchored" data-anchor-id="in-github-desktop">In GitHub Desktop</h3>
-<ol type="1">
-<li><strong>Current branch → New branch</strong>. Name it, and base it on <code>main</code>.</li>
-<li>Make your changes, then <strong>Commit to <code>your-branch</code></strong>.</li>
-<li>Click <strong>Publish branch</strong>. This pushes the branch to GitHub.</li>
-<li>Click <strong>Create Pull Request</strong>. Your browser opens on GitHub.</li>
-<li>Add a title and description, choose <strong>Reviewers</strong> on the right, then click <strong>Create pull request</strong>.</li>
-<li>After approval, click <strong>Merge pull request</strong> on GitHub, then <strong>Delete branch</strong>.</li>
-<li>Back in Desktop, switch to <code>main</code> and click <strong>Pull origin</strong>.</li>
-</ol>
+<p>This walkthrough uses a real (small) change to this training’s README, from branch to merge.</p>
+<p><strong>1. Create a branch.</strong> Make sure you’re on <code>main</code> and have pulled. Click <strong>Current branch → New branch</strong> (or <strong>Branch → New branch…</strong>, <strong>Ctrl + Shift + N</strong>):</p>
+<div style="max-width:45%">
+<p><img src="../../images/intro-to-github/06-branch-dropdown.png" class="img-fluid" alt="GitHub Desktop's Current branch dropdown opened, on the Branches tab, with a Filter box, a New branch button, and main listed as the default branch."></p>
+</div>
+<p>Name it <code>yourname/short-description</code>. It’s based on the branch you’re on (<code>main</code>). Click <strong>Create branch</strong>:</p>
+<div style="max-width:50%">
+<p><img src="../../images/intro-to-github/06-create-branch-dialog.png" class="img-fluid" alt="The Create a branch dialog with the name mwegener/readme-suggested-order typed in. A note says the new branch will be based on the currently checked out branch, main. Create branch and Cancel buttons are at the bottom."></p>
+</div>
+<p><strong>2. Make your changes and commit.</strong> Edit and save as usual. The commit button now names your branch: <strong>Commit to <code>yourname/…</code></strong>:</p>
+<p><img src="../../images/intro-to-github/06-commit-to-branch.png" class="img-fluid" alt="GitHub Desktop on the branch mwegener/readme-suggested-order with one changed file, README.md. The diff shows three added green lines, including a new note pointing to the Suggested order. The Summary reads Add suggested-order note to README, and the button reads Commit 1 file to mwegener/readme-suggested-order."></p>
+<p><strong>3. Publish the branch.</strong> A new branch exists only on your computer until you publish it:</p>
+<div style="max-width:70%">
+<p><img src="../../images/intro-to-github/06-publish-branch-prompt.png" class="img-fluid" alt="A GitHub Desktop prompt: Publish your branch. The current branch mwegener/readme-suggested-order hasn't been published to the remote yet. By publishing it to GitHub you can share it, open a pull request, and collaborate with others. A blue Publish branch button is on the right."></p>
+</div>
+<p>After that, push new commits on the branch with <strong>Push origin</strong>, as usual:</p>
+<p><img src="../../images/intro-to-github/06-push-origin-branch.png" class="img-fluid" alt="GitHub Desktop's top bar showing Current repository training, Current branch mwegener/readme-suggested-order, and Push origin with 1 commit waiting."></p>
+<p><strong>4. Preview and create the pull request.</strong> Click <strong>Preview Pull Request</strong> (or <strong>Branch → Create pull request</strong>, <strong>Ctrl + R</strong>):</p>
+<div style="max-width:70%">
+<p><img src="../../images/intro-to-github/06-preview-pr-prompt.png" class="img-fluid" alt="A GitHub Desktop prompt: Preview the Pull Request from your current branch. The branch is already published; preview the changes this pull request will have before proposing your changes. A blue Preview Pull Request button is on the right."></p>
+</div>
+<p>The preview shows exactly what will be in the pull request. Check it, then click <strong>Create pull request</strong>. Your browser opens on GitHub:</p>
+<p><img src="../../images/intro-to-github/06-preview-pr.png" class="img-fluid" alt="GitHub Desktop's Open a pull request preview, merging 1 commit into main from mwegener/readme-suggested-order. It shows README.md with the added lines in green, a note at the bottom saying Able to merge, and a Create pull request button."></p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Is the preview blank?">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Is the preview blank?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div style="max-width:60%">
+<p><img src="../../images/intro-to-github/06-preview-pr-empty.png" class="img-fluid" alt="An empty pull request preview that says There are no changes. main is up to date with all commits from mwegener/readme-suggested-order."></p>
+</div>
+<p>Your changes aren’t <strong>committed on this branch</strong> yet, so there’s nothing to compare. Check the <strong>History</strong> tab: your commit should be at the top. If it isn’t, commit (and push) on the branch, then preview again.</p>
+</div>
+</div>
+<p><strong>5. Fill in the pull request.</strong> Add a clear <strong>title</strong> and a short <strong>description</strong> (what changed and why). On the right, click ⚙️ next to <strong>Reviewers</strong> and choose who should review:</p>
+<p><img src="../../images/intro-to-github/06-open-pr-form.png" class="img-fluid" alt="GitHub's Open a pull request page, comparing base main with mwegener/readme-suggested-order, marked Able to merge. The title is Add suggested-order note to README and the description explains the change in a sentence and two bullet points. On the right, Reviewers lists jordanlancaster430. A green Create pull request button is at the bottom."></p>
+<div style="max-width:40%">
+<p><img src="../../images/intro-to-github/06-reviewers-select.png" class="img-fluid" alt="The Reviewers menu opened, titled Request up to 15 reviewers, with a Find a user box and jordanlancaster430 (Jordan Lancaster) selected with a checkmark."></p>
+</div>
+<p>Click <strong>Create pull request</strong>. The reviewer is notified.</p>
+<p><strong>6. Merge after approval.</strong> When the reviewer approves, the pull request shows it, along with the <strong>Merge pull request</strong> button:</p>
+<div style="max-width:70%">
+<p><img src="../../images/intro-to-github/06-pr-approved.png" class="img-fluid" alt="A pull request's Conversation tab: jordanlancaster430 approved these changes and left a comment, Looks good!. Below, Changes reviewed: 1 approving review, All checks have passed, No conflicts with base branch, and a green Merge pull request button."></p>
+</div>
+<p>Click <strong>Merge pull request</strong>, then <strong>Confirm merge</strong>:</p>
+<div style="max-width:80%">
+<p><img src="../../images/intro-to-github/06-confirm-merge.png" class="img-fluid" alt="The Confirm merge form, with the commit message Pull request successfully merged and closed, an extended description, a note that the commit will be authored by a noreply address, and a green Confirm merge button."></p>
+</div>
+<p>Then click <strong>Delete branch</strong>. The branch’s work is now in <code>main</code>, so the branch isn’t needed anymore:</p>
+<p><img src="../../images/intro-to-github/06-delete-branch.png" class="img-fluid" alt="A banner on the merged pull request: Pull request successfully merged and closed. You're all set, the mwegener/readme-suggested-order branch can be safely deleted. A Delete branch button is on the right."></p>
+<p><strong>7. Back in GitHub Desktop,</strong> switch to <code>main</code> and click <strong>Pull origin</strong> to get the merged change:</p>
+<p><img src="../../images/intro-to-github/06-pull-after-merge.png" class="img-fluid" alt="GitHub Desktop on the main branch with no local changes and a prompt to Pull 2 commits from the origin remote, with a blue Pull origin button."></p>
+<p>If GitHub Desktop offers to delete your local copy of the branch, say yes. Otherwise use <strong>Branch → Delete…</strong> while on another branch.</p>
 </section>
 <section id="on-the-command-line" class="level3">
 <h3 class="anchored" data-anchor-id="on-the-command-line">On the command line</h3>
@@ -579,12 +628,47 @@ my-branch:       C───D───┘</code></pre>
 </section>
 <section id="reviewing-a-pull-request" class="level2">
 <h2 class="anchored" data-anchor-id="reviewing-a-pull-request">Reviewing a pull request</h2>
+<p>When you’re asked to review, you’ll get a notification and an email.</p>
 <ol type="1">
-<li>Open the PR and go to the <strong>Files changed</strong> tab.</li>
-<li>Click <strong>+</strong> next to a line to comment on it.</li>
-<li>Click <strong>Review changes</strong> and choose <strong>Comment</strong>, <strong>Approve</strong>, or <strong>Request changes</strong>.</li>
+<li>Open the PR and go to the <strong>Files changed</strong> tab. Added lines are green, removed lines red:</li>
 </ol>
+<p><img src="../../images/intro-to-github/06-pr-files-changed.png" class="img-fluid" alt="The Files changed tab of pull request #1, Add suggested-order note to README, showing README.md side by side: the old version on the left and the new version on the right, where lines 17 to 19 are added in green. A green Submit review button is at the top right."></p>
+<ol start="2" type="1">
+<li>To comment on a specific line, hover over it and click the blue <strong>+</strong>. Type your comment, then <strong>Start a review</strong> (to send all your comments together) or <strong>Comment</strong> (to post just this one):</li>
+</ol>
+<p><img src="../../images/intro-to-github/06-line-comment.png" class="img-fluid" alt="A line comment being written on line 17 of README.md in the Files changed tab: an Add a comment on line R17 box containing Link works, with Cancel, Comment, and Start a review buttons."></p>
+<ol start="3" type="1">
+<li>Click <strong>Submit review</strong> (top right):</li>
+</ol>
+<div style="max-width:45%">
+<p><img src="../../images/intro-to-github/06-submit-review-button.png" class="img-fluid" alt="The top right of the Files changed tab: 0 of 1 files viewed, and a green Submit review button showing 1 pending comment."></p>
+</div>
+<ol start="4" type="1">
+<li>Write a summary, choose <strong>Comment</strong>, <strong>Approve</strong>, or <strong>Request changes</strong>, and click <strong>Submit review</strong>:</li>
+</ol>
+<div style="max-width:60%">
+<p><img src="../../images/intro-to-github/06-review-changes.png" class="img-fluid" alt="The Finish your review box with Looks good typed in, and three options: Comment (selected), Approve, and Request changes. Approve and Request changes note that pull request authors can't approve or request changes on their own pull requests. One pending comment is listed, with Cancel and Submit review buttons."></p>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>You can’t approve your own pull request.</strong> As the author, you’ll see Approve and Request changes greyed out. That’s why you ask a teammate to review.</p>
+</div>
+</div>
 <p>When reviewing, ask: Does it work? Is it clear? <strong>Is there any sensitive data or any credential in it?</strong></p>
+<p>The <strong>Conversation</strong> tab shows the whole discussion: the description, review requests, comments, and approvals:</p>
+<p><img src="../../images/intro-to-github/06-pr-conversation.png" class="img-fluid" alt="The Conversation tab of pull request #1: the author's description at the top, then a timeline showing a review requested from jordanlancaster430, a comment Looks good, and a line comment Link works on README.md. The right side lists Reviewers, Assignees, Labels, and other details."></p>
+<p>Until someone approves, the merge box shows <strong>Review requested</strong>. Merging is still possible, but in shared NV OSE repos, wait for the approval:</p>
+<div style="max-width:70%">
+<p><img src="../../images/intro-to-github/06-merge-box-review-requested.png" class="img-fluid" alt="The merge box before approval: Review requested, 1 pending review; All checks have passed; No conflicts with base branch; and a green Merge pull request button."></p>
+</div>
 </section>
 <section id="merge-conflicts" class="level2">
 <h2 class="anchored" data-anchor-id="merge-conflicts">Merge conflicts</h2>

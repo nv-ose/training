@@ -453,6 +453,9 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#the-layout" id="toc-the-layout" class="nav-link active" data-scroll-target="#the-layout">The layout</a></li>
   <li><a href="#getting-a-repository-onto-your-computer" id="toc-getting-a-repository-onto-your-computer" class="nav-link" data-scroll-target="#getting-a-repository-onto-your-computer">Getting a repository onto your computer</a>
   <ul class="collapse">
+  <li><a href="#clone-a-repository" id="toc-clone-a-repository" class="nav-link" data-scroll-target="#clone-a-repository">Clone a repository</a></li>
+  <li><a href="#add-a-folder-thats-already-on-your-computer" id="toc-add-a-folder-thats-already-on-your-computer" class="nav-link" data-scroll-target="#add-a-folder-thats-already-on-your-computer">Add a folder that’s already on your computer</a></li>
+  <li><a href="#start-a-new-repository" id="toc-start-a-new-repository" class="nav-link" data-scroll-target="#start-a-new-repository">Start a new repository</a></li>
   <li><a href="#publishing-choose-the-organization" id="toc-publishing-choose-the-organization" class="nav-link" data-scroll-target="#publishing-choose-the-organization">Publishing: choose the organization</a></li>
   </ul></li>
   <li><a href="#the-everyday-loop" id="toc-the-everyday-loop" class="nav-link" data-scroll-target="#the-everyday-loop">The everyday loop</a>
@@ -463,7 +466,11 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#commit" id="toc-commit" class="nav-link" data-scroll-target="#commit">4. Commit</a></li>
   <li><a href="#push" id="toc-push" class="nav-link" data-scroll-target="#push">5. Push</a></li>
   </ul></li>
-  <li><a href="#other-handy-features" id="toc-other-handy-features" class="nav-link" data-scroll-target="#other-handy-features">Other handy features</a></li>
+  <li><a href="#other-handy-features" id="toc-other-handy-features" class="nav-link" data-scroll-target="#other-handy-features">Other handy features</a>
+  <ul class="collapse">
+  <li><a href="#history" id="toc-history" class="nav-link" data-scroll-target="#history">History</a></li>
+  <li><a href="#discarding-changes" id="toc-discarding-changes" class="nav-link" data-scroll-target="#discarding-changes">Discarding changes</a></li>
+  </ul></li>
   <li><a href="#writing-good-commit-messages" id="toc-writing-good-commit-messages" class="nav-link" data-scroll-target="#writing-good-commit-messages">Writing good commit messages</a></li>
   </ul>
 </nav>
@@ -494,18 +501,43 @@ ul.task-list li input[type="checkbox"] {
 <p>GitHub Desktop lets you do everyday Git work with buttons instead of commands. If you don’t have it yet, <a href="https://desktop.github.com/download/">download GitHub Desktop</a> and sign in (see <a href="../../pages/intro-to-github/02-setup.html#connect-github-desktop">Lesson 2</a>). Behind the scenes, it runs the same Git commands you’ll learn in <a href="../../pages/intro-to-github/05-command-line.html">Lesson 5</a>.</p>
 <section id="the-layout" class="level2">
 <h2 class="anchored" data-anchor-id="the-layout">The layout</h2>
-<pre><code>┌──────────────────┬──────────────────┬──────────────────────────────┐
-│ Current          │ Current branch ▾ │ Fetch / Pull / Push origin   │
-│ repository ▾     │                  │                              │
-├──────────────────┴──────────────────┴──────────────────────────────┤
-│ Changes | History  │  Diff view: red = removed, green = added       │
-│ ☑ file1.R          │                                                │
-│ ☑ README.md        │                                                │
-│                    │                                                │
-│ Summary (required) │                                                │
-│ Description        │                                                │
-│ [Commit to main]   │                                                │
-└────────────────────┴────────────────────────────────────────────────┘</code></pre>
+<p><img src="../../images/intro-to-github/04-desktop-overview.png" class="img-fluid" alt="GitHub Desktop with the training repository open. Across the top bar: Current repository (training), Current branch (main), and Fetch origin. On the left, the Changes and History tabs, with 0 changed files, and Summary and Description boxes above a Commit to main button. The main area says No local changes and offers buttons to open the repository in an editor, show it in Explorer, or view it on GitHub."></p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Area</th>
+<th>What it’s for</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Current repository</strong> (top left)</td>
+<td>Switch between repos</td>
+</tr>
+<tr class="even">
+<td><strong>Current branch</strong></td>
+<td>See and switch branches (<a href="../../pages/intro-to-github/06-branches-pull-requests.html">Lesson 6</a>)</td>
+</tr>
+<tr class="odd">
+<td><strong>Fetch / Pull / Push origin</strong> (top)</td>
+<td>Sync with GitHub. The label changes depending on what’s needed</td>
+</tr>
+<tr class="even">
+<td><strong>Changes</strong> tab</td>
+<td>Files you’ve changed since the last commit</td>
+</tr>
+<tr class="odd">
+<td><strong>History</strong> tab</td>
+<td>Past commits</td>
+</tr>
+<tr class="even">
+<td><strong>Summary / Description / Commit</strong> (bottom left)</td>
+<td>Save your changes as a commit</td>
+</tr>
+</tbody>
+</table>
+<p>The first time you open GitHub Desktop, it shows a <strong>Let’s get started!</strong> screen with the same options as the File menu:</p>
+<p><img src="../../images/intro-to-github/04-desktop-welcome.png" class="img-fluid" alt="GitHub Desktop's Let's get started! screen with four buttons: Create a tutorial repository, Clone a repository from the Internet, Create a New Repository on your local drive, and Add an Existing Repository from your local drive."></p>
 </section>
 <section id="getting-a-repository-onto-your-computer" class="level2">
 <h2 class="anchored" data-anchor-id="getting-a-repository-onto-your-computer">Getting a repository onto your computer</h2>
@@ -535,6 +567,35 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 </tbody>
 </table>
+<section id="clone-a-repository" class="level3">
+<h3 class="anchored" data-anchor-id="clone-a-repository">Clone a repository</h3>
+<p><strong>File → Clone repository…</strong> (<strong>Ctrl + Shift + O</strong>):</p>
+<div class="annotated" style="max-width:45%">
+<p><img src="../../images/intro-to-github/04-clone-menu.png" class="img-fluid" alt="GitHub Desktop's File menu with Clone repository… (shortcut Ctrl+Shift+O) marked with a red box."> <span class="red-box" style="left:9.5%; top:39.5%; width:59%; height:11.5%;"></span></p>
+</div>
+<p>Choose the repo on the <strong>GitHub.com</strong> tab, or paste its URL on the <strong>URL</strong> tab. Check the <strong>Local path</strong> (e.g., <code>Documents\GitHub</code>), then click <strong>Clone</strong>.</p>
+<div style="max-width:60%">
+<p><img src="../../images/intro-to-github/04-clone-dialog.png" class="img-fluid" alt="The Clone a repository dialog on the URL tab, with a box for the repository URL or username/repository, and a Local path ending in the Documents GitHub folder, with a Choose… button. Clone and Cancel buttons are at the bottom."></p>
+</div>
+</section>
+<section id="add-a-folder-thats-already-on-your-computer" class="level3">
+<h3 class="anchored" data-anchor-id="add-a-folder-thats-already-on-your-computer">Add a folder that’s already on your computer</h3>
+<p><strong>File → Add local repository…</strong> (<strong>Ctrl + O</strong>), then choose the folder:</p>
+<div class="annotated" style="max-width:45%">
+<p><img src="../../images/intro-to-github/04-add-local-menu.png" class="img-fluid" alt="GitHub Desktop's File menu with Add local repository… (shortcut Ctrl+O) marked with a red box."> <span class="red-box" style="left:9.5%; top:29%; width:58%; height:12.5%;"></span></p>
+</div>
+<p>If the folder isn’t a Git repository yet, GitHub Desktop says so. Click <strong>create a repository</strong>:</p>
+<div class="annotated" style="max-width:55%">
+<p><img src="../../images/intro-to-github/04-add-local-create-repo.png" class="img-fluid" alt="The Add local repository dialog with a local path filled in, and a red warning: This directory does not appear to be a Git repository. Would you like to create a repository here instead? The create a repository link is marked with a red box."> <span class="red-box" style="left:31.5%; top:56%; width:24%; height:8.5%;"></span></p>
+</div>
+</section>
+<section id="start-a-new-repository" class="level3">
+<h3 class="anchored" data-anchor-id="start-a-new-repository">Start a new repository</h3>
+<p><strong>File → New repository…</strong> (<strong>Ctrl + N</strong>). Give it a name, choose the local path, and optionally add a README, <code>.gitignore</code>, and license:</p>
+<div style="max-width:55%">
+<p><img src="../../images/intro-to-github/04-new-repo-dialog.png" class="img-fluid" alt="The Create a new repository dialog with Name (test), Local path, Description, an Initialize this repository with a README checkbox, Git ignore and License dropdowns, and a note showing where the repository will be created. A Create repository button is at the bottom."></p>
+</div>
+</section>
 <section id="publishing-choose-the-organization" class="level3">
 <h3 class="anchored" data-anchor-id="publishing-choose-the-organization">Publishing: choose the organization</h3>
 <p>A repository you create or add on your computer is <strong>local only</strong> until you publish it. GitHub Desktop lists it under <strong>Other</strong>, with a computer icon instead of a repo icon.</p>
@@ -588,7 +649,10 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="the-everyday-loop">The everyday loop</h2>
 <section id="pull-first" class="level3">
 <h3 class="anchored" data-anchor-id="pull-first">1. Pull first</h3>
-<p>Click <strong>Fetch origin</strong>. If others made changes, the button changes to <strong>Pull origin</strong>. Click it.</p>
+<p>Click <strong>Fetch origin</strong>. If others made changes, the button changes to <strong>Pull origin</strong>, with a ↓ count of new commits. Click it.</p>
+<div class="annotated">
+<p><img src="../../images/intro-to-github/04-pull-origin.png" class="img-fluid" alt="GitHub Desktop with no local changes. The top bar button reads Pull origin with a count of 2 down arrows, marked with a red box, and the main area says Pull 2 commits from the origin remote with a blue Pull origin button."> <span class="red-box" style="left:31.2%; top:3%; width:12.6%; height:5.6%;"></span></p>
+</div>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -609,11 +673,28 @@ Tip
 </section>
 <section id="review-your-changes" class="level3">
 <h3 class="anchored" data-anchor-id="review-your-changes">3. Review your changes</h3>
-<p>The <strong>Changes</strong> tab lists every file that changed. Click a file to see exactly what changed.</p>
+<p>The <strong>Changes</strong> tab lists every file that changed. Click a file to see exactly what changed: <strong>red</strong> lines were removed, <strong>green</strong> lines were added.</p>
+<p><img src="../../images/intro-to-github/04-changes-tab.png" class="img-fluid" alt="GitHub Desktop's Changes tab with one changed file, README.md. The diff on the right shows a red removed line, ## Available trainings, and a green added line, ## Available training. At the bottom left, the Summary says updated readme, the Description explains the change, and the button reads Commit 1 file to main."></p>
 <ul>
-<li><strong>Uncheck</strong> any file you don’t want in this commit.</li>
+<li><strong>Uncheck</strong> any file you don’t want in this commit. Checked files are included:</li>
+</ul>
+<div style="max-width:30%">
+<p><img src="../../images/intro-to-github/04-changes-list.png" class="img-fluid" alt="The Changes list with 2 changed files, .gitignore and README.md, both checked."></p>
+</div>
+<ul>
 <li><strong>Check for sensitive content.</strong> Is there a password, a real name, or a data file? If so, uncheck it, and add it to <code>.gitignore</code>: right-click the file → <strong>Ignore file</strong>.</li>
 </ul>
+<div class="columns">
+<div class="column" style="width:48%;">
+<div style="max-width:100%">
+<p><img src="../../images/intro-to-github/04-ignore-file-menu.png" class="img-fluid" alt="The right-click menu for a changed file, with Discard changes…, Ignore file (add to .gitignore), Ignore all .md files (add to .gitignore), Copy file path, Show in Explorer, and Open in Visual Studio Code."></p>
+</div>
+</div><div class="column" style="width:4%;">
+
+</div><div class="column" style="width:48%;">
+<p>Right-clicking a file gives you <strong>Ignore file (add to .gitignore)</strong> to keep it out of Git for good, and <strong>Discard changes…</strong> to throw away your edits to it (<a href="#other-handy-features">below</a>).</p>
+</div>
+</div>
 </section>
 <section id="commit" class="level3">
 <h3 class="anchored" data-anchor-id="commit">4. Commit</h3>
@@ -622,11 +703,30 @@ Tip
 <li>Optional: add a <strong>Description</strong> with more detail.</li>
 <li>Click <strong>Commit to main</strong>, or to whichever branch you’re on.</li>
 </ol>
+<div class="annotated" style="max-width:40%">
+<p><img src="../../images/intro-to-github/04-commit-summary-description.png" class="img-fluid" alt="The bottom of GitHub Desktop's Changes tab: the Summary box says updated readme, the Description says updated the available training heading in the readme file, and the Commit 1 file to main button is marked with a red box."> <span class="red-box" style="left:2.5%; top:80.5%; width:87%; height:14%;"></span></p>
+</div>
 <p>A commit is saved <strong>only on your computer</strong> at this point.</p>
 </section>
 <section id="push" class="level3">
 <h3 class="anchored" data-anchor-id="push">5. Push</h3>
-<p>Click <strong>Push origin</strong>. Your commits are now on GitHub.</p>
+<p>Click <strong>Push origin</strong>. The ↑ count shows how many commits are waiting. Your commits are now on GitHub.</p>
+<div class="annotated">
+<p><img src="../../images/intro-to-github/04-push-origin.png" class="img-fluid" alt="GitHub Desktop after committing. The top bar button reads Push origin with a count of 2 up arrows, marked with a red box, and the main area says You have 2 local commits waiting to be pushed to GitHub, with a blue Push origin button. At the bottom left, Committed just now with an Undo button."> <span class="red-box" style="left:31.2%; top:3%; width:12.6%; height:5.6%;"></span></p>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Changed your mind right after committing?">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Changed your mind right after committing?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Before you push, click <strong>Undo</strong> at the bottom left (next to “Committed just now”) to take the commit back. Your changes stay in the Changes tab.</p>
+</div>
+</div>
 </section>
 </section>
 <section id="other-handy-features" class="level2">
@@ -669,6 +769,63 @@ Tip
 </tr>
 </tbody>
 </table>
+<section id="history" class="level3">
+<h3 class="anchored" data-anchor-id="history">History</h3>
+<p>The <strong>History</strong> tab lists every commit, newest first. Click one to see which files it changed:</p>
+<p><img src="../../images/intro-to-github/04-history-tab.png" class="img-fluid" alt="GitHub Desktop's History tab: a list of commits with their messages, authors, and times on the left (two marked with up arrows, meaning not pushed yet), and on the right the selected commit's message, its 41 changed files, and the diff of one file."></p>
+<p>Right-click a commit for more options:</p>
+<div class="annotated" style="max-width:30%">
+<p><img src="../../images/intro-to-github/04-history-menu.png" class="img-fluid" alt="The right-click menu for a commit in the History tab, with Undo commit… marked with a red box and Revert changes in commit marked with a green box. Other items include Amend commit, Create branch from commit, Cherry-pick commit, and Copy SHA."> <span class="red-box" style="left:5%; top:10.5%; width:90%; height:7%;"></span> <span class="green-box" style="left:5%; top:38.5%; width:90%; height:7%;"></span></p>
+</div>
+<ul>
+<li><strong>Undo commit</strong> (red): for your <strong>latest commit that isn’t pushed yet</strong>. The changes go back to the Changes tab.</li>
+<li><strong>Revert changes in commit</strong> (green): for a commit that’s <strong>already pushed</strong>. It makes a <em>new</em> commit that reverses it, so history stays intact.</li>
+</ul>
+</section>
+<section id="discarding-changes" class="level3">
+<h3 class="anchored" data-anchor-id="discarding-changes">Discarding changes</h3>
+<p>Right-click a file in <strong>Changes</strong> → <strong>Discard changes…</strong>, then confirm:</p>
+<div class="columns">
+<div class="column" style="width:45%;">
+<div style="max-width:100%">
+<p><img src="../../images/intro-to-github/04-discard-changes-menu.png" class="img-fluid" alt="The Changes list with .gitignore selected and its right-click menu open, showing Discard changes… at the top."></p>
+</div>
+</div><div class="column" style="width:5%;">
+
+</div><div class="column" style="width:50%;">
+<div style="max-width:100%">
+<p><img src="../../images/intro-to-github/04-confirm-discard.png" class="img-fluid" alt="The Confirm discard changes dialog asking: Are you sure you want to discard all changes to .gitignore? Changes can be restored by retrieving them from the Recycle Bin. Discard changes and Cancel buttons are at the bottom."></p>
+</div>
+</div>
+</div>
+<p>To throw away <strong>all</strong> uncommitted changes at once (for example, after testing something), use <strong>Branch → Discard all changes…</strong> (<strong>Ctrl + Shift + Backspace</strong>):</p>
+<div class="columns">
+<div class="column" style="width:45%;">
+<div style="max-width:100%">
+<p><img src="../../images/intro-to-github/04-branch-menu-discard-all.png" class="img-fluid" alt="GitHub Desktop's Branch menu with Discard all changes… (shortcut Ctrl+Shift+Backspace) highlighted. Other items include New branch, Rename, Delete, Stash all changes, Update from main, Merge into current branch, Compare on GitHub, Preview pull request, and Create pull request."></p>
+</div>
+</div><div class="column" style="width:5%;">
+
+</div><div class="column" style="width:50%;">
+<div style="max-width:100%">
+<p><img src="../../images/intro-to-github/04-confirm-discard-all.png" class="img-fluid" alt="The Confirm discard all changes dialog asking: Are you sure you want to discard all 18 changed files? Changes can be restored by retrieving them from the Recycle Bin. Discard all changes and Cancel buttons are at the bottom."></p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Discarding throws away your edits since the last commit. The file goes to the Recycle Bin, but don’t rely on that. Only discard what you really don’t want.</p>
+</div>
+</div>
+</section>
 </section>
 <section id="writing-good-commit-messages" class="level2">
 <h2 class="anchored" data-anchor-id="writing-good-commit-messages">Writing good commit messages</h2>

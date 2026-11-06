@@ -526,10 +526,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="create-a-github-account" class="level2">
 <h2 class="anchored" data-anchor-id="create-a-github-account">1. Create a GitHub account</h2>
 <ol type="1">
-<li>Go to <a href="https://github.com/signup">github.com/signup</a>.</li>
-<li>Choose a <strong>professional username</strong>. It appears on everything you do, for example <code>jsmith-nv</code> rather than <code>pizzalover99</code>.</li>
-<li><strong>Turn on two-factor authentication (2FA):</strong> profile picture → <strong>Settings → Password and authentication</strong>. NV OSE requires 2FA for all organization members.</li>
-<li>Optional: if you use a personal account for work, add your work email under <strong>Settings → Emails</strong>.</li>
+<li><p>Go to <a href="https://github.com/signup">github.com/signup</a>.</p></li>
+<li><p>Choose a <strong>professional username</strong>. It appears on everything you do, for example <code>jsmith-nv</code> rather than <code>pizzalover99</code>.</p></li>
+<li><p><strong>Turn on two-factor authentication (2FA):</strong> profile picture → <strong>Settings → Password and authentication</strong>. NV OSE requires 2FA for all organization members.</p>
+<p><img src="../../images/intro-to-github/02-2fa-settings.png" class="img-fluid" alt="GitHub's Password and authentication settings page. Sign in methods are listed (email, password, passkeys, Google, Apple), and below them the Two-factor authentication section with a Preferred 2FA method set to Passkeys."></p></li>
+<li><p>Optional: if you use a personal account for work, add your work email under <strong>Settings → Emails</strong>.</p></li>
 </ol>
 <section id="protect-your-email-address" class="level3">
 <h3 class="anchored" data-anchor-id="protect-your-email-address">Protect your email address</h3>
@@ -538,6 +539,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Go to <strong>Settings → Emails</strong> and check <strong>Keep my email addresses private</strong>.</li>
 <li>GitHub then shows you a private “noreply” address, like <code>12345678+username@users.noreply.github.com</code>. Use that address when you configure Git (below).</li>
 </ol>
+<div class="annotated">
+<p><img src="../../images/intro-to-github/02-email-privacy.png" class="img-fluid" alt="GitHub's Emails settings page. It lists one verified email address and shows the account's noreply address for web-based Git operations. At the bottom, the Keep my email addresses private setting is turned on, marked with a red box."> <span class="red-box" style="left:78.5%; top:82%; width:3.7%; height:5.5%;"></span></p>
+</div>
+<div class="callout callout-style-default callout-warning callout-titled" title="Push failed because of a private email?">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>Push failed because of a private email?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div style="max-width:70%">
+<p><img src="../../images/intro-to-github/02-push-failed-private-email.png" class="img-fluid" alt="A GitHub Desktop error titled Failed to push: Cannot push these commits as they contain an email address marked as private on GitHub. It suggests unchecking Keep my email address private."></p>
+</div>
+<p>This means Git is committing with your <strong>private</strong> email. <strong>Don’t</strong> turn off email privacy as the message suggests. Instead, set your Git email to your <strong>noreply</strong> address (<a href="#connect-github-desktop">step 3</a>), then undo and redo the commit.</p>
+</div>
+</div>
 </section>
 </section>
 <section id="install-the-tools" class="level2">
@@ -590,15 +610,32 @@ Note
 </ol>
 <p>Check that Git works. Open <strong>Git Bash</strong> (Start menu → type <code>Git Bash</code>) or <strong>Command Prompt</strong>, and run:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> <span class="at">--version</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>You should see something like <code>git version 2.47.0</code>.</p>
+<p>You should see something like <code>git version 2.53.0.windows.2</code>:</p>
+<p><img src="../../images/intro-to-github/02-git-version.png" class="img-fluid" alt="Windows PowerShell after running git --version, which prints git version 2.53.0.windows.2."></p>
 </section>
 </section>
 <section id="connect-github-desktop" class="level2">
 <h2 class="anchored" data-anchor-id="connect-github-desktop">3. Connect GitHub Desktop</h2>
 <ol type="1">
-<li>Open GitHub Desktop and sign in: <strong>File → Options → Accounts</strong> (Mac: <strong>GitHub Desktop → Settings → Accounts</strong>).</li>
-<li>Your browser opens. Sign in to GitHub and authorize the app.</li>
-<li>Under <strong>Git</strong>, confirm your name and email.</li>
+<li>Open GitHub Desktop and go to <strong>File → Options…</strong> (Mac: <strong>GitHub Desktop → Settings</strong>).</li>
+</ol>
+<div class="annotated" style="max-width:60%">
+<p><img src="../../images/intro-to-github/02-desktop-file-options-menu.png" class="img-fluid" alt="GitHub Desktop's File menu with Options… (shortcut Ctrl+,) marked with a red box. Other items are New repository, Add local repository, Clone repository, and Exit."> <span class="red-box" style="left:4.5%; top:53%; width:28.5%; height:13.5%;"></span></p>
+</div>
+<ol start="2" type="1">
+<li>Under <strong>Accounts</strong>, click <strong>Sign in</strong> for GitHub.com. Your browser opens; sign in to GitHub and authorize the app. When it’s done, your account appears:</li>
+</ol>
+<div style="max-width:55%">
+<p><img src="../../images/intro-to-github/02-desktop-accounts.png" class="img-fluid" alt="The Accounts page of GitHub Desktop's Options, showing a signed-in GitHub.com account with a Sign out button, and a Sign into GitHub Enterprise button below."></p>
+</div>
+<ol start="3" type="1">
+<li>Under <strong>Git → Author</strong>, set your <strong>Name</strong>, and choose your <strong>noreply</strong> address in the <strong>Email</strong> dropdown. Click <strong>Save</strong>.</li>
+</ol>
+<div style="max-width:55%">
+<p><img src="../../images/intro-to-github/02-desktop-git-config.png" class="img-fluid" alt="The Git page of GitHub Desktop's Options, on the Author tab. The Name field has a username, and the Email dropdown shows a noreply address ending in @users.noreply.github.com."></p>
+</div>
+<ol start="4" type="1">
+<li>Under <strong>Git → Default branch</strong>, leave it as <strong>main</strong>.</li>
 </ol>
 </section>
 <section id="configure-git-for-the-command-line" class="level2">

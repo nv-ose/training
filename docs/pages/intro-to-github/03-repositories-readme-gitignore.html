@@ -490,6 +490,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#readme.md" id="toc-readme.md" class="nav-link" data-scroll-target="#readme.md">README.md</a>
   <ul class="collapse">
   <li><a href="#a-good-readme-answers" id="toc-a-good-readme-answers" class="nav-link" data-scroll-target="#a-good-readme-answers">A good README answers</a></li>
+  <li><a href="#editing-a-file-on-github" id="toc-editing-a-file-on-github" class="nav-link" data-scroll-target="#editing-a-file-on-github">Editing a file on GitHub</a></li>
   <li><a href="#markdown-basics" id="toc-markdown-basics" class="nav-link" data-scroll-target="#markdown-basics">Markdown basics</a></li>
   </ul></li>
   <li><a href="#gitignore" id="toc-gitignore" class="nav-link" data-scroll-target="#gitignore">.gitignore</a>
@@ -537,19 +538,33 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="creating-a-repository-on-github">Creating a repository on GitHub</h2>
 <ol type="1">
 <li>Click <strong>+</strong> (top right) → <strong>New repository</strong>.</li>
+</ol>
+<div class="annotated" style="max-width:35%">
+<p><img src="../../images/intro-to-github/03-new-repo-menu.png" class="img-fluid" alt="GitHub's + menu opened from the top right of the page, with New repository marked with a red box. Other items are New issue, Import repository, New codespace, New gist, New organization, and New project."> <span class="red-box" style="left:45%; top:28%; width:52%; height:9.5%;"></span></p>
+</div>
+<ol start="2" type="1">
+<li>Fill in the form:</li>
+</ol>
+<p><img src="../../images/intro-to-github/03-new-repo-form.png" class="img-fluid" alt="GitHub's Create a new repository form. Under General: Owner and Repository name fields, and a Description field. Under Configuration: Choose visibility (set to Public), Start with a template, an Add README toggle, Add .gitignore, and Add license dropdowns, and a green Create repository button."></p>
+<ul>
 <li><strong>Owner:</strong> choose <code>nv-ose</code> for team work, or your own account for practice.</li>
-<li><strong>Name:</strong> lowercase with hyphens, like <code>flu-dashboard</code>. See the <a href="https://github.com/nv-ose/.github/blob/main/CONTRIBUTING.md">SOP naming rules</a>.</li>
+<li><strong>Repository name:</strong> lowercase with hyphens, like <code>flu-dashboard</code>. See the <a href="https://github.com/nv-ose/.github/blob/main/CONTRIBUTING.md">SOP naming rules</a>.</li>
 <li><strong>Description:</strong> one sentence.</li>
-<li><strong>Visibility:</strong> Public or Private. See <a href="../../pages/intro-to-github/08-public-vs-private.html">Lesson 8</a>. <strong>When in doubt, choose Private.</strong></li>
-<li>Check <strong>Add a README file</strong>.</li>
+<li><strong>Choose visibility:</strong> Public or Private. See <a href="../../pages/intro-to-github/08-public-vs-private.html">Lesson 8</a>. <strong>When in doubt, choose Private.</strong></li>
+<li><strong>Add README:</strong> turn it <strong>On</strong>.</li>
 <li><strong>Add .gitignore:</strong> choose a template, such as <strong>R</strong> or <strong>Python</strong>.</li>
-<li><strong>Choose a license:</strong> CC BY 4.0 for documents, MIT for code. This mostly matters for public repos.</li>
+<li><strong>Add license:</strong> CC BY 4.0 for documents, MIT for code. This mostly matters for public repos.</li>
+</ul>
+<ol start="3" type="1">
 <li>Click <strong>Create repository</strong>.</li>
 </ol>
+<p>Your new repository’s page lists its files, with branch, <strong>Add file</strong>, and <strong>Code</strong> buttons above them:</p>
+<p><img src="../../images/intro-to-github/03-repo-front-page.png" class="img-fluid" alt="The nv-ose/training repository page on GitHub. Tabs across the top include Code, Issues, Pull requests, Actions, and Settings. Above the file list are the main branch selector, Go to file, Add file, and a green Code button. The file list shows folders and files with their last commit messages, and an About panel is on the right."></p>
 </section>
 <section id="readme.md" class="level2">
 <h2 class="anchored" data-anchor-id="readme.md">README.md</h2>
 <p>The README is the <strong>front page</strong> of your repo. GitHub displays it automatically below the file list. It’s written in <strong>Markdown</strong>, a simple formatting language.</p>
+<p><img src="../../images/intro-to-github/03-readme-rendered.png" class="img-fluid" alt="A README displayed on a GitHub repository page, below the file list: a large NV OSE Training heading, a description, a website link, a warning that the repository is public, and an Available trainings table."></p>
 <section id="a-good-readme-answers" class="level3">
 <h3 class="anchored" data-anchor-id="a-good-readme-answers">A good README answers</h3>
 <ul>
@@ -572,6 +587,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>See <strong><a href="../../pages/intro-to-github/readme-guide.html">Writing a good README</a></strong> for what to include, tips, examples, and a downloadable NV OSE template.</p>
 </div>
 </div>
+</section>
+<section id="editing-a-file-on-github" class="level3">
+<h3 class="anchored" data-anchor-id="editing-a-file-on-github">Editing a file on GitHub</h3>
+<p>You can edit a README (or any text file) right in the browser:</p>
+<ol type="1">
+<li>Open the file and click the <strong>pencil</strong> icon (<strong>Edit file</strong>).</li>
+</ol>
+<div class="annotated">
+<p><img src="../../images/intro-to-github/03-edit-file-button.png" class="img-fluid" alt="The header bar above a README on GitHub, with README and Contributing tabs on the left and an Edit file pencil icon on the right, marked with a red box and showing an Edit file tooltip."> <span class="red-box" style="left:79.3%; top:5%; width:3.2%; height:52%;"></span></p>
+</div>
+<ol start="2" type="1">
+<li>Make your changes on the <strong>Edit</strong> tab:</li>
+</ol>
+<p><img src="../../images/intro-to-github/03-edit-readme.png" class="img-fluid" alt="GitHub's file editor for README.md, on the Edit tab. The Markdown source is shown with line numbers, and Cancel changes and Commit changes buttons are at the top right."></p>
+<ol start="3" type="1">
+<li>Click <strong>Preview</strong> to check the formatting:</li>
+</ol>
+<p><img src="../../images/intro-to-github/03-edit-readme-preview.png" class="img-fluid" alt="The same editor on the Preview tab, showing the README formatted: the NV OSE Training heading, a website link, the public-repository warning, and the trainings table."></p>
+<ol start="4" type="1">
+<li>Click <strong>Commit changes…</strong>, write a short message, and for shared repos choose <strong>Create a new branch… and start a pull request</strong> (<a href="../../pages/intro-to-github/06-branches-pull-requests.html">Lesson 6</a>).</li>
+</ol>
 </section>
 <section id="markdown-basics" class="level3">
 <h3 class="anchored" data-anchor-id="markdown-basics">Markdown basics</h3>
@@ -650,6 +686,8 @@ credentials.json
 data/raw/
 *.sas7bdat
 *.xlsx</code></pre>
+<p>Here’s the <code>.gitignore</code> for this training site, viewed on GitHub:</p>
+<p><img src="../../images/intro-to-github/03-gitignore-file.png" class="img-fluid" alt="A .gitignore file opened on GitHub, 23 lines long, with comment headings for System files, R, Python, Quarto build cache, and Secrets, each followed by patterns such as .DS_Store, .Rhistory, __pycache__/, /.quarto/, .env, .Renviron, and *.key."></p>
 <section id="how-it-works" class="level3">
 <h3 class="anchored" data-anchor-id="how-it-works">How it works</h3>
 <ul>

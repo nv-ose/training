@@ -567,6 +567,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/nv-ose/training.git</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> training</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><code>git clone</code> downloads the whole repo, including its history, and sets up <code>origin</code> for you.</p>
+<p><strong>Where to get the URL:</strong> on the repo’s GitHub page, click the green <strong>Code</strong> button, and copy the <strong>HTTPS</strong> URL:</p>
+<div class="annotated" style="max-width:50%">
+<p><img src="../../images/intro-to-github/05-copy-clone-url.png" class="img-fluid" alt="The Code menu opened on a GitHub repository, on the Local tab. Under Clone, the HTTPS option is selected and the URL https://github.com/nv-ose/training.git is shown with a copy icon, marked with a red box. Below are Open with GitHub Desktop and Download ZIP."> <span class="red-box" style="left:17%; top:47%; width:75%; height:13%;"></span></p>
+</div>
 </section>
 <section id="the-everyday-loop" class="level2">
 <h2 class="anchored" data-anchor-id="the-everyday-loop">The everyday loop</h2>
@@ -629,6 +633,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><code>git add .</code> stages <em>everything</em>, including files you may not want. Run <code>git status</code> first, and rely on your <code>.gitignore</code>.</p>
 </div>
 </div>
+<p><code>git status</code> is the command you’ll use most. It tells you which branch you’re on, whether you’re in sync with GitHub, and which files changed:</p>
+<p><img src="../../images/intro-to-github/05-terminal-status.png" class="img-fluid" alt="PowerShell in the training repository folder. git --version shows git version 2.53.0.windows.2, and git status shows: On branch main, Your branch is up to date with origin/main, Changes not staged for commit, modified: README.md, in red."></p>
 </section>
 <section id="looking-at-history" class="level2">
 <h2 class="anchored" data-anchor-id="looking-at-history">Looking at history</h2>
