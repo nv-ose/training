@@ -217,6 +217,23 @@ Right-click a file in **Changes** → **Discard changes…**, then confirm:
 :::
 :::
 
+To throw away **all** uncommitted changes at once (for example, after testing something), use **Branch → Discard all changes…** (**Ctrl + Shift + Backspace**):
+
+::: {.columns}
+::: {.column width="45%"}
+::: {style="max-width:100%"}
+![](../../images/intro-to-github/04-branch-menu-discard-all.png){fig-alt="GitHub Desktop's Branch menu with Discard all changes… (shortcut Ctrl+Shift+Backspace) highlighted. Other items include New branch, Rename, Delete, Stash all changes, Update from main, Merge into current branch, Compare on GitHub, Preview pull request, and Create pull request."}
+:::
+:::
+::: {.column width="5%"}
+:::
+::: {.column width="50%"}
+::: {style="max-width:100%"}
+![](../../images/intro-to-github/04-confirm-discard-all.png){fig-alt="The Confirm discard all changes dialog asking: Are you sure you want to discard all 18 changed files? Changes can be restored by retrieving them from the Recycle Bin. Discard all changes and Cancel buttons are at the bottom."}
+:::
+:::
+:::
+
 ::: {.callout-warning}
 Discarding throws away your edits since the last commit. The file goes to the Recycle Bin, but don't rely on that. Only discard what you really don't want.
 :::

@@ -45,17 +45,19 @@ Not rendered on the site (the file name starts with `_`). ✅ = saved and checke
 - [ ] `05-git-bash.png`: **Git Bash** open, or right-click a folder → **Open Git Bash here**
 - [ ] `05-empty-repo-setup.png`: a new **empty** repo's page with "…or push an existing repository from the command line"
 
-## Lesson 6: Branches and pull requests (next batch, in a practice repo)
+## Lesson 6: Branches and pull requests ✅ done
 
-- [ ] `06-new-branch.png`: **Current branch** dropdown → **New branch**
-- [ ] `06-publish-branch.png`: **Publish branch** button
-- [ ] `06-create-pr-desktop.png`: **Create Pull Request** in GitHub Desktop
-- [ ] `06-compare-banner.png`: github.com's yellow **Compare & pull request** banner
-- [ ] `06-open-pr-form.png`: **Open a pull request** form (title, description, **Reviewers**)
-- [ ] `06-files-changed.png`: **Files changed** tab with a line comment (blue **+**)
-- [ ] `06-review-changes.png`: **Review changes** box (Comment / Approve / Request changes)
-- [ ] `06-merge-pr.png`: **Merge pull request**, then **Delete branch**
-- [ ] `06-conflict-desktop.png` (optional): GitHub Desktop merge conflict dialog
+- [x] `06-branch-dropdown.png`, `06-create-branch-dialog.png`, `06-commit-to-branch.png`
+- [x] `06-publish-branch-prompt.png`, `06-push-origin-branch.png`
+- [x] `06-preview-pr-prompt.png`, `06-preview-pr.png`, `06-preview-pr-empty.png` (troubleshooting)
+- [x] `06-open-pr-form.png`, `06-reviewers-select.png`
+- [x] `06-pr-files-changed.png`, `06-line-comment.png`, `06-submit-review-button.png`, `06-review-changes.png`
+- [x] `06-pr-conversation.png`, `06-merge-box-review-requested.png`, `06-pr-approved.png`
+- [x] `06-confirm-merge.png`, `06-delete-branch.png`, `06-pull-after-merge.png`
+- [ ] `06-compare-banner.png` (optional): github.com's yellow **Compare & pull request** banner
+- [ ] `06-conflict-desktop.png` (optional): GitHub Desktop merge conflict dialog (practice repo)
+
+Also added to Lesson 4: `04-branch-menu-discard-all.png`, `04-confirm-discard-all.png` (and spare `04-branch-menu-new-branch.png`).
 
 ## Lesson 7: Clones, forks, and templates
 
