@@ -1863,14 +1863,14 @@
     "href": "index.html#trainings",
     "title": "NV OSE Training",
     "section": "Trainings",
-    "text": "Trainings\n\n\n\nTraining\nWhat you’ll learn\nLevel\nTime\n\n\n\n\nIntroduction to Git and GitHub\nGit vs. GitHub, READMEs, .gitignore, GitHub Desktop, the command line, branches, pull requests, forks, public vs. private, and data security\nBeginner\nAbout 3 hours\n\n\nIntroduction to Quarto\nMarkdown, what Quarto adds, R code chunks, HTML reports, revealjs presentations, websites, accessibility, and publishing on GitHub Pages\nBeginner\nAbout 5 hours (3 sessions)\n\n\nIntroduction to Positron\nThe Positron IDE for R and Python: interpreters, project folders and here(), the NV OSE folder structure, panes compared with RStudio and VS Code, extensions (including AI assistants), Git, and Python environments\nBeginner\nAbout 1 hour\n\n\n\nMore trainings are on the way."
+    "text": "Trainings\n\n\n\nTraining\nWhat you’ll learn\nLevel\nTime\n\n\n\n\nIntroduction to Positron\nThe Positron IDE for R and Python: interpreters, project folders and here(), the NV OSE folder structure, panes compared with RStudio and VS Code, extensions (including AI assistants), Git, and Python environments\nBeginner\nAbout 1 hour\n\n\nIntroduction to Git and GitHub\nGit vs. GitHub, READMEs, .gitignore, GitHub Desktop, the command line, branches, pull requests, forks, public vs. private, and data security\nBeginner\nAbout 3 hours\n\n\nIntroduction to Quarto\nMarkdown, what Quarto adds, R code chunks, HTML reports, revealjs presentations, websites, accessibility, and publishing on GitHub Pages\nBeginner\nAbout 5 hours (3 sessions)\n\n\n\nMore trainings are on the way."
   },
   {
     "objectID": "index.html#suggested-order",
     "href": "index.html#suggested-order",
     "title": "NV OSE Training",
     "section": "Suggested order",
-    "text": "Suggested order\nNew to all of this? Take the trainings in this order:\n\nIntroduction to Positron (1 hour): set up the editor and a project folder.\nIntroduction to Quarto, Sessions 1–2: Markdown, code, reports, and slides.\nIntroduction to Git and GitHub: version control and sharing your work.\nIntroduction to Quarto, Session 3: build a website and publish it on GitHub Pages.\n\nAlready comfortable with one of these? Skip ahead. Each training lists its own prerequisites."
+    "text": "Suggested order\nNew to all of this? Take the trainings in this order:\n\nIntroduction to Positron (1 hour): set up the editor and a project folder.\nIntroduction to Git and GitHub (3 hours): version control and sharing your work.\nIntroduction to Quarto (5 hours, 3 sessions): Markdown, reports, slides, and websites published on GitHub Pages.\n\nAlready comfortable with one of these? Skip ahead. Each training lists its own prerequisites."
   },
   {
     "objectID": "index.html#how-to-use-these-materials",

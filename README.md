@@ -10,9 +10,9 @@ Workshops, tutorials, and learning materials from **NV OSE — The Office of Sta
 
 | Training | Description | Level | Last updated |
 |---|---|---|---|
+| [Introduction to Positron](https://nv-ose.github.io/training/pages/intro-to-positron/) ([source](pages/intro-to-positron/)) | The Positron IDE for R and Python: interpreters, project folders and here(), the NV OSE folder structure, panes compared with RStudio and VS Code, extensions (including AI assistants), Git, and Python environments | Beginner | 2026-11-04 |
 | [Introduction to Git and GitHub](https://nv-ose.github.io/training/pages/intro-to-github/) ([source](pages/intro-to-github/)) | Git vs. GitHub, READMEs, .gitignore, GitHub Desktop, the command line, branches, pull requests, forks, public vs. private, and data security | Beginner | 2026-10-27 |
 | [Introduction to Quarto](https://nv-ose.github.io/training/pages/intro-to-quarto/) ([source](pages/intro-to-quarto/)) | Markdown, what Quarto adds, R code chunks, HTML reports, revealjs presentations, websites, accessibility, and publishing on GitHub Pages | Beginner | 2026-10-28 |
-| [Introduction to Positron](https://nv-ose.github.io/training/pages/intro-to-positron/) ([source](pages/intro-to-positron/)) | The Positron IDE for R and Python: interpreters, project folders and here(), the NV OSE folder structure, panes compared with RStudio and VS Code, extensions (including AI assistants), Git, and Python environments | Beginner | 2026-11-04 |
 
 New to all of this? See the **Suggested order** on the [training site](https://nv-ose.github.io/training/).
  

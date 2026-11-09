@@ -23,12 +23,12 @@ website:
     left:
       - text: "Home"
         href: index.qmd
+      - text: "Intro to Positron"
+        href: pages/intro-to-positron/index.qmd
       - text: "Intro to Git & GitHub"
         href: pages/intro-to-github/index.qmd
       - text: "Intro to Quarto"
         href: pages/intro-to-quarto/index.qmd
-      - text: "Intro to Positron"
-        href: pages/intro-to-positron/index.qmd
     right:
       - text: "Feedback"
         icon: envelope
