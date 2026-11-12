@@ -9,6 +9,8 @@ project:
     - "/.nojekyll"
     - "pages/intro-to-github/README-template.md"
     - "practice/positron-practice.zip"
+    - "practice/nv-ose-project-template.zip"
+    - "pages/intro-to-github/gitignore-template.txt"
 
 website:
   title: "NV OSE Training"
@@ -58,6 +60,7 @@ website:
           contents:
             - pages/intro-to-github/exercises.qmd
             - pages/intro-to-github/readme-guide.qmd
+            - pages/intro-to-github/project-setup.qmd
             - pages/intro-to-github/cheatsheet.qmd
             - pages/intro-to-github/glossary.qmd
             - pages/intro-to-github/resources.qmd

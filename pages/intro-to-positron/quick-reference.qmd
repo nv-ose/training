@@ -39,10 +39,14 @@ On a Mac, use **Cmd** instead of **Ctrl**.
 
 ## Starting a new project checklist
 
+Full details: [Project setup standard](../intro-to-github/project-setup.qmd). Fastest start: download its **starter project**.
+
+
 - [ ] Create or open the folder (**File → Open Folder…** or **New Folder from Template…**)
 - [ ] Create the folders: `scripts/`, `notebooks/`, `raw_data/`, `processed_data/`, `images/`, `reports/`, `downloads/`
 - [ ] Add `README.md` ([template](../intro-to-github/readme-guide.qmd))
 - [ ] Add `.here` (`here::set_here()`)
 - [ ] Add `.gitignore` (data folders and secrets)
+- [ ] Keep PHI/PII on the network drive; save its path in `~/.Renviron`
 - [ ] Initialize Git and make a first commit
 - [ ] Publish privately to **nv-ose** with GitHub Desktop

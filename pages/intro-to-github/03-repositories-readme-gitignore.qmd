@@ -96,6 +96,10 @@ GitHub's [Markdown guide](https://docs.github.com/en/get-started/writing-on-gith
 
 ## .gitignore
 
+::: {.callout-tip title="NV OSE standard .gitignore"}
+For NV OSE projects, start from the **[standard .gitignore](project-setup.qmd#the-standard-.gitignore)** on the Project setup standard page. It already covers data folders, secrets, and R/Python/Quarto clutter.
+:::
+
 A `.gitignore` file tells Git which files to **never track**. It's one of your most important safety tools.
 
 ```gitignore

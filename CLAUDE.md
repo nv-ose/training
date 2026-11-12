@@ -41,3 +41,4 @@
 - The lesson order in the `_quarto.yml` sidebar, and the lesson tables in each training's `index.qmd`.
 - Owner contact info, which also appears in `pages/intro-to-github/09-data-security.qmd` and `cheatsheet.qmd`.
 - `practice/positron-practice/` is the source of the downloadable practice project; `practice/positron-practice.zip` is what the site serves (listed under `resources:`). **Rebuild the zip** whenever files in the folder change. All its data is synthetic.
+- `practice/nv-ose-project-template/` is the **standard project structure** (also copied to `shared-resources/_template-project/` and documented in `pages/intro-to-github/project-setup.qmd`). Its `.gitignore` is also served as `pages/intro-to-github/gitignore-template.txt`. Keep all four in sync, and **rebuild `practice/nv-ose-project-template.zip`** after any change.

@@ -16,8 +16,8 @@ Use the same folders in every project, so anyone can find their way around:
 |---|---|---|
 | `scripts/` | `.R` and `.py` files: code you run. Number them in order: `01_import.R`, `02_clean.R` | ✅ |
 | `notebooks/` | `.qmd`, `.Rmd`, and `.md` files: documents that mix code and text | ✅ |
-| `raw_data/` | Original data, **never edited** | ❌ |
-| `processed_data/` | Cleaned or derived data, created by your scripts | ❌ |
+| `raw_data/` | Original **non-sensitive** data (public, aggregate, or synthetic), **never edited** | ❌ |
+| `processed_data/` | Cleaned or derived non-sensitive data, created by your scripts | ❌ |
 | `images/` | Figures and screenshots | ✅ (if no data shown) |
 | `reports/` | Rendered output: HTML, Word, PDF | Usually ❌ |
 | `downloads/` | Files pulled from outside sources | ❌ |
@@ -26,6 +26,14 @@ Use the same folders in every project, so anyone can find their way around:
 | `.here` | Marks the top of the project for `here()` ([Lesson 3](03-projects.qmd#the-.here-file-and-herehere)) | ✅ |
 
 Delete folders you don't need. Data folders stay **out of Git** with a `.gitignore` ([Lesson 7](07-git.qmd)).
+
+::: {.callout-warning title="PHI and PII never go in these folders"}
+Data with PHI or PII stays on the approved network drive, and your scripts read it from there. See [Where the data lives](../intro-to-github/project-setup.qmd#where-the-data-lives).
+:::
+
+::: {.callout-tip title="Start from the starter project"}
+The **[Project setup standard](../intro-to-github/project-setup.qmd)** has all of this in one place, plus a **downloadable starter project** with the folders, README template, standard `.gitignore`, and `.here` already set up.
+:::
 
 ## Creating folders
 

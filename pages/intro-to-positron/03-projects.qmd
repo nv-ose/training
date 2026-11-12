@@ -61,8 +61,13 @@ Positron can create a new project folder for you: **File → New Folder from Tem
 
 Positron creates the folder and opens it.
 
-::: {.callout-note title="Where to keep projects"}
-Keep projects you'll put on GitHub in `Documents\GitHub\` (or `Documents\GitHub\NV-OSE\` for NV OSE repos). Avoid shared network drives for Git projects: Git and network drives don't mix well.
+::: {.callout-important title="Where to keep projects, and where to keep data"}
+Keep the **code** separate from any **sensitive data**:
+
+- **Project folder (code):** in `Documents\GitHub\` on your computer (or `Documents\GitHub\NV-OSE\` for NV OSE repos). Scripts, notebooks, and the README contain no PHI, and Git works best on a local drive. Avoid network drives for Git projects.
+- **PHI/PII data:** stays on the **approved network drive**. Never copy it to your computer. Your scripts read it from there, using a path saved in your personal `.Renviron` file.
+
+See [Where the data lives](../intro-to-github/project-setup.qmd#where-the-data-lives) for how to set this up.
 :::
 
 ## The `.here` file and `here::here()`

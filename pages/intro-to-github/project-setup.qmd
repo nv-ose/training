@@ -1,0 +1,252 @@
+---
+title: "Project setup standard"
+---
+
+Every NV OSE project, whether it's a weekly report, a dashboard pipeline, or a one-off analysis, uses the **same structure and the same rules**. Anyone can open anyone's project and know where things are, what to run, and what stays out of Git.
+
+[⬇ Download the starter project](../../practice/nv-ose-project-template.zip){.btn .btn-outline-primary download="nv-ose-project-template.zip"}
+[⬇ Download the standard .gitignore](gitignore-template.txt){.btn .btn-outline-secondary download="gitignore-template.txt"}
+
+The starter project has all the folders, a README template, the standard `.gitignore`, and a `.here` file, ready to rename and fill in. NV OSE members can also copy `_template-project/` from the [`shared-resources`](https://github.com/nv-ose/shared-resources) repo.
+
+## The folder structure
+
+```
+project-name/
+├── scripts/          # .R and .py files, numbered in run order
+├── notebooks/        # .qmd / .Rmd / .md documents (report source)
+├── raw_data/         # original data, never edited
+├── processed_data/   # cleaned data created by scripts
+├── images/           # figures and screenshots
+├── reports/          # rendered output: HTML, Word, PDF
+├── downloads/        # files pulled from outside sources
+├── README.md         # what this is and how to use it
+├── .gitignore        # what Git must never track
+└── .here             # marks the top folder for here::here()
+```
+
+| Folder or file | What goes in it | In Git? |
+|---|---|---|
+| `scripts/` | Code you run: `.R`, `.py`, `.sql`. Number them in the order they run | ✅ |
+| `notebooks/` | Documents that mix code and text: `.qmd`, `.Rmd`, `.md`. This is the **source** of reports | ✅ |
+| `raw_data/` | **Non-sensitive** original data exactly as received: public downloads, approved aggregate tables, synthetic test data. **Never edit these files**; scripts read them and write to `processed_data/`. **No PHI/PII** ([see below](#where-the-data-lives)) | ❌ |
+| `processed_data/` | Cleaned or derived non-sensitive data, created by your scripts. Can always be rebuilt from `raw_data/` + `scripts/` | ❌ |
+| `images/` | Figures, diagrams, screenshots used in reports or the README | ✅ if no real data is shown |
+| `reports/` | Final rendered output (HTML, Word, PDF) | ❌ by default (they contain results) |
+| `downloads/` | Files pulled from websites, APIs, or other systems | ❌ |
+| `README.md` | What the project is, how to run it, who maintains it | ✅ |
+| `.gitignore` | The NV OSE standard (below) | ✅ |
+| `.here` | An empty file marking the project's top folder | ✅ |
+
+**Don't need a folder?** Delete it. **Need a different one?** Ask yourself if it fits one of these first; don't invent new top-level folders without a good reason.
+
+## Where the data lives
+
+Code and sensitive data live in **different places**:
+
+| What | Where | Why |
+|---|---|---|
+| Code: scripts, notebooks, README | Project folder in `Documents\GitHub\` on your computer, and on GitHub | Contains no data. Git works best on a local drive, not a network drive |
+| **PHI/PII and other restricted data** | The program's **approved network drive**. **Never** copied to your computer, OneDrive, or GitHub | Agency rules on where sensitive data may be stored |
+| Non-sensitive data: public downloads, approved aggregates, synthetic data | `raw_data/`, `processed_data/`, `downloads/` in the project folder (not in Git) | Convenient, and safe to have locally |
+
+Scripts **read sensitive data straight from the network drive**, and write any cleaned versions back there, never to the project folder.
+
+### Point your code to the data with `.Renviron`
+
+Don't type the network path into your code. Save it once in your personal `~/.Renviron` file (the same file used for credentials, never in the project):
+
+```r
+usethis::edit_r_environ()   # opens ~/.Renviron
+```
+
+Add a line like this (an example path; use your program's real one), save, and restart R:
+
+```
+RESP_DATA_DIR="S:/Epi/Respiratory/data"
+```
+
+Then, in your scripts:
+
+```r
+data_dir <- Sys.getenv("RESP_DATA_DIR")
+if (data_dir == "") stop("Set RESP_DATA_DIR in ~/.Renviron (see the README).")
+
+cases <- read.csv(file.path(data_dir, "raw", "cases.csv"))
+# ... clean ...
+write.csv(clean, file.path(data_dir, "processed", "cases_clean.csv"), row.names = FALSE)
+```
+
+In Python, put the same line in a `.env` file in the project folder (already in the standard `.gitignore`) and read it with `python-dotenv`:
+
+```python
+import os
+from pathlib import Path
+from dotenv import load_dotenv
+
+load_dotenv()
+data_dir = Path(os.environ["RESP_DATA_DIR"])
+cases = data_dir / "raw" / "cases.csv"
+```
+
+This way:
+
+- **No PHI is ever on your computer.** It's read over the network and kept in memory only.
+- **No server paths are in the code or on GitHub.**
+- **Each person can have a different path** (a different drive letter, say) without changing the code.
+- The README says **which variable to set** and where authorized people can find the data.
+
+::: {.callout-warning title="Watch what you save locally"}
+- Don't save PHI to `processed_data/`, `downloads/`, `reports/`, the Desktop, or Downloads, even temporarily.
+- Rendered reports and figures can contain data too. If a report shows line-level or small-cell data, save it to the network drive, not `reports/`.
+- Synced folders like OneDrive may not be approved for PHI. Follow agency rules.
+:::
+
+## Naming files and folders
+
+| Rule | Example |
+|---|---|
+| Lowercase, no spaces | `weekly_ili.R`, not `Weekly ILI Final.R` |
+| Underscores or hyphens; be consistent within a project | `raw_data/`, `01_import.R` |
+| Number scripts in run order | `01_import.R`, `02_clean.R`, `03_analyze.R`, `04_report.R` |
+| Date first, as `YYYY-MM-DD`, when versions or order matter | `2026-11-10_weekly-ili.html` |
+| Describe the content, not the status | `ili_by_county.csv`, not `final_v2_USE_THIS.csv` |
+| Repositories: lowercase with **hyphens** | `flu-weekly-report` |
+
+Dates in `YYYY-MM-DD` format sort correctly in any file list.
+
+## The README
+
+Every project has a `README.md` at the top level. At minimum: **what it is, who maintains it, how to run it, what's in each folder, and where the data comes from**. See [Writing a good README](readme-guide.qmd) for the full guide. The starter project includes the template.
+
+## The standard `.gitignore`
+
+Add it **first**, before any data goes into the folder. It's in the starter project, or [download it](gitignore-template.txt){download="gitignore-template.txt"} and rename it to `.gitignore` (see the tip below).
+
+```gitignore
+# ---- Data folders: never in Git (the empty folders are kept with .gitkeep) ----
+/raw_data/*
+!/raw_data/.gitkeep
+/processed_data/*
+!/processed_data/.gitkeep
+/downloads/*
+!/downloads/.gitkeep
+
+# ---- Rendered reports: not in Git by default (they contain results) ----
+/reports/*
+!/reports/.gitkeep
+
+# ---- Data files anywhere (safety net) ----
+# To allow one specific file, add a line like:  !lookups/county_codes.csv
+*.csv
+*.xlsx
+*.xls
+*.sas7bdat
+*.dta
+*.sav
+*.parquet
+*.rds
+*.RData
+*.rda
+
+# ---- Secrets: never in Git ----
+.Renviron
+.env
+*.key
+*.pem
+credentials*
+*secret*
+
+# ---- R ----
+.Rhistory
+.Rproj.user/
+.Ruserdata
+
+# ---- Python ----
+__pycache__/
+.venv/
+.ipynb_checkpoints/
+
+# ---- Quarto (rendered files next to the source) ----
+/.quarto/
+*_files/
+/notebooks/*.html
+**/*.quarto_ipynb
+
+# ---- System and Office temporary files ----
+.DS_Store
+Thumbs.db
+desktop.ini
+~$*
+```
+
+What it does:
+
+- **Data never goes in**, even if someone saves a CSV in the wrong folder (the safety net).
+- **Secrets never go in:** `.Renviron`, `.env`, keys.
+- **Clutter stays out:** R history, Python caches, Quarto build files, Office lock files.
+- The **folders themselves** are kept (with an empty `.gitkeep` file), so the structure is the same in every copy of the project.
+
+::: {.callout-tip title="Renaming to .gitignore on Windows"}
+Windows may refuse a name that starts with a dot, or hide the `.txt` extension. Easiest: in Positron's Explorer, right-click `gitignore-template.txt` → **Rename** → `.gitignore`. Or in File Explorer, first turn on **View → Show → File name extensions**, then rename it to `.gitignore.` (with a trailing dot; Windows removes it).
+:::
+
+::: {.callout-warning title="Already committed something by mistake?"}
+`.gitignore` only affects files Git isn't tracking yet. See [Lesson 3](03-repositories-readme-gitignore.qmd#gotcha-.gitignore-doesnt-affect-files-already-tracked) to stop tracking a file, and [Lesson 9](09-data-security.qmd#if-something-sensitive-is-committed) if it contained sensitive data.
+:::
+
+## Paths: `.here` and `here()`
+
+Never type full paths like `C:\Users\jsmith\...` in code. They break for everyone else. Instead, build paths from the project's top folder with the [`here`](https://here.r-lib.org/) package:
+
+```r
+library(here)
+cases <- read.csv(here("raw_data", "cases.csv"))
+write.csv(summary, here("processed_data", "summary.csv"), row.names = FALSE)
+```
+
+The empty `.here` file tells `here()` where the top folder is. It's in the starter project, or run `here::set_here()` once in the project folder. See [Positron Lesson 3](../intro-to-positron/03-projects.qmd#the-.here-file-and-herehere).
+
+In Python, build paths from the project folder with `pathlib`:
+
+```python
+from pathlib import Path
+project = Path.cwd()          # run from the project folder
+cases = project / "raw_data" / "cases.csv"
+```
+
+## Reports
+
+| Rule | Why |
+|---|---|
+| Write report **source** in `notebooks/` (e.g., `notebooks/weekly_ili.qmd`) | Source is code + text: it belongs in Git |
+| Read data with `here()` and produce every number and chart from code | Re-running with new data updates the whole report |
+| Save **final** rendered versions to `reports/` with the date first: `2026-11-10_weekly-ili.html` | A dated history of what was shared, in order |
+| Keep `reports/` **out of Git** (the default) | Rendered reports contain results, often with data |
+| Use `embed-resources: true` for HTML reports you'll share | One self-contained file ([Quarto Lesson 6](../intro-to-quarto/06-documents.qmd)) |
+
+When you render a `.qmd`, Quarto saves the HTML **next to it** in `notebooks/` (ignored by Git). Copy or move the final version into `reports/` with a dated name. To render straight to a dated file:
+
+```bash
+quarto render notebooks/weekly_ili.qmd --output 2026-11-10_weekly-ili.html
+```
+
+then move it into `reports/`.
+
+::: {.callout-note}
+Only change the default and commit `reports/` if **every** report in the project is cleared for sharing and contains no restricted data, for example a public training or methods report.
+:::
+
+## New project checklist
+
+- [ ] Create the project folder in `Documents\GitHub\` (named with hyphens: `flu-weekly-report`)
+- [ ] Copy in the **starter project** (or `shared-resources/_template-project/`)
+- [ ] Fill in `README.md`: what, who, how to run, data sources
+- [ ] Check `.gitignore` is in place **before** adding any data
+- [ ] Check `.here` is in place (`here::here()` returns the project folder)
+- [ ] PHI/PII stays on the network drive: save its path in `~/.Renviron` and read it from there
+- [ ] Put non-sensitive original data in `raw_data/` and never edit it
+- [ ] Number scripts in run order; build paths with `here()`
+- [ ] Credentials only in `~/.Renviron`, never in code
+- [ ] Initialize Git and check the first commit contains **no data** ([Positron Lesson 7](../intro-to-positron/07-git.qmd) or [GitHub Desktop, Lesson 4](04-github-desktop.qmd))
+- [ ] Publish **privately** to **nv-ose**, add topics, and list it in the member directory ([SOP §4](https://github.com/nv-ose/.github/blob/main/CONTRIBUTING.md#4-adding-a-new-repository))

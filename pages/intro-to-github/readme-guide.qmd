@@ -76,6 +76,10 @@ One sentence: what this project does and who it's for.
 YYYY-MM-DD
 ```
 
+::: {.callout-note}
+The README is one part of the **[Project setup standard](project-setup.qmd)**, which also covers the folder structure, the standard `.gitignore`, and a downloadable starter project.
+:::
+
 ## Tips
 
 - **Lead with the one-line description.** "Weekly data pipeline for the Nevada Respiratory Surveillance Dashboard" beats "This repo contains scripts."

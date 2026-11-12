@@ -51,6 +51,7 @@ On a state computer you may need IT to install software. Request it ahead of tim
 
 - [Hands-on exercises](exercises.qmd)
 - [Writing a good README](readme-guide.qmd), with a downloadable template
+- [Project setup standard](project-setup.qmd): the NV OSE folder structure, standard `.gitignore`, and a downloadable starter project
 - [Cheat sheet](cheatsheet.qmd): the commands and buttons you'll use most
 - [Glossary](glossary.qmd)
 - [Further resources](resources.qmd)
