@@ -505,12 +505,12 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 <tr class="odd">
 <td><code>raw_data/</code></td>
-<td>Original data, <strong>never edited</strong></td>
+<td>Original <strong>non-sensitive</strong> data (public, aggregate, or synthetic), <strong>never edited</strong></td>
 <td>❌</td>
 </tr>
 <tr class="even">
 <td><code>processed_data/</code></td>
-<td>Cleaned or derived data, created by your scripts</td>
+<td>Cleaned or derived non-sensitive data, created by your scripts</td>
 <td>❌</td>
 </tr>
 <tr class="odd">
@@ -546,6 +546,32 @@ ul.task-list li input[type="checkbox"] {
 </tbody>
 </table>
 <p>Delete folders you don’t need. Data folders stay <strong>out of Git</strong> with a <code>.gitignore</code> (<a href="../../pages/intro-to-positron/07-git.html">Lesson 7</a>).</p>
+<div class="callout callout-style-default callout-warning callout-titled" title="PHI and PII never go in these folders">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>PHI and PII never go in these folders
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Data with PHI or PII stays on the approved network drive, and your scripts read it from there. See <a href="../../pages/intro-to-github/project-setup.html#where-the-data-lives">Where the data lives</a>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Start from the starter project">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Start from the starter project
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The <strong><a href="../../pages/intro-to-github/project-setup.html">Project setup standard</a></strong> has all of this in one place, plus a <strong>downloadable starter project</strong> with the folders, README template, standard <code>.gitignore</code>, and <code>.here</code> already set up.</p>
+</div>
+</div>
 </section>
 <section id="creating-folders" class="level2">
 <h2 class="anchored" data-anchor-id="creating-folders">Creating folders</h2>

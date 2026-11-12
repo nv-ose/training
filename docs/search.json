@@ -1096,7 +1096,7 @@
     "href": "pages/intro-to-positron/04-files-folders.html#the-nv-ose-folder-structure",
     "title": "Lesson 4: Files and folders",
     "section": "The NV OSE folder structure",
-    "text": "The NV OSE folder structure\nUse the same folders in every project, so anyone can find their way around:\n\n\n\nFolder or file\nWhat goes in it\nIn Git?\n\n\n\n\nscripts/\n.R and .py files: code you run. Number them in order: 01_import.R, 02_clean.R\n✅\n\n\nnotebooks/\n.qmd, .Rmd, and .md files: documents that mix code and text\n✅\n\n\nraw_data/\nOriginal data, never edited\n❌\n\n\nprocessed_data/\nCleaned or derived data, created by your scripts\n❌\n\n\nimages/\nFigures and screenshots\n✅ (if no data shown)\n\n\nreports/\nRendered output: HTML, Word, PDF\nUsually ❌\n\n\ndownloads/\nFiles pulled from outside sources\n❌\n\n\nREADME.md\nWhat the project is and how to use it (guide)\n✅\n\n\n.gitignore\nFiles and folders Git should never track\n✅\n\n\n.here\nMarks the top of the project for here() (Lesson 3)\n✅\n\n\n\nDelete folders you don’t need. Data folders stay out of Git with a .gitignore (Lesson 7).",
+    "text": "The NV OSE folder structure\nUse the same folders in every project, so anyone can find their way around:\n\n\n\nFolder or file\nWhat goes in it\nIn Git?\n\n\n\n\nscripts/\n.R and .py files: code you run. Number them in order: 01_import.R, 02_clean.R\n✅\n\n\nnotebooks/\n.qmd, .Rmd, and .md files: documents that mix code and text\n✅\n\n\nraw_data/\nOriginal non-sensitive data (public, aggregate, or synthetic), never edited\n❌\n\n\nprocessed_data/\nCleaned or derived non-sensitive data, created by your scripts\n❌\n\n\nimages/\nFigures and screenshots\n✅ (if no data shown)\n\n\nreports/\nRendered output: HTML, Word, PDF\nUsually ❌\n\n\ndownloads/\nFiles pulled from outside sources\n❌\n\n\nREADME.md\nWhat the project is and how to use it (guide)\n✅\n\n\n.gitignore\nFiles and folders Git should never track\n✅\n\n\n.here\nMarks the top of the project for here() (Lesson 3)\n✅\n\n\n\nDelete folders you don’t need. Data folders stay out of Git with a .gitignore (Lesson 7).\n\n\n\n\n\n\nWarningPHI and PII never go in these folders\n\n\n\nData with PHI or PII stays on the approved network drive, and your scripts read it from there. See Where the data lives.\n\n\n\n\n\n\n\n\nTipStart from the starter project\n\n\n\nThe Project setup standard has all of this in one place, plus a downloadable starter project with the folders, README template, standard .gitignore, and .here already set up.",
     "crumbs": [
       "Intro to Positron",
       "Lessons",
@@ -1320,870 +1320,123 @@
     ]
   },
   {
-    "objectID": "pages/intro-to-github/index.html",
-    "href": "pages/intro-to-github/index.html",
-    "title": "Introduction to Git and GitHub",
+    "objectID": "pages/intro-to-github/project-setup.html",
+    "href": "pages/intro-to-github/project-setup.html",
+    "title": "Project setup standard",
     "section": "",
-    "text": "A beginner-friendly training on version control with Git and GitHub, written for NV OSE staff and public health professionals. No prior experience needed.",
-    "crumbs": [
-      "Intro to Git & GitHub",
-      "Overview"
-    ]
-  },
-  {
-    "objectID": "pages/intro-to-github/index.html#overview",
-    "href": "pages/intro-to-github/index.html#overview",
-    "title": "Introduction to Git and GitHub",
-    "section": "Overview",
-    "text": "Overview\n\nAudience: Anyone new to Git and GitHub: epidemiologists, analysts, and program staff\nLevel: Beginner\nDuration: About 3 hours (can be split into two sessions)\nFormat: Workshop or self-paced",
-    "crumbs": [
-      "Intro to Git & GitHub",
-      "Overview"
-    ]
-  },
-  {
-    "objectID": "pages/intro-to-github/index.html#learning-objectives",
-    "href": "pages/intro-to-github/index.html#learning-objectives",
-    "title": "Introduction to Git and GitHub",
-    "section": "Learning objectives",
-    "text": "Learning objectives\nBy the end of this training, you will be able to:\n\nExplain the difference between Git and GitHub, and why version control matters.\nCreate a repository with a README and a .gitignore.\nMake, commit, push, and pull changes using GitHub Desktop and the command line.\nUse branches and pull requests to collaborate safely, and explain what a fork is.\nChoose between public and private repositories.\nKeep data, passwords, and API tokens out of GitHub, and know what to do if something is committed by mistake.",
-    "crumbs": [
-      "Intro to Git & GitHub",
-      "Overview"
-    ]
-  },
-  {
-    "objectID": "pages/intro-to-github/index.html#prerequisites",
-    "href": "pages/intro-to-github/index.html#prerequisites",
-    "title": "Introduction to Git and GitHub",
-    "section": "Prerequisites",
-    "text": "Prerequisites\n\nA free GitHub account with two-factor authentication turned on\nGitHub Desktop installed\nGit installed (for the command-line lesson)\nA text editor, such as VS Code or RStudio\n\n\n\n\n\n\n\nNote\n\n\n\nOn a state computer you may need IT to install software. Request it ahead of time.",
-    "crumbs": [
-      "Intro to Git & GitHub",
-      "Overview"
-    ]
-  },
-  {
-    "objectID": "pages/intro-to-github/index.html#lessons",
-    "href": "pages/intro-to-github/index.html#lessons",
-    "title": "Introduction to Git and GitHub",
-    "section": "Lessons",
-    "text": "Lessons\n\n\n\n#\nLesson\nTime\n\n\n\n\n1\nGit vs. GitHub: what and why\n15 min\n\n\n2\nSetting up\n20 min\n\n\n3\nRepositories, READMEs, and .gitignore\n20 min\n\n\n4\nThe basic workflow in GitHub Desktop\n25 min\n\n\n5\nThe basic workflow on the command line\n25 min\n\n\n6\nBranches and pull requests\n25 min\n\n\n7\nClones, forks, and templates\n10 min\n\n\n8\nPublic vs. private repositories\n10 min\n\n\n9\nData security: what never goes on GitHub\n20 min\n\n\n\nAlso included:\n\nHands-on exercises\nWriting a good README, with a downloadable template\nCheat sheet: the commands and buttons you’ll use most\nGlossary\nFurther resources",
-    "crumbs": [
-      "Intro to Git & GitHub",
-      "Overview"
-    ]
-  },
-  {
-    "objectID": "pages/intro-to-github/index.html#maintainer",
-    "href": "pages/intro-to-github/index.html#maintainer",
-    "title": "Introduction to Git and GitHub",
-    "section": "Maintainer",
-    "text": "Maintainer\nMax Wegener — mwegener@health.nv.gov",
-    "crumbs": [
-      "Intro to Git & GitHub",
-      "Overview"
-    ]
-  },
-  {
-    "objectID": "pages/intro-to-github/index.html#license",
-    "href": "pages/intro-to-github/index.html#license",
-    "title": "Introduction to Git and GitHub",
-    "section": "License",
-    "text": "License\nCC BY 4.0",
-    "crumbs": [
-      "Intro to Git & GitHub",
-      "Overview"
-    ]
-  },
-  {
-    "objectID": "pages/intro-to-github/index.html#last-updated",
-    "href": "pages/intro-to-github/index.html#last-updated",
-    "title": "Introduction to Git and GitHub",
-    "section": "Last updated",
-    "text": "Last updated\n2026-10-27",
-    "crumbs": [
-      "Intro to Git & GitHub",
-      "Overview"
-    ]
-  },
-  {
-    "objectID": "pages/intro-to-github/exercises.html",
-    "href": "pages/intro-to-github/exercises.html",
-    "title": "Hands-on exercises",
-    "section": "",
-    "text": "Do these in your personal GitHub account, or in a practice repo an owner creates for the workshop. Don’t use real NV OSE project repos.",
+    "text": "Every NV OSE project, whether it’s a weekly report, a dashboard pipeline, or a one-off analysis, uses the same structure and the same rules. Anyone can open anyone’s project and know where things are, what to run, and what stays out of Git.\n⬇ Download the starter project ⬇ Download the standard .gitignore\nThe starter project has all the folders, a README template, the standard .gitignore, and a .here file, ready to rename and fill in. NV OSE members can also copy _template-project/ from the shared-resources repo.",
     "crumbs": [
       "Intro to Git & GitHub",
       "Practice and reference",
-      "Hands-on exercises"
+      "Project setup standard"
     ]
   },
   {
-    "objectID": "pages/intro-to-github/exercises.html#exercise-1-create-a-repository-lesson-3-10-min",
-    "href": "pages/intro-to-github/exercises.html#exercise-1-create-a-repository-lesson-3-10-min",
-    "title": "Hands-on exercises",
-    "section": "Exercise 1: Create a repository (Lesson 3, 10 min)",
-    "text": "Exercise 1: Create a repository (Lesson 3, 10 min)\n\nOn github.com, create a new private repo named github-practice.\nCheck Add a README file, and choose the R (or Python) .gitignore template.\nClick the pencil icon on the README and edit it so it includes:\n\na heading with your name\none sentence about what you hope to use GitHub for\na bulleted list of three things\na link to the NV OSE SOP\n\nCommit directly to main with the message Update README.\nOpen .gitignore. Find one line you understand and one you don’t.\n\nCheck: the README shows your formatting on the repo’s front page.",
+    "objectID": "pages/intro-to-github/project-setup.html#the-folder-structure",
+    "href": "pages/intro-to-github/project-setup.html#the-folder-structure",
+    "title": "Project setup standard",
+    "section": "The folder structure",
+    "text": "The folder structure\nproject-name/\n├── scripts/          # .R and .py files, numbered in run order\n├── notebooks/        # .qmd / .Rmd / .md documents (report source)\n├── raw_data/         # original data, never edited\n├── processed_data/   # cleaned data created by scripts\n├── images/           # figures and screenshots\n├── reports/          # rendered output: HTML, Word, PDF\n├── downloads/        # files pulled from outside sources\n├── README.md         # what this is and how to use it\n├── .gitignore        # what Git must never track\n└── .here             # marks the top folder for here::here()\n\n\n\nFolder or file\nWhat goes in it\nIn Git?\n\n\n\n\nscripts/\nCode you run: .R, .py, .sql. Number them in the order they run\n✅\n\n\nnotebooks/\nDocuments that mix code and text: .qmd, .Rmd, .md. This is the source of reports\n✅\n\n\nraw_data/\nNon-sensitive original data exactly as received: public downloads, approved aggregate tables, synthetic test data. Never edit these files; scripts read them and write to processed_data/. No PHI/PII (see below)\n❌\n\n\nprocessed_data/\nCleaned or derived non-sensitive data, created by your scripts. Can always be rebuilt from raw_data/ + scripts/\n❌\n\n\nimages/\nFigures, diagrams, screenshots used in reports or the README\n✅ if no real data is shown\n\n\nreports/\nFinal rendered output (HTML, Word, PDF)\n❌ by default (they contain results)\n\n\ndownloads/\nFiles pulled from websites, APIs, or other systems\n❌\n\n\nREADME.md\nWhat the project is, how to run it, who maintains it\n✅\n\n\n.gitignore\nThe NV OSE standard (below)\n✅\n\n\n.here\nAn empty file marking the project’s top folder\n✅\n\n\n\nDon’t need a folder? Delete it. Need a different one? Ask yourself if it fits one of these first; don’t invent new top-level folders without a good reason.",
     "crumbs": [
       "Intro to Git & GitHub",
       "Practice and reference",
-      "Hands-on exercises"
+      "Project setup standard"
     ]
   },
   {
-    "objectID": "pages/intro-to-github/exercises.html#exercise-2-clone-edit-commit-push-with-github-desktop-lesson-4-15-min",
-    "href": "pages/intro-to-github/exercises.html#exercise-2-clone-edit-commit-push-with-github-desktop-lesson-4-15-min",
-    "title": "Hands-on exercises",
-    "section": "Exercise 2: Clone, edit, commit, push with GitHub Desktop (Lesson 4, 15 min)",
-    "text": "Exercise 2: Clone, edit, commit, push with GitHub Desktop (Lesson 4, 15 min)\n\nIn GitHub Desktop: File → Clone repository, then choose github-practice.\nOpen the folder and create a file called notes.md that contains the line My first commit from Desktop.\nIn GitHub Desktop, look at the change in the Changes tab.\nCommit it with the summary Add notes file.\nClick Push origin.\nRefresh the repo on github.com. Is notes.md there?\nOpen the History tab in Desktop. How many commits do you see?",
+    "objectID": "pages/intro-to-github/project-setup.html#where-the-data-lives",
+    "href": "pages/intro-to-github/project-setup.html#where-the-data-lives",
+    "title": "Project setup standard",
+    "section": "Where the data lives",
+    "text": "Where the data lives\nCode and sensitive data live in different places:\n\n\n\n\n\n\n\n\nWhat\nWhere\nWhy\n\n\n\n\nCode: scripts, notebooks, README\nProject folder in Documents\\GitHub\\ on your computer, and on GitHub\nContains no data. Git works best on a local drive, not a network drive\n\n\nPHI/PII and other restricted data\nThe program’s approved network drive. Never copied to your computer, OneDrive, or GitHub\nAgency rules on where sensitive data may be stored\n\n\nNon-sensitive data: public downloads, approved aggregates, synthetic data\nraw_data/, processed_data/, downloads/ in the project folder (not in Git)\nConvenient, and safe to have locally\n\n\n\nScripts read sensitive data straight from the network drive, and write any cleaned versions back there, never to the project folder.\n\nPoint your code to the data with .Renviron\nDon’t type the network path into your code. Save it once in your personal ~/.Renviron file (the same file used for credentials, never in the project):\nusethis::edit_r_environ()   # opens ~/.Renviron\nAdd a line like this (an example path; use your program’s real one), save, and restart R:\nRESP_DATA_DIR=\"S:/Epi/Respiratory/data\"\nThen, in your scripts:\ndata_dir &lt;- Sys.getenv(\"RESP_DATA_DIR\")\nif (data_dir == \"\") stop(\"Set RESP_DATA_DIR in ~/.Renviron (see the README).\")\n\ncases &lt;- read.csv(file.path(data_dir, \"raw\", \"cases.csv\"))\n# ... clean ...\nwrite.csv(clean, file.path(data_dir, \"processed\", \"cases_clean.csv\"), row.names = FALSE)\nIn Python, put the same line in a .env file in the project folder (already in the standard .gitignore) and read it with python-dotenv:\nimport os\nfrom pathlib import Path\nfrom dotenv import load_dotenv\n\nload_dotenv()\ndata_dir = Path(os.environ[\"RESP_DATA_DIR\"])\ncases = data_dir / \"raw\" / \"cases.csv\"\nThis way:\n\nNo PHI is ever on your computer. It’s read over the network and kept in memory only.\nNo server paths are in the code or on GitHub.\nEach person can have a different path (a different drive letter, say) without changing the code.\nThe README says which variable to set and where authorized people can find the data.\n\n\n\n\n\n\n\nWarningWatch what you save locally\n\n\n\n\nDon’t save PHI to processed_data/, downloads/, reports/, the Desktop, or Downloads, even temporarily.\nRendered reports and figures can contain data too. If a report shows line-level or small-cell data, save it to the network drive, not reports/.\nSynced folders like OneDrive may not be approved for PHI. Follow agency rules.",
     "crumbs": [
       "Intro to Git & GitHub",
       "Practice and reference",
-      "Hands-on exercises"
+      "Project setup standard"
     ]
   },
   {
-    "objectID": "pages/intro-to-github/exercises.html#exercise-3-the-command-line-and-git-init-lesson-5-20-min",
-    "href": "pages/intro-to-github/exercises.html#exercise-3-the-command-line-and-git-init-lesson-5-20-min",
-    "title": "Hands-on exercises",
-    "section": "Exercise 3: The command line and git init (Lesson 5, 20 min)",
-    "text": "Exercise 3: The command line and git init (Lesson 5, 20 min)\n\nOpen Git Bash (Mac: Terminal) and run:\ncd ~/Documents\nmkdir cli-practice\ncd cli-practice\ngit init\nCreate a README and a .gitignore:\necho \"# CLI Practice\" &gt; README.md\necho \".env\" &gt; .gitignore\nCreate a fake secrets file: echo \"API_KEY=fake123\" &gt; .env\nRun git status. Is .env listed? Why or why not?\nStage and commit:\ngit add .\ngit commit -m \"Initial commit\"\ngit log --oneline\nOn github.com, create an empty, private repo named cli-practice. Don’t add a README. Then follow the commands GitHub shows under “…or push an existing repository from the command line.”\nRefresh github.com. Confirm .env was NOT uploaded.",
+    "objectID": "pages/intro-to-github/project-setup.html#naming-files-and-folders",
+    "href": "pages/intro-to-github/project-setup.html#naming-files-and-folders",
+    "title": "Project setup standard",
+    "section": "Naming files and folders",
+    "text": "Naming files and folders\n\n\n\n\n\n\n\nRule\nExample\n\n\n\n\nLowercase, no spaces\nweekly_ili.R, not Weekly ILI Final.R\n\n\nUnderscores or hyphens; be consistent within a project\nraw_data/, 01_import.R\n\n\nNumber scripts in run order\n01_import.R, 02_clean.R, 03_analyze.R, 04_report.R\n\n\nDate first, as YYYY-MM-DD, when versions or order matter\n2026-11-10_weekly-ili.html\n\n\nDescribe the content, not the status\nili_by_county.csv, not final_v2_USE_THIS.csv\n\n\nRepositories: lowercase with hyphens\nflu-weekly-report\n\n\n\nDates in YYYY-MM-DD format sort correctly in any file list.",
     "crumbs": [
       "Intro to Git & GitHub",
       "Practice and reference",
-      "Hands-on exercises"
+      "Project setup standard"
     ]
   },
   {
-    "objectID": "pages/intro-to-github/exercises.html#exercise-4-branch-and-pull-request-lesson-6-20-min-best-in-pairs",
-    "href": "pages/intro-to-github/exercises.html#exercise-4-branch-and-pull-request-lesson-6-20-min-best-in-pairs",
-    "title": "Hands-on exercises",
-    "section": "Exercise 4: Branch and pull request (Lesson 6, 20 min, best in pairs)",
-    "text": "Exercise 4: Branch and pull request (Lesson 6, 20 min, best in pairs)\n\nIn github-practice, create a branch named yourname/add-favorite.\nAdd a line to notes.md: My favorite dataset is ...\nCommit, publish the branch, and click Create Pull Request.\nAdd your partner as a reviewer. (They’ll need access: Settings → Collaborators.)\nPartner: open the PR → Files changed → leave one comment → Approve.\nMerge the PR, delete the branch, and pull main in Desktop.\n\nBonus, create a merge conflict: on two different branches, change the same line of notes.md. Merge one, then try to merge the other, and resolve the conflict.",
+    "objectID": "pages/intro-to-github/project-setup.html#the-readme",
+    "href": "pages/intro-to-github/project-setup.html#the-readme",
+    "title": "Project setup standard",
+    "section": "The README",
+    "text": "The README\nEvery project has a README.md at the top level. At minimum: what it is, who maintains it, how to run it, what’s in each folder, and where the data comes from. See Writing a good README for the full guide. The starter project includes the template.",
     "crumbs": [
       "Intro to Git & GitHub",
       "Practice and reference",
-      "Hands-on exercises"
+      "Project setup standard"
     ]
   },
   {
-    "objectID": "pages/intro-to-github/exercises.html#exercise-5-spot-the-problem-lesson-9-10-min-discussion",
-    "href": "pages/intro-to-github/exercises.html#exercise-5-spot-the-problem-lesson-9-10-min-discussion",
-    "title": "Hands-on exercises",
-    "section": "Exercise 5: Spot the problem (Lesson 9, 10 min, discussion)",
-    "text": "Exercise 5: Spot the problem (Lesson 9, 10 min, discussion)\nEach of these is about to be committed. What’s wrong, and what should happen instead?\nA.\nlibrary(DBI)\ncon &lt;- dbConnect(odbc::odbc(), server = \"db-server.example.org\",\n                 uid = \"jsmith\", pwd = \"Winter2026!\")\nB. A folder data/ containing measles_cases_2026.csv, with columns name, dob, zip, onset_date.\nC. A colleague says: “I accidentally pushed my API key, but I deleted the file and pushed again, so it’s fine.”\nD. A private repo with a summary table where one county has a count of 2.\nE. .gitignore contains data/, but data/cases.csv still shows up on GitHub.\n\n\n\n\n\n\nTipShow answers\n\n\n\n\n\nA. It contains a password, a username, and an internal server name. Move the credentials to .Renviron or .env (ignored by Git) and use Sys.getenv(). Leave out the server name too, or keep it in config. If this was already pushed, change the password and tell an owner.\nB. This is line-level PHI. It must never be on GitHub, public or private. Keep it on approved secure storage, add data/ to .gitignore, and use synthetic data for examples. If it was pushed, tell an owner and follow incident reporting procedures.\nC. Not fine. The key is still in the history, and bots may already have it. Revoke the key right away, tell an owner, and clean the history.\nD. Small cell counts can identify people. Follow the agency’s small-number suppression rules before sharing, even internally.\nE. .gitignore doesn’t affect files that were already tracked. Run git rm --cached data/cases.csv and commit. The file remains in history, so treat it as exposed if it’s sensitive.",
+    "objectID": "pages/intro-to-github/project-setup.html#the-standard-.gitignore",
+    "href": "pages/intro-to-github/project-setup.html#the-standard-.gitignore",
+    "title": "Project setup standard",
+    "section": "The standard .gitignore",
+    "text": "The standard .gitignore\nAdd it first, before any data goes into the folder. It’s in the starter project, or download it and rename it to .gitignore (see the tip below).\n# ---- Data folders: never in Git (the empty folders are kept with .gitkeep) ----\n/raw_data/*\n!/raw_data/.gitkeep\n/processed_data/*\n!/processed_data/.gitkeep\n/downloads/*\n!/downloads/.gitkeep\n\n# ---- Rendered reports: not in Git by default (they contain results) ----\n/reports/*\n!/reports/.gitkeep\n\n# ---- Data files anywhere (safety net) ----\n# To allow one specific file, add a line like:  !lookups/county_codes.csv\n*.csv\n*.xlsx\n*.xls\n*.sas7bdat\n*.dta\n*.sav\n*.parquet\n*.rds\n*.RData\n*.rda\n\n# ---- Secrets: never in Git ----\n.Renviron\n.env\n*.key\n*.pem\ncredentials*\n*secret*\n\n# ---- R ----\n.Rhistory\n.Rproj.user/\n.Ruserdata\n\n# ---- Python ----\n__pycache__/\n.venv/\n.ipynb_checkpoints/\n\n# ---- Quarto (rendered files next to the source) ----\n/.quarto/\n*_files/\n/notebooks/*.html\n**/*.quarto_ipynb\n\n# ---- System and Office temporary files ----\n.DS_Store\nThumbs.db\ndesktop.ini\n~$*\nWhat it does:\n\nData never goes in, even if someone saves a CSV in the wrong folder (the safety net).\nSecrets never go in: .Renviron, .env, keys.\nClutter stays out: R history, Python caches, Quarto build files, Office lock files.\nThe folders themselves are kept (with an empty .gitkeep file), so the structure is the same in every copy of the project.\n\n\n\n\n\n\n\nTipRenaming to .gitignore on Windows\n\n\n\nWindows may refuse a name that starts with a dot, or hide the .txt extension. Easiest: in Positron’s Explorer, right-click gitignore-template.txt → Rename → .gitignore. Or in File Explorer, first turn on View → Show → File name extensions, then rename it to .gitignore. (with a trailing dot; Windows removes it).\n\n\n\n\n\n\n\n\nWarningAlready committed something by mistake?\n\n\n\n.gitignore only affects files Git isn’t tracking yet. See Lesson 3 to stop tracking a file, and Lesson 9 if it contained sensitive data.",
     "crumbs": [
       "Intro to Git & GitHub",
       "Practice and reference",
-      "Hands-on exercises"
+      "Project setup standard"
     ]
   },
   {
-    "objectID": "pages/intro-to-github/exercises.html#extra-practice",
-    "href": "pages/intro-to-github/exercises.html#extra-practice",
-    "title": "Hands-on exercises",
-    "section": "Extra practice",
-    "text": "Extra practice\n\nGitHub Skills: Introduction to GitHub, an interactive course of under an hour\nGitHub Skills: Communicate using Markdown",
+    "objectID": "pages/intro-to-github/project-setup.html#paths-.here-and-here",
+    "href": "pages/intro-to-github/project-setup.html#paths-.here-and-here",
+    "title": "Project setup standard",
+    "section": "Paths: .here and here()",
+    "text": "Paths: .here and here()\nNever type full paths like C:\\Users\\jsmith\\... in code. They break for everyone else. Instead, build paths from the project’s top folder with the here package:\nlibrary(here)\ncases &lt;- read.csv(here(\"raw_data\", \"cases.csv\"))\nwrite.csv(summary, here(\"processed_data\", \"summary.csv\"), row.names = FALSE)\nThe empty .here file tells here() where the top folder is. It’s in the starter project, or run here::set_here() once in the project folder. See Positron Lesson 3.\nIn Python, build paths from the project folder with pathlib:\nfrom pathlib import Path\nproject = Path.cwd()          # run from the project folder\ncases = project / \"raw_data\" / \"cases.csv\"",
     "crumbs": [
       "Intro to Git & GitHub",
       "Practice and reference",
-      "Hands-on exercises"
+      "Project setup standard"
     ]
   },
   {
-    "objectID": "pages/intro-to-github/09-data-security.html",
-    "href": "pages/intro-to-github/09-data-security.html",
-    "title": "Lesson 9: Data security: what never goes on GitHub",
+    "objectID": "pages/intro-to-github/project-setup.html#reports",
+    "href": "pages/intro-to-github/project-setup.html#reports",
+    "title": "Project setup standard",
+    "section": "Reports",
+    "text": "Reports\n\n\n\nRule\nWhy\n\n\n\n\nWrite report source in notebooks/ (e.g., notebooks/weekly_ili.qmd)\nSource is code + text: it belongs in Git\n\n\nRead data with here() and produce every number and chart from code\nRe-running with new data updates the whole report\n\n\nSave final rendered versions to reports/ with the date first: 2026-11-10_weekly-ili.html\nA dated history of what was shared, in order\n\n\nKeep reports/ out of Git (the default)\nRendered reports contain results, often with data\n\n\nUse embed-resources: true for HTML reports you’ll share\nOne self-contained file (Quarto Lesson 6)\n\n\n\nWhen you render a .qmd, Quarto saves the HTML next to it in notebooks/ (ignored by Git). Copy or move the final version into reports/ with a dated name. To render straight to a dated file:\nquarto render notebooks/weekly_ili.qmd --output 2026-11-10_weekly-ili.html\nthen move it into reports/.\n\n\n\n\n\n\nNote\n\n\n\nOnly change the default and commit reports/ if every report in the project is cleared for sharing and contains no restricted data, for example a public training or methods report.",
+    "crumbs": [
+      "Intro to Git & GitHub",
+      "Practice and reference",
+      "Project setup standard"
+    ]
+  },
+  {
+    "objectID": "pages/intro-to-github/project-setup.html#new-project-checklist",
+    "href": "pages/intro-to-github/project-setup.html#new-project-checklist",
+    "title": "Project setup standard",
+    "section": "New project checklist",
+    "text": "New project checklist\n\nCreate the project folder in Documents\\GitHub\\ (named with hyphens: flu-weekly-report)\nCopy in the starter project (or shared-resources/_template-project/)\nFill in README.md: what, who, how to run, data sources\nCheck .gitignore is in place before adding any data\nCheck .here is in place (here::here() returns the project folder)\nPHI/PII stays on the network drive: save its path in ~/.Renviron and read it from there\nPut non-sensitive original data in raw_data/ and never edit it\nNumber scripts in run order; build paths with here()\nCredentials only in ~/.Renviron, never in code\nInitialize Git and check the first commit contains no data (Positron Lesson 7 or GitHub Desktop, Lesson 4)\nPublish privately to nv-ose, add topics, and list it in the member directory (SOP §4)",
+    "crumbs": [
+      "Intro to Git & GitHub",
+      "Practice and reference",
+      "Project setup standard"
+    ]
+  },
+  {
+    "objectID": "pages/intro-to-github/glossary.html",
+    "href": "pages/intro-to-github/glossary.html",
+    "title": "Glossary",
     "section": "",
-    "text": "ImportantThe most important lesson in this training\n\n\n\nGit is designed to never forget. That’s great for code, and dangerous for data and secrets.",
+    "text": "Term\nDefinition\n\n\n\n\nBranch\nA separate line of development. main is the default branch.\n\n\nClone\nA full copy of a repo, including its history, on your computer.\n\n\nCommit\nA saved snapshot of changes, with a message, an author, and a unique ID (hash).\n\n\nCommit message\nA short description of what a commit changed and why.\n\n\nConflict (merge conflict)\nWhen two changes affect the same lines and Git needs you to choose which to keep.\n\n\nDiff\nThe line-by-line difference between two versions of a file.\n\n\nFetch\nCheck GitHub for new changes without applying them.\n\n\nFork\nYour own copy of someone else’s repo on GitHub.\n\n\n.gitignore\nA file listing patterns for files Git should never track.\n\n\nGitHub Pages\nA free GitHub service that turns a repo into a website.\n\n\nHEAD\nThe commit you are currently on.\n\n\nIssue\nA GitHub item for tracking a task, bug, or idea.\n\n\nLocal\nYour computer’s copy of a repo.\n\n\nmain\nThe default, official branch of a repo.\n\n\nMarkdown (.md)\nA simple text formatting language used for READMEs and documentation.\n\n\nMerge\nCombine the changes from one branch into another.\n\n\nOrganization (org)\nA shared GitHub account for a team, such as nv-ose.\n\n\norigin\nThe default name for the remote copy of the repo on GitHub.\n\n\nOwner\nAn org member with full admin rights.\n\n\nPull\nFetch new changes from GitHub and merge them into your local copy.\n\n\nPull request (PR)\nA request to merge one branch into another, with review and discussion.\n\n\nPush\nUpload your local commits to GitHub.\n\n\nPush protection\nA GitHub feature that blocks pushes containing known secret formats.\n\n\nREADME\nThe front-page document of a repo, usually README.md.\n\n\nRemote\nA copy of the repo hosted elsewhere, usually on GitHub.\n\n\nRepository (repo)\nA project folder tracked by Git, plus its history.\n\n\nRevert\nA new commit that undoes an earlier commit.\n\n\nSecret\nAny credential: a password, API key, token, or private key.\n\n\nStage (staging area)\nThe set of changes chosen to go into the next commit (git add).\n\n\nTemplate repository\nA repo you can use to start new repos with the same files, without its history.\n\n\nTwo-factor authentication (2FA)\nA second login step, such as an app code, that protects your account.",
     "crumbs": [
       "Intro to Git & GitHub",
-      "Lessons",
-      "Lesson 9: Data security: what never goes on GitHub"
-    ]
-  },
-  {
-    "objectID": "pages/intro-to-github/09-data-security.html#never-commit-any-of-these-in-public-or-private-repos",
-    "href": "pages/intro-to-github/09-data-security.html#never-commit-any-of-these-in-public-or-private-repos",
-    "title": "Lesson 9: Data security: what never goes on GitHub",
-    "section": "Never commit any of these, in public or private repos",
-    "text": "Never commit any of these, in public or private repos\n\nData\n\n❌ Protected health information (PHI): names, dates of birth, addresses, medical record numbers, case details\n❌ Personally identifiable information (PII): Social Security numbers, phone numbers, email addresses of the public\n❌ Line-level surveillance or case data, even if it’s “de-identified.” Small counts and combinations of fields (age + ZIP code + date) can identify people.\n❌ Data covered by data use agreements (DUAs), IRB protocols, HIPAA, or state confidentiality rules\n❌ Unreleased or provisional numbers that haven’t been cleared\n\n\n\nSecrets (credentials)\n\n❌ Passwords, including database and server passwords\n❌ API keys and tokens, such as REDCap, Census, or cloud service keys, and GitHub tokens\n❌ Usernames paired with systems, connection strings, and internal server names or IP addresses\n❌ Private keys and certificates (.pem, .key, id_rsa)\n❌ .env files and config files that contain any of the above\n\n\n\nAlso avoid\n\n❌ Large files. GitHub warns at 50 MB and blocks files over 100 MB.\n❌ Copyrighted material you don’t have rights to share",
-    "crumbs": [
-      "Intro to Git & GitHub",
-      "Lessons",
-      "Lesson 9: Data security: what never goes on GitHub"
-    ]
-  },
-  {
-    "objectID": "pages/intro-to-github/09-data-security.html#why-just-delete-it-doesnt-work",
-    "href": "pages/intro-to-github/09-data-security.html#why-just-delete-it-doesnt-work",
-    "title": "Lesson 9: Data security: what never goes on GitHub",
-    "section": "Why “just delete it” doesn’t work",
-    "text": "Why “just delete it” doesn’t work\nWhen you commit a file, Git stores it permanently in the history. If you delete it and commit again:\nCommit 1: Add analysis.R + patients.csv      ← patients.csv is still here\nCommit 2: Delete patients.csv                ← only hidden from the latest version\nAnyone with access can still:\n\nopen History, or run git log, and view the old commit\ncheck out the old commit and get the file back\nfind it in every clone and fork made before you deleted it\n\nAnd in a public repo:\n\nAutomated bots scan GitHub for leaked secrets within minutes of a push.\nSearch engines and archives may have already copied it.\nMaking the repo private, or deleting it, doesn’t undo copies that already exist.\n\nRemoving something from history completely requires rewriting the history (with tools like git filter-repo or BFG), force-pushing, getting everyone to re-clone, and sometimes contacting GitHub Support. It’s slow and error-prone, and never fully guaranteed. Prevention is much easier.",
-    "crumbs": [
-      "Intro to Git & GitHub",
-      "Lessons",
-      "Lesson 9: Data security: what never goes on GitHub"
-    ]
-  },
-  {
-    "objectID": "pages/intro-to-github/09-data-security.html#how-to-keep-secrets-and-data-out",
-    "href": "pages/intro-to-github/09-data-security.html#how-to-keep-secrets-and-data-out",
-    "title": "Lesson 9: Data security: what never goes on GitHub",
-    "section": "How to keep secrets and data out",
-    "text": "How to keep secrets and data out\n\n1. Set up .gitignore first\nBefore adding anything else to a new repo:\n.env\n*.key\n*.pem\ncredentials*\nconfig/secrets.*\ndata/raw/\ndata/confidential/\n*.sas7bdat\n*.xlsx\n*.csv\nYou can add exceptions for safe files, for example !data/example/*.csv.\n\n\n2. Keep secrets out of code\n❌ Don’t do this:\ncon &lt;- dbConnect(odbc(), uid = \"jsmith\", pwd = \"Summer2026!\")\napi_key &lt;- \"a1b2c3d4e5f6\"\n✅ Do this instead. Store secrets in a file that Git ignores, or in your system’s environment variables.\nR: put the values in your personal .Renviron file. In R, run file.edit(\"~/.Renviron\") to open it. On Windows it’s usually in your Documents folder (C:\\Users\\&lt;you&gt;\\Documents\\.Renviron), outside any project, so it isn’t committed. If you ever keep one inside a project, add .Renviron to .gitignore.\n# .Renviron (never committed)\nDB_USER=jsmith\nDB_PASS=Summer2026!\n# analysis.R (safe to commit)\ncon &lt;- dbConnect(odbc(),\n                 uid = Sys.getenv(\"DB_USER\"),\n                 pwd = Sys.getenv(\"DB_PASS\"))\nPython: put the values in .env, and add .env to .gitignore.\nimport os\nfrom dotenv import load_dotenv\nload_dotenv()\napi_key = os.getenv(\"API_KEY\")\nEven better, use your agency’s approved password manager or secrets tool.\n\n\n3. Keep data out of the repo\n\nStore real data on approved agency storage, such as secure network drives, and point your code to it.\nCommit code, not data. Document in the README where authorized users can find the data.\nFor examples and training, use synthetic (fake) data or public, aggregated datasets.\n\n\n\n4. Review before every commit\n\nIn GitHub Desktop, look at every file and line in the Changes tab.\nOn the command line, run git status and git diff --staged before committing.\nAsk yourself: Would I be comfortable if this were on the front page of the news?\n\n\n\n5. Let GitHub help\n\nPush protection blocks many known secret formats, such as API keys and tokens. NV OSE has it turned on for public repos. Turn it on for your own account too: Settings → Code security → Push protection for yourself.\nDon’t rely on it alone. It doesn’t detect PHI or data, and it doesn’t catch every kind of password.",
-    "crumbs": [
-      "Intro to Git & GitHub",
-      "Lessons",
-      "Lesson 9: Data security: what never goes on GitHub"
-    ]
-  },
-  {
-    "objectID": "pages/intro-to-github/09-data-security.html#if-something-sensitive-is-committed",
-    "href": "pages/intro-to-github/09-data-security.html#if-something-sensitive-is-committed",
-    "title": "Lesson 9: Data security: what never goes on GitHub",
-    "section": "If something sensitive is committed",
-    "text": "If something sensitive is committed\nAct quickly, and don’t try to hide it.\n\nDon’t push, if you haven’t yet. Undo the commit: in GitHub Desktop, History → Undo commit; on the command line, git reset --soft HEAD~1. Then remove the file and add it to .gitignore.\nIf it’s already pushed:\n\nTell an NV OSE owner immediately: Max Wegener (mwegener@health.nv.gov) or Jordan Lancaster (jlancaster@health.nv.gov).\nSecrets: revoke or change them right away. Treat the password or token as compromised, even if the repo is private or you deleted it quickly.\nData (PHI/PII): follow the agency’s privacy and security incident reporting procedures. This may be a reportable breach.\n\nAn owner will help remove it from history and check forks and clones.",
-    "crumbs": [
-      "Intro to Git & GitHub",
-      "Lessons",
-      "Lesson 9: Data security: what never goes on GitHub"
-    ]
-  },
-  {
-    "objectID": "pages/intro-to-github/09-data-security.html#quick-self-check",
-    "href": "pages/intro-to-github/09-data-security.html#quick-self-check",
-    "title": "Lesson 9: Data security: what never goes on GitHub",
-    "section": "Quick self-check",
-    "text": "Quick self-check\nBefore you push, ask:\n\nDid I check every changed file?\nIs there any real data, or anything that could identify a person?\nIs there any password, token, key, username, or server name?\nIs my .gitignore covering data and secret files?\nIf this repo is public, is everything in it cleared for public release?",
-    "crumbs": [
-      "Intro to Git & GitHub",
-      "Lessons",
-      "Lesson 9: Data security: what never goes on GitHub"
-    ]
-  },
-  {
-    "objectID": "pages/intro-to-github/07-clones-forks.html",
-    "href": "pages/intro-to-github/07-clones-forks.html",
-    "title": "Lesson 7: Clones, forks, and templates",
-    "section": "",
-    "text": "These three are easy to mix up.",
-    "crumbs": [
-      "Intro to Git & GitHub",
-      "Lessons",
-      "Lesson 7: Clones, forks, and templates"
-    ]
-  },
-  {
-    "objectID": "pages/intro-to-github/07-clones-forks.html#clone",
-    "href": "pages/intro-to-github/07-clones-forks.html#clone",
-    "title": "Lesson 7: Clones, forks, and templates",
-    "section": "Clone",
-    "text": "Clone\nYou did this in Lessons 4 and 5. Use it for any repo you can push to, which includes all NV OSE repos you’re a member of.",
-    "crumbs": [
-      "Intro to Git & GitHub",
-      "Lessons",
-      "Lesson 7: Clones, forks, and templates"
-    ]
-  },
-  {
-    "objectID": "pages/intro-to-github/07-clones-forks.html#fork",
-    "href": "pages/intro-to-github/07-clones-forks.html#fork",
-    "title": "Lesson 7: Clones, forks, and templates",
-    "section": "Fork",
-    "text": "Fork\nA fork is your own copy of someone else’s project, on GitHub.\n\nOn the repo’s page, click Fork (top right) → Create fork.\nClone your fork to your computer and make changes.\nTo suggest your changes to the original project, open a pull request from your fork.\nTo get the original’s newest changes, click Sync fork on your fork’s page.\n\n\nWhen to fork, and when to use a branch\n\nInside NV OSE: use branches, not forks. You already have access.\nOutside projects (another agency’s or an open-source package): fork.\n\n\n\nFork rules to know\n\nA fork of a public repo is public.\nA fork of a private repo stays private, and NV OSE has turned off forking of its private repos.\nIf a public repo is deleted or made private, existing public forks remain. This is one more reason never to put sensitive data in a public repo (see Lesson 9).",
-    "crumbs": [
-      "Intro to Git & GitHub",
-      "Lessons",
-      "Lesson 7: Clones, forks, and templates"
-    ]
-  },
-  {
-    "objectID": "pages/intro-to-github/07-clones-forks.html#template",
-    "href": "pages/intro-to-github/07-clones-forks.html#template",
-    "title": "Lesson 7: Clones, forks, and templates",
-    "section": "Template",
-    "text": "Template\nA template repo has a Use this template button. Clicking it creates a brand-new repo with the same files but none of the history. It’s great for standard project setups.\nThe GitHub Skills course Introduction to GitHub uses a template. Try it for extra hands-on practice.",
-    "crumbs": [
-      "Intro to Git & GitHub",
-      "Lessons",
-      "Lesson 7: Clones, forks, and templates"
-    ]
-  },
-  {
-    "objectID": "pages/intro-to-github/05-command-line.html",
-    "href": "pages/intro-to-github/05-command-line.html",
-    "title": "Lesson 5: The basic workflow on the command line",
-    "section": "",
-    "text": "The command line (CLI) does everything GitHub Desktop does, and more. It’s also what you’ll use on servers and in automated pipelines.",
-    "crumbs": [
-      "Intro to Git & GitHub",
-      "Lessons",
-      "Lesson 5: The basic workflow on the command line"
-    ]
-  },
-  {
-    "objectID": "pages/intro-to-github/05-command-line.html#moving-around",
-    "href": "pages/intro-to-github/05-command-line.html#moving-around",
-    "title": "Lesson 5: The basic workflow on the command line",
-    "section": "Moving around",
-    "text": "Moving around\nSome basic commands for finding your way:\npwd                      # Show the folder you're in\nls                       # List files (add -a to include hidden files)\ncd Documents/GitHub      # Go into a folder\ncd ..                    # Go up one folder\nmkdir my-project         # Make a new folder",
-    "crumbs": [
-      "Intro to Git & GitHub",
-      "Lessons",
-      "Lesson 5: The basic workflow on the command line"
-    ]
-  },
-  {
-    "objectID": "pages/intro-to-github/05-command-line.html#option-a-start-a-new-repo-with-git-init",
-    "href": "pages/intro-to-github/05-command-line.html#option-a-start-a-new-repo-with-git-init",
-    "title": "Lesson 5: The basic workflow on the command line",
-    "section": "Option A: Start a new repo with git init",
-    "text": "Option A: Start a new repo with git init\nmkdir my-project\ncd my-project\ngit init                 # Turns this folder into a Git repo (creates the hidden .git folder)\nCreate a README and a .gitignore, then make your first commit:\necho \"# My Project\" &gt; README.md\necho \".DS_Store\" &gt; .gitignore\n\ngit status               # See what's changed\ngit add README.md .gitignore\ngit commit -m \"Initial commit: add README and .gitignore\"\nTo connect it to GitHub, first create an empty repo on github.com. Don’t add a README there, because you already have one. Then:\ngit remote add origin https://github.com/nv-ose/my-project.git\ngit push -u origin main  # -u remembers this remote, so next time just type: git push",
-    "crumbs": [
-      "Intro to Git & GitHub",
-      "Lessons",
-      "Lesson 5: The basic workflow on the command line"
-    ]
-  },
-  {
-    "objectID": "pages/intro-to-github/05-command-line.html#option-b-copy-an-existing-repo-with-git-clone",
-    "href": "pages/intro-to-github/05-command-line.html#option-b-copy-an-existing-repo-with-git-clone",
-    "title": "Lesson 5: The basic workflow on the command line",
-    "section": "Option B: Copy an existing repo with git clone",
-    "text": "Option B: Copy an existing repo with git clone\ncd ~/Documents/GitHub\ngit clone https://github.com/nv-ose/training.git\ncd training\ngit clone downloads the whole repo, including its history, and sets up origin for you.\nWhere to get the URL: on the repo’s GitHub page, click the green Code button, and copy the HTTPS URL:",
-    "crumbs": [
-      "Intro to Git & GitHub",
-      "Lessons",
-      "Lesson 5: The basic workflow on the command line"
-    ]
-  },
-  {
-    "objectID": "pages/intro-to-github/05-command-line.html#the-everyday-loop",
-    "href": "pages/intro-to-github/05-command-line.html#the-everyday-loop",
-    "title": "Lesson 5: The basic workflow on the command line",
-    "section": "The everyday loop",
-    "text": "The everyday loop\ngit pull                         # 1. Get the latest changes\n# ... edit files ...\ngit status                       # 2. See what changed\ngit diff                         # 3. See the exact line changes\ngit add filename.R               # 4. Stage specific files\ngit add .                        #    ...or stage everything (check git status first!)\ngit commit -m \"Add age filter\"   # 5. Commit\ngit push                         # 6. Send to GitHub\n\n\n\nCommand\nGitHub Desktop equivalent\n\n\n\n\ngit pull\nFetch origin / Pull origin\n\n\ngit status\nChanges tab\n\n\ngit diff\nClicking a file in the Changes tab\n\n\ngit add\nChecking a file’s box\n\n\ngit commit -m \"...\"\nSummary box + Commit to main\n\n\ngit push\nPush origin\n\n\ngit log --oneline\nHistory tab\n\n\n\n\n\n\n\n\n\nWarningBe careful with git add .\n\n\n\ngit add . stages everything, including files you may not want. Run git status first, and rely on your .gitignore.\n\n\ngit status is the command you’ll use most. It tells you which branch you’re on, whether you’re in sync with GitHub, and which files changed:",
-    "crumbs": [
-      "Intro to Git & GitHub",
-      "Lessons",
-      "Lesson 5: The basic workflow on the command line"
-    ]
-  },
-  {
-    "objectID": "pages/intro-to-github/05-command-line.html#looking-at-history",
-    "href": "pages/intro-to-github/05-command-line.html#looking-at-history",
-    "title": "Lesson 5: The basic workflow on the command line",
-    "section": "Looking at history",
-    "text": "Looking at history\ngit log                  # Full history\ngit log --oneline        # One line per commit\ngit log -p filename.R    # Every change to one file\ngit show abc1234         # Details of one commit (use the ID from git log)",
-    "crumbs": [
-      "Intro to Git & GitHub",
-      "Lessons",
-      "Lesson 5: The basic workflow on the command line"
-    ]
-  },
-  {
-    "objectID": "pages/intro-to-github/05-command-line.html#undoing-things",
-    "href": "pages/intro-to-github/05-command-line.html#undoing-things",
-    "title": "Lesson 5: The basic workflow on the command line",
-    "section": "Undoing things",
-    "text": "Undoing things\n\n\n\n\n\n\n\nSituation\nCommand\n\n\n\n\nDiscard unsaved edits to a file\ngit restore filename.R\n\n\nUnstage a file (keep the edits)\ngit restore --staged filename.R\n\n\nFix the last commit’s message (before pushing)\ngit commit --amend -m \"New message\"\n\n\nUndo a commit that’s already pushed\ngit revert abc1234. This creates a new commit that reverses it\n\n\n\n\n\n\n\n\n\nWarning\n\n\n\nAvoid git reset --hard and git push --force until you’re comfortable. They can permanently delete work.",
-    "crumbs": [
-      "Intro to Git & GitHub",
-      "Lessons",
-      "Lesson 5: The basic workflow on the command line"
-    ]
-  },
-  {
-    "objectID": "pages/intro-to-github/05-command-line.html#getting-help",
-    "href": "pages/intro-to-github/05-command-line.html#getting-help",
-    "title": "Lesson 5: The basic workflow on the command line",
-    "section": "Getting help",
-    "text": "Getting help\ngit help             # List common commands\ngit help commit      # Manual for a specific command",
-    "crumbs": [
-      "Intro to Git & GitHub",
-      "Lessons",
-      "Lesson 5: The basic workflow on the command line"
-    ]
-  },
-  {
-    "objectID": "pages/intro-to-github/03-repositories-readme-gitignore.html",
-    "href": "pages/intro-to-github/03-repositories-readme-gitignore.html",
-    "title": "Lesson 3: Repositories, READMEs, and .gitignore",
-    "section": "",
-    "text": "A repository (repo) is a project folder that Git tracks. It contains:\n\nyour files (code, documents, small example data)\na hidden .git folder that stores the complete history. Don’t edit or delete it.\n\nA good rule is one project per repo.",
-    "crumbs": [
-      "Intro to Git & GitHub",
-      "Lessons",
-      "Lesson 3: Repositories, READMEs, and .gitignore"
-    ]
-  },
-  {
-    "objectID": "pages/intro-to-github/03-repositories-readme-gitignore.html#what-is-a-repository",
-    "href": "pages/intro-to-github/03-repositories-readme-gitignore.html#what-is-a-repository",
-    "title": "Lesson 3: Repositories, READMEs, and .gitignore",
-    "section": "",
-    "text": "A repository (repo) is a project folder that Git tracks. It contains:\n\nyour files (code, documents, small example data)\na hidden .git folder that stores the complete history. Don’t edit or delete it.\n\nA good rule is one project per repo.",
-    "crumbs": [
-      "Intro to Git & GitHub",
-      "Lessons",
-      "Lesson 3: Repositories, READMEs, and .gitignore"
-    ]
-  },
-  {
-    "objectID": "pages/intro-to-github/03-repositories-readme-gitignore.html#creating-a-repository-on-github",
-    "href": "pages/intro-to-github/03-repositories-readme-gitignore.html#creating-a-repository-on-github",
-    "title": "Lesson 3: Repositories, READMEs, and .gitignore",
-    "section": "Creating a repository on GitHub",
-    "text": "Creating a repository on GitHub\n\nClick + (top right) → New repository.\n\n\n \n\n\nFill in the form:\n\n\n\nOwner: choose nv-ose for team work, or your own account for practice.\nRepository name: lowercase with hyphens, like flu-dashboard. See the SOP naming rules.\nDescription: one sentence.\nChoose visibility: Public or Private. See Lesson 8. When in doubt, choose Private.\nAdd README: turn it On.\nAdd .gitignore: choose a template, such as R or Python.\nAdd license: CC BY 4.0 for documents, MIT for code. This mostly matters for public repos.\n\n\nClick Create repository.\n\nYour new repository’s page lists its files, with branch, Add file, and Code buttons above them:",
-    "crumbs": [
-      "Intro to Git & GitHub",
-      "Lessons",
-      "Lesson 3: Repositories, READMEs, and .gitignore"
-    ]
-  },
-  {
-    "objectID": "pages/intro-to-github/03-repositories-readme-gitignore.html#readme.md",
-    "href": "pages/intro-to-github/03-repositories-readme-gitignore.html#readme.md",
-    "title": "Lesson 3: Repositories, READMEs, and .gitignore",
-    "section": "README.md",
-    "text": "README.md\nThe README is the front page of your repo. GitHub displays it automatically below the file list. It’s written in Markdown, a simple formatting language.\n\n\nA good README answers\n\nWhat is this?\nWho is it for, and who maintains it?\nHow do I use it? What software do I need, and in what order do I run the scripts?\nWhat’s in each folder?\nWhen was it last updated?\n\n\n\n\n\n\n\nTipREADME guide and template\n\n\n\nSee Writing a good README for what to include, tips, examples, and a downloadable NV OSE template.\n\n\n\n\nEditing a file on GitHub\nYou can edit a README (or any text file) right in the browser:\n\nOpen the file and click the pencil icon (Edit file).\n\n\n \n\n\nMake your changes on the Edit tab:\n\n\n\nClick Preview to check the formatting:\n\n\n\nClick Commit changes…, write a short message, and for shared repos choose Create a new branch… and start a pull request (Lesson 6).\n\n\n\nMarkdown basics\n\n\n\nYou type\nYou get\n\n\n\n\n# Heading\nLarge heading\n\n\n## Subheading\nSmaller heading\n\n\n**bold**\nbold\n\n\n*italic*\nitalic\n\n\n- item\nBulleted list\n\n\n1. item\nNumbered list\n\n\n[link text](https://example.com)\nlink text\n\n\n`code`\ncode\n\n\n![alt text](image.png)\nAn image\n\n\n\nFor a block of code, put three backticks (```) on the lines before and after it.\nGitHub’s Markdown guide covers more.",
-    "crumbs": [
-      "Intro to Git & GitHub",
-      "Lessons",
-      "Lesson 3: Repositories, READMEs, and .gitignore"
-    ]
-  },
-  {
-    "objectID": "pages/intro-to-github/03-repositories-readme-gitignore.html#gitignore",
-    "href": "pages/intro-to-github/03-repositories-readme-gitignore.html#gitignore",
-    "title": "Lesson 3: Repositories, READMEs, and .gitignore",
-    "section": ".gitignore",
-    "text": ".gitignore\nA .gitignore file tells Git which files to never track. It’s one of your most important safety tools.\n# Operating-system clutter\n.DS_Store\nThumbs.db\n\n# R\n.Rhistory\n.RData\n.Rproj.user/\n\n# Python\n__pycache__/\n.venv/\n\n# Secrets: NEVER commit these\n.env\n*.key\ncredentials.json\n\n# Data: keep real data out of Git\ndata/raw/\n*.sas7bdat\n*.xlsx\nHere’s the .gitignore for this training site, viewed on GitHub:\n\n\nHow it works\n\nEach line is a pattern. * matches anything, a trailing / means a folder, and # starts a comment.\nIgnored files stay on your computer. Git just doesn’t track them or upload them.\nGitHub has ready-made templates in the github/gitignore repo.\n\n\n\nGotcha: .gitignore doesn’t affect files already tracked\nIf a file was committed before you added it to .gitignore, Git keeps tracking it. To stop tracking it, but keep it on your computer:\ngit rm --cached path/to/file\ngit commit -m \"Stop tracking file\"\nThe file still exists in earlier commits. If it contained sensitive information, see Lesson 9.\n\n\n\n\n\n\nTipBest practice\n\n\n\nCreate the .gitignore first, before you add any data or secrets to the folder.",
-    "crumbs": [
-      "Intro to Git & GitHub",
-      "Lessons",
-      "Lesson 3: Repositories, READMEs, and .gitignore"
-    ]
-  },
-  {
-    "objectID": "pages/intro-to-github/03-repositories-readme-gitignore.html#other-common-files",
-    "href": "pages/intro-to-github/03-repositories-readme-gitignore.html#other-common-files",
-    "title": "Lesson 3: Repositories, READMEs, and .gitignore",
-    "section": "Other common files",
-    "text": "Other common files\n\n\n\n\n\n\n\nFile\nPurpose\n\n\n\n\nLICENSE\nTells others how they may reuse your work\n\n\nCONTRIBUTING.md\nHow to contribute. For NV OSE, it’s set org-wide in the .github repo\n\n\n.github/ folder\nGitHub-specific settings, such as issue templates and workflows",
-    "crumbs": [
-      "Intro to Git & GitHub",
-      "Lessons",
-      "Lesson 3: Repositories, READMEs, and .gitignore"
-    ]
-  },
-  {
-    "objectID": "pages/intro-to-github/01-git-vs-github.html",
-    "href": "pages/intro-to-github/01-git-vs-github.html",
-    "title": "Lesson 1: Git vs. GitHub: what and why",
-    "section": "",
-    "text": "Most of us have a folder that looks like this:\nanalysis_final.R\nanalysis_final_v2.R\nanalysis_final_v2_JL_edits.R\nanalysis_FINAL_actually_final.R\nVersion control replaces that with one file and a complete, labeled history of every change: who changed what, when, and why. You can go back to any earlier version at any time.\nFor public health work, this means:\n\nReproducibility. You can show exactly which code produced a report.\nCollaboration. Several people can work on the same project without emailing files or overwriting each other.\nContinuity. When someone leaves, their work and its history stay with the team.\nSafety. Mistakes can be undone.",
-    "crumbs": [
-      "Intro to Git & GitHub",
-      "Lessons",
-      "Lesson 1: Git vs. GitHub: what and why"
-    ]
-  },
-  {
-    "objectID": "pages/intro-to-github/01-git-vs-github.html#why-version-control",
-    "href": "pages/intro-to-github/01-git-vs-github.html#why-version-control",
-    "title": "Lesson 1: Git vs. GitHub: what and why",
-    "section": "",
-    "text": "Most of us have a folder that looks like this:\nanalysis_final.R\nanalysis_final_v2.R\nanalysis_final_v2_JL_edits.R\nanalysis_FINAL_actually_final.R\nVersion control replaces that with one file and a complete, labeled history of every change: who changed what, when, and why. You can go back to any earlier version at any time.\nFor public health work, this means:\n\nReproducibility. You can show exactly which code produced a report.\nCollaboration. Several people can work on the same project without emailing files or overwriting each other.\nContinuity. When someone leaves, their work and its history stay with the team.\nSafety. Mistakes can be undone.",
-    "crumbs": [
-      "Intro to Git & GitHub",
-      "Lessons",
-      "Lesson 1: Git vs. GitHub: what and why"
-    ]
-  },
-  {
-    "objectID": "pages/intro-to-github/01-git-vs-github.html#git-vs.-github",
-    "href": "pages/intro-to-github/01-git-vs-github.html#git-vs.-github",
-    "title": "Lesson 1: Git vs. GitHub: what and why",
-    "section": "Git vs. GitHub",
-    "text": "Git vs. GitHub\n\n\n\n\n\n\n\n\n\nGit\nGitHub\n\n\n\n\nWhat it is\nVersion control software\nA website that hosts Git repositories\n\n\nWhere it runs\nOn your computer\nIn the cloud (github.com)\n\n\nNeeds internet?\nNo\nYes\n\n\nWhat it does\nTracks changes to files in a folder\nStores a copy online, and adds collaboration tools: pull requests, issues, discussions, permissions, and websites (GitHub Pages)\n\n\nMade by\nLinus Torvalds (2005), open source\nGitHub, Inc. (owned by Microsoft)\n\n\n\nAn analogy: Git is like Microsoft Word’s “Track Changes,” and GitHub is like SharePoint where the tracked documents are stored and shared. You can use Git without GitHub, but GitHub needs Git.\nOther sites that host Git repositories include GitLab and Bitbucket. The Git skills are the same everywhere.",
-    "crumbs": [
-      "Intro to Git & GitHub",
-      "Lessons",
-      "Lesson 1: Git vs. GitHub: what and why"
-    ]
-  },
-  {
-    "objectID": "pages/intro-to-github/01-git-vs-github.html#three-ways-to-use-git-and-github",
-    "href": "pages/intro-to-github/01-git-vs-github.html#three-ways-to-use-git-and-github",
-    "title": "Lesson 1: Git vs. GitHub: what and why",
-    "section": "Three ways to use Git and GitHub",
-    "text": "Three ways to use Git and GitHub\n\n\n\n\n\n\n\nTool\nBest for\n\n\n\n\ngithub.com (web browser)\nQuick edits, reviewing pull requests, settings, Discussions\n\n\nGitHub Desktop (app)\nDay-to-day work without typing commands. Recommended for beginners\n\n\nCommand line (Git Bash or PowerShell on Windows; Terminal on Mac)\nFull control, automation, and working on servers\n\n\n\nRStudio and VS Code also have built-in Git panels. They do the same things as GitHub Desktop.",
-    "crumbs": [
-      "Intro to Git & GitHub",
-      "Lessons",
-      "Lesson 1: Git vs. GitHub: what and why"
-    ]
-  },
-  {
-    "objectID": "pages/intro-to-github/01-git-vs-github.html#key-vocabulary",
-    "href": "pages/intro-to-github/01-git-vs-github.html#key-vocabulary",
-    "title": "Lesson 1: Git vs. GitHub: what and why",
-    "section": "Key vocabulary",
-    "text": "Key vocabulary\n\n\n\n\n\n\n\nTerm\nMeaning\n\n\n\n\nRepository (repo)\nA project folder tracked by Git, including its full history\n\n\nCommit\nA saved snapshot of your changes, with a message explaining them\n\n\nLocal\nThe copy on your computer\n\n\nRemote\nThe copy on GitHub (usually called origin)\n\n\nPush\nSend your commits from local to remote\n\n\nPull\nBring new commits from remote to local\n\n\nBranch\nA separate line of work, so you can make changes without affecting the main version\n\n\nPull request (PR)\nA request to merge one branch into another, with a place for review and discussion\n\n\n\nSee the full glossary.",
-    "crumbs": [
-      "Intro to Git & GitHub",
-      "Lessons",
-      "Lesson 1: Git vs. GitHub: what and why"
-    ]
-  },
-  {
-    "objectID": "pages/intro-to-github/01-git-vs-github.html#the-big-picture",
-    "href": "pages/intro-to-github/01-git-vs-github.html#the-big-picture",
-    "title": "Lesson 1: Git vs. GitHub: what and why",
-    "section": "The big picture",
-    "text": "The big picture\n Your computer (local)                              GitHub (remote)\n┌───────────────────────────────────────┐         ┌─────────────────┐\n│ Working folder → Staging → Local repo │  push → │   Remote repo   │\n│     (edit)        (add)    (commit)   │ ← pull  │   (origin)      │\n└───────────────────────────────────────┘         └─────────────────┘\n\nEdit files as you normally would.\nStage (choose) the changes you want to save together.\nCommit them with a message.\nPush them to GitHub so others can see them.\nPull to get changes others have made.\n\nEvery lesson that follows builds on this loop.",
-    "crumbs": [
-      "Intro to Git & GitHub",
-      "Lessons",
-      "Lesson 1: Git vs. GitHub: what and why"
-    ]
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "NV OSE Training",
-    "section": "",
-    "text": "Welcome! This site collects training materials created by NV OSE, the Office of State Epidemiology, for public health staff and anyone else who wants to learn. All materials are free to use and share under CC BY 4.0."
-  },
-  {
-    "objectID": "index.html#trainings",
-    "href": "index.html#trainings",
-    "title": "NV OSE Training",
-    "section": "Trainings",
-    "text": "Trainings\n\n\n\nTraining\nWhat you’ll learn\nLevel\nTime\n\n\n\n\nIntroduction to Positron\nThe Positron IDE for R and Python: interpreters, project folders and here(), the NV OSE folder structure, panes compared with RStudio and VS Code, extensions (including AI assistants), Git, and Python environments\nBeginner\nAbout 1 hour\n\n\nIntroduction to Git and GitHub\nGit vs. GitHub, READMEs, .gitignore, GitHub Desktop, the command line, branches, pull requests, forks, public vs. private, and data security\nBeginner\nAbout 3 hours\n\n\nIntroduction to Quarto\nMarkdown, what Quarto adds, R code chunks, HTML reports, revealjs presentations, websites, accessibility, and publishing on GitHub Pages\nBeginner\nAbout 5 hours (3 sessions)\n\n\n\nMore trainings are on the way."
-  },
-  {
-    "objectID": "index.html#suggested-order",
-    "href": "index.html#suggested-order",
-    "title": "NV OSE Training",
-    "section": "Suggested order",
-    "text": "Suggested order\nNew to all of this? Take the trainings in this order:\n\nIntroduction to Positron (1 hour): set up the editor and a project folder.\nIntroduction to Git and GitHub (3 hours): version control and sharing your work.\nIntroduction to Quarto (5 hours, 3 sessions): Markdown, reports, slides, and websites published on GitHub Pages.\n\nAlready comfortable with one of these? Skip ahead. Each training lists its own prerequisites."
-  },
-  {
-    "objectID": "index.html#how-to-use-these-materials",
-    "href": "index.html#how-to-use-these-materials",
-    "title": "NV OSE Training",
-    "section": "How to use these materials",
-    "text": "How to use these materials\n\nSelf-paced: work through the lessons in order using the sidebar, then try the exercises.\nWorkshop: instructors can teach directly from the pages. Each training lists its learning objectives, prerequisites, and timing.\nGet the files: all source files are on GitHub. You can download everything as a ZIP."
-  },
-  {
-    "objectID": "index.html#share-a-training",
-    "href": "index.html#share-a-training",
-    "title": "NV OSE Training",
-    "section": "Share a training",
-    "text": "Share a training\nNV OSE staff: have materials you’d like to see here? Submit a training (sign-in required). Attach your slides, handouts, or code, and we’ll turn them into pages on this site.\n\n\n\n\n\n\nNote\n\n\n\nThese pages never contain real data. Examples use made-up or public data only."
-  },
-  {
-    "objectID": "pages/intro-to-github/02-setup.html",
-    "href": "pages/intro-to-github/02-setup.html",
-    "title": "Lesson 2: Setting up",
-    "section": "",
-    "text": "Go to github.com/signup.\nChoose a professional username. It appears on everything you do, for example jsmith-nv rather than pizzalover99.\nTurn on two-factor authentication (2FA): profile picture → Settings → Password and authentication. NV OSE requires 2FA for all organization members.\n\nOptional: if you use a personal account for work, add your work email under Settings → Emails.\n\n\n\nEvery commit is labeled with an email address, and in public repos anyone can see it. To keep yours private:\n\nGo to Settings → Emails and check Keep my email addresses private.\nGitHub then shows you a private “noreply” address, like 12345678+username@users.noreply.github.com. Use that address when you configure Git (below).\n\n\n \n\n\n\n\n\n\n\nWarningPush failed because of a private email?\n\n\n\n\n\n\nThis means Git is committing with your private email. Don’t turn off email privacy as the message suggests. Instead, set your Git email to your noreply address (step 3), then undo and redo the commit.",
-    "crumbs": [
-      "Intro to Git & GitHub",
-      "Lessons",
-      "Lesson 2: Setting up"
-    ]
-  },
-  {
-    "objectID": "pages/intro-to-github/02-setup.html#create-a-github-account",
-    "href": "pages/intro-to-github/02-setup.html#create-a-github-account",
-    "title": "Lesson 2: Setting up",
-    "section": "",
-    "text": "Go to github.com/signup.\nChoose a professional username. It appears on everything you do, for example jsmith-nv rather than pizzalover99.\nTurn on two-factor authentication (2FA): profile picture → Settings → Password and authentication. NV OSE requires 2FA for all organization members.\n\nOptional: if you use a personal account for work, add your work email under Settings → Emails.\n\n\n\nEvery commit is labeled with an email address, and in public repos anyone can see it. To keep yours private:\n\nGo to Settings → Emails and check Keep my email addresses private.\nGitHub then shows you a private “noreply” address, like 12345678+username@users.noreply.github.com. Use that address when you configure Git (below).\n\n\n \n\n\n\n\n\n\n\nWarningPush failed because of a private email?\n\n\n\n\n\n\nThis means Git is committing with your private email. Don’t turn off email privacy as the message suggests. Instead, set your Git email to your noreply address (step 3), then undo and redo the commit.",
-    "crumbs": [
-      "Intro to Git & GitHub",
-      "Lessons",
-      "Lesson 2: Setting up"
-    ]
-  },
-  {
-    "objectID": "pages/intro-to-github/02-setup.html#install-the-tools",
-    "href": "pages/intro-to-github/02-setup.html#install-the-tools",
-    "title": "Lesson 2: Setting up",
-    "section": "2. Install the tools",
-    "text": "2. Install the tools\n\n\n\nTool\nWindows\nMac (if you use one)\n\n\n\n\nGitHub Desktop\nDownload GitHub Desktop (Windows version)\nSame link (Mac version)\n\n\nGit (for the command line)\nInstall Git for Windows and accept the defaults. It includes Git Bash and Git Credential Manager\nOpen Terminal and type git --version; macOS offers to install it\n\n\nEditor\nPositron, VS Code, or RStudio\nSame\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nOn a state computer you may need IT to install software. Request it ahead of time.\n\n\n\nShow file extensions and hidden files (Windows)\nBy default, Windows hides file extensions (so report.qmd shows as just report) and hides some files. You’ll be working with files like .gitignore, .here, and .Renviron, so turn both on:\n\nOpen File Explorer.\nClick View (top menu) → Show → check File name extensions and Hidden items. On Windows 10: the View tab → check File name extensions and Hidden items.\n\nCheck that Git works. Open Git Bash (Start menu → type Git Bash) or Command Prompt, and run:\ngit --version\nYou should see something like git version 2.53.0.windows.2:",
-    "crumbs": [
-      "Intro to Git & GitHub",
-      "Lessons",
-      "Lesson 2: Setting up"
-    ]
-  },
-  {
-    "objectID": "pages/intro-to-github/02-setup.html#connect-github-desktop",
-    "href": "pages/intro-to-github/02-setup.html#connect-github-desktop",
-    "title": "Lesson 2: Setting up",
-    "section": "3. Connect GitHub Desktop",
-    "text": "3. Connect GitHub Desktop\n\nOpen GitHub Desktop and go to File → Options… (Mac: GitHub Desktop → Settings).\n\n\n \n\n\nUnder Accounts, click Sign in for GitHub.com. Your browser opens; sign in to GitHub and authorize the app. When it’s done, your account appears:\n\n\n\n\n\nUnder Git → Author, set your Name, and choose your noreply address in the Email dropdown. Click Save.\n\n\n\n\n\nUnder Git → Default branch, leave it as main.",
-    "crumbs": [
-      "Intro to Git & GitHub",
-      "Lessons",
-      "Lesson 2: Setting up"
-    ]
-  },
-  {
-    "objectID": "pages/intro-to-github/02-setup.html#configure-git-for-the-command-line",
-    "href": "pages/intro-to-github/02-setup.html#configure-git-for-the-command-line",
-    "title": "Lesson 2: Setting up",
-    "section": "4. Configure Git for the command line",
-    "text": "4. Configure Git for the command line\nTell Git who you are. Do this once per computer:\ngit config --global user.name \"Your Name\"\ngit config --global user.email \"your-noreply-or-work-email@example.com\"\ngit config --global init.defaultBranch main\nCheck your settings:\ngit config --list",
-    "crumbs": [
-      "Intro to Git & GitHub",
-      "Lessons",
-      "Lesson 2: Setting up"
-    ]
-  },
-  {
-    "objectID": "pages/intro-to-github/02-setup.html#authenticate-the-command-line",
-    "href": "pages/intro-to-github/02-setup.html#authenticate-the-command-line",
-    "title": "Lesson 2: Setting up",
-    "section": "5. Authenticate the command line",
-    "text": "5. Authenticate the command line\nGitHub no longer accepts your password for Git on the command line. Use one of these instead:\n\nEasiest (Windows): Git for Windows includes Git Credential Manager. The first time you push, a browser window opens so you can sign in.\nAlternative: install the GitHub CLI and run:\ngh auth login\nFollow the prompts and choose HTTPS and Login with a web browser.\nAlternative: a personal access token or an SSH key. These are more advanced.\n\n\n\n\n\n\n\nWarning\n\n\n\nA token works like a password. Never paste it into code, a README, or a chat. See Lesson 9.",
-    "crumbs": [
-      "Intro to Git & GitHub",
-      "Lessons",
-      "Lesson 2: Setting up"
-    ]
-  },
-  {
-    "objectID": "pages/intro-to-github/02-setup.html#checklist",
-    "href": "pages/intro-to-github/02-setup.html#checklist",
-    "title": "Lesson 2: Setting up",
-    "section": "Checklist",
-    "text": "Checklist\n\nGitHub account created, with 2FA on\nEmail privacy set\nGitHub Desktop installed and signed in\nGit installed (git --version works)\nuser.name and user.email configured\nAccepted the invitation to the nv-ose organization (check your email or github.com/nv-ose)",
-    "crumbs": [
-      "Intro to Git & GitHub",
-      "Lessons",
-      "Lesson 2: Setting up"
-    ]
-  },
-  {
-    "objectID": "pages/intro-to-github/04-github-desktop.html",
-    "href": "pages/intro-to-github/04-github-desktop.html",
-    "title": "Lesson 4: The basic workflow in GitHub Desktop",
-    "section": "",
-    "text": "GitHub Desktop lets you do everyday Git work with buttons instead of commands. If you don’t have it yet, download GitHub Desktop and sign in (see Lesson 2). Behind the scenes, it runs the same Git commands you’ll learn in Lesson 5.",
-    "crumbs": [
-      "Intro to Git & GitHub",
-      "Lessons",
-      "Lesson 4: The basic workflow in GitHub Desktop"
-    ]
-  },
-  {
-    "objectID": "pages/intro-to-github/04-github-desktop.html#the-layout",
-    "href": "pages/intro-to-github/04-github-desktop.html#the-layout",
-    "title": "Lesson 4: The basic workflow in GitHub Desktop",
-    "section": "The layout",
-    "text": "The layout\n\n\n\n\nArea\nWhat it’s for\n\n\n\n\nCurrent repository (top left)\nSwitch between repos\n\n\nCurrent branch\nSee and switch branches (Lesson 6)\n\n\nFetch / Pull / Push origin (top)\nSync with GitHub. The label changes depending on what’s needed\n\n\nChanges tab\nFiles you’ve changed since the last commit\n\n\nHistory tab\nPast commits\n\n\nSummary / Description / Commit (bottom left)\nSave your changes as a commit\n\n\n\nThe first time you open GitHub Desktop, it shows a Let’s get started! screen with the same options as the File menu:",
-    "crumbs": [
-      "Intro to Git & GitHub",
-      "Lessons",
-      "Lesson 4: The basic workflow in GitHub Desktop"
-    ]
-  },
-  {
-    "objectID": "pages/intro-to-github/04-github-desktop.html#getting-a-repository-onto-your-computer",
-    "href": "pages/intro-to-github/04-github-desktop.html#getting-a-repository-onto-your-computer",
-    "title": "Lesson 4: The basic workflow in GitHub Desktop",
-    "section": "Getting a repository onto your computer",
-    "text": "Getting a repository onto your computer\n\n\n\n\n\n\n\nSituation\nWhat to do\n\n\n\n\nThe repo is already on GitHub\nFile → Clone repository, choose it from the list (or paste the URL), choose where to save it, then click Clone\n\n\nYou have a local folder that isn’t a repo yet\nFile → Add local repository, choose the folder, click create a repository, then Publish repository\n\n\nYou’re starting from scratch\nFile → New repository, then Publish repository\n\n\n\n\nClone a repository\nFile → Clone repository… (Ctrl + Shift + O):\n\n \n\nChoose the repo on the GitHub.com tab, or paste its URL on the URL tab. Check the Local path (e.g., Documents\\GitHub), then click Clone.\n\n\n\n\n\nAdd a folder that’s already on your computer\nFile → Add local repository… (Ctrl + O), then choose the folder:\n\n \n\nIf the folder isn’t a Git repository yet, GitHub Desktop says so. Click create a repository:\n\n \n\n\n\nStart a new repository\nFile → New repository… (Ctrl + N). Give it a name, choose the local path, and optionally add a README, .gitignore, and license:\n\n\n\n\n\nPublishing: choose the organization\nA repository you create or add on your computer is local only until you publish it. GitHub Desktop lists it under Other, with a computer icon instead of a repo icon.\nTo put it on GitHub, click Publish repository in the top bar:\n\n  \n\n\nName: lowercase with hyphens (see the SOP naming rules).\nDescription: one sentence about what the repo is.\nKeep this code private (green box): leave it checked unless an owner has approved making the repo public.\nOrganization (red box): choose nv-ose for team work.\n\n\n\n\n\n\n\nWarningCheck the Organization dropdown\n\n\n\nIt defaults to None, which publishes the repo to your personal account, not to NV OSE. It’s an easy step to miss.\n\n\n\n\n\n\n\n\nTipPublished to the wrong account? How to move it\n\n\n\n\n\n\nOn github.com, open the repo and go to Settings → Danger Zone → Transfer ownership.\nChoose Specify an organization or username, type nv-ose, and confirm by typing the repo name.\nIn GitHub Desktop, go to Repository → Repository Settings → Remote and change the URL to https://github.com/nv-ose/&lt;repo-name&gt;.git. Then click Fetch origin to check it works.\n\nGitHub redirects the old address for a while, but update the remote anyway.",
-    "crumbs": [
-      "Intro to Git & GitHub",
-      "Lessons",
-      "Lesson 4: The basic workflow in GitHub Desktop"
-    ]
-  },
-  {
-    "objectID": "pages/intro-to-github/04-github-desktop.html#the-everyday-loop",
-    "href": "pages/intro-to-github/04-github-desktop.html#the-everyday-loop",
-    "title": "Lesson 4: The basic workflow in GitHub Desktop",
-    "section": "The everyday loop",
-    "text": "The everyday loop\n\n1. Pull first\nClick Fetch origin. If others made changes, the button changes to Pull origin, with a ↓ count of new commits. Click it.\n\n \n\n\n\n\n\n\n\nTip\n\n\n\nAlways pull before you start working. It avoids most conflicts.\n\n\n\n\n2. Make changes\nEdit files in your usual tools, such as RStudio, VS Code, Excel or Word. GitHub Desktop notices automatically.\n\n\n3. Review your changes\nThe Changes tab lists every file that changed. Click a file to see exactly what changed: red lines were removed, green lines were added.\n\n\nUncheck any file you don’t want in this commit. Checked files are included:\n\n\n\n\n\nCheck for sensitive content. Is there a password, a real name, or a data file? If so, uncheck it, and add it to .gitignore: right-click the file → Ignore file.\n\n\n\n\n\n\n\n\n\nRight-clicking a file gives you Ignore file (add to .gitignore) to keep it out of Git for good, and Discard changes… to throw away your edits to it (below).\n\n\n\n\n4. Commit\n\nWrite a Summary, such as Add age-group filter to flu script.\nOptional: add a Description with more detail.\nClick Commit to main, or to whichever branch you’re on.\n\n\n \n\nA commit is saved only on your computer at this point.\n\n\n5. Push\nClick Push origin. The ↑ count shows how many commits are waiting. Your commits are now on GitHub.\n\n \n\n\n\n\n\n\n\nTipChanged your mind right after committing?\n\n\n\nBefore you push, click Undo at the bottom left (next to “Committed just now”) to take the commit back. Your changes stay in the Changes tab.",
-    "crumbs": [
-      "Intro to Git & GitHub",
-      "Lessons",
-      "Lesson 4: The basic workflow in GitHub Desktop"
-    ]
-  },
-  {
-    "objectID": "pages/intro-to-github/04-github-desktop.html#other-handy-features",
-    "href": "pages/intro-to-github/04-github-desktop.html#other-handy-features",
-    "title": "Lesson 4: The basic workflow in GitHub Desktop",
-    "section": "Other handy features",
-    "text": "Other handy features\n\n\n\nFeature\nWhere\n\n\n\n\nSee past commits\nHistory tab\n\n\nUndo the most recent commit (before pushing)\nHistory → right-click the commit → Undo commit\n\n\nDiscard changes to a file\nChanges → right-click the file → Discard changes\n\n\nReverse a commit you’ve already pushed\nHistory → right-click → Revert changes in commit. This makes a new commit that undoes it\n\n\nOpen the repo in your editor or file browser\nRepository → Open in… / Show in Explorer (Mac: Show in Finder)\n\n\nView the repo on GitHub\nRepository → View on GitHub\n\n\nBranches and pull requests\nSee Lesson 6\n\n\n\n\nHistory\nThe History tab lists every commit, newest first. Click one to see which files it changed:\n\nRight-click a commit for more options:\n\n  \n\n\nUndo commit (red): for your latest commit that isn’t pushed yet. The changes go back to the Changes tab.\nRevert changes in commit (green): for a commit that’s already pushed. It makes a new commit that reverses it, so history stays intact.\n\n\n\nDiscarding changes\nRight-click a file in Changes → Discard changes…, then confirm:\n\n\n\n\n\n\n\n\n\n\n\n\n\nTo throw away all uncommitted changes at once (for example, after testing something), use Branch → Discard all changes… (Ctrl + Shift + Backspace):\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWarning\n\n\n\nDiscarding throws away your edits since the last commit. The file goes to the Recycle Bin, but don’t rely on that. Only discard what you really don’t want.",
-    "crumbs": [
-      "Intro to Git & GitHub",
-      "Lessons",
-      "Lesson 4: The basic workflow in GitHub Desktop"
-    ]
-  },
-  {
-    "objectID": "pages/intro-to-github/04-github-desktop.html#writing-good-commit-messages",
-    "href": "pages/intro-to-github/04-github-desktop.html#writing-good-commit-messages",
-    "title": "Lesson 4: The basic workflow in GitHub Desktop",
-    "section": "Writing good commit messages",
-    "text": "Writing good commit messages\n\nStart with a verb in the present tense: Add, Fix, Update, Remove.\nSay what changed and, if it isn’t obvious, why.\nKeep the summary under about 50 characters.\n\n\n\n\n✅ Good\n❌ Not helpful\n\n\n\n\nFix date parsing in import script\nfixed stuff\n\n\nAdd README for flu dashboard\nupdate\n\n\nRemove unused 2023 data columns\nfinal version",
-    "crumbs": [
-      "Intro to Git & GitHub",
-      "Lessons",
-      "Lesson 4: The basic workflow in GitHub Desktop"
-    ]
-  },
-  {
-    "objectID": "pages/intro-to-github/06-branches-pull-requests.html",
-    "href": "pages/intro-to-github/06-branches-pull-requests.html",
-    "title": "Lesson 6: Branches and pull requests",
-    "section": "",
-    "text": "A branch is a separate copy of the project where you can make changes without affecting the main version. When the work is ready, you merge it back.\nmain:      A───B───────────E (merge)\n                \\         /\nmy-branch:       C───D───┘\n\nmain is the official, working version.\nYou create my-branch, make commits C and D, and main is unaffected.\nWhen you’re done, you merge the branch back into main.\n\nWhy use branches? You can experiment safely, several people can work at once, and every change can be reviewed before it reaches main. The NV OSE SOP requires this for shared repos.\nNaming: yourname/short-description, for example mwegener/add-age-filter.",
-    "crumbs": [
-      "Intro to Git & GitHub",
-      "Lessons",
-      "Lesson 6: Branches and pull requests"
-    ]
-  },
-  {
-    "objectID": "pages/intro-to-github/06-branches-pull-requests.html#what-is-a-branch",
-    "href": "pages/intro-to-github/06-branches-pull-requests.html#what-is-a-branch",
-    "title": "Lesson 6: Branches and pull requests",
-    "section": "",
-    "text": "A branch is a separate copy of the project where you can make changes without affecting the main version. When the work is ready, you merge it back.\nmain:      A───B───────────E (merge)\n                \\         /\nmy-branch:       C───D───┘\n\nmain is the official, working version.\nYou create my-branch, make commits C and D, and main is unaffected.\nWhen you’re done, you merge the branch back into main.\n\nWhy use branches? You can experiment safely, several people can work at once, and every change can be reviewed before it reaches main. The NV OSE SOP requires this for shared repos.\nNaming: yourname/short-description, for example mwegener/add-age-filter.",
-    "crumbs": [
-      "Intro to Git & GitHub",
-      "Lessons",
-      "Lesson 6: Branches and pull requests"
-    ]
-  },
-  {
-    "objectID": "pages/intro-to-github/06-branches-pull-requests.html#what-is-a-pull-request-pr",
-    "href": "pages/intro-to-github/06-branches-pull-requests.html#what-is-a-pull-request-pr",
-    "title": "Lesson 6: Branches and pull requests",
-    "section": "What is a pull request (PR)?",
-    "text": "What is a pull request (PR)?\nA pull request asks to merge your branch into main. It’s where teammates:\n\nsee exactly what changed\nleave comments on specific lines\napprove the change, or request changes\nmerge it once it’s approved",
-    "crumbs": [
-      "Intro to Git & GitHub",
-      "Lessons",
-      "Lesson 6: Branches and pull requests"
-    ]
-  },
-  {
-    "objectID": "pages/intro-to-github/06-branches-pull-requests.html#the-branch-pr-merge-workflow",
-    "href": "pages/intro-to-github/06-branches-pull-requests.html#the-branch-pr-merge-workflow",
-    "title": "Lesson 6: Branches and pull requests",
-    "section": "The branch → PR → merge workflow",
-    "text": "The branch → PR → merge workflow\n\nIn GitHub Desktop\nThis walkthrough uses a real (small) change to this training’s README, from branch to merge.\n1. Create a branch. Make sure you’re on main and have pulled. Click Current branch → New branch (or Branch → New branch…, Ctrl + Shift + N):\n\n\n\nName it yourname/short-description. It’s based on the branch you’re on (main). Click Create branch:\n\n\n\n2. Make your changes and commit. Edit and save as usual. The commit button now names your branch: Commit to yourname/…:\n\n3. Publish the branch. A new branch exists only on your computer until you publish it:\n\n\n\nAfter that, push new commits on the branch with Push origin, as usual:\n\n4. Preview and create the pull request. Click Preview Pull Request (or Branch → Create pull request, Ctrl + R):\n\n\n\nThe preview shows exactly what will be in the pull request. Check it, then click Create pull request. Your browser opens on GitHub:\n\n\n\n\n\n\n\nTipIs the preview blank?\n\n\n\n\n\n\nYour changes aren’t committed on this branch yet, so there’s nothing to compare. Check the History tab: your commit should be at the top. If it isn’t, commit (and push) on the branch, then preview again.\n\n\n5. Fill in the pull request. Add a clear title and a short description (what changed and why). On the right, click ⚙️ next to Reviewers and choose who should review:\n\n\n\n\nClick Create pull request. The reviewer is notified.\n6. Merge after approval. When the reviewer approves, the pull request shows it, along with the Merge pull request button:\n\n\n\nClick Merge pull request, then Confirm merge:\n\n\n\nThen click Delete branch. The branch’s work is now in main, so the branch isn’t needed anymore:\n\n7. Back in GitHub Desktop, switch to main and click Pull origin to get the merged change:\n\nIf GitHub Desktop offers to delete your local copy of the branch, say yes. Otherwise use Branch → Delete… while on another branch.\n\n\nOn the command line\ngit switch main\ngit pull\ngit switch -c mwegener/add-age-filter      # Create and switch to a new branch\n# ... edit, then:\ngit add .\ngit commit -m \"Add age filter\"\ngit push -u origin mwegener/add-age-filter\nThen open the PR on github.com. GitHub shows a yellow Compare & pull request banner. After it’s merged:\ngit switch main\ngit pull\ngit branch -d mwegener/add-age-filter      # Delete the local branch\nOther branch commands:\ngit branch               # List local branches (* marks the current one)\ngit branch -a            # Include branches on GitHub\ngit switch branch-name   # Switch to an existing branch",
-    "crumbs": [
-      "Intro to Git & GitHub",
-      "Lessons",
-      "Lesson 6: Branches and pull requests"
-    ]
-  },
-  {
-    "objectID": "pages/intro-to-github/06-branches-pull-requests.html#reviewing-a-pull-request",
-    "href": "pages/intro-to-github/06-branches-pull-requests.html#reviewing-a-pull-request",
-    "title": "Lesson 6: Branches and pull requests",
-    "section": "Reviewing a pull request",
-    "text": "Reviewing a pull request\nWhen you’re asked to review, you’ll get a notification and an email.\n\nOpen the PR and go to the Files changed tab. Added lines are green, removed lines red:\n\n\n\nTo comment on a specific line, hover over it and click the blue +. Type your comment, then Start a review (to send all your comments together) or Comment (to post just this one):\n\n\n\nClick Submit review (top right):\n\n\n\n\n\nWrite a summary, choose Comment, Approve, or Request changes, and click Submit review:\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nYou can’t approve your own pull request. As the author, you’ll see Approve and Request changes greyed out. That’s why you ask a teammate to review.\n\n\nWhen reviewing, ask: Does it work? Is it clear? Is there any sensitive data or any credential in it?\nThe Conversation tab shows the whole discussion: the description, review requests, comments, and approvals:\n\nUntil someone approves, the merge box shows Review requested. Merging is still possible, but in shared NV OSE repos, wait for the approval:",
-    "crumbs": [
-      "Intro to Git & GitHub",
-      "Lessons",
-      "Lesson 6: Branches and pull requests"
-    ]
-  },
-  {
-    "objectID": "pages/intro-to-github/06-branches-pull-requests.html#merge-conflicts",
-    "href": "pages/intro-to-github/06-branches-pull-requests.html#merge-conflicts",
-    "title": "Lesson 6: Branches and pull requests",
-    "section": "Merge conflicts",
-    "text": "Merge conflicts\nA conflict happens when two branches change the same lines of the same file. Git can’t decide which version to keep, so it asks you.\nThe file will contain markers like this:\n&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD\nage_groups &lt;- c(\"0-17\", \"18-64\", \"65+\")\n=======\nage_groups &lt;- c(\"0-4\", \"5-17\", \"18-49\", \"50-64\", \"65+\")\n&gt;&gt;&gt;&gt;&gt;&gt;&gt; mwegener/add-age-filter\nTo resolve it:\n\nEdit the file so it contains the version you want, and delete all of the marker lines (&lt;&lt;&lt;&lt;&lt;&lt;&lt;, =======, &gt;&gt;&gt;&gt;&gt;&gt;&gt;).\nSave the file, then stage and commit it. GitHub Desktop walks you through this, and GitHub can resolve simple conflicts in the browser.\n\nTo avoid conflicts: pull often, keep branches short-lived, and talk with your team about who is editing what.",
-    "crumbs": [
-      "Intro to Git & GitHub",
-      "Lessons",
-      "Lesson 6: Branches and pull requests"
-    ]
-  },
-  {
-    "objectID": "pages/intro-to-github/08-public-vs-private.html",
-    "href": "pages/intro-to-github/08-public-vs-private.html",
-    "title": "Lesson 8: Public vs. private repositories",
-    "section": "",
-    "text": "Public\nPrivate\n\n\n\n\nWho can see it\nAnyone on the internet, including search engines and automated scrapers\nOnly people you give access to\n\n\nWho can edit it\nOnly people you give access to\nOnly people you give access to\n\n\nCan others fork it?\nYes, anyone\nOnly members, and NV OSE has disabled this\n\n\nGitHub Pages on the Free plan\n✅ Yes\n❌ No\n\n\nFree security scanning\n✅ Full\nLimited\n\n\n\nPublic means anyone can see it, not that anyone can change it. Outsiders can only suggest changes, through forks and pull requests.",
-    "crumbs": [
-      "Intro to Git & GitHub",
-      "Lessons",
-      "Lesson 8: Public vs. private repositories"
-    ]
-  },
-  {
-    "objectID": "pages/intro-to-github/08-public-vs-private.html#the-difference",
-    "href": "pages/intro-to-github/08-public-vs-private.html#the-difference",
-    "title": "Lesson 8: Public vs. private repositories",
-    "section": "",
-    "text": "Public\nPrivate\n\n\n\n\nWho can see it\nAnyone on the internet, including search engines and automated scrapers\nOnly people you give access to\n\n\nWho can edit it\nOnly people you give access to\nOnly people you give access to\n\n\nCan others fork it?\nYes, anyone\nOnly members, and NV OSE has disabled this\n\n\nGitHub Pages on the Free plan\n✅ Yes\n❌ No\n\n\nFree security scanning\n✅ Full\nLimited\n\n\n\nPublic means anyone can see it, not that anyone can change it. Outsiders can only suggest changes, through forks and pull requests.",
-    "crumbs": [
-      "Intro to Git & GitHub",
-      "Lessons",
-      "Lesson 8: Public vs. private repositories"
-    ]
-  },
-  {
-    "objectID": "pages/intro-to-github/08-public-vs-private.html#whats-public-in-a-public-repo",
-    "href": "pages/intro-to-github/08-public-vs-private.html#whats-public-in-a-public-repo",
-    "title": "Lesson 8: Public vs. private repositories",
-    "section": "What’s public in a public repo",
-    "text": "What’s public in a public repo\nAll of it:\n\nevery file, in every commit in the history\nevery branch, including work in progress\nissues, pull requests, comments, and commit messages\nthe name and email on each commit (see email privacy in Lesson 2)",
-    "crumbs": [
-      "Intro to Git & GitHub",
-      "Lessons",
-      "Lesson 8: Public vs. private repositories"
-    ]
-  },
-  {
-    "objectID": "pages/intro-to-github/08-public-vs-private.html#which-to-choose",
-    "href": "pages/intro-to-github/08-public-vs-private.html#which-to-choose",
-    "title": "Lesson 8: Public vs. private repositories",
-    "section": "Which to choose",
-    "text": "Which to choose\n\n\n\n\n\n\n\nChoose Public for\nChoose Private for\n\n\n\n\nTraining materials meant to be shared\nInternal procedures and drafts\n\n\nCode from published or approved analyses\nCode from analyses that haven’t been released or cleared\n\n\nTemplates and tools for other agencies\nAnything that mentions internal systems, servers, or file paths\n\n\nGitHub Pages websites\nAnything you’re unsure about\n\n\n\n\n\n\n\n\n\nTipWhen in doubt, start private\n\n\n\nA private repo can be made public later, after review. Making a public repo private doesn’t erase what people have already seen, copied, or forked.",
-    "crumbs": [
-      "Intro to Git & GitHub",
-      "Lessons",
-      "Lesson 8: Public vs. private repositories"
-    ]
-  },
-  {
-    "objectID": "pages/intro-to-github/08-public-vs-private.html#nv-ose-repositories",
-    "href": "pages/intro-to-github/08-public-vs-private.html#nv-ose-repositories",
-    "title": "Lesson 8: Public vs. private repositories",
-    "section": "NV OSE repositories",
-    "text": "NV OSE repositories\n\n\n\nRepo\nVisibility\n\n\n\n\n.github (org profile and SOP)\nPublic\n\n\ntraining\nPublic\n\n\nshared-resources\nPrivate\n\n\npresentations\nPrivate\n\n\nteam-hub\nPrivate\n\n\n\nOnly organization owners can change a repo’s visibility. Ask an owner if you think a repo should be made public.",
-    "crumbs": [
-      "Intro to Git & GitHub",
-      "Lessons",
-      "Lesson 8: Public vs. private repositories"
-    ]
-  },
-  {
-    "objectID": "pages/intro-to-github/08-public-vs-private.html#private-safe-for-sensitive-data",
-    "href": "pages/intro-to-github/08-public-vs-private.html#private-safe-for-sensitive-data",
-    "title": "Lesson 8: Public vs. private repositories",
-    "section": "Private ≠ safe for sensitive data",
-    "text": "Private ≠ safe for sensitive data\nA private repo is still not an approved place for PHI, PII, or confidential data:\n\nAccess can change when people join, leave, or are added by mistake.\nA repo can be made public by accident.\nData in Git history is hard to remove completely.\n\nSee Lesson 9.",
-    "crumbs": [
-      "Intro to Git & GitHub",
-      "Lessons",
-      "Lesson 8: Public vs. private repositories"
+      "Practice and reference",
+      "Glossary"
     ]
   },
   {
@@ -2283,15 +1536,870 @@
     ]
   },
   {
-    "objectID": "pages/intro-to-github/glossary.html",
-    "href": "pages/intro-to-github/glossary.html",
-    "title": "Glossary",
+    "objectID": "pages/intro-to-github/08-public-vs-private.html",
+    "href": "pages/intro-to-github/08-public-vs-private.html",
+    "title": "Lesson 8: Public vs. private repositories",
     "section": "",
-    "text": "Term\nDefinition\n\n\n\n\nBranch\nA separate line of development. main is the default branch.\n\n\nClone\nA full copy of a repo, including its history, on your computer.\n\n\nCommit\nA saved snapshot of changes, with a message, an author, and a unique ID (hash).\n\n\nCommit message\nA short description of what a commit changed and why.\n\n\nConflict (merge conflict)\nWhen two changes affect the same lines and Git needs you to choose which to keep.\n\n\nDiff\nThe line-by-line difference between two versions of a file.\n\n\nFetch\nCheck GitHub for new changes without applying them.\n\n\nFork\nYour own copy of someone else’s repo on GitHub.\n\n\n.gitignore\nA file listing patterns for files Git should never track.\n\n\nGitHub Pages\nA free GitHub service that turns a repo into a website.\n\n\nHEAD\nThe commit you are currently on.\n\n\nIssue\nA GitHub item for tracking a task, bug, or idea.\n\n\nLocal\nYour computer’s copy of a repo.\n\n\nmain\nThe default, official branch of a repo.\n\n\nMarkdown (.md)\nA simple text formatting language used for READMEs and documentation.\n\n\nMerge\nCombine the changes from one branch into another.\n\n\nOrganization (org)\nA shared GitHub account for a team, such as nv-ose.\n\n\norigin\nThe default name for the remote copy of the repo on GitHub.\n\n\nOwner\nAn org member with full admin rights.\n\n\nPull\nFetch new changes from GitHub and merge them into your local copy.\n\n\nPull request (PR)\nA request to merge one branch into another, with review and discussion.\n\n\nPush\nUpload your local commits to GitHub.\n\n\nPush protection\nA GitHub feature that blocks pushes containing known secret formats.\n\n\nREADME\nThe front-page document of a repo, usually README.md.\n\n\nRemote\nA copy of the repo hosted elsewhere, usually on GitHub.\n\n\nRepository (repo)\nA project folder tracked by Git, plus its history.\n\n\nRevert\nA new commit that undoes an earlier commit.\n\n\nSecret\nAny credential: a password, API key, token, or private key.\n\n\nStage (staging area)\nThe set of changes chosen to go into the next commit (git add).\n\n\nTemplate repository\nA repo you can use to start new repos with the same files, without its history.\n\n\nTwo-factor authentication (2FA)\nA second login step, such as an app code, that protects your account.",
+    "text": "Public\nPrivate\n\n\n\n\nWho can see it\nAnyone on the internet, including search engines and automated scrapers\nOnly people you give access to\n\n\nWho can edit it\nOnly people you give access to\nOnly people you give access to\n\n\nCan others fork it?\nYes, anyone\nOnly members, and NV OSE has disabled this\n\n\nGitHub Pages on the Free plan\n✅ Yes\n❌ No\n\n\nFree security scanning\n✅ Full\nLimited\n\n\n\nPublic means anyone can see it, not that anyone can change it. Outsiders can only suggest changes, through forks and pull requests.",
+    "crumbs": [
+      "Intro to Git & GitHub",
+      "Lessons",
+      "Lesson 8: Public vs. private repositories"
+    ]
+  },
+  {
+    "objectID": "pages/intro-to-github/08-public-vs-private.html#the-difference",
+    "href": "pages/intro-to-github/08-public-vs-private.html#the-difference",
+    "title": "Lesson 8: Public vs. private repositories",
+    "section": "",
+    "text": "Public\nPrivate\n\n\n\n\nWho can see it\nAnyone on the internet, including search engines and automated scrapers\nOnly people you give access to\n\n\nWho can edit it\nOnly people you give access to\nOnly people you give access to\n\n\nCan others fork it?\nYes, anyone\nOnly members, and NV OSE has disabled this\n\n\nGitHub Pages on the Free plan\n✅ Yes\n❌ No\n\n\nFree security scanning\n✅ Full\nLimited\n\n\n\nPublic means anyone can see it, not that anyone can change it. Outsiders can only suggest changes, through forks and pull requests.",
+    "crumbs": [
+      "Intro to Git & GitHub",
+      "Lessons",
+      "Lesson 8: Public vs. private repositories"
+    ]
+  },
+  {
+    "objectID": "pages/intro-to-github/08-public-vs-private.html#whats-public-in-a-public-repo",
+    "href": "pages/intro-to-github/08-public-vs-private.html#whats-public-in-a-public-repo",
+    "title": "Lesson 8: Public vs. private repositories",
+    "section": "What’s public in a public repo",
+    "text": "What’s public in a public repo\nAll of it:\n\nevery file, in every commit in the history\nevery branch, including work in progress\nissues, pull requests, comments, and commit messages\nthe name and email on each commit (see email privacy in Lesson 2)",
+    "crumbs": [
+      "Intro to Git & GitHub",
+      "Lessons",
+      "Lesson 8: Public vs. private repositories"
+    ]
+  },
+  {
+    "objectID": "pages/intro-to-github/08-public-vs-private.html#which-to-choose",
+    "href": "pages/intro-to-github/08-public-vs-private.html#which-to-choose",
+    "title": "Lesson 8: Public vs. private repositories",
+    "section": "Which to choose",
+    "text": "Which to choose\n\n\n\n\n\n\n\nChoose Public for\nChoose Private for\n\n\n\n\nTraining materials meant to be shared\nInternal procedures and drafts\n\n\nCode from published or approved analyses\nCode from analyses that haven’t been released or cleared\n\n\nTemplates and tools for other agencies\nAnything that mentions internal systems, servers, or file paths\n\n\nGitHub Pages websites\nAnything you’re unsure about\n\n\n\n\n\n\n\n\n\nTipWhen in doubt, start private\n\n\n\nA private repo can be made public later, after review. Making a public repo private doesn’t erase what people have already seen, copied, or forked.",
+    "crumbs": [
+      "Intro to Git & GitHub",
+      "Lessons",
+      "Lesson 8: Public vs. private repositories"
+    ]
+  },
+  {
+    "objectID": "pages/intro-to-github/08-public-vs-private.html#nv-ose-repositories",
+    "href": "pages/intro-to-github/08-public-vs-private.html#nv-ose-repositories",
+    "title": "Lesson 8: Public vs. private repositories",
+    "section": "NV OSE repositories",
+    "text": "NV OSE repositories\n\n\n\nRepo\nVisibility\n\n\n\n\n.github (org profile and SOP)\nPublic\n\n\ntraining\nPublic\n\n\nshared-resources\nPrivate\n\n\npresentations\nPrivate\n\n\nteam-hub\nPrivate\n\n\n\nOnly organization owners can change a repo’s visibility. Ask an owner if you think a repo should be made public.",
+    "crumbs": [
+      "Intro to Git & GitHub",
+      "Lessons",
+      "Lesson 8: Public vs. private repositories"
+    ]
+  },
+  {
+    "objectID": "pages/intro-to-github/08-public-vs-private.html#private-safe-for-sensitive-data",
+    "href": "pages/intro-to-github/08-public-vs-private.html#private-safe-for-sensitive-data",
+    "title": "Lesson 8: Public vs. private repositories",
+    "section": "Private ≠ safe for sensitive data",
+    "text": "Private ≠ safe for sensitive data\nA private repo is still not an approved place for PHI, PII, or confidential data:\n\nAccess can change when people join, leave, or are added by mistake.\nA repo can be made public by accident.\nData in Git history is hard to remove completely.\n\nSee Lesson 9.",
+    "crumbs": [
+      "Intro to Git & GitHub",
+      "Lessons",
+      "Lesson 8: Public vs. private repositories"
+    ]
+  },
+  {
+    "objectID": "pages/intro-to-github/06-branches-pull-requests.html",
+    "href": "pages/intro-to-github/06-branches-pull-requests.html",
+    "title": "Lesson 6: Branches and pull requests",
+    "section": "",
+    "text": "A branch is a separate copy of the project where you can make changes without affecting the main version. When the work is ready, you merge it back.\nmain:      A───B───────────E (merge)\n                \\         /\nmy-branch:       C───D───┘\n\nmain is the official, working version.\nYou create my-branch, make commits C and D, and main is unaffected.\nWhen you’re done, you merge the branch back into main.\n\nWhy use branches? You can experiment safely, several people can work at once, and every change can be reviewed before it reaches main. The NV OSE SOP requires this for shared repos.\nNaming: yourname/short-description, for example mwegener/add-age-filter.",
+    "crumbs": [
+      "Intro to Git & GitHub",
+      "Lessons",
+      "Lesson 6: Branches and pull requests"
+    ]
+  },
+  {
+    "objectID": "pages/intro-to-github/06-branches-pull-requests.html#what-is-a-branch",
+    "href": "pages/intro-to-github/06-branches-pull-requests.html#what-is-a-branch",
+    "title": "Lesson 6: Branches and pull requests",
+    "section": "",
+    "text": "A branch is a separate copy of the project where you can make changes without affecting the main version. When the work is ready, you merge it back.\nmain:      A───B───────────E (merge)\n                \\         /\nmy-branch:       C───D───┘\n\nmain is the official, working version.\nYou create my-branch, make commits C and D, and main is unaffected.\nWhen you’re done, you merge the branch back into main.\n\nWhy use branches? You can experiment safely, several people can work at once, and every change can be reviewed before it reaches main. The NV OSE SOP requires this for shared repos.\nNaming: yourname/short-description, for example mwegener/add-age-filter.",
+    "crumbs": [
+      "Intro to Git & GitHub",
+      "Lessons",
+      "Lesson 6: Branches and pull requests"
+    ]
+  },
+  {
+    "objectID": "pages/intro-to-github/06-branches-pull-requests.html#what-is-a-pull-request-pr",
+    "href": "pages/intro-to-github/06-branches-pull-requests.html#what-is-a-pull-request-pr",
+    "title": "Lesson 6: Branches and pull requests",
+    "section": "What is a pull request (PR)?",
+    "text": "What is a pull request (PR)?\nA pull request asks to merge your branch into main. It’s where teammates:\n\nsee exactly what changed\nleave comments on specific lines\napprove the change, or request changes\nmerge it once it’s approved",
+    "crumbs": [
+      "Intro to Git & GitHub",
+      "Lessons",
+      "Lesson 6: Branches and pull requests"
+    ]
+  },
+  {
+    "objectID": "pages/intro-to-github/06-branches-pull-requests.html#the-branch-pr-merge-workflow",
+    "href": "pages/intro-to-github/06-branches-pull-requests.html#the-branch-pr-merge-workflow",
+    "title": "Lesson 6: Branches and pull requests",
+    "section": "The branch → PR → merge workflow",
+    "text": "The branch → PR → merge workflow\n\nIn GitHub Desktop\nThis walkthrough uses a real (small) change to this training’s README, from branch to merge.\n1. Create a branch. Make sure you’re on main and have pulled. Click Current branch → New branch (or Branch → New branch…, Ctrl + Shift + N):\n\n\n\nName it yourname/short-description. It’s based on the branch you’re on (main). Click Create branch:\n\n\n\n2. Make your changes and commit. Edit and save as usual. The commit button now names your branch: Commit to yourname/…:\n\n3. Publish the branch. A new branch exists only on your computer until you publish it:\n\n\n\nAfter that, push new commits on the branch with Push origin, as usual:\n\n4. Preview and create the pull request. Click Preview Pull Request (or Branch → Create pull request, Ctrl + R):\n\n\n\nThe preview shows exactly what will be in the pull request. Check it, then click Create pull request. Your browser opens on GitHub:\n\n\n\n\n\n\n\nTipIs the preview blank?\n\n\n\n\n\n\nYour changes aren’t committed on this branch yet, so there’s nothing to compare. Check the History tab: your commit should be at the top. If it isn’t, commit (and push) on the branch, then preview again.\n\n\n5. Fill in the pull request. Add a clear title and a short description (what changed and why). On the right, click ⚙️ next to Reviewers and choose who should review:\n\n\n\n\nClick Create pull request. The reviewer is notified.\n6. Merge after approval. When the reviewer approves, the pull request shows it, along with the Merge pull request button:\n\n\n\nClick Merge pull request, then Confirm merge:\n\n\n\nThen click Delete branch. The branch’s work is now in main, so the branch isn’t needed anymore:\n\n7. Back in GitHub Desktop, switch to main and click Pull origin to get the merged change:\n\nIf GitHub Desktop offers to delete your local copy of the branch, say yes. Otherwise use Branch → Delete… while on another branch.\n\n\nOn the command line\ngit switch main\ngit pull\ngit switch -c mwegener/add-age-filter      # Create and switch to a new branch\n# ... edit, then:\ngit add .\ngit commit -m \"Add age filter\"\ngit push -u origin mwegener/add-age-filter\nThen open the PR on github.com. GitHub shows a yellow Compare & pull request banner. After it’s merged:\ngit switch main\ngit pull\ngit branch -d mwegener/add-age-filter      # Delete the local branch\nOther branch commands:\ngit branch               # List local branches (* marks the current one)\ngit branch -a            # Include branches on GitHub\ngit switch branch-name   # Switch to an existing branch",
+    "crumbs": [
+      "Intro to Git & GitHub",
+      "Lessons",
+      "Lesson 6: Branches and pull requests"
+    ]
+  },
+  {
+    "objectID": "pages/intro-to-github/06-branches-pull-requests.html#reviewing-a-pull-request",
+    "href": "pages/intro-to-github/06-branches-pull-requests.html#reviewing-a-pull-request",
+    "title": "Lesson 6: Branches and pull requests",
+    "section": "Reviewing a pull request",
+    "text": "Reviewing a pull request\nWhen you’re asked to review, you’ll get a notification and an email.\n\nOpen the PR and go to the Files changed tab. Added lines are green, removed lines red:\n\n\n\nTo comment on a specific line, hover over it and click the blue +. Type your comment, then Start a review (to send all your comments together) or Comment (to post just this one):\n\n\n\nClick Submit review (top right):\n\n\n\n\n\nWrite a summary, choose Comment, Approve, or Request changes, and click Submit review:\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nYou can’t approve your own pull request. As the author, you’ll see Approve and Request changes greyed out. That’s why you ask a teammate to review.\n\n\nWhen reviewing, ask: Does it work? Is it clear? Is there any sensitive data or any credential in it?\nThe Conversation tab shows the whole discussion: the description, review requests, comments, and approvals:\n\nUntil someone approves, the merge box shows Review requested. Merging is still possible, but in shared NV OSE repos, wait for the approval:",
+    "crumbs": [
+      "Intro to Git & GitHub",
+      "Lessons",
+      "Lesson 6: Branches and pull requests"
+    ]
+  },
+  {
+    "objectID": "pages/intro-to-github/06-branches-pull-requests.html#merge-conflicts",
+    "href": "pages/intro-to-github/06-branches-pull-requests.html#merge-conflicts",
+    "title": "Lesson 6: Branches and pull requests",
+    "section": "Merge conflicts",
+    "text": "Merge conflicts\nA conflict happens when two branches change the same lines of the same file. Git can’t decide which version to keep, so it asks you.\nThe file will contain markers like this:\n&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD\nage_groups &lt;- c(\"0-17\", \"18-64\", \"65+\")\n=======\nage_groups &lt;- c(\"0-4\", \"5-17\", \"18-49\", \"50-64\", \"65+\")\n&gt;&gt;&gt;&gt;&gt;&gt;&gt; mwegener/add-age-filter\nTo resolve it:\n\nEdit the file so it contains the version you want, and delete all of the marker lines (&lt;&lt;&lt;&lt;&lt;&lt;&lt;, =======, &gt;&gt;&gt;&gt;&gt;&gt;&gt;).\nSave the file, then stage and commit it. GitHub Desktop walks you through this, and GitHub can resolve simple conflicts in the browser.\n\nTo avoid conflicts: pull often, keep branches short-lived, and talk with your team about who is editing what.",
+    "crumbs": [
+      "Intro to Git & GitHub",
+      "Lessons",
+      "Lesson 6: Branches and pull requests"
+    ]
+  },
+  {
+    "objectID": "pages/intro-to-github/04-github-desktop.html",
+    "href": "pages/intro-to-github/04-github-desktop.html",
+    "title": "Lesson 4: The basic workflow in GitHub Desktop",
+    "section": "",
+    "text": "GitHub Desktop lets you do everyday Git work with buttons instead of commands. If you don’t have it yet, download GitHub Desktop and sign in (see Lesson 2). Behind the scenes, it runs the same Git commands you’ll learn in Lesson 5.",
+    "crumbs": [
+      "Intro to Git & GitHub",
+      "Lessons",
+      "Lesson 4: The basic workflow in GitHub Desktop"
+    ]
+  },
+  {
+    "objectID": "pages/intro-to-github/04-github-desktop.html#the-layout",
+    "href": "pages/intro-to-github/04-github-desktop.html#the-layout",
+    "title": "Lesson 4: The basic workflow in GitHub Desktop",
+    "section": "The layout",
+    "text": "The layout\n\n\n\n\nArea\nWhat it’s for\n\n\n\n\nCurrent repository (top left)\nSwitch between repos\n\n\nCurrent branch\nSee and switch branches (Lesson 6)\n\n\nFetch / Pull / Push origin (top)\nSync with GitHub. The label changes depending on what’s needed\n\n\nChanges tab\nFiles you’ve changed since the last commit\n\n\nHistory tab\nPast commits\n\n\nSummary / Description / Commit (bottom left)\nSave your changes as a commit\n\n\n\nThe first time you open GitHub Desktop, it shows a Let’s get started! screen with the same options as the File menu:",
+    "crumbs": [
+      "Intro to Git & GitHub",
+      "Lessons",
+      "Lesson 4: The basic workflow in GitHub Desktop"
+    ]
+  },
+  {
+    "objectID": "pages/intro-to-github/04-github-desktop.html#getting-a-repository-onto-your-computer",
+    "href": "pages/intro-to-github/04-github-desktop.html#getting-a-repository-onto-your-computer",
+    "title": "Lesson 4: The basic workflow in GitHub Desktop",
+    "section": "Getting a repository onto your computer",
+    "text": "Getting a repository onto your computer\n\n\n\n\n\n\n\nSituation\nWhat to do\n\n\n\n\nThe repo is already on GitHub\nFile → Clone repository, choose it from the list (or paste the URL), choose where to save it, then click Clone\n\n\nYou have a local folder that isn’t a repo yet\nFile → Add local repository, choose the folder, click create a repository, then Publish repository\n\n\nYou’re starting from scratch\nFile → New repository, then Publish repository\n\n\n\n\nClone a repository\nFile → Clone repository… (Ctrl + Shift + O):\n\n \n\nChoose the repo on the GitHub.com tab, or paste its URL on the URL tab. Check the Local path (e.g., Documents\\GitHub), then click Clone.\n\n\n\n\n\nAdd a folder that’s already on your computer\nFile → Add local repository… (Ctrl + O), then choose the folder:\n\n \n\nIf the folder isn’t a Git repository yet, GitHub Desktop says so. Click create a repository:\n\n \n\n\n\nStart a new repository\nFile → New repository… (Ctrl + N). Give it a name, choose the local path, and optionally add a README, .gitignore, and license:\n\n\n\n\n\nPublishing: choose the organization\nA repository you create or add on your computer is local only until you publish it. GitHub Desktop lists it under Other, with a computer icon instead of a repo icon.\nTo put it on GitHub, click Publish repository in the top bar:\n\n  \n\n\nName: lowercase with hyphens (see the SOP naming rules).\nDescription: one sentence about what the repo is.\nKeep this code private (green box): leave it checked unless an owner has approved making the repo public.\nOrganization (red box): choose nv-ose for team work.\n\n\n\n\n\n\n\nWarningCheck the Organization dropdown\n\n\n\nIt defaults to None, which publishes the repo to your personal account, not to NV OSE. It’s an easy step to miss.\n\n\n\n\n\n\n\n\nTipPublished to the wrong account? How to move it\n\n\n\n\n\n\nOn github.com, open the repo and go to Settings → Danger Zone → Transfer ownership.\nChoose Specify an organization or username, type nv-ose, and confirm by typing the repo name.\nIn GitHub Desktop, go to Repository → Repository Settings → Remote and change the URL to https://github.com/nv-ose/&lt;repo-name&gt;.git. Then click Fetch origin to check it works.\n\nGitHub redirects the old address for a while, but update the remote anyway.",
+    "crumbs": [
+      "Intro to Git & GitHub",
+      "Lessons",
+      "Lesson 4: The basic workflow in GitHub Desktop"
+    ]
+  },
+  {
+    "objectID": "pages/intro-to-github/04-github-desktop.html#the-everyday-loop",
+    "href": "pages/intro-to-github/04-github-desktop.html#the-everyday-loop",
+    "title": "Lesson 4: The basic workflow in GitHub Desktop",
+    "section": "The everyday loop",
+    "text": "The everyday loop\n\n1. Pull first\nClick Fetch origin. If others made changes, the button changes to Pull origin, with a ↓ count of new commits. Click it.\n\n \n\n\n\n\n\n\n\nTip\n\n\n\nAlways pull before you start working. It avoids most conflicts.\n\n\n\n\n2. Make changes\nEdit files in your usual tools, such as RStudio, VS Code, Excel or Word. GitHub Desktop notices automatically.\n\n\n3. Review your changes\nThe Changes tab lists every file that changed. Click a file to see exactly what changed: red lines were removed, green lines were added.\n\n\nUncheck any file you don’t want in this commit. Checked files are included:\n\n\n\n\n\nCheck for sensitive content. Is there a password, a real name, or a data file? If so, uncheck it, and add it to .gitignore: right-click the file → Ignore file.\n\n\n\n\n\n\n\n\n\nRight-clicking a file gives you Ignore file (add to .gitignore) to keep it out of Git for good, and Discard changes… to throw away your edits to it (below).\n\n\n\n\n4. Commit\n\nWrite a Summary, such as Add age-group filter to flu script.\nOptional: add a Description with more detail.\nClick Commit to main, or to whichever branch you’re on.\n\n\n \n\nA commit is saved only on your computer at this point.\n\n\n5. Push\nClick Push origin. The ↑ count shows how many commits are waiting. Your commits are now on GitHub.\n\n \n\n\n\n\n\n\n\nTipChanged your mind right after committing?\n\n\n\nBefore you push, click Undo at the bottom left (next to “Committed just now”) to take the commit back. Your changes stay in the Changes tab.",
+    "crumbs": [
+      "Intro to Git & GitHub",
+      "Lessons",
+      "Lesson 4: The basic workflow in GitHub Desktop"
+    ]
+  },
+  {
+    "objectID": "pages/intro-to-github/04-github-desktop.html#other-handy-features",
+    "href": "pages/intro-to-github/04-github-desktop.html#other-handy-features",
+    "title": "Lesson 4: The basic workflow in GitHub Desktop",
+    "section": "Other handy features",
+    "text": "Other handy features\n\n\n\nFeature\nWhere\n\n\n\n\nSee past commits\nHistory tab\n\n\nUndo the most recent commit (before pushing)\nHistory → right-click the commit → Undo commit\n\n\nDiscard changes to a file\nChanges → right-click the file → Discard changes\n\n\nReverse a commit you’ve already pushed\nHistory → right-click → Revert changes in commit. This makes a new commit that undoes it\n\n\nOpen the repo in your editor or file browser\nRepository → Open in… / Show in Explorer (Mac: Show in Finder)\n\n\nView the repo on GitHub\nRepository → View on GitHub\n\n\nBranches and pull requests\nSee Lesson 6\n\n\n\n\nHistory\nThe History tab lists every commit, newest first. Click one to see which files it changed:\n\nRight-click a commit for more options:\n\n  \n\n\nUndo commit (red): for your latest commit that isn’t pushed yet. The changes go back to the Changes tab.\nRevert changes in commit (green): for a commit that’s already pushed. It makes a new commit that reverses it, so history stays intact.\n\n\n\nDiscarding changes\nRight-click a file in Changes → Discard changes…, then confirm:\n\n\n\n\n\n\n\n\n\n\n\n\n\nTo throw away all uncommitted changes at once (for example, after testing something), use Branch → Discard all changes… (Ctrl + Shift + Backspace):\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWarning\n\n\n\nDiscarding throws away your edits since the last commit. The file goes to the Recycle Bin, but don’t rely on that. Only discard what you really don’t want.",
+    "crumbs": [
+      "Intro to Git & GitHub",
+      "Lessons",
+      "Lesson 4: The basic workflow in GitHub Desktop"
+    ]
+  },
+  {
+    "objectID": "pages/intro-to-github/04-github-desktop.html#writing-good-commit-messages",
+    "href": "pages/intro-to-github/04-github-desktop.html#writing-good-commit-messages",
+    "title": "Lesson 4: The basic workflow in GitHub Desktop",
+    "section": "Writing good commit messages",
+    "text": "Writing good commit messages\n\nStart with a verb in the present tense: Add, Fix, Update, Remove.\nSay what changed and, if it isn’t obvious, why.\nKeep the summary under about 50 characters.\n\n\n\n\n✅ Good\n❌ Not helpful\n\n\n\n\nFix date parsing in import script\nfixed stuff\n\n\nAdd README for flu dashboard\nupdate\n\n\nRemove unused 2023 data columns\nfinal version",
+    "crumbs": [
+      "Intro to Git & GitHub",
+      "Lessons",
+      "Lesson 4: The basic workflow in GitHub Desktop"
+    ]
+  },
+  {
+    "objectID": "pages/intro-to-github/02-setup.html",
+    "href": "pages/intro-to-github/02-setup.html",
+    "title": "Lesson 2: Setting up",
+    "section": "",
+    "text": "Go to github.com/signup.\nChoose a professional username. It appears on everything you do, for example jsmith-nv rather than pizzalover99.\nTurn on two-factor authentication (2FA): profile picture → Settings → Password and authentication. NV OSE requires 2FA for all organization members.\n\nOptional: if you use a personal account for work, add your work email under Settings → Emails.\n\n\n\nEvery commit is labeled with an email address, and in public repos anyone can see it. To keep yours private:\n\nGo to Settings → Emails and check Keep my email addresses private.\nGitHub then shows you a private “noreply” address, like 12345678+username@users.noreply.github.com. Use that address when you configure Git (below).\n\n\n \n\n\n\n\n\n\n\nWarningPush failed because of a private email?\n\n\n\n\n\n\nThis means Git is committing with your private email. Don’t turn off email privacy as the message suggests. Instead, set your Git email to your noreply address (step 3), then undo and redo the commit.",
+    "crumbs": [
+      "Intro to Git & GitHub",
+      "Lessons",
+      "Lesson 2: Setting up"
+    ]
+  },
+  {
+    "objectID": "pages/intro-to-github/02-setup.html#create-a-github-account",
+    "href": "pages/intro-to-github/02-setup.html#create-a-github-account",
+    "title": "Lesson 2: Setting up",
+    "section": "",
+    "text": "Go to github.com/signup.\nChoose a professional username. It appears on everything you do, for example jsmith-nv rather than pizzalover99.\nTurn on two-factor authentication (2FA): profile picture → Settings → Password and authentication. NV OSE requires 2FA for all organization members.\n\nOptional: if you use a personal account for work, add your work email under Settings → Emails.\n\n\n\nEvery commit is labeled with an email address, and in public repos anyone can see it. To keep yours private:\n\nGo to Settings → Emails and check Keep my email addresses private.\nGitHub then shows you a private “noreply” address, like 12345678+username@users.noreply.github.com. Use that address when you configure Git (below).\n\n\n \n\n\n\n\n\n\n\nWarningPush failed because of a private email?\n\n\n\n\n\n\nThis means Git is committing with your private email. Don’t turn off email privacy as the message suggests. Instead, set your Git email to your noreply address (step 3), then undo and redo the commit.",
+    "crumbs": [
+      "Intro to Git & GitHub",
+      "Lessons",
+      "Lesson 2: Setting up"
+    ]
+  },
+  {
+    "objectID": "pages/intro-to-github/02-setup.html#install-the-tools",
+    "href": "pages/intro-to-github/02-setup.html#install-the-tools",
+    "title": "Lesson 2: Setting up",
+    "section": "2. Install the tools",
+    "text": "2. Install the tools\n\n\n\nTool\nWindows\nMac (if you use one)\n\n\n\n\nGitHub Desktop\nDownload GitHub Desktop (Windows version)\nSame link (Mac version)\n\n\nGit (for the command line)\nInstall Git for Windows and accept the defaults. It includes Git Bash and Git Credential Manager\nOpen Terminal and type git --version; macOS offers to install it\n\n\nEditor\nPositron, VS Code, or RStudio\nSame\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nOn a state computer you may need IT to install software. Request it ahead of time.\n\n\n\nShow file extensions and hidden files (Windows)\nBy default, Windows hides file extensions (so report.qmd shows as just report) and hides some files. You’ll be working with files like .gitignore, .here, and .Renviron, so turn both on:\n\nOpen File Explorer.\nClick View (top menu) → Show → check File name extensions and Hidden items. On Windows 10: the View tab → check File name extensions and Hidden items.\n\nCheck that Git works. Open Git Bash (Start menu → type Git Bash) or Command Prompt, and run:\ngit --version\nYou should see something like git version 2.53.0.windows.2:",
+    "crumbs": [
+      "Intro to Git & GitHub",
+      "Lessons",
+      "Lesson 2: Setting up"
+    ]
+  },
+  {
+    "objectID": "pages/intro-to-github/02-setup.html#connect-github-desktop",
+    "href": "pages/intro-to-github/02-setup.html#connect-github-desktop",
+    "title": "Lesson 2: Setting up",
+    "section": "3. Connect GitHub Desktop",
+    "text": "3. Connect GitHub Desktop\n\nOpen GitHub Desktop and go to File → Options… (Mac: GitHub Desktop → Settings).\n\n\n \n\n\nUnder Accounts, click Sign in for GitHub.com. Your browser opens; sign in to GitHub and authorize the app. When it’s done, your account appears:\n\n\n\n\n\nUnder Git → Author, set your Name, and choose your noreply address in the Email dropdown. Click Save.\n\n\n\n\n\nUnder Git → Default branch, leave it as main.",
+    "crumbs": [
+      "Intro to Git & GitHub",
+      "Lessons",
+      "Lesson 2: Setting up"
+    ]
+  },
+  {
+    "objectID": "pages/intro-to-github/02-setup.html#configure-git-for-the-command-line",
+    "href": "pages/intro-to-github/02-setup.html#configure-git-for-the-command-line",
+    "title": "Lesson 2: Setting up",
+    "section": "4. Configure Git for the command line",
+    "text": "4. Configure Git for the command line\nTell Git who you are. Do this once per computer:\ngit config --global user.name \"Your Name\"\ngit config --global user.email \"your-noreply-or-work-email@example.com\"\ngit config --global init.defaultBranch main\nCheck your settings:\ngit config --list",
+    "crumbs": [
+      "Intro to Git & GitHub",
+      "Lessons",
+      "Lesson 2: Setting up"
+    ]
+  },
+  {
+    "objectID": "pages/intro-to-github/02-setup.html#authenticate-the-command-line",
+    "href": "pages/intro-to-github/02-setup.html#authenticate-the-command-line",
+    "title": "Lesson 2: Setting up",
+    "section": "5. Authenticate the command line",
+    "text": "5. Authenticate the command line\nGitHub no longer accepts your password for Git on the command line. Use one of these instead:\n\nEasiest (Windows): Git for Windows includes Git Credential Manager. The first time you push, a browser window opens so you can sign in.\nAlternative: install the GitHub CLI and run:\ngh auth login\nFollow the prompts and choose HTTPS and Login with a web browser.\nAlternative: a personal access token or an SSH key. These are more advanced.\n\n\n\n\n\n\n\nWarning\n\n\n\nA token works like a password. Never paste it into code, a README, or a chat. See Lesson 9.",
+    "crumbs": [
+      "Intro to Git & GitHub",
+      "Lessons",
+      "Lesson 2: Setting up"
+    ]
+  },
+  {
+    "objectID": "pages/intro-to-github/02-setup.html#checklist",
+    "href": "pages/intro-to-github/02-setup.html#checklist",
+    "title": "Lesson 2: Setting up",
+    "section": "Checklist",
+    "text": "Checklist\n\nGitHub account created, with 2FA on\nEmail privacy set\nGitHub Desktop installed and signed in\nGit installed (git --version works)\nuser.name and user.email configured\nAccepted the invitation to the nv-ose organization (check your email or github.com/nv-ose)",
+    "crumbs": [
+      "Intro to Git & GitHub",
+      "Lessons",
+      "Lesson 2: Setting up"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "NV OSE Training",
+    "section": "",
+    "text": "Welcome! This site collects training materials created by NV OSE, the Office of State Epidemiology, for public health staff and anyone else who wants to learn. All materials are free to use and share under CC BY 4.0."
+  },
+  {
+    "objectID": "index.html#trainings",
+    "href": "index.html#trainings",
+    "title": "NV OSE Training",
+    "section": "Trainings",
+    "text": "Trainings\n\n\n\nTraining\nWhat you’ll learn\nLevel\nTime\n\n\n\n\nIntroduction to Positron\nThe Positron IDE for R and Python: interpreters, project folders and here(), the NV OSE folder structure, panes compared with RStudio and VS Code, extensions (including AI assistants), Git, and Python environments\nBeginner\nAbout 1 hour\n\n\nIntroduction to Git and GitHub\nGit vs. GitHub, READMEs, .gitignore, GitHub Desktop, the command line, branches, pull requests, forks, public vs. private, and data security\nBeginner\nAbout 3 hours\n\n\nIntroduction to Quarto\nMarkdown, what Quarto adds, R code chunks, HTML reports, revealjs presentations, websites, accessibility, and publishing on GitHub Pages\nBeginner\nAbout 5 hours (3 sessions)\n\n\n\nMore trainings are on the way."
+  },
+  {
+    "objectID": "index.html#suggested-order",
+    "href": "index.html#suggested-order",
+    "title": "NV OSE Training",
+    "section": "Suggested order",
+    "text": "Suggested order\nNew to all of this? Take the trainings in this order:\n\nIntroduction to Positron (1 hour): set up the editor and a project folder.\nIntroduction to Git and GitHub (3 hours): version control and sharing your work.\nIntroduction to Quarto (5 hours, 3 sessions): Markdown, reports, slides, and websites published on GitHub Pages.\n\nAlready comfortable with one of these? Skip ahead. Each training lists its own prerequisites."
+  },
+  {
+    "objectID": "index.html#how-to-use-these-materials",
+    "href": "index.html#how-to-use-these-materials",
+    "title": "NV OSE Training",
+    "section": "How to use these materials",
+    "text": "How to use these materials\n\nSelf-paced: work through the lessons in order using the sidebar, then try the exercises.\nWorkshop: instructors can teach directly from the pages. Each training lists its learning objectives, prerequisites, and timing.\nGet the files: all source files are on GitHub. You can download everything as a ZIP."
+  },
+  {
+    "objectID": "index.html#share-a-training",
+    "href": "index.html#share-a-training",
+    "title": "NV OSE Training",
+    "section": "Share a training",
+    "text": "Share a training\nNV OSE staff: have materials you’d like to see here? Submit a training (sign-in required). Attach your slides, handouts, or code, and we’ll turn them into pages on this site.\n\n\n\n\n\n\nNote\n\n\n\nThese pages never contain real data. Examples use made-up or public data only."
+  },
+  {
+    "objectID": "pages/intro-to-github/01-git-vs-github.html",
+    "href": "pages/intro-to-github/01-git-vs-github.html",
+    "title": "Lesson 1: Git vs. GitHub: what and why",
+    "section": "",
+    "text": "Most of us have a folder that looks like this:\nanalysis_final.R\nanalysis_final_v2.R\nanalysis_final_v2_JL_edits.R\nanalysis_FINAL_actually_final.R\nVersion control replaces that with one file and a complete, labeled history of every change: who changed what, when, and why. You can go back to any earlier version at any time.\nFor public health work, this means:\n\nReproducibility. You can show exactly which code produced a report.\nCollaboration. Several people can work on the same project without emailing files or overwriting each other.\nContinuity. When someone leaves, their work and its history stay with the team.\nSafety. Mistakes can be undone.",
+    "crumbs": [
+      "Intro to Git & GitHub",
+      "Lessons",
+      "Lesson 1: Git vs. GitHub: what and why"
+    ]
+  },
+  {
+    "objectID": "pages/intro-to-github/01-git-vs-github.html#why-version-control",
+    "href": "pages/intro-to-github/01-git-vs-github.html#why-version-control",
+    "title": "Lesson 1: Git vs. GitHub: what and why",
+    "section": "",
+    "text": "Most of us have a folder that looks like this:\nanalysis_final.R\nanalysis_final_v2.R\nanalysis_final_v2_JL_edits.R\nanalysis_FINAL_actually_final.R\nVersion control replaces that with one file and a complete, labeled history of every change: who changed what, when, and why. You can go back to any earlier version at any time.\nFor public health work, this means:\n\nReproducibility. You can show exactly which code produced a report.\nCollaboration. Several people can work on the same project without emailing files or overwriting each other.\nContinuity. When someone leaves, their work and its history stay with the team.\nSafety. Mistakes can be undone.",
+    "crumbs": [
+      "Intro to Git & GitHub",
+      "Lessons",
+      "Lesson 1: Git vs. GitHub: what and why"
+    ]
+  },
+  {
+    "objectID": "pages/intro-to-github/01-git-vs-github.html#git-vs.-github",
+    "href": "pages/intro-to-github/01-git-vs-github.html#git-vs.-github",
+    "title": "Lesson 1: Git vs. GitHub: what and why",
+    "section": "Git vs. GitHub",
+    "text": "Git vs. GitHub\n\n\n\n\n\n\n\n\n\nGit\nGitHub\n\n\n\n\nWhat it is\nVersion control software\nA website that hosts Git repositories\n\n\nWhere it runs\nOn your computer\nIn the cloud (github.com)\n\n\nNeeds internet?\nNo\nYes\n\n\nWhat it does\nTracks changes to files in a folder\nStores a copy online, and adds collaboration tools: pull requests, issues, discussions, permissions, and websites (GitHub Pages)\n\n\nMade by\nLinus Torvalds (2005), open source\nGitHub, Inc. (owned by Microsoft)\n\n\n\nAn analogy: Git is like Microsoft Word’s “Track Changes,” and GitHub is like SharePoint where the tracked documents are stored and shared. You can use Git without GitHub, but GitHub needs Git.\nOther sites that host Git repositories include GitLab and Bitbucket. The Git skills are the same everywhere.",
+    "crumbs": [
+      "Intro to Git & GitHub",
+      "Lessons",
+      "Lesson 1: Git vs. GitHub: what and why"
+    ]
+  },
+  {
+    "objectID": "pages/intro-to-github/01-git-vs-github.html#three-ways-to-use-git-and-github",
+    "href": "pages/intro-to-github/01-git-vs-github.html#three-ways-to-use-git-and-github",
+    "title": "Lesson 1: Git vs. GitHub: what and why",
+    "section": "Three ways to use Git and GitHub",
+    "text": "Three ways to use Git and GitHub\n\n\n\n\n\n\n\nTool\nBest for\n\n\n\n\ngithub.com (web browser)\nQuick edits, reviewing pull requests, settings, Discussions\n\n\nGitHub Desktop (app)\nDay-to-day work without typing commands. Recommended for beginners\n\n\nCommand line (Git Bash or PowerShell on Windows; Terminal on Mac)\nFull control, automation, and working on servers\n\n\n\nRStudio and VS Code also have built-in Git panels. They do the same things as GitHub Desktop.",
+    "crumbs": [
+      "Intro to Git & GitHub",
+      "Lessons",
+      "Lesson 1: Git vs. GitHub: what and why"
+    ]
+  },
+  {
+    "objectID": "pages/intro-to-github/01-git-vs-github.html#key-vocabulary",
+    "href": "pages/intro-to-github/01-git-vs-github.html#key-vocabulary",
+    "title": "Lesson 1: Git vs. GitHub: what and why",
+    "section": "Key vocabulary",
+    "text": "Key vocabulary\n\n\n\n\n\n\n\nTerm\nMeaning\n\n\n\n\nRepository (repo)\nA project folder tracked by Git, including its full history\n\n\nCommit\nA saved snapshot of your changes, with a message explaining them\n\n\nLocal\nThe copy on your computer\n\n\nRemote\nThe copy on GitHub (usually called origin)\n\n\nPush\nSend your commits from local to remote\n\n\nPull\nBring new commits from remote to local\n\n\nBranch\nA separate line of work, so you can make changes without affecting the main version\n\n\nPull request (PR)\nA request to merge one branch into another, with a place for review and discussion\n\n\n\nSee the full glossary.",
+    "crumbs": [
+      "Intro to Git & GitHub",
+      "Lessons",
+      "Lesson 1: Git vs. GitHub: what and why"
+    ]
+  },
+  {
+    "objectID": "pages/intro-to-github/01-git-vs-github.html#the-big-picture",
+    "href": "pages/intro-to-github/01-git-vs-github.html#the-big-picture",
+    "title": "Lesson 1: Git vs. GitHub: what and why",
+    "section": "The big picture",
+    "text": "The big picture\n Your computer (local)                              GitHub (remote)\n┌───────────────────────────────────────┐         ┌─────────────────┐\n│ Working folder → Staging → Local repo │  push → │   Remote repo   │\n│     (edit)        (add)    (commit)   │ ← pull  │   (origin)      │\n└───────────────────────────────────────┘         └─────────────────┘\n\nEdit files as you normally would.\nStage (choose) the changes you want to save together.\nCommit them with a message.\nPush them to GitHub so others can see them.\nPull to get changes others have made.\n\nEvery lesson that follows builds on this loop.",
+    "crumbs": [
+      "Intro to Git & GitHub",
+      "Lessons",
+      "Lesson 1: Git vs. GitHub: what and why"
+    ]
+  },
+  {
+    "objectID": "pages/intro-to-github/03-repositories-readme-gitignore.html",
+    "href": "pages/intro-to-github/03-repositories-readme-gitignore.html",
+    "title": "Lesson 3: Repositories, READMEs, and .gitignore",
+    "section": "",
+    "text": "A repository (repo) is a project folder that Git tracks. It contains:\n\nyour files (code, documents, small example data)\na hidden .git folder that stores the complete history. Don’t edit or delete it.\n\nA good rule is one project per repo.",
+    "crumbs": [
+      "Intro to Git & GitHub",
+      "Lessons",
+      "Lesson 3: Repositories, READMEs, and .gitignore"
+    ]
+  },
+  {
+    "objectID": "pages/intro-to-github/03-repositories-readme-gitignore.html#what-is-a-repository",
+    "href": "pages/intro-to-github/03-repositories-readme-gitignore.html#what-is-a-repository",
+    "title": "Lesson 3: Repositories, READMEs, and .gitignore",
+    "section": "",
+    "text": "A repository (repo) is a project folder that Git tracks. It contains:\n\nyour files (code, documents, small example data)\na hidden .git folder that stores the complete history. Don’t edit or delete it.\n\nA good rule is one project per repo.",
+    "crumbs": [
+      "Intro to Git & GitHub",
+      "Lessons",
+      "Lesson 3: Repositories, READMEs, and .gitignore"
+    ]
+  },
+  {
+    "objectID": "pages/intro-to-github/03-repositories-readme-gitignore.html#creating-a-repository-on-github",
+    "href": "pages/intro-to-github/03-repositories-readme-gitignore.html#creating-a-repository-on-github",
+    "title": "Lesson 3: Repositories, READMEs, and .gitignore",
+    "section": "Creating a repository on GitHub",
+    "text": "Creating a repository on GitHub\n\nClick + (top right) → New repository.\n\n\n \n\n\nFill in the form:\n\n\n\nOwner: choose nv-ose for team work, or your own account for practice.\nRepository name: lowercase with hyphens, like flu-dashboard. See the SOP naming rules.\nDescription: one sentence.\nChoose visibility: Public or Private. See Lesson 8. When in doubt, choose Private.\nAdd README: turn it On.\nAdd .gitignore: choose a template, such as R or Python.\nAdd license: CC BY 4.0 for documents, MIT for code. This mostly matters for public repos.\n\n\nClick Create repository.\n\nYour new repository’s page lists its files, with branch, Add file, and Code buttons above them:",
+    "crumbs": [
+      "Intro to Git & GitHub",
+      "Lessons",
+      "Lesson 3: Repositories, READMEs, and .gitignore"
+    ]
+  },
+  {
+    "objectID": "pages/intro-to-github/03-repositories-readme-gitignore.html#readme.md",
+    "href": "pages/intro-to-github/03-repositories-readme-gitignore.html#readme.md",
+    "title": "Lesson 3: Repositories, READMEs, and .gitignore",
+    "section": "README.md",
+    "text": "README.md\nThe README is the front page of your repo. GitHub displays it automatically below the file list. It’s written in Markdown, a simple formatting language.\n\n\nA good README answers\n\nWhat is this?\nWho is it for, and who maintains it?\nHow do I use it? What software do I need, and in what order do I run the scripts?\nWhat’s in each folder?\nWhen was it last updated?\n\n\n\n\n\n\n\nTipREADME guide and template\n\n\n\nSee Writing a good README for what to include, tips, examples, and a downloadable NV OSE template.\n\n\n\n\nEditing a file on GitHub\nYou can edit a README (or any text file) right in the browser:\n\nOpen the file and click the pencil icon (Edit file).\n\n\n \n\n\nMake your changes on the Edit tab:\n\n\n\nClick Preview to check the formatting:\n\n\n\nClick Commit changes…, write a short message, and for shared repos choose Create a new branch… and start a pull request (Lesson 6).\n\n\n\nMarkdown basics\n\n\n\nYou type\nYou get\n\n\n\n\n# Heading\nLarge heading\n\n\n## Subheading\nSmaller heading\n\n\n**bold**\nbold\n\n\n*italic*\nitalic\n\n\n- item\nBulleted list\n\n\n1. item\nNumbered list\n\n\n[link text](https://example.com)\nlink text\n\n\n`code`\ncode\n\n\n![alt text](image.png)\nAn image\n\n\n\nFor a block of code, put three backticks (```) on the lines before and after it.\nGitHub’s Markdown guide covers more.",
+    "crumbs": [
+      "Intro to Git & GitHub",
+      "Lessons",
+      "Lesson 3: Repositories, READMEs, and .gitignore"
+    ]
+  },
+  {
+    "objectID": "pages/intro-to-github/03-repositories-readme-gitignore.html#gitignore",
+    "href": "pages/intro-to-github/03-repositories-readme-gitignore.html#gitignore",
+    "title": "Lesson 3: Repositories, READMEs, and .gitignore",
+    "section": ".gitignore",
+    "text": ".gitignore\n\n\n\n\n\n\nTipNV OSE standard .gitignore\n\n\n\nFor NV OSE projects, start from the standard .gitignore on the Project setup standard page. It already covers data folders, secrets, and R/Python/Quarto clutter.\n\n\nA .gitignore file tells Git which files to never track. It’s one of your most important safety tools.\n# Operating-system clutter\n.DS_Store\nThumbs.db\n\n# R\n.Rhistory\n.RData\n.Rproj.user/\n\n# Python\n__pycache__/\n.venv/\n\n# Secrets: NEVER commit these\n.env\n*.key\ncredentials.json\n\n# Data: keep real data out of Git\ndata/raw/\n*.sas7bdat\n*.xlsx\nHere’s the .gitignore for this training site, viewed on GitHub:\n\n\nHow it works\n\nEach line is a pattern. * matches anything, a trailing / means a folder, and # starts a comment.\nIgnored files stay on your computer. Git just doesn’t track them or upload them.\nGitHub has ready-made templates in the github/gitignore repo.\n\n\n\nGotcha: .gitignore doesn’t affect files already tracked\nIf a file was committed before you added it to .gitignore, Git keeps tracking it. To stop tracking it, but keep it on your computer:\ngit rm --cached path/to/file\ngit commit -m \"Stop tracking file\"\nThe file still exists in earlier commits. If it contained sensitive information, see Lesson 9.\n\n\n\n\n\n\nTipBest practice\n\n\n\nCreate the .gitignore first, before you add any data or secrets to the folder.",
+    "crumbs": [
+      "Intro to Git & GitHub",
+      "Lessons",
+      "Lesson 3: Repositories, READMEs, and .gitignore"
+    ]
+  },
+  {
+    "objectID": "pages/intro-to-github/03-repositories-readme-gitignore.html#other-common-files",
+    "href": "pages/intro-to-github/03-repositories-readme-gitignore.html#other-common-files",
+    "title": "Lesson 3: Repositories, READMEs, and .gitignore",
+    "section": "Other common files",
+    "text": "Other common files\n\n\n\n\n\n\n\nFile\nPurpose\n\n\n\n\nLICENSE\nTells others how they may reuse your work\n\n\nCONTRIBUTING.md\nHow to contribute. For NV OSE, it’s set org-wide in the .github repo\n\n\n.github/ folder\nGitHub-specific settings, such as issue templates and workflows",
+    "crumbs": [
+      "Intro to Git & GitHub",
+      "Lessons",
+      "Lesson 3: Repositories, READMEs, and .gitignore"
+    ]
+  },
+  {
+    "objectID": "pages/intro-to-github/05-command-line.html",
+    "href": "pages/intro-to-github/05-command-line.html",
+    "title": "Lesson 5: The basic workflow on the command line",
+    "section": "",
+    "text": "The command line (CLI) does everything GitHub Desktop does, and more. It’s also what you’ll use on servers and in automated pipelines.",
+    "crumbs": [
+      "Intro to Git & GitHub",
+      "Lessons",
+      "Lesson 5: The basic workflow on the command line"
+    ]
+  },
+  {
+    "objectID": "pages/intro-to-github/05-command-line.html#moving-around",
+    "href": "pages/intro-to-github/05-command-line.html#moving-around",
+    "title": "Lesson 5: The basic workflow on the command line",
+    "section": "Moving around",
+    "text": "Moving around\nSome basic commands for finding your way:\npwd                      # Show the folder you're in\nls                       # List files (add -a to include hidden files)\ncd Documents/GitHub      # Go into a folder\ncd ..                    # Go up one folder\nmkdir my-project         # Make a new folder",
+    "crumbs": [
+      "Intro to Git & GitHub",
+      "Lessons",
+      "Lesson 5: The basic workflow on the command line"
+    ]
+  },
+  {
+    "objectID": "pages/intro-to-github/05-command-line.html#option-a-start-a-new-repo-with-git-init",
+    "href": "pages/intro-to-github/05-command-line.html#option-a-start-a-new-repo-with-git-init",
+    "title": "Lesson 5: The basic workflow on the command line",
+    "section": "Option A: Start a new repo with git init",
+    "text": "Option A: Start a new repo with git init\nmkdir my-project\ncd my-project\ngit init                 # Turns this folder into a Git repo (creates the hidden .git folder)\nCreate a README and a .gitignore, then make your first commit:\necho \"# My Project\" &gt; README.md\necho \".DS_Store\" &gt; .gitignore\n\ngit status               # See what's changed\ngit add README.md .gitignore\ngit commit -m \"Initial commit: add README and .gitignore\"\nTo connect it to GitHub, first create an empty repo on github.com. Don’t add a README there, because you already have one. Then:\ngit remote add origin https://github.com/nv-ose/my-project.git\ngit push -u origin main  # -u remembers this remote, so next time just type: git push",
+    "crumbs": [
+      "Intro to Git & GitHub",
+      "Lessons",
+      "Lesson 5: The basic workflow on the command line"
+    ]
+  },
+  {
+    "objectID": "pages/intro-to-github/05-command-line.html#option-b-copy-an-existing-repo-with-git-clone",
+    "href": "pages/intro-to-github/05-command-line.html#option-b-copy-an-existing-repo-with-git-clone",
+    "title": "Lesson 5: The basic workflow on the command line",
+    "section": "Option B: Copy an existing repo with git clone",
+    "text": "Option B: Copy an existing repo with git clone\ncd ~/Documents/GitHub\ngit clone https://github.com/nv-ose/training.git\ncd training\ngit clone downloads the whole repo, including its history, and sets up origin for you.\nWhere to get the URL: on the repo’s GitHub page, click the green Code button, and copy the HTTPS URL:",
+    "crumbs": [
+      "Intro to Git & GitHub",
+      "Lessons",
+      "Lesson 5: The basic workflow on the command line"
+    ]
+  },
+  {
+    "objectID": "pages/intro-to-github/05-command-line.html#the-everyday-loop",
+    "href": "pages/intro-to-github/05-command-line.html#the-everyday-loop",
+    "title": "Lesson 5: The basic workflow on the command line",
+    "section": "The everyday loop",
+    "text": "The everyday loop\ngit pull                         # 1. Get the latest changes\n# ... edit files ...\ngit status                       # 2. See what changed\ngit diff                         # 3. See the exact line changes\ngit add filename.R               # 4. Stage specific files\ngit add .                        #    ...or stage everything (check git status first!)\ngit commit -m \"Add age filter\"   # 5. Commit\ngit push                         # 6. Send to GitHub\n\n\n\nCommand\nGitHub Desktop equivalent\n\n\n\n\ngit pull\nFetch origin / Pull origin\n\n\ngit status\nChanges tab\n\n\ngit diff\nClicking a file in the Changes tab\n\n\ngit add\nChecking a file’s box\n\n\ngit commit -m \"...\"\nSummary box + Commit to main\n\n\ngit push\nPush origin\n\n\ngit log --oneline\nHistory tab\n\n\n\n\n\n\n\n\n\nWarningBe careful with git add .\n\n\n\ngit add . stages everything, including files you may not want. Run git status first, and rely on your .gitignore.\n\n\ngit status is the command you’ll use most. It tells you which branch you’re on, whether you’re in sync with GitHub, and which files changed:",
+    "crumbs": [
+      "Intro to Git & GitHub",
+      "Lessons",
+      "Lesson 5: The basic workflow on the command line"
+    ]
+  },
+  {
+    "objectID": "pages/intro-to-github/05-command-line.html#looking-at-history",
+    "href": "pages/intro-to-github/05-command-line.html#looking-at-history",
+    "title": "Lesson 5: The basic workflow on the command line",
+    "section": "Looking at history",
+    "text": "Looking at history\ngit log                  # Full history\ngit log --oneline        # One line per commit\ngit log -p filename.R    # Every change to one file\ngit show abc1234         # Details of one commit (use the ID from git log)",
+    "crumbs": [
+      "Intro to Git & GitHub",
+      "Lessons",
+      "Lesson 5: The basic workflow on the command line"
+    ]
+  },
+  {
+    "objectID": "pages/intro-to-github/05-command-line.html#undoing-things",
+    "href": "pages/intro-to-github/05-command-line.html#undoing-things",
+    "title": "Lesson 5: The basic workflow on the command line",
+    "section": "Undoing things",
+    "text": "Undoing things\n\n\n\n\n\n\n\nSituation\nCommand\n\n\n\n\nDiscard unsaved edits to a file\ngit restore filename.R\n\n\nUnstage a file (keep the edits)\ngit restore --staged filename.R\n\n\nFix the last commit’s message (before pushing)\ngit commit --amend -m \"New message\"\n\n\nUndo a commit that’s already pushed\ngit revert abc1234. This creates a new commit that reverses it\n\n\n\n\n\n\n\n\n\nWarning\n\n\n\nAvoid git reset --hard and git push --force until you’re comfortable. They can permanently delete work.",
+    "crumbs": [
+      "Intro to Git & GitHub",
+      "Lessons",
+      "Lesson 5: The basic workflow on the command line"
+    ]
+  },
+  {
+    "objectID": "pages/intro-to-github/05-command-line.html#getting-help",
+    "href": "pages/intro-to-github/05-command-line.html#getting-help",
+    "title": "Lesson 5: The basic workflow on the command line",
+    "section": "Getting help",
+    "text": "Getting help\ngit help             # List common commands\ngit help commit      # Manual for a specific command",
+    "crumbs": [
+      "Intro to Git & GitHub",
+      "Lessons",
+      "Lesson 5: The basic workflow on the command line"
+    ]
+  },
+  {
+    "objectID": "pages/intro-to-github/07-clones-forks.html",
+    "href": "pages/intro-to-github/07-clones-forks.html",
+    "title": "Lesson 7: Clones, forks, and templates",
+    "section": "",
+    "text": "These three are easy to mix up.",
+    "crumbs": [
+      "Intro to Git & GitHub",
+      "Lessons",
+      "Lesson 7: Clones, forks, and templates"
+    ]
+  },
+  {
+    "objectID": "pages/intro-to-github/07-clones-forks.html#clone",
+    "href": "pages/intro-to-github/07-clones-forks.html#clone",
+    "title": "Lesson 7: Clones, forks, and templates",
+    "section": "Clone",
+    "text": "Clone\nYou did this in Lessons 4 and 5. Use it for any repo you can push to, which includes all NV OSE repos you’re a member of.",
+    "crumbs": [
+      "Intro to Git & GitHub",
+      "Lessons",
+      "Lesson 7: Clones, forks, and templates"
+    ]
+  },
+  {
+    "objectID": "pages/intro-to-github/07-clones-forks.html#fork",
+    "href": "pages/intro-to-github/07-clones-forks.html#fork",
+    "title": "Lesson 7: Clones, forks, and templates",
+    "section": "Fork",
+    "text": "Fork\nA fork is your own copy of someone else’s project, on GitHub.\n\nOn the repo’s page, click Fork (top right) → Create fork.\nClone your fork to your computer and make changes.\nTo suggest your changes to the original project, open a pull request from your fork.\nTo get the original’s newest changes, click Sync fork on your fork’s page.\n\n\nWhen to fork, and when to use a branch\n\nInside NV OSE: use branches, not forks. You already have access.\nOutside projects (another agency’s or an open-source package): fork.\n\n\n\nFork rules to know\n\nA fork of a public repo is public.\nA fork of a private repo stays private, and NV OSE has turned off forking of its private repos.\nIf a public repo is deleted or made private, existing public forks remain. This is one more reason never to put sensitive data in a public repo (see Lesson 9).",
+    "crumbs": [
+      "Intro to Git & GitHub",
+      "Lessons",
+      "Lesson 7: Clones, forks, and templates"
+    ]
+  },
+  {
+    "objectID": "pages/intro-to-github/07-clones-forks.html#template",
+    "href": "pages/intro-to-github/07-clones-forks.html#template",
+    "title": "Lesson 7: Clones, forks, and templates",
+    "section": "Template",
+    "text": "Template\nA template repo has a Use this template button. Clicking it creates a brand-new repo with the same files but none of the history. It’s great for standard project setups.\nThe GitHub Skills course Introduction to GitHub uses a template. Try it for extra hands-on practice.",
+    "crumbs": [
+      "Intro to Git & GitHub",
+      "Lessons",
+      "Lesson 7: Clones, forks, and templates"
+    ]
+  },
+  {
+    "objectID": "pages/intro-to-github/09-data-security.html",
+    "href": "pages/intro-to-github/09-data-security.html",
+    "title": "Lesson 9: Data security: what never goes on GitHub",
+    "section": "",
+    "text": "ImportantThe most important lesson in this training\n\n\n\nGit is designed to never forget. That’s great for code, and dangerous for data and secrets.",
+    "crumbs": [
+      "Intro to Git & GitHub",
+      "Lessons",
+      "Lesson 9: Data security: what never goes on GitHub"
+    ]
+  },
+  {
+    "objectID": "pages/intro-to-github/09-data-security.html#never-commit-any-of-these-in-public-or-private-repos",
+    "href": "pages/intro-to-github/09-data-security.html#never-commit-any-of-these-in-public-or-private-repos",
+    "title": "Lesson 9: Data security: what never goes on GitHub",
+    "section": "Never commit any of these, in public or private repos",
+    "text": "Never commit any of these, in public or private repos\n\nData\n\n❌ Protected health information (PHI): names, dates of birth, addresses, medical record numbers, case details\n❌ Personally identifiable information (PII): Social Security numbers, phone numbers, email addresses of the public\n❌ Line-level surveillance or case data, even if it’s “de-identified.” Small counts and combinations of fields (age + ZIP code + date) can identify people.\n❌ Data covered by data use agreements (DUAs), IRB protocols, HIPAA, or state confidentiality rules\n❌ Unreleased or provisional numbers that haven’t been cleared\n\n\n\nSecrets (credentials)\n\n❌ Passwords, including database and server passwords\n❌ API keys and tokens, such as REDCap, Census, or cloud service keys, and GitHub tokens\n❌ Usernames paired with systems, connection strings, and internal server names or IP addresses\n❌ Private keys and certificates (.pem, .key, id_rsa)\n❌ .env files and config files that contain any of the above\n\n\n\nAlso avoid\n\n❌ Large files. GitHub warns at 50 MB and blocks files over 100 MB.\n❌ Copyrighted material you don’t have rights to share",
+    "crumbs": [
+      "Intro to Git & GitHub",
+      "Lessons",
+      "Lesson 9: Data security: what never goes on GitHub"
+    ]
+  },
+  {
+    "objectID": "pages/intro-to-github/09-data-security.html#why-just-delete-it-doesnt-work",
+    "href": "pages/intro-to-github/09-data-security.html#why-just-delete-it-doesnt-work",
+    "title": "Lesson 9: Data security: what never goes on GitHub",
+    "section": "Why “just delete it” doesn’t work",
+    "text": "Why “just delete it” doesn’t work\nWhen you commit a file, Git stores it permanently in the history. If you delete it and commit again:\nCommit 1: Add analysis.R + patients.csv      ← patients.csv is still here\nCommit 2: Delete patients.csv                ← only hidden from the latest version\nAnyone with access can still:\n\nopen History, or run git log, and view the old commit\ncheck out the old commit and get the file back\nfind it in every clone and fork made before you deleted it\n\nAnd in a public repo:\n\nAutomated bots scan GitHub for leaked secrets within minutes of a push.\nSearch engines and archives may have already copied it.\nMaking the repo private, or deleting it, doesn’t undo copies that already exist.\n\nRemoving something from history completely requires rewriting the history (with tools like git filter-repo or BFG), force-pushing, getting everyone to re-clone, and sometimes contacting GitHub Support. It’s slow and error-prone, and never fully guaranteed. Prevention is much easier.",
+    "crumbs": [
+      "Intro to Git & GitHub",
+      "Lessons",
+      "Lesson 9: Data security: what never goes on GitHub"
+    ]
+  },
+  {
+    "objectID": "pages/intro-to-github/09-data-security.html#how-to-keep-secrets-and-data-out",
+    "href": "pages/intro-to-github/09-data-security.html#how-to-keep-secrets-and-data-out",
+    "title": "Lesson 9: Data security: what never goes on GitHub",
+    "section": "How to keep secrets and data out",
+    "text": "How to keep secrets and data out\n\n1. Set up .gitignore first\nBefore adding anything else to a new repo:\n.env\n*.key\n*.pem\ncredentials*\nconfig/secrets.*\ndata/raw/\ndata/confidential/\n*.sas7bdat\n*.xlsx\n*.csv\nYou can add exceptions for safe files, for example !data/example/*.csv.\n\n\n2. Keep secrets out of code\n❌ Don’t do this:\ncon &lt;- dbConnect(odbc(), uid = \"jsmith\", pwd = \"Summer2026!\")\napi_key &lt;- \"a1b2c3d4e5f6\"\n✅ Do this instead. Store secrets in a file that Git ignores, or in your system’s environment variables.\nR: put the values in your personal .Renviron file. In R, run file.edit(\"~/.Renviron\") to open it. On Windows it’s usually in your Documents folder (C:\\Users\\&lt;you&gt;\\Documents\\.Renviron), outside any project, so it isn’t committed. If you ever keep one inside a project, add .Renviron to .gitignore.\n# .Renviron (never committed)\nDB_USER=jsmith\nDB_PASS=Summer2026!\n# analysis.R (safe to commit)\ncon &lt;- dbConnect(odbc(),\n                 uid = Sys.getenv(\"DB_USER\"),\n                 pwd = Sys.getenv(\"DB_PASS\"))\nPython: put the values in .env, and add .env to .gitignore.\nimport os\nfrom dotenv import load_dotenv\nload_dotenv()\napi_key = os.getenv(\"API_KEY\")\nEven better, use your agency’s approved password manager or secrets tool.\n\n\n3. Keep data out of the repo\n\nStore real data on approved agency storage, such as secure network drives, and point your code to it.\nCommit code, not data. Document in the README where authorized users can find the data.\nFor examples and training, use synthetic (fake) data or public, aggregated datasets.\n\n\n\n4. Review before every commit\n\nIn GitHub Desktop, look at every file and line in the Changes tab.\nOn the command line, run git status and git diff --staged before committing.\nAsk yourself: Would I be comfortable if this were on the front page of the news?\n\n\n\n5. Let GitHub help\n\nPush protection blocks many known secret formats, such as API keys and tokens. NV OSE has it turned on for public repos. Turn it on for your own account too: Settings → Code security → Push protection for yourself.\nDon’t rely on it alone. It doesn’t detect PHI or data, and it doesn’t catch every kind of password.",
+    "crumbs": [
+      "Intro to Git & GitHub",
+      "Lessons",
+      "Lesson 9: Data security: what never goes on GitHub"
+    ]
+  },
+  {
+    "objectID": "pages/intro-to-github/09-data-security.html#if-something-sensitive-is-committed",
+    "href": "pages/intro-to-github/09-data-security.html#if-something-sensitive-is-committed",
+    "title": "Lesson 9: Data security: what never goes on GitHub",
+    "section": "If something sensitive is committed",
+    "text": "If something sensitive is committed\nAct quickly, and don’t try to hide it.\n\nDon’t push, if you haven’t yet. Undo the commit: in GitHub Desktop, History → Undo commit; on the command line, git reset --soft HEAD~1. Then remove the file and add it to .gitignore.\nIf it’s already pushed:\n\nTell an NV OSE owner immediately: Max Wegener (mwegener@health.nv.gov) or Jordan Lancaster (jlancaster@health.nv.gov).\nSecrets: revoke or change them right away. Treat the password or token as compromised, even if the repo is private or you deleted it quickly.\nData (PHI/PII): follow the agency’s privacy and security incident reporting procedures. This may be a reportable breach.\n\nAn owner will help remove it from history and check forks and clones.",
+    "crumbs": [
+      "Intro to Git & GitHub",
+      "Lessons",
+      "Lesson 9: Data security: what never goes on GitHub"
+    ]
+  },
+  {
+    "objectID": "pages/intro-to-github/09-data-security.html#quick-self-check",
+    "href": "pages/intro-to-github/09-data-security.html#quick-self-check",
+    "title": "Lesson 9: Data security: what never goes on GitHub",
+    "section": "Quick self-check",
+    "text": "Quick self-check\nBefore you push, ask:\n\nDid I check every changed file?\nIs there any real data, or anything that could identify a person?\nIs there any password, token, key, username, or server name?\nIs my .gitignore covering data and secret files?\nIf this repo is public, is everything in it cleared for public release?",
+    "crumbs": [
+      "Intro to Git & GitHub",
+      "Lessons",
+      "Lesson 9: Data security: what never goes on GitHub"
+    ]
+  },
+  {
+    "objectID": "pages/intro-to-github/exercises.html",
+    "href": "pages/intro-to-github/exercises.html",
+    "title": "Hands-on exercises",
+    "section": "",
+    "text": "Do these in your personal GitHub account, or in a practice repo an owner creates for the workshop. Don’t use real NV OSE project repos.",
     "crumbs": [
       "Intro to Git & GitHub",
       "Practice and reference",
-      "Glossary"
+      "Hands-on exercises"
+    ]
+  },
+  {
+    "objectID": "pages/intro-to-github/exercises.html#exercise-1-create-a-repository-lesson-3-10-min",
+    "href": "pages/intro-to-github/exercises.html#exercise-1-create-a-repository-lesson-3-10-min",
+    "title": "Hands-on exercises",
+    "section": "Exercise 1: Create a repository (Lesson 3, 10 min)",
+    "text": "Exercise 1: Create a repository (Lesson 3, 10 min)\n\nOn github.com, create a new private repo named github-practice.\nCheck Add a README file, and choose the R (or Python) .gitignore template.\nClick the pencil icon on the README and edit it so it includes:\n\na heading with your name\none sentence about what you hope to use GitHub for\na bulleted list of three things\na link to the NV OSE SOP\n\nCommit directly to main with the message Update README.\nOpen .gitignore. Find one line you understand and one you don’t.\n\nCheck: the README shows your formatting on the repo’s front page.",
+    "crumbs": [
+      "Intro to Git & GitHub",
+      "Practice and reference",
+      "Hands-on exercises"
+    ]
+  },
+  {
+    "objectID": "pages/intro-to-github/exercises.html#exercise-2-clone-edit-commit-push-with-github-desktop-lesson-4-15-min",
+    "href": "pages/intro-to-github/exercises.html#exercise-2-clone-edit-commit-push-with-github-desktop-lesson-4-15-min",
+    "title": "Hands-on exercises",
+    "section": "Exercise 2: Clone, edit, commit, push with GitHub Desktop (Lesson 4, 15 min)",
+    "text": "Exercise 2: Clone, edit, commit, push with GitHub Desktop (Lesson 4, 15 min)\n\nIn GitHub Desktop: File → Clone repository, then choose github-practice.\nOpen the folder and create a file called notes.md that contains the line My first commit from Desktop.\nIn GitHub Desktop, look at the change in the Changes tab.\nCommit it with the summary Add notes file.\nClick Push origin.\nRefresh the repo on github.com. Is notes.md there?\nOpen the History tab in Desktop. How many commits do you see?",
+    "crumbs": [
+      "Intro to Git & GitHub",
+      "Practice and reference",
+      "Hands-on exercises"
+    ]
+  },
+  {
+    "objectID": "pages/intro-to-github/exercises.html#exercise-3-the-command-line-and-git-init-lesson-5-20-min",
+    "href": "pages/intro-to-github/exercises.html#exercise-3-the-command-line-and-git-init-lesson-5-20-min",
+    "title": "Hands-on exercises",
+    "section": "Exercise 3: The command line and git init (Lesson 5, 20 min)",
+    "text": "Exercise 3: The command line and git init (Lesson 5, 20 min)\n\nOpen Git Bash (Mac: Terminal) and run:\ncd ~/Documents\nmkdir cli-practice\ncd cli-practice\ngit init\nCreate a README and a .gitignore:\necho \"# CLI Practice\" &gt; README.md\necho \".env\" &gt; .gitignore\nCreate a fake secrets file: echo \"API_KEY=fake123\" &gt; .env\nRun git status. Is .env listed? Why or why not?\nStage and commit:\ngit add .\ngit commit -m \"Initial commit\"\ngit log --oneline\nOn github.com, create an empty, private repo named cli-practice. Don’t add a README. Then follow the commands GitHub shows under “…or push an existing repository from the command line.”\nRefresh github.com. Confirm .env was NOT uploaded.",
+    "crumbs": [
+      "Intro to Git & GitHub",
+      "Practice and reference",
+      "Hands-on exercises"
+    ]
+  },
+  {
+    "objectID": "pages/intro-to-github/exercises.html#exercise-4-branch-and-pull-request-lesson-6-20-min-best-in-pairs",
+    "href": "pages/intro-to-github/exercises.html#exercise-4-branch-and-pull-request-lesson-6-20-min-best-in-pairs",
+    "title": "Hands-on exercises",
+    "section": "Exercise 4: Branch and pull request (Lesson 6, 20 min, best in pairs)",
+    "text": "Exercise 4: Branch and pull request (Lesson 6, 20 min, best in pairs)\n\nIn github-practice, create a branch named yourname/add-favorite.\nAdd a line to notes.md: My favorite dataset is ...\nCommit, publish the branch, and click Create Pull Request.\nAdd your partner as a reviewer. (They’ll need access: Settings → Collaborators.)\nPartner: open the PR → Files changed → leave one comment → Approve.\nMerge the PR, delete the branch, and pull main in Desktop.\n\nBonus, create a merge conflict: on two different branches, change the same line of notes.md. Merge one, then try to merge the other, and resolve the conflict.",
+    "crumbs": [
+      "Intro to Git & GitHub",
+      "Practice and reference",
+      "Hands-on exercises"
+    ]
+  },
+  {
+    "objectID": "pages/intro-to-github/exercises.html#exercise-5-spot-the-problem-lesson-9-10-min-discussion",
+    "href": "pages/intro-to-github/exercises.html#exercise-5-spot-the-problem-lesson-9-10-min-discussion",
+    "title": "Hands-on exercises",
+    "section": "Exercise 5: Spot the problem (Lesson 9, 10 min, discussion)",
+    "text": "Exercise 5: Spot the problem (Lesson 9, 10 min, discussion)\nEach of these is about to be committed. What’s wrong, and what should happen instead?\nA.\nlibrary(DBI)\ncon &lt;- dbConnect(odbc::odbc(), server = \"db-server.example.org\",\n                 uid = \"jsmith\", pwd = \"Winter2026!\")\nB. A folder data/ containing measles_cases_2026.csv, with columns name, dob, zip, onset_date.\nC. A colleague says: “I accidentally pushed my API key, but I deleted the file and pushed again, so it’s fine.”\nD. A private repo with a summary table where one county has a count of 2.\nE. .gitignore contains data/, but data/cases.csv still shows up on GitHub.\n\n\n\n\n\n\nTipShow answers\n\n\n\n\n\nA. It contains a password, a username, and an internal server name. Move the credentials to .Renviron or .env (ignored by Git) and use Sys.getenv(). Leave out the server name too, or keep it in config. If this was already pushed, change the password and tell an owner.\nB. This is line-level PHI. It must never be on GitHub, public or private. Keep it on approved secure storage, add data/ to .gitignore, and use synthetic data for examples. If it was pushed, tell an owner and follow incident reporting procedures.\nC. Not fine. The key is still in the history, and bots may already have it. Revoke the key right away, tell an owner, and clean the history.\nD. Small cell counts can identify people. Follow the agency’s small-number suppression rules before sharing, even internally.\nE. .gitignore doesn’t affect files that were already tracked. Run git rm --cached data/cases.csv and commit. The file remains in history, so treat it as exposed if it’s sensitive.",
+    "crumbs": [
+      "Intro to Git & GitHub",
+      "Practice and reference",
+      "Hands-on exercises"
+    ]
+  },
+  {
+    "objectID": "pages/intro-to-github/exercises.html#extra-practice",
+    "href": "pages/intro-to-github/exercises.html#extra-practice",
+    "title": "Hands-on exercises",
+    "section": "Extra practice",
+    "text": "Extra practice\n\nGitHub Skills: Introduction to GitHub, an interactive course of under an hour\nGitHub Skills: Communicate using Markdown",
+    "crumbs": [
+      "Intro to Git & GitHub",
+      "Practice and reference",
+      "Hands-on exercises"
+    ]
+  },
+  {
+    "objectID": "pages/intro-to-github/index.html",
+    "href": "pages/intro-to-github/index.html",
+    "title": "Introduction to Git and GitHub",
+    "section": "",
+    "text": "A beginner-friendly training on version control with Git and GitHub, written for NV OSE staff and public health professionals. No prior experience needed.",
+    "crumbs": [
+      "Intro to Git & GitHub",
+      "Overview"
+    ]
+  },
+  {
+    "objectID": "pages/intro-to-github/index.html#overview",
+    "href": "pages/intro-to-github/index.html#overview",
+    "title": "Introduction to Git and GitHub",
+    "section": "Overview",
+    "text": "Overview\n\nAudience: Anyone new to Git and GitHub: epidemiologists, analysts, and program staff\nLevel: Beginner\nDuration: About 3 hours (can be split into two sessions)\nFormat: Workshop or self-paced",
+    "crumbs": [
+      "Intro to Git & GitHub",
+      "Overview"
+    ]
+  },
+  {
+    "objectID": "pages/intro-to-github/index.html#learning-objectives",
+    "href": "pages/intro-to-github/index.html#learning-objectives",
+    "title": "Introduction to Git and GitHub",
+    "section": "Learning objectives",
+    "text": "Learning objectives\nBy the end of this training, you will be able to:\n\nExplain the difference between Git and GitHub, and why version control matters.\nCreate a repository with a README and a .gitignore.\nMake, commit, push, and pull changes using GitHub Desktop and the command line.\nUse branches and pull requests to collaborate safely, and explain what a fork is.\nChoose between public and private repositories.\nKeep data, passwords, and API tokens out of GitHub, and know what to do if something is committed by mistake.",
+    "crumbs": [
+      "Intro to Git & GitHub",
+      "Overview"
+    ]
+  },
+  {
+    "objectID": "pages/intro-to-github/index.html#prerequisites",
+    "href": "pages/intro-to-github/index.html#prerequisites",
+    "title": "Introduction to Git and GitHub",
+    "section": "Prerequisites",
+    "text": "Prerequisites\n\nA free GitHub account with two-factor authentication turned on\nGitHub Desktop installed\nGit installed (for the command-line lesson)\nA text editor, such as VS Code or RStudio\n\n\n\n\n\n\n\nNote\n\n\n\nOn a state computer you may need IT to install software. Request it ahead of time.",
+    "crumbs": [
+      "Intro to Git & GitHub",
+      "Overview"
+    ]
+  },
+  {
+    "objectID": "pages/intro-to-github/index.html#lessons",
+    "href": "pages/intro-to-github/index.html#lessons",
+    "title": "Introduction to Git and GitHub",
+    "section": "Lessons",
+    "text": "Lessons\n\n\n\n#\nLesson\nTime\n\n\n\n\n1\nGit vs. GitHub: what and why\n15 min\n\n\n2\nSetting up\n20 min\n\n\n3\nRepositories, READMEs, and .gitignore\n20 min\n\n\n4\nThe basic workflow in GitHub Desktop\n25 min\n\n\n5\nThe basic workflow on the command line\n25 min\n\n\n6\nBranches and pull requests\n25 min\n\n\n7\nClones, forks, and templates\n10 min\n\n\n8\nPublic vs. private repositories\n10 min\n\n\n9\nData security: what never goes on GitHub\n20 min\n\n\n\nAlso included:\n\nHands-on exercises\nWriting a good README, with a downloadable template\nProject setup standard: the NV OSE folder structure, standard .gitignore, and a downloadable starter project\nCheat sheet: the commands and buttons you’ll use most\nGlossary\nFurther resources",
+    "crumbs": [
+      "Intro to Git & GitHub",
+      "Overview"
+    ]
+  },
+  {
+    "objectID": "pages/intro-to-github/index.html#maintainer",
+    "href": "pages/intro-to-github/index.html#maintainer",
+    "title": "Introduction to Git and GitHub",
+    "section": "Maintainer",
+    "text": "Maintainer\nMax Wegener — mwegener@health.nv.gov",
+    "crumbs": [
+      "Intro to Git & GitHub",
+      "Overview"
+    ]
+  },
+  {
+    "objectID": "pages/intro-to-github/index.html#license",
+    "href": "pages/intro-to-github/index.html#license",
+    "title": "Introduction to Git and GitHub",
+    "section": "License",
+    "text": "License\nCC BY 4.0",
+    "crumbs": [
+      "Intro to Git & GitHub",
+      "Overview"
+    ]
+  },
+  {
+    "objectID": "pages/intro-to-github/index.html#last-updated",
+    "href": "pages/intro-to-github/index.html#last-updated",
+    "title": "Introduction to Git and GitHub",
+    "section": "Last updated",
+    "text": "Last updated\n2026-10-27",
+    "crumbs": [
+      "Intro to Git & GitHub",
+      "Overview"
     ]
   },
   {
@@ -2347,7 +2455,7 @@
     "href": "pages/intro-to-github/readme-guide.html#the-nv-ose-template",
     "title": "Writing a good README",
     "section": "The NV OSE template",
-    "text": "The NV OSE template\n⬇ Download README-template.md, rename it to README.md, put it in your project’s top folder, and fill it in. Delete sections you don’t need.\n# Project Title\n\nOne sentence: what this project does and who it's for.\n\n## Overview\n- **Purpose:** ...\n- **Program area:** ...\n- **Status:** Active / In development / Archived\n- **Maintainer:** Name (email)\n\n## Quick start\n1. ...\n\n## Project structure\n(folder tree)\n\n## Requirements\n## Setup\n## Data\n## Outputs\n## Troubleshooting\n## Contributing\n## License\n## Last updated\nYYYY-MM-DD",
+    "text": "The NV OSE template\n⬇ Download README-template.md, rename it to README.md, put it in your project’s top folder, and fill it in. Delete sections you don’t need.\n# Project Title\n\nOne sentence: what this project does and who it's for.\n\n## Overview\n- **Purpose:** ...\n- **Program area:** ...\n- **Status:** Active / In development / Archived\n- **Maintainer:** Name (email)\n\n## Quick start\n1. ...\n\n## Project structure\n(folder tree)\n\n## Requirements\n## Setup\n## Data\n## Outputs\n## Troubleshooting\n## Contributing\n## License\n## Last updated\nYYYY-MM-DD\n\n\n\n\n\n\nNote\n\n\n\nThe README is one part of the Project setup standard, which also covers the folder structure, the standard .gitignore, and a downloadable starter project.",
     "crumbs": [
       "Intro to Git & GitHub",
       "Practice and reference",
@@ -2479,7 +2587,7 @@
     "href": "pages/intro-to-positron/03-projects.html#creating-a-new-project-from-a-template",
     "title": "Lesson 3: Projects: folders, not .Rproj",
     "section": "Creating a new project from a template",
-    "text": "Creating a new project from a template\nPositron can create a new project folder for you: File → New Folder from Template…\n\n\nChoose R Project (or Python Project), and click Next.\nEnter a Folder Name (lowercase, hyphens: my-r-project) and choose its Location, such as your Documents\\GitHub folder.\n\nLeave Initialize Git repository unchecked for now. You’ll set up Git in Lesson 7, after adding a .gitignore.\nChoose the R version, and leave Use renv unchecked unless you already use renv. Click Create.\n\n\nPositron creates the folder and opens it.\n\n\n\n\n\n\nNoteWhere to keep projects\n\n\n\nKeep projects you’ll put on GitHub in Documents\\GitHub\\ (or Documents\\GitHub\\NV-OSE\\ for NV OSE repos). Avoid shared network drives for Git projects: Git and network drives don’t mix well.",
+    "text": "Creating a new project from a template\nPositron can create a new project folder for you: File → New Folder from Template…\n\n\nChoose R Project (or Python Project), and click Next.\nEnter a Folder Name (lowercase, hyphens: my-r-project) and choose its Location, such as your Documents\\GitHub folder.\n\nLeave Initialize Git repository unchecked for now. You’ll set up Git in Lesson 7, after adding a .gitignore.\nChoose the R version, and leave Use renv unchecked unless you already use renv. Click Create.\n\n\nPositron creates the folder and opens it.\n\n\n\n\n\n\nImportantWhere to keep projects, and where to keep data\n\n\n\nKeep the code separate from any sensitive data:\n\nProject folder (code): in Documents\\GitHub\\ on your computer (or Documents\\GitHub\\NV-OSE\\ for NV OSE repos). Scripts, notebooks, and the README contain no PHI, and Git works best on a local drive. Avoid network drives for Git projects.\nPHI/PII data: stays on the approved network drive. Never copy it to your computer. Your scripts read it from there, using a path saved in your personal .Renviron file.\n\nSee Where the data lives for how to set this up.",
     "crumbs": [
       "Intro to Positron",
       "Lessons",
@@ -2842,7 +2950,7 @@
     "href": "pages/intro-to-positron/quick-reference.html#starting-a-new-project-checklist",
     "title": "Quick reference",
     "section": "Starting a new project checklist",
-    "text": "Starting a new project checklist\n\nCreate or open the folder (File → Open Folder… or New Folder from Template…)\nCreate the folders: scripts/, notebooks/, raw_data/, processed_data/, images/, reports/, downloads/\nAdd README.md (template)\nAdd .here (here::set_here())\nAdd .gitignore (data folders and secrets)\nInitialize Git and make a first commit\nPublish privately to nv-ose with GitHub Desktop",
+    "text": "Starting a new project checklist\nFull details: Project setup standard. Fastest start: download its starter project.\n\nCreate or open the folder (File → Open Folder… or New Folder from Template…)\nCreate the folders: scripts/, notebooks/, raw_data/, processed_data/, images/, reports/, downloads/\nAdd README.md (template)\nAdd .here (here::set_here())\nAdd .gitignore (data folders and secrets)\nKeep PHI/PII on the network drive; save its path in ~/.Renviron\nInitialize Git and make a first commit\nPublish privately to nv-ose with GitHub Desktop",
     "crumbs": [
       "Intro to Positron",
       "Reference",

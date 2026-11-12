@@ -606,17 +606,22 @@ Warning
 <p><img src="../../images/intro-to-positron/05f-project-configuration.png" class="img-fluid" style="width:70.0%" alt="The Project Configuration step. R 4.5.2 is selected as the R version, and an Advanced Configuration checkbox 'Use renv to create a reproducible environment' is unchecked. A Create button is at the bottom right."></p></li>
 </ol>
 <p>Positron creates the folder and opens it.</p>
-<div class="callout callout-style-default callout-note callout-titled" title="Where to keep projects">
+<div class="callout callout-style-default callout-important callout-titled" title="Where to keep projects, and where to keep data">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Where to keep projects
+<span class="screen-reader-only">Important</span>Where to keep projects, and where to keep data
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Keep projects you’ll put on GitHub in <code>Documents\GitHub\</code> (or <code>Documents\GitHub\NV-OSE\</code> for NV OSE repos). Avoid shared network drives for Git projects: Git and network drives don’t mix well.</p>
+<p>Keep the <strong>code</strong> separate from any <strong>sensitive data</strong>:</p>
+<ul>
+<li><strong>Project folder (code):</strong> in <code>Documents\GitHub\</code> on your computer (or <code>Documents\GitHub\NV-OSE\</code> for NV OSE repos). Scripts, notebooks, and the README contain no PHI, and Git works best on a local drive. Avoid network drives for Git projects.</li>
+<li><strong>PHI/PII data:</strong> stays on the <strong>approved network drive</strong>. Never copy it to your computer. Your scripts read it from there, using a path saved in your personal <code>.Renviron</code> file.</li>
+</ul>
+<p>See <a href="../../pages/intro-to-github/project-setup.html#where-the-data-lives">Where the data lives</a> for how to set this up.</p>
 </div>
 </div>
 </section>

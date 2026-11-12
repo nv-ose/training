@@ -41,9 +41,10 @@ project-name/
 First-time steps, for example:
 
 1. Install the packages: `install.packages(c("tidyverse", "here"))`
-2. Add credentials to your personal `~/.Renviron` (never to this project):
+2. Add credentials and data paths to your personal `~/.Renviron` (never to this project):
    ```
    EXAMPLE_API_KEY=your_key
+   PROJECT_DATA_DIR="S:/path/to/approved/data/folder"
    ```
 3. Restart R.
 
@@ -51,9 +52,10 @@ First-time steps, for example:
 
 | Data | Source | Where it's stored | Updated |
 |---|---|---|---|
-| Weekly case counts | REDCap project | `raw_data/` (local only, not in Git) | Weekly |
+| Case line list (PHI) | REDCap project | Network drive, read from `PROJECT_DATA_DIR` | Weekly |
+| Public counts | CDC FluView | `raw_data/` (local only, not in Git) | Weekly |
 
-Real data is **never** committed to this repository.
+PHI/PII stays on the network drive and is never copied to this folder. Real data is **never** committed to this repository.
 
 ## Outputs
 

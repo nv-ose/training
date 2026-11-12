@@ -1,0 +1,1353 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Project setup standard – NV OSE Training</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../pages/intro-to-github/cheatsheet.html" rel="next">
+<link href="../../pages/intro-to-github/readme-guide.html" rel="prev">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-b85bc7c33db8c58e0ec93c3465666fed.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-56cbe7e2c74e93eb5a74d5d451ceeedd.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-ca9b2201628fc86bb467812d21859389.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-56cbe7e2c74e93eb5a74d5d451ceeedd.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-sidebar docked nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const queryPrefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+    const darkModeDefault = queryPrefersDark.matches;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    queryPrefersDark.addEventListener("change", e => {
+      if(window.localStorage.getItem("quarto-color-scheme") !== null)
+        return;
+      const alternate = e.matches
+      toggleColorMode(alternate);
+      localAlternateSentinel = e.matches ? 'alternate' : 'default'; // this is used alongside local storage!
+      toggleGiscusIfUsed(alternate, darkModeDefault);
+    });
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../images/logo.png" alt="Office of State Epidemiology logo" class="navbar-logo light-content">
+    <img src="../../images/logo.png" alt="Office of State Epidemiology logo" class="navbar-logo dark-content">
+    </a>
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">NV OSE Training</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../pages/intro-to-positron/index.html"> 
+<span class="menu-text">Intro to Positron</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="../../pages/intro-to-github/index.html" aria-current="page"> 
+<span class="menu-text">Intro to Git &amp; GitHub</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../pages/intro-to-quarto/index.html"> 
+<span class="menu-text">Intro to Quarto</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="mailto:mwegener@health.nv.gov?subject=NV%20OSE%20Training%20feedback"> <i class="bi bi-envelope" role="img">
+</i> 
+<span class="menu-text">Feedback</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/nv-ose/training"> <i class="bi bi-github" role="img" aria-label="Training materials on GitHub">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../pages/intro-to-github/exercises.html">Practice and reference</a></li><li class="breadcrumb-item"><a href="../../pages/intro-to-github/project-setup.html">Project setup standard</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/intro-to-github/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Overview</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Lessons</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/intro-to-github/01-git-vs-github.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lesson 1: Git vs.&nbsp;GitHub: what and why</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/intro-to-github/02-setup.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lesson 2: Setting up</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/intro-to-github/03-repositories-readme-gitignore.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lesson 3: Repositories, READMEs, and .gitignore</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/intro-to-github/04-github-desktop.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lesson 4: The basic workflow in GitHub Desktop</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/intro-to-github/05-command-line.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lesson 5: The basic workflow on the command line</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/intro-to-github/06-branches-pull-requests.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lesson 6: Branches and pull requests</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/intro-to-github/07-clones-forks.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lesson 7: Clones, forks, and templates</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/intro-to-github/08-public-vs-private.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lesson 8: Public vs.&nbsp;private repositories</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/intro-to-github/09-data-security.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lesson 9: Data security: what never goes on GitHub</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Practice and reference</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/intro-to-github/exercises.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Hands-on exercises</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/intro-to-github/readme-guide.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Writing a good README</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/intro-to-github/project-setup.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Project setup standard</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/intro-to-github/cheatsheet.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Git and GitHub cheat sheet</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/intro-to-github/glossary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Glossary</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/intro-to-github/resources.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Further resources</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#the-folder-structure" id="toc-the-folder-structure" class="nav-link active" data-scroll-target="#the-folder-structure">The folder structure</a></li>
+  <li><a href="#where-the-data-lives" id="toc-where-the-data-lives" class="nav-link" data-scroll-target="#where-the-data-lives">Where the data lives</a>
+  <ul class="collapse">
+  <li><a href="#point-your-code-to-the-data-with-.renviron" id="toc-point-your-code-to-the-data-with-.renviron" class="nav-link" data-scroll-target="#point-your-code-to-the-data-with-.renviron">Point your code to the data with <code>.Renviron</code></a></li>
+  </ul></li>
+  <li><a href="#naming-files-and-folders" id="toc-naming-files-and-folders" class="nav-link" data-scroll-target="#naming-files-and-folders">Naming files and folders</a></li>
+  <li><a href="#the-readme" id="toc-the-readme" class="nav-link" data-scroll-target="#the-readme">The README</a></li>
+  <li><a href="#the-standard-.gitignore" id="toc-the-standard-.gitignore" class="nav-link" data-scroll-target="#the-standard-.gitignore">The standard <code>.gitignore</code></a></li>
+  <li><a href="#paths-.here-and-here" id="toc-paths-.here-and-here" class="nav-link" data-scroll-target="#paths-.here-and-here">Paths: <code>.here</code> and <code>here()</code></a></li>
+  <li><a href="#reports" id="toc-reports" class="nav-link" data-scroll-target="#reports">Reports</a></li>
+  <li><a href="#new-project-checklist" id="toc-new-project-checklist" class="nav-link" data-scroll-target="#new-project-checklist">New project checklist</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../pages/intro-to-github/exercises.html">Practice and reference</a></li><li class="breadcrumb-item"><a href="../../pages/intro-to-github/project-setup.html">Project setup standard</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Project setup standard</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>Every NV OSE project, whether it’s a weekly report, a dashboard pipeline, or a one-off analysis, uses the <strong>same structure and the same rules</strong>. Anyone can open anyone’s project and know where things are, what to run, and what stays out of Git.</p>
+<p><a href="../../practice/nv-ose-project-template.zip" class="btn btn-outline-primary" download="nv-ose-project-template.zip">⬇ Download the starter project</a> <a href="gitignore-template.txt" class="btn btn-outline-secondary" download="gitignore-template.txt">⬇ Download the standard .gitignore</a></p>
+<p>The starter project has all the folders, a README template, the standard <code>.gitignore</code>, and a <code>.here</code> file, ready to rename and fill in. NV OSE members can also copy <code>_template-project/</code> from the <a href="https://github.com/nv-ose/shared-resources"><code>shared-resources</code></a> repo.</p>
+<section id="the-folder-structure" class="level2">
+<h2 class="anchored" data-anchor-id="the-folder-structure">The folder structure</h2>
+<pre><code>project-name/
+├── scripts/          # .R and .py files, numbered in run order
+├── notebooks/        # .qmd / .Rmd / .md documents (report source)
+├── raw_data/         # original data, never edited
+├── processed_data/   # cleaned data created by scripts
+├── images/           # figures and screenshots
+├── reports/          # rendered output: HTML, Word, PDF
+├── downloads/        # files pulled from outside sources
+├── README.md         # what this is and how to use it
+├── .gitignore        # what Git must never track
+└── .here             # marks the top folder for here::here()</code></pre>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Folder or file</th>
+<th>What goes in it</th>
+<th>In Git?</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>scripts/</code></td>
+<td>Code you run: <code>.R</code>, <code>.py</code>, <code>.sql</code>. Number them in the order they run</td>
+<td>✅</td>
+</tr>
+<tr class="even">
+<td><code>notebooks/</code></td>
+<td>Documents that mix code and text: <code>.qmd</code>, <code>.Rmd</code>, <code>.md</code>. This is the <strong>source</strong> of reports</td>
+<td>✅</td>
+</tr>
+<tr class="odd">
+<td><code>raw_data/</code></td>
+<td><strong>Non-sensitive</strong> original data exactly as received: public downloads, approved aggregate tables, synthetic test data. <strong>Never edit these files</strong>; scripts read them and write to <code>processed_data/</code>. <strong>No PHI/PII</strong> (<a href="#where-the-data-lives">see below</a>)</td>
+<td>❌</td>
+</tr>
+<tr class="even">
+<td><code>processed_data/</code></td>
+<td>Cleaned or derived non-sensitive data, created by your scripts. Can always be rebuilt from <code>raw_data/</code> + <code>scripts/</code></td>
+<td>❌</td>
+</tr>
+<tr class="odd">
+<td><code>images/</code></td>
+<td>Figures, diagrams, screenshots used in reports or the README</td>
+<td>✅ if no real data is shown</td>
+</tr>
+<tr class="even">
+<td><code>reports/</code></td>
+<td>Final rendered output (HTML, Word, PDF)</td>
+<td>❌ by default (they contain results)</td>
+</tr>
+<tr class="odd">
+<td><code>downloads/</code></td>
+<td>Files pulled from websites, APIs, or other systems</td>
+<td>❌</td>
+</tr>
+<tr class="even">
+<td><code>README.md</code></td>
+<td>What the project is, how to run it, who maintains it</td>
+<td>✅</td>
+</tr>
+<tr class="odd">
+<td><code>.gitignore</code></td>
+<td>The NV OSE standard (below)</td>
+<td>✅</td>
+</tr>
+<tr class="even">
+<td><code>.here</code></td>
+<td>An empty file marking the project’s top folder</td>
+<td>✅</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Don’t need a folder?</strong> Delete it. <strong>Need a different one?</strong> Ask yourself if it fits one of these first; don’t invent new top-level folders without a good reason.</p>
+</section>
+<section id="where-the-data-lives" class="level2">
+<h2 class="anchored" data-anchor-id="where-the-data-lives">Where the data lives</h2>
+<p>Code and sensitive data live in <strong>different places</strong>:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>What</th>
+<th>Where</th>
+<th>Why</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Code: scripts, notebooks, README</td>
+<td>Project folder in <code>Documents\GitHub\</code> on your computer, and on GitHub</td>
+<td>Contains no data. Git works best on a local drive, not a network drive</td>
+</tr>
+<tr class="even">
+<td><strong>PHI/PII and other restricted data</strong></td>
+<td>The program’s <strong>approved network drive</strong>. <strong>Never</strong> copied to your computer, OneDrive, or GitHub</td>
+<td>Agency rules on where sensitive data may be stored</td>
+</tr>
+<tr class="odd">
+<td>Non-sensitive data: public downloads, approved aggregates, synthetic data</td>
+<td><code>raw_data/</code>, <code>processed_data/</code>, <code>downloads/</code> in the project folder (not in Git)</td>
+<td>Convenient, and safe to have locally</td>
+</tr>
+</tbody>
+</table>
+<p>Scripts <strong>read sensitive data straight from the network drive</strong>, and write any cleaned versions back there, never to the project folder.</p>
+<section id="point-your-code-to-the-data-with-.renviron" class="level3">
+<h3 class="anchored" data-anchor-id="point-your-code-to-the-data-with-.renviron">Point your code to the data with <code>.Renviron</code></h3>
+<p>Don’t type the network path into your code. Save it once in your personal <code>~/.Renviron</code> file (the same file used for credentials, never in the project):</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">edit_r_environ</span>()   <span class="co"># opens ~/.Renviron</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Add a line like this (an example path; use your program’s real one), save, and restart R:</p>
+<pre><code>RESP_DATA_DIR="S:/Epi/Respiratory/data"</code></pre>
+<p>Then, in your scripts:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>data_dir <span class="ot">&lt;-</span> <span class="fu">Sys.getenv</span>(<span class="st">"RESP_DATA_DIR"</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (data_dir <span class="sc">==</span> <span class="st">""</span>) <span class="fu">stop</span>(<span class="st">"Set RESP_DATA_DIR in ~/.Renviron (see the README)."</span>)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>cases <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="fu">file.path</span>(data_dir, <span class="st">"raw"</span>, <span class="st">"cases.csv"</span>))</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co"># ... clean ...</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(clean, <span class="fu">file.path</span>(data_dir, <span class="st">"processed"</span>, <span class="st">"cases_clean.csv"</span>), <span class="at">row.names =</span> <span class="cn">FALSE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>In Python, put the same line in a <code>.env</code> file in the project folder (already in the standard <code>.gitignore</code>) and read it with <code>python-dotenv</code>:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pathlib <span class="im">import</span> Path</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> dotenv <span class="im">import</span> load_dotenv</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>load_dotenv()</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>data_dir <span class="op">=</span> Path(os.environ[<span class="st">"RESP_DATA_DIR"</span>])</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>cases <span class="op">=</span> data_dir <span class="op">/</span> <span class="st">"raw"</span> <span class="op">/</span> <span class="st">"cases.csv"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>This way:</p>
+<ul>
+<li><strong>No PHI is ever on your computer.</strong> It’s read over the network and kept in memory only.</li>
+<li><strong>No server paths are in the code or on GitHub.</strong></li>
+<li><strong>Each person can have a different path</strong> (a different drive letter, say) without changing the code.</li>
+<li>The README says <strong>which variable to set</strong> and where authorized people can find the data.</li>
+</ul>
+<div class="callout callout-style-default callout-warning callout-titled" title="Watch what you save locally">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>Watch what you save locally
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Don’t save PHI to <code>processed_data/</code>, <code>downloads/</code>, <code>reports/</code>, the Desktop, or Downloads, even temporarily.</li>
+<li>Rendered reports and figures can contain data too. If a report shows line-level or small-cell data, save it to the network drive, not <code>reports/</code>.</li>
+<li>Synced folders like OneDrive may not be approved for PHI. Follow agency rules.</li>
+</ul>
+</div>
+</div>
+</section>
+</section>
+<section id="naming-files-and-folders" class="level2">
+<h2 class="anchored" data-anchor-id="naming-files-and-folders">Naming files and folders</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Rule</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Lowercase, no spaces</td>
+<td><code>weekly_ili.R</code>, not <code>Weekly ILI Final.R</code></td>
+</tr>
+<tr class="even">
+<td>Underscores or hyphens; be consistent within a project</td>
+<td><code>raw_data/</code>, <code>01_import.R</code></td>
+</tr>
+<tr class="odd">
+<td>Number scripts in run order</td>
+<td><code>01_import.R</code>, <code>02_clean.R</code>, <code>03_analyze.R</code>, <code>04_report.R</code></td>
+</tr>
+<tr class="even">
+<td>Date first, as <code>YYYY-MM-DD</code>, when versions or order matter</td>
+<td><code>2026-11-10_weekly-ili.html</code></td>
+</tr>
+<tr class="odd">
+<td>Describe the content, not the status</td>
+<td><code>ili_by_county.csv</code>, not <code>final_v2_USE_THIS.csv</code></td>
+</tr>
+<tr class="even">
+<td>Repositories: lowercase with <strong>hyphens</strong></td>
+<td><code>flu-weekly-report</code></td>
+</tr>
+</tbody>
+</table>
+<p>Dates in <code>YYYY-MM-DD</code> format sort correctly in any file list.</p>
+</section>
+<section id="the-readme" class="level2">
+<h2 class="anchored" data-anchor-id="the-readme">The README</h2>
+<p>Every project has a <code>README.md</code> at the top level. At minimum: <strong>what it is, who maintains it, how to run it, what’s in each folder, and where the data comes from</strong>. See <a href="../../pages/intro-to-github/readme-guide.html">Writing a good README</a> for the full guide. The starter project includes the template.</p>
+</section>
+<section id="the-standard-.gitignore" class="level2">
+<h2 class="anchored" data-anchor-id="the-standard-.gitignore">The standard <code>.gitignore</code></h2>
+<p>Add it <strong>first</strong>, before any data goes into the folder. It’s in the starter project, or <a href="gitignore-template.txt" download="gitignore-template.txt">download it</a> and rename it to <code>.gitignore</code> (see the tip below).</p>
+<pre class="gitignore"><code># ---- Data folders: never in Git (the empty folders are kept with .gitkeep) ----
+/raw_data/*
+!/raw_data/.gitkeep
+/processed_data/*
+!/processed_data/.gitkeep
+/downloads/*
+!/downloads/.gitkeep
+
+# ---- Rendered reports: not in Git by default (they contain results) ----
+/reports/*
+!/reports/.gitkeep
+
+# ---- Data files anywhere (safety net) ----
+# To allow one specific file, add a line like:  !lookups/county_codes.csv
+*.csv
+*.xlsx
+*.xls
+*.sas7bdat
+*.dta
+*.sav
+*.parquet
+*.rds
+*.RData
+*.rda
+
+# ---- Secrets: never in Git ----
+.Renviron
+.env
+*.key
+*.pem
+credentials*
+*secret*
+
+# ---- R ----
+.Rhistory
+.Rproj.user/
+.Ruserdata
+
+# ---- Python ----
+__pycache__/
+.venv/
+.ipynb_checkpoints/
+
+# ---- Quarto (rendered files next to the source) ----
+/.quarto/
+*_files/
+/notebooks/*.html
+**/*.quarto_ipynb
+
+# ---- System and Office temporary files ----
+.DS_Store
+Thumbs.db
+desktop.ini
+~$*</code></pre>
+<p>What it does:</p>
+<ul>
+<li><strong>Data never goes in</strong>, even if someone saves a CSV in the wrong folder (the safety net).</li>
+<li><strong>Secrets never go in:</strong> <code>.Renviron</code>, <code>.env</code>, keys.</li>
+<li><strong>Clutter stays out:</strong> R history, Python caches, Quarto build files, Office lock files.</li>
+<li>The <strong>folders themselves</strong> are kept (with an empty <code>.gitkeep</code> file), so the structure is the same in every copy of the project.</li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled" title="Renaming to .gitignore on Windows">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Renaming to .gitignore on Windows
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Windows may refuse a name that starts with a dot, or hide the <code>.txt</code> extension. Easiest: in Positron’s Explorer, right-click <code>gitignore-template.txt</code> → <strong>Rename</strong> → <code>.gitignore</code>. Or in File Explorer, first turn on <strong>View → Show → File name extensions</strong>, then rename it to <code>.gitignore.</code> (with a trailing dot; Windows removes it).</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning callout-titled" title="Already committed something by mistake?">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>Already committed something by mistake?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><code>.gitignore</code> only affects files Git isn’t tracking yet. See <a href="../../pages/intro-to-github/03-repositories-readme-gitignore.html#gotcha-.gitignore-doesnt-affect-files-already-tracked">Lesson 3</a> to stop tracking a file, and <a href="../../pages/intro-to-github/09-data-security.html#if-something-sensitive-is-committed">Lesson 9</a> if it contained sensitive data.</p>
+</div>
+</div>
+</section>
+<section id="paths-.here-and-here" class="level2">
+<h2 class="anchored" data-anchor-id="paths-.here-and-here">Paths: <code>.here</code> and <code>here()</code></h2>
+<p>Never type full paths like <code>C:\Users\jsmith\...</code> in code. They break for everyone else. Instead, build paths from the project’s top folder with the <a href="https://here.r-lib.org/"><code>here</code></a> package:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(here)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>cases <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="fu">here</span>(<span class="st">"raw_data"</span>, <span class="st">"cases.csv"</span>))</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(summary, <span class="fu">here</span>(<span class="st">"processed_data"</span>, <span class="st">"summary.csv"</span>), <span class="at">row.names =</span> <span class="cn">FALSE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>The empty <code>.here</code> file tells <code>here()</code> where the top folder is. It’s in the starter project, or run <code>here::set_here()</code> once in the project folder. See <a href="../../pages/intro-to-positron/03-projects.html#the-.here-file-and-herehere">Positron Lesson 3</a>.</p>
+<p>In Python, build paths from the project folder with <code>pathlib</code>:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pathlib <span class="im">import</span> Path</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>project <span class="op">=</span> Path.cwd()          <span class="co"># run from the project folder</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>cases <span class="op">=</span> project <span class="op">/</span> <span class="st">"raw_data"</span> <span class="op">/</span> <span class="st">"cases.csv"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="reports" class="level2">
+<h2 class="anchored" data-anchor-id="reports">Reports</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Rule</th>
+<th>Why</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Write report <strong>source</strong> in <code>notebooks/</code> (e.g., <code>notebooks/weekly_ili.qmd</code>)</td>
+<td>Source is code + text: it belongs in Git</td>
+</tr>
+<tr class="even">
+<td>Read data with <code>here()</code> and produce every number and chart from code</td>
+<td>Re-running with new data updates the whole report</td>
+</tr>
+<tr class="odd">
+<td>Save <strong>final</strong> rendered versions to <code>reports/</code> with the date first: <code>2026-11-10_weekly-ili.html</code></td>
+<td>A dated history of what was shared, in order</td>
+</tr>
+<tr class="even">
+<td>Keep <code>reports/</code> <strong>out of Git</strong> (the default)</td>
+<td>Rendered reports contain results, often with data</td>
+</tr>
+<tr class="odd">
+<td>Use <code>embed-resources: true</code> for HTML reports you’ll share</td>
+<td>One self-contained file (<a href="../../pages/intro-to-quarto/06-documents.html">Quarto Lesson 6</a>)</td>
+</tr>
+</tbody>
+</table>
+<p>When you render a <code>.qmd</code>, Quarto saves the HTML <strong>next to it</strong> in <code>notebooks/</code> (ignored by Git). Copy or move the final version into <code>reports/</code> with a dated name. To render straight to a dated file:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> render notebooks/weekly_ili.qmd <span class="at">--output</span> 2026-11-10_weekly-ili.html</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>then move it into <code>reports/</code>.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Only change the default and commit <code>reports/</code> if <strong>every</strong> report in the project is cleared for sharing and contains no restricted data, for example a public training or methods report.</p>
+</div>
+</div>
+</section>
+<section id="new-project-checklist" class="level2">
+<h2 class="anchored" data-anchor-id="new-project-checklist">New project checklist</h2>
+<ul class="task-list">
+<li><label><input type="checkbox">Create the project folder in <code>Documents\GitHub\</code> (named with hyphens: <code>flu-weekly-report</code>)</label></li>
+<li><label><input type="checkbox">Copy in the <strong>starter project</strong> (or <code>shared-resources/_template-project/</code>)</label></li>
+<li><label><input type="checkbox">Fill in <code>README.md</code>: what, who, how to run, data sources</label></li>
+<li><label><input type="checkbox">Check <code>.gitignore</code> is in place <strong>before</strong> adding any data</label></li>
+<li><label><input type="checkbox">Check <code>.here</code> is in place (<code>here::here()</code> returns the project folder)</label></li>
+<li><label><input type="checkbox">PHI/PII stays on the network drive: save its path in <code>~/.Renviron</code> and read it from there</label></li>
+<li><label><input type="checkbox">Put non-sensitive original data in <code>raw_data/</code> and never edit it</label></li>
+<li><label><input type="checkbox">Number scripts in run order; build paths with <code>here()</code></label></li>
+<li><label><input type="checkbox">Credentials only in <code>~/.Renviron</code>, never in code</label></li>
+<li><label><input type="checkbox">Initialize Git and check the first commit contains <strong>no data</strong> (<a href="../../pages/intro-to-positron/07-git.html">Positron Lesson 7</a> or <a href="../../pages/intro-to-github/04-github-desktop.html">GitHub Desktop, Lesson 4</a>)</label></li>
+<li><label><input type="checkbox">Publish <strong>privately</strong> to <strong>nv-ose</strong>, add topics, and list it in the member directory (<a href="https://github.com/nv-ose/.github/blob/main/CONTRIBUTING.md#4-adding-a-new-repository">SOP §4</a>)</label></li>
+</ul>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/nv-ose\.github\.io\/training\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../../pages/intro-to-github/readme-guide.html" class="pagination-link" aria-label="Writing a good README">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Writing a good README</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../../pages/intro-to-github/cheatsheet.html" class="pagination-link" aria-label="Git and GitHub cheat sheet">
+        <span class="nav-page-text">Git and GitHub cheat sheet</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Nevada Office of State Epidemiology</p>
+</div>   
+    <div class="nav-footer-center">
+<p>Questions or feedback? Email <a href="mailto:mwegener@health.nv.gov?subject=NV%20OSE%20Training%20feedback">mwegener@health.nv.gov</a></p>
+</div>
+    <div class="nav-footer-right">
+<p>Built with <a href="https://quarto.org">Quarto</a></p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

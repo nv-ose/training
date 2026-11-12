@@ -1,0 +1,61 @@
+# =============================================================================
+# NV OSE standard .gitignore
+# Keeps data, secrets, and clutter out of Git. Put this file at the top of
+# every project BEFORE adding any data. Comments must be on their own lines.
+# =============================================================================
+
+# ---- Data folders: never in Git (the empty folders are kept with .gitkeep) ----
+/raw_data/*
+!/raw_data/.gitkeep
+/processed_data/*
+!/processed_data/.gitkeep
+/downloads/*
+!/downloads/.gitkeep
+
+# ---- Rendered reports: not in Git by default (they contain results) ----
+# Delete these two lines only if every report is cleared for sharing.
+/reports/*
+!/reports/.gitkeep
+
+# ---- Data files anywhere (safety net) ----
+# To allow one specific file, add a line like:  !lookups/county_codes.csv
+*.csv
+*.xlsx
+*.xls
+*.sas7bdat
+*.dta
+*.sav
+*.parquet
+*.rds
+*.RData
+*.rda
+
+# ---- Secrets: never in Git ----
+.Renviron
+.env
+*.key
+*.pem
+credentials*
+*secret*
+
+# ---- R ----
+.Rhistory
+.Rproj.user/
+.Ruserdata
+
+# ---- Python ----
+__pycache__/
+.venv/
+.ipynb_checkpoints/
+
+# ---- Quarto (rendered files next to the source) ----
+/.quarto/
+*_files/
+/notebooks/*.html
+**/*.quarto_ipynb
+
+# ---- System and Office temporary files ----
+.DS_Store
+Thumbs.db
+desktop.ini
+~$*

@@ -50,7 +50,7 @@
   </url>
   <url>
     <loc>https://nv-ose.github.io/training/pages/intro-to-positron/04-files-folders.html</loc>
-    <lastmod>2026-11-06T15:54:37.970Z</lastmod>
+    <lastmod>2026-11-12T18:06:33.571Z</lastmod>
   </url>
   <url>
     <loc>https://nv-ose.github.io/training/pages/intro-to-positron/02-setup.html</loc>
@@ -61,64 +61,68 @@
     <lastmod>2026-11-06T15:54:37.968Z</lastmod>
   </url>
   <url>
-    <loc>https://nv-ose.github.io/training/pages/intro-to-github/index.html</loc>
-    <lastmod>2026-11-06T15:54:37.967Z</lastmod>
-  </url>
-  <url>
-    <loc>https://nv-ose.github.io/training/pages/intro-to-github/exercises.html</loc>
-    <lastmod>2026-11-06T15:54:37.967Z</lastmod>
-  </url>
-  <url>
-    <loc>https://nv-ose.github.io/training/pages/intro-to-github/09-data-security.html</loc>
-    <lastmod>2026-11-06T15:54:37.966Z</lastmod>
-  </url>
-  <url>
-    <loc>https://nv-ose.github.io/training/pages/intro-to-github/07-clones-forks.html</loc>
-    <lastmod>2026-11-06T15:54:37.965Z</lastmod>
-  </url>
-  <url>
-    <loc>https://nv-ose.github.io/training/pages/intro-to-github/05-command-line.html</loc>
-    <lastmod>2026-11-06T16:08:15.799Z</lastmod>
-  </url>
-  <url>
-    <loc>https://nv-ose.github.io/training/pages/intro-to-github/03-repositories-readme-gitignore.html</loc>
-    <lastmod>2026-11-06T16:08:15.789Z</lastmod>
-  </url>
-  <url>
-    <loc>https://nv-ose.github.io/training/pages/intro-to-github/01-git-vs-github.html</loc>
-    <lastmod>2026-11-06T15:54:37.962Z</lastmod>
-  </url>
-  <url>
-    <loc>https://nv-ose.github.io/training/index.html</loc>
-    <lastmod>2026-11-09T19:53:23.004Z</lastmod>
-  </url>
-  <url>
-    <loc>https://nv-ose.github.io/training/pages/intro-to-github/02-setup.html</loc>
-    <lastmod>2026-11-06T16:08:15.786Z</lastmod>
-  </url>
-  <url>
-    <loc>https://nv-ose.github.io/training/pages/intro-to-github/04-github-desktop.html</loc>
-    <lastmod>2026-11-06T20:47:15.868Z</lastmod>
-  </url>
-  <url>
-    <loc>https://nv-ose.github.io/training/pages/intro-to-github/06-branches-pull-requests.html</loc>
-    <lastmod>2026-11-06T20:47:15.867Z</lastmod>
-  </url>
-  <url>
-    <loc>https://nv-ose.github.io/training/pages/intro-to-github/08-public-vs-private.html</loc>
-    <lastmod>2026-11-06T15:54:37.966Z</lastmod>
-  </url>
-  <url>
-    <loc>https://nv-ose.github.io/training/pages/intro-to-github/cheatsheet.html</loc>
-    <lastmod>2026-11-06T15:54:37.967Z</lastmod>
+    <loc>https://nv-ose.github.io/training/pages/intro-to-github/project-setup.html</loc>
+    <lastmod>2026-11-12T18:06:52.644Z</lastmod>
   </url>
   <url>
     <loc>https://nv-ose.github.io/training/pages/intro-to-github/glossary.html</loc>
     <lastmod>2026-11-06T15:54:37.967Z</lastmod>
   </url>
   <url>
+    <loc>https://nv-ose.github.io/training/pages/intro-to-github/cheatsheet.html</loc>
+    <lastmod>2026-11-06T15:54:37.967Z</lastmod>
+  </url>
+  <url>
+    <loc>https://nv-ose.github.io/training/pages/intro-to-github/08-public-vs-private.html</loc>
+    <lastmod>2026-11-06T15:54:37.966Z</lastmod>
+  </url>
+  <url>
+    <loc>https://nv-ose.github.io/training/pages/intro-to-github/06-branches-pull-requests.html</loc>
+    <lastmod>2026-11-06T20:47:15.867Z</lastmod>
+  </url>
+  <url>
+    <loc>https://nv-ose.github.io/training/pages/intro-to-github/04-github-desktop.html</loc>
+    <lastmod>2026-11-06T20:47:15.868Z</lastmod>
+  </url>
+  <url>
+    <loc>https://nv-ose.github.io/training/pages/intro-to-github/02-setup.html</loc>
+    <lastmod>2026-11-06T16:08:15.786Z</lastmod>
+  </url>
+  <url>
+    <loc>https://nv-ose.github.io/training/index.html</loc>
+    <lastmod>2026-11-09T19:53:23.004Z</lastmod>
+  </url>
+  <url>
+    <loc>https://nv-ose.github.io/training/pages/intro-to-github/01-git-vs-github.html</loc>
+    <lastmod>2026-11-06T15:54:37.962Z</lastmod>
+  </url>
+  <url>
+    <loc>https://nv-ose.github.io/training/pages/intro-to-github/03-repositories-readme-gitignore.html</loc>
+    <lastmod>2026-11-10T11:12:43.472Z</lastmod>
+  </url>
+  <url>
+    <loc>https://nv-ose.github.io/training/pages/intro-to-github/05-command-line.html</loc>
+    <lastmod>2026-11-06T16:08:15.799Z</lastmod>
+  </url>
+  <url>
+    <loc>https://nv-ose.github.io/training/pages/intro-to-github/07-clones-forks.html</loc>
+    <lastmod>2026-11-06T15:54:37.965Z</lastmod>
+  </url>
+  <url>
+    <loc>https://nv-ose.github.io/training/pages/intro-to-github/09-data-security.html</loc>
+    <lastmod>2026-11-06T15:54:37.966Z</lastmod>
+  </url>
+  <url>
+    <loc>https://nv-ose.github.io/training/pages/intro-to-github/exercises.html</loc>
+    <lastmod>2026-11-06T15:54:37.967Z</lastmod>
+  </url>
+  <url>
+    <loc>https://nv-ose.github.io/training/pages/intro-to-github/index.html</loc>
+    <lastmod>2026-11-10T11:12:43.467Z</lastmod>
+  </url>
+  <url>
     <loc>https://nv-ose.github.io/training/pages/intro-to-github/readme-guide.html</loc>
-    <lastmod>2026-11-06T15:54:37.968Z</lastmod>
+    <lastmod>2026-11-10T11:12:43.476Z</lastmod>
   </url>
   <url>
     <loc>https://nv-ose.github.io/training/pages/intro-to-positron/01-introduction.html</loc>
@@ -126,7 +130,7 @@
   </url>
   <url>
     <loc>https://nv-ose.github.io/training/pages/intro-to-positron/03-projects.html</loc>
-    <lastmod>2026-11-06T15:54:37.968Z</lastmod>
+    <lastmod>2026-11-12T18:06:29.511Z</lastmod>
   </url>
   <url>
     <loc>https://nv-ose.github.io/training/pages/intro-to-positron/05-panes.html</loc>
@@ -142,7 +146,7 @@
   </url>
   <url>
     <loc>https://nv-ose.github.io/training/pages/intro-to-positron/quick-reference.html</loc>
-    <lastmod>2026-11-06T15:54:37.974Z</lastmod>
+    <lastmod>2026-11-12T18:07:13.387Z</lastmod>
   </url>
   <url>
     <loc>https://nv-ose.github.io/training/pages/intro-to-quarto/01-what-is-quarto.html</loc>
